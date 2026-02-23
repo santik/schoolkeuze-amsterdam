@@ -65,5 +65,19 @@
     "concept": "Concept",
     "address": "Adres",
     "website": "Website"
+  },
+  "Profile": {
+    "title": "Jouw profiel (prototype)",
+    "adviceLabel": "Advies/niveau",
+    "conceptLabel": "Voorkeursconcept (optioneel)",
+    "prototypeNote": "Dit is een eerste prototype van “suggesties”. In productie komt hier meer: interesses, brugklasprofielen, toelatingsregels, reistijd (fiets/OV) en uitleg waarom iets past.",
+    "suggestionsTitle": "Suggesties",
+    "allSchools": "Alle scholen →",
+    "noSuggestions": "Geen suggesties.",
+    "hasAdvice": "Heeft {advice}",
+    "conceptMatch": "Concept match: {concept}",
+    "withinRadius": "{km} km (binnen radius)",
+    "outsideRadius": "{km} km (buiten radius)",
+    "scoreLabel": "Score:"
   }
 }
