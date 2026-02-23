@@ -1,3 +1,68 @@
+# Schoolkeuze Amsterdam (prototype)
+
+Mobile-ready **web app** (NL/EN) for group 8 students and parents to **search, filter, compare** and **rank** secondary schools in Amsterdam.
+
+## Features (current prototype)
+
+- **Bilingual routing**: `/nl` and `/en`
+- **Schools**: search + filters + map (OpenStreetMap) + distance estimate (bike)
+- **Compare**: side-by-side table
+- **Favorites**: save + drag-to-rank + export ranked list (txt)
+- **Profile (prototype)**: basic suggestions based on advice, concept and distance
+- **Backend**: Next.js API routes + Prisma model for schools
+- **Data**: runs with `data/schools.sample.json` when no database is configured
+
+## Local setup
+
+### 1) Install
+
+```bash
+npm install
+```
+
+### 2) Database (optional but recommended)
+
+Start Postgres:
+
+```bash
+docker compose up -d
+```
+
+Create `.env` from `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Run migrations and seed:
+
+```bash
+npm run db:migrate
+npm run db:seed
+```
+
+### 3) Run the app
+
+```bash
+npm run dev
+```
+
+Then open:
+- `http://localhost:3000/nl`
+- `http://localhost:3000/en`
+
+## Data ingestion (public sources)
+
+This repo includes an ingestion scaffold:
+
+- `npm run ingest:sample` — upserts `data/schools.sample.json` into Postgres
+- `scripts/ingest/duo.ts` — **placeholder** for DUO open datasets/APIs ingestion
+
+### Notes
+
+- For **travel time**, the prototype currently shows a **straight-line distance** + a simple bike-time estimate. For production, plug in a routing provider (OV + cycling) and cache results.
+- For **admissions/lottery rules**, the prototype currently shows a guide + placeholders; production should ingest and cite official sources (e.g. OSVO/municipality pages) per school.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

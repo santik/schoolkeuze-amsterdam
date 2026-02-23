@@ -1,0 +1,48 @@
+[
+  {
+    "brin": "00AA",
+    "name": "Barlaeus Gymnasium",
+    "websiteUrl": "https://barlaeus.nl",
+    "street": "Weteringschans",
+    "houseNumber": "31",
+    "postalCode": "1017RV",
+    "city": "Amsterdam",
+    "lat": 52.3629,
+    "lon": 4.8926,
+    "levels": ["VWO"],
+    "concepts": ["Gymnasium"],
+    "denomination": "Openbaar",
+    "source": "sample"
+  },
+  {
+    "brin": "00AB",
+    "name": "Montessori Lyceum Amsterdam",
+    "websiteUrl": "https://mla.nl",
+    "street": "Pieter de Hoochstraat",
+    "houseNumber": "59",
+    "postalCode": "1071ED",
+    "city": "Amsterdam",
+    "lat": 52.3555,
+    "lon": 4.8829,
+    "levels": ["HAVO", "VWO"],
+    "concepts": ["Montessori"],
+    "denomination": "Bijzonder",
+    "source": "sample"
+  },
+  {
+    "brin": "00AC",
+    "name": "Hyperion Lyceum",
+    "websiteUrl": "https://hyperionlyceum.nl",
+    "street": "Voorlandpad",
+    "houseNumber": "13",
+    "postalCode": "1093BJ",
+    "city": "Amsterdam",
+    "lat": 52.3659,
+    "lon": 4.9445,
+    "levels": ["VWO"],
+    "concepts": ["Tweetalig", "Technasium"],
+    "denomination": "Bijzonder",
+    "source": "sample"
+  }
+]
+

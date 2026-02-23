@@ -1,0 +1,69 @@
+{
+  "App": {
+    "name": "Amsterdam School Choice"
+  },
+  "Nav": {
+    "schools": "Schools",
+    "compare": "Compare",
+    "favorites": "Favorites",
+    "guide": "Guide",
+    "profile": "Profile"
+  },
+  "Home": {
+    "title": "Choose a secondary school in Amsterdam",
+    "subtitle": "Search, filter and compare schools. Save favorites and build a ranked list.",
+    "ctaPrimary": "Browse schools",
+    "ctaSecondary": "How does it work?",
+    "feature1Title": "Search & filter",
+    "feature1Desc": "Filter by level (vmbo/havo/vwo), profile (Montessori/Jenaplan), denomination and distance.",
+    "feature2Title": "Compare",
+    "feature2Desc": "Put schools side by side and compare what is important to you.",
+    "feature3Title": "Favorites & list",
+    "feature3Desc": "Save favorites and build an order for your preference list."
+  },
+  "Schools": {
+    "searchLabel": "Search",
+    "searchPlaceholder": "e.g. Montessori, Barlaeus...",
+    "levelLabel": "Level",
+    "levelAll": "All",
+    "conceptLabel": "Concept",
+    "conceptPlaceholder": "Montessori, Dalton...",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "1017",
+    "useLocation": "Use my location (distance)",
+    "radiusLabel": "Radius",
+    "compareCta": "Compare",
+    "loading": "Loading...",
+    "schoolsCount": "{count} schools",
+    "distanceEstimate": "{km} km · ~{minutes} min bike",
+    "detailsCta": "Details",
+    "favoriteOn": "★",
+    "favoriteOff": "☆"
+  },
+  "Compare": {
+    "addMore": "+ Add schools",
+    "empty": "No schools selected yet."
+  },
+  "Favorites": {
+    "empty": "You don't have any favorites yet.",
+    "count": "{count} favorites",
+    "export": "Export list",
+    "remove": "Remove",
+    "details": "Details",
+    "compare": "Compare"
+  },
+  "SchoolDetails": {
+    "backToSchools": "← Back to schools",
+    "compare": "Compare",
+    "website": "Website",
+    "admissionsTitle": "Admissions & lottery (prototype)",
+    "admissionsDesc": "This section is filled from public sources (OSVO/DUO/municipality) and will be made more specific per school. For now this is a placeholder."
+  },
+  "CompareTable": {
+    "property": "Property",
+    "level": "Level",
+    "concept": "Concept",
+    "address": "Address",
+    "website": "Website"
+  }
+}

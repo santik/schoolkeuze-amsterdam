@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: schoolkeuze
+      POSTGRES_PASSWORD: schoolkeuze
+      POSTGRES_DB: schoolkeuze
+    ports:
+      - "5432:5432"
+    volumes:
+      - schoolkeuze_pgdata:/var/lib/postgresql/data
+
+volumes:
+  schoolkeuze_pgdata:
+

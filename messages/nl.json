@@ -1,0 +1,69 @@
+{
+  "App": {
+    "name": "Schoolkeuze Amsterdam"
+  },
+  "Nav": {
+    "schools": "Scholen",
+    "compare": "Vergelijken",
+    "favorites": "Favorieten",
+    "guide": "Uitleg",
+    "profile": "Profiel"
+  },
+  "Home": {
+    "title": "Kies een middelbare school in Amsterdam",
+    "subtitle": "Zoek, filter en vergelijk scholen. Bewaar favorieten en stel een volgorde samen voor je lijst.",
+    "ctaPrimary": "Scholen bekijken",
+    "ctaSecondary": "Hoe werkt het?",
+    "feature1Title": "Zoeken & filteren",
+    "feature1Desc": "Filter op niveau (vmbo/havo/vwo), profiel (Montessori/Jenaplan), denominatie en afstand.",
+    "feature2Title": "Vergelijken",
+    "feature2Desc": "Zet scholen naast elkaar en vergelijk wat voor jullie belangrijk is.",
+    "feature3Title": "Favorieten & lijst",
+    "feature3Desc": "Bewaar favorieten en bouw een volgorde voor je voorkeurslijst."
+  },
+  "Schools": {
+    "searchLabel": "Zoek",
+    "searchPlaceholder": "Bijv. Montessori, Barlaeus...",
+    "levelLabel": "Niveau",
+    "levelAll": "Alle",
+    "conceptLabel": "Concept",
+    "conceptPlaceholder": "Montessori, Dalton...",
+    "postalCodeLabel": "Postcode",
+    "postalCodePlaceholder": "1017",
+    "useLocation": "Gebruik mijn locatie (afstand)",
+    "radiusLabel": "Radius",
+    "compareCta": "Vergelijken",
+    "loading": "Laden...",
+    "schoolsCount": "{count} scholen",
+    "distanceEstimate": "{km} km · ~{minutes} min fiets",
+    "detailsCta": "Details",
+    "favoriteOn": "★",
+    "favoriteOff": "☆"
+  },
+  "Compare": {
+    "addMore": "+ Scholen toevoegen",
+    "empty": "Nog geen scholen geselecteerd."
+  },
+  "Favorites": {
+    "empty": "Je hebt nog geen favorieten.",
+    "count": "{count} favorieten",
+    "export": "Exporteer lijst",
+    "remove": "Verwijder",
+    "details": "Details",
+    "compare": "Vergelijken"
+  },
+  "SchoolDetails": {
+    "backToSchools": "← Terug naar scholen",
+    "compare": "Vergelijken",
+    "website": "Website",
+    "admissionsTitle": "Toelating & loting (prototype)",
+    "admissionsDesc": "Deze sectie wordt gevuld vanuit openbare bronnen (OSVO/DUO/gemeente) en wordt per school specifieker gemaakt. Voor nu is dit een placeholder."
+  },
+  "CompareTable": {
+    "property": "Eigenschap",
+    "level": "Niveau",
+    "concept": "Concept",
+    "address": "Adres",
+    "website": "Website"
+  }
+}
