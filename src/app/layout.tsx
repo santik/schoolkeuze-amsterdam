@@ -17,7 +17,7 @@ export default async function RootLayout({
   const locale = h.get("x-next-intl-locale") ?? "nl";
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className="antialiased">{children}</body>
     </html>
   );
