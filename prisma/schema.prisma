@@ -48,3 +48,26 @@ model School {
   @@index([postalCode])
 }
 
+model Favorite {
+  id        String   @id @default(cuid())
+  profileId String
+  schoolId  String
+  rank      Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([profileId, schoolId])
+  @@index([profileId, rank])
+}
+
+model SchoolNote {
+  id        String   @id @default(cuid())
+  profileId String
+  schoolId  String
+  note      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([profileId, schoolId])
+  @@index([profileId])
+}

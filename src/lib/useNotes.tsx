@@ -2,17 +2,42 @@
 
 import * as React from "react";
 
-import { useLocalStorageState } from "@/lib/useLocalStorageState";
-
-const KEY = "schoolkeuze:notes:v1";
+import { useProfileId } from "@/lib/useProfileId";
 
 type NotesState = Record<string, string>;
 
 export function useNotes() {
-  const [notesById, setNotesById, hydrated] = useLocalStorageState<NotesState>(
-    KEY,
-    {}
-  );
+  const { profileId, hydrated: profileHydrated } = useProfileId();
+  const [notesById, setNotesById] = React.useState<NotesState>({});
+  const [hydrated, setHydrated] = React.useState(false);
+
+  React.useEffect(() => {
+    if (profileHydrated && !profileId) {
+      setHydrated(true);
+      return;
+    }
+    if (!profileHydrated || !profileId) return;
+    let cancelled = false;
+
+    fetch(`/api/profile/notes?profileId=${encodeURIComponent(profileId)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Request failed"))))
+      .then((body: { notesById?: NotesState }) => {
+        if (cancelled) return;
+        setNotesById(body.notesById && typeof body.notesById === "object" ? body.notesById : {});
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setNotesById({});
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setHydrated(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [profileHydrated, profileId]);
 
   const get = React.useCallback(
     (id: string) => notesById[id] ?? "",
@@ -21,31 +46,30 @@ export function useNotes() {
 
   const set = React.useCallback(
     (id: string, note: string) => {
-      const next = note.trim();
+      const next = note;
       setNotesById((prev) => {
         const copy = { ...prev };
-        if (!next) {
+        if (!next.trim()) {
           delete copy[id];
-          return copy;
+        } else {
+          copy[id] = next;
         }
-        copy[id] = note;
         return copy;
       });
+
+      if (!profileId) return;
+      void fetch("/api/profile/notes", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ profileId, schoolId: id, note }),
+      }).catch(() => {
+        // best-effort persistence
+      });
     },
-    [setNotesById]
+    [profileId]
   );
 
-  const remove = React.useCallback(
-    (id: string) => {
-      setNotesById((prev) => {
-        if (!(id in prev)) return prev;
-        const copy = { ...prev };
-        delete copy[id];
-        return copy;
-      });
-    },
-    [setNotesById]
-  );
+  const remove = React.useCallback((id: string) => set(id, ""), [set]);
 
   const has = React.useCallback((id: string) => Boolean(notesById[id]), [notesById]);
 
