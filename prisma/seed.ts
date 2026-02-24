@@ -31,8 +31,11 @@ function slugify(v: string) {
 }
 
 function toLevel(v: string): SchoolLevel | null {
-  const key = v.toUpperCase().trim();
+  const key = v.toUpperCase().trim().replaceAll("-", "_");
   if (key === "VMBO") return SchoolLevel.VMBO;
+  if (key === "VMBO_T") return SchoolLevel.VMBO_T;
+  if (key === "VMBO_B") return SchoolLevel.VMBO_B;
+  if (key === "VMBO_K") return SchoolLevel.VMBO_K;
   if (key === "HAVO") return SchoolLevel.HAVO;
   if (key === "VWO") return SchoolLevel.VWO;
   return null;
