@@ -47,13 +47,13 @@ export default async function LocaleLayout({
               <nav className="flex items-center gap-2">
                 <Link
                   href="/schools"
-                  className="hidden rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10 sm:inline-flex"
+                  className="rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   {tNav("schools")}
                 </Link>
                 <Link
                   href="/profile"
-                  className="hidden rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10 sm:inline-flex"
+                  className="rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   {tNav("profile")}
                 </Link>
