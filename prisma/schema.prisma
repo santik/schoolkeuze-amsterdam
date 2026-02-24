@@ -9,6 +9,9 @@ datasource db {
 
 enum SchoolLevel {
   VMBO
+  VMBO_T
+  VMBO_B
+  VMBO_K
   HAVO
   VWO
 }

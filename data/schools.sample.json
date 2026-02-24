@@ -29,7 +29,7 @@
     "lat": 52.3555,
     "lon": 4.8829,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -128,7 +128,7 @@
     "lat": 52.3479,
     "lon": 4.8687,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -204,9 +204,9 @@
     "lat": 52.3533,
     "lon": 4.9023,
     "levels": [
-      "VMBO-B",
-      "VMBO-K",
-      "VMBO-T",
+      "VMBO_B",
+      "VMBO_K",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -227,7 +227,7 @@
     "lat": 52.3713,
     "lon": 4.8165,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -251,7 +251,7 @@
     "lat": 52.3698,
     "lon": 4.8276,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -327,7 +327,7 @@
     "lat": 52.3726,
     "lon": 4.8304,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -387,7 +387,7 @@
     "lat": 52.3545,
     "lon": 4.8766,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],
@@ -408,7 +408,7 @@
     "lat": 52.3655,
     "lon": 4.8302,
     "levels": [
-      "VMBO-T",
+      "VMBO_T",
       "HAVO",
       "VWO"
     ],

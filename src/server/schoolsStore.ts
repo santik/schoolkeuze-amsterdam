@@ -106,7 +106,37 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       results = results.filter((s) => s.name.toLowerCase().includes(q));
     }
     if (filters.level) {
-      results = results.filter((s) => s.levels.includes(filters.level!));
+      if (filters.level === "VMBO") {
+        // For VMBO, include schools that have VMBO (any variant) - may also have other levels
+        results = results.filter((s) => 
+          s.levels.some(level => 
+            level === "VMBO" || 
+            level.startsWith("VMBO_") ||
+            level.startsWith("VMBO-")
+          )
+        );
+      } else if (filters.level === "HAVO") {
+        // For HAVO, include all schools that have HAVO (but not VMBO)
+        results = results.filter((s) => 
+          s.levels.includes("HAVO") &&
+          !s.levels.some(level => 
+            level === "VMBO" || 
+            level.startsWith("VMBO_") ||
+            level.startsWith("VMBO-")
+          )
+        );
+      } else if (filters.level === "VWO") {
+        // For VWO, include schools that have VWO only (no HAVO, no VMBO)
+        results = results.filter((s) => 
+          s.levels.includes("VWO") && 
+          !s.levels.includes("HAVO") && 
+          !s.levels.some(level => 
+            level === "VMBO" || 
+            level.startsWith("VMBO_") ||
+            level.startsWith("VMBO-")
+          )
+        );
+      }
     }
     if (filters.concept) {
       const c = filters.concept.toLowerCase();
@@ -145,8 +175,68 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     ];
   }
   if (filters.level) {
-    where.levels = { has: filters.level };
-  }
+      if (filters.level === "VMBO") {
+        // For VMBO, include schools that have VMBO (any variant) - may also have other levels
+        const levelConditions = [
+          { levels: { has: "VMBO" as SchoolLevel } },
+          { levels: { has: "VMBO_T" as SchoolLevel } },
+          { levels: { has: "VMBO_B" as SchoolLevel } },
+          { levels: { has: "VMBO_K" as SchoolLevel } },
+        ];
+        
+        if (where.OR) {
+          // Merge with existing OR conditions
+          where.OR = [...where.OR, ...levelConditions];
+        } else {
+          where.OR = levelConditions;
+        }
+      } else if (filters.level === "HAVO") {
+        // For HAVO, include all schools that have HAVO (but not VMBO)
+        const levelConditions = [
+          { levels: { has: "HAVO" as SchoolLevel } },
+        ];
+        
+        if (where.OR) {
+          // Merge with existing OR conditions
+          where.OR = [...where.OR, ...levelConditions];
+        } else {
+          where.OR = levelConditions;
+        }
+        
+        // Add NOT conditions for VMBO variants
+        where.NOT = {
+          OR: [
+            { levels: { has: "VMBO" as SchoolLevel } },
+            { levels: { has: "VMBO_T" as SchoolLevel } },
+            { levels: { has: "VMBO_B" as SchoolLevel } },
+            { levels: { has: "VMBO_K" as SchoolLevel } },
+          ]
+        };
+      } else if (filters.level === "VWO") {
+        // For VWO, include schools that have VWO only (no HAVO, no VMBO)
+        const levelConditions = [
+          { levels: { has: "VWO" as SchoolLevel } },
+        ];
+        
+        if (where.OR) {
+          // Merge with existing OR conditions
+          where.OR = [...where.OR, ...levelConditions];
+        } else {
+          where.OR = levelConditions;
+        }
+        
+        // Add NOT conditions for HAVO and VMBO variants
+        where.NOT = {
+          OR: [
+            { levels: { has: "HAVO" as SchoolLevel } },
+            { levels: { has: "VMBO" as SchoolLevel } },
+            { levels: { has: "VMBO_T" as SchoolLevel } },
+            { levels: { has: "VMBO_B" as SchoolLevel } },
+            { levels: { has: "VMBO_K" as SchoolLevel } },
+          ]
+        };
+      }
+    }
   if (filters.postalCode) {
     where.postalCode = {
       startsWith: filters.postalCode.replaceAll(/\s+/g, "").toUpperCase(),
