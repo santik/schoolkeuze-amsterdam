@@ -47,6 +47,7 @@
   "Favorites": {
     "empty": "You don't have any favorites yet.",
     "count": "{count} favorites",
+    "dragToRank": "Drag to rank",
     "export": "Export list",
     "remove": "Remove",
     "details": "Details",
