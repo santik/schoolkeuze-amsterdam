@@ -32,6 +32,12 @@ function toLevel(v: string): SchoolLevel | null {
   return null;
 }
 
+const SOURCE = "sample";
+
+function slugify(v: string) {
+  return v.toLowerCase().trim().replaceAll(/\W+/g, "-");
+}
+
 async function main() {
   if (!process.env.DATABASE_URL) {
     throw new Error("DATABASE_URL is required for ingestion.");
@@ -42,17 +48,21 @@ async function main() {
   const raw = await fs.readFile(filePath, "utf8");
   const schools = JSON.parse(raw) as InputSchool[];
 
-  let index = 0;
+  await prisma.school.deleteMany({
+    where: { source: SOURCE },
+  });
+
   for (const s of schools) {
-    const brin = s.brin ? `${s.brin}_${index}` : `${s.name.toLowerCase().replaceAll(/\s+/g, "-")}-sample_${index}`;
+    const sourceKey = `${SOURCE}:${s.brin?.trim() || "no-brin"}:${slugify(s.name)}`;
     const levels = (s.levels ?? [])
       .map(toLevel)
       .filter((x): x is SchoolLevel => x !== null);
 
     await prisma.school.upsert({
-      where: { brin },
+      where: { sourceKey },
       create: {
-        brin,
+        sourceKey,
+        brin: s.brin ?? null,
         name: s.name,
         websiteUrl: s.websiteUrl,
         phone: s.phone,
@@ -68,10 +78,12 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
-        source: s.source ?? "sample",
+        source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },
       update: {
+        sourceKey,
+        brin: s.brin ?? null,
         name: s.name,
         websiteUrl: s.websiteUrl,
         phone: s.phone,
@@ -87,12 +99,10 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
-        source: s.source ?? "sample",
+        source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },
     });
-
-    index++;
   }
 
   await prisma.$disconnect();
@@ -103,4 +113,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-

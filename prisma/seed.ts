@@ -24,6 +24,11 @@ type SeedSchool = {
 };
 
 const prisma = new PrismaClient();
+const SOURCE = "sample";
+
+function slugify(v: string) {
+  return v.toLowerCase().trim().replaceAll(/\W+/g, "-");
+}
 
 function toLevel(v: string): SchoolLevel | null {
   const key = v.toUpperCase().trim();
@@ -38,18 +43,22 @@ async function main() {
   const raw = await fs.readFile(filePath, "utf8");
   const schools = JSON.parse(raw) as SeedSchool[];
 
+  await prisma.school.deleteMany({
+    where: { source: SOURCE },
+  });
+
   for (const s of schools) {
     const levels = (s.levels ?? [])
       .map((x) => toLevel(String(x)))
       .filter((x): x is SchoolLevel => x !== null);
 
-    const computedBrin =
-      s.brin ?? `${s.name.toLowerCase().replaceAll(/\s+/g, "-")}-sample`;
+    const sourceKey = `${SOURCE}:${s.brin?.trim() || "no-brin"}:${slugify(s.name)}`;
 
     await prisma.school.upsert({
-      where: { brin: computedBrin },
+      where: { sourceKey },
       create: {
-        brin: computedBrin,
+        sourceKey,
+        brin: s.brin ?? null,
         name: s.name,
         websiteUrl: s.websiteUrl,
         phone: s.phone,
@@ -65,10 +74,12 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
-        source: s.source,
+        source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },
       update: {
+        sourceKey,
+        brin: s.brin ?? null,
         name: s.name,
         websiteUrl: s.websiteUrl,
         phone: s.phone,
@@ -84,7 +95,7 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
-        source: s.source,
+        source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },
     });
@@ -100,4 +111,3 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
-

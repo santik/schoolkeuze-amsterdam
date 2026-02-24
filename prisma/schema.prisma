@@ -18,7 +18,8 @@ enum SchoolLevel {
 
 model School {
   id          String        @id @default(cuid())
-  brin        String?       @unique
+  sourceKey   String?       @unique
+  brin        String?
   name        String
   websiteUrl  String?
   phone       String?
@@ -45,6 +46,7 @@ model School {
   createdAt   DateTime      @default(now())
 
   @@index([name])
+  @@index([brin])
   @@index([postalCode])
 }
 

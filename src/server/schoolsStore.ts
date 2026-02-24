@@ -68,6 +68,7 @@ async function getSampleSchools(): Promise<School[]> {
   // Map sample -> Prisma-like shape. IDs are stable-ish for demos.
   sampleCache = parsed.map((s, index) => ({
     id: `sample_${(s.brin ?? s.name).toLowerCase().replaceAll(/\W+/g, "_")}_${index}`,
+    sourceKey: null,
     brin: s.brin ?? null,
     name: s.name,
     websiteUrl: s.websiteUrl ?? null,
@@ -103,7 +104,7 @@ async function getSampleSchools(): Promise<School[]> {
     createdAt: new Date(),
   }));
 
-  return sampleCache;
+  return sampleCache ?? [];
 }
 
 function hasDb() {
