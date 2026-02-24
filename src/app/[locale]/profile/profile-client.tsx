@@ -4,12 +4,16 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 
 import { FavoritesClient } from "./favorites-client";
+import { useLocalStorageState } from "@/lib/useLocalStorageState";
 
 export function ProfileClient() {
   const tSchools = useTranslations("Schools");
   const tProfile = useTranslations("Profile");
 
-  const [advice, setAdvice] = React.useState<string>("VWO");
+  const [advice, setAdvice] = useLocalStorageState<string>(
+    "schoolkeuze:profile:adviceLevel:v1",
+    "VWO"
+  );
   const [useMyLocation, setUseMyLocation] = React.useState(false);
   const [lat, setLat] = React.useState<number | null>(null);
   const [lon, setLon] = React.useState<number | null>(null);

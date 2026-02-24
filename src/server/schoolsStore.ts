@@ -33,6 +33,8 @@ type SampleSchool = {
   denomination?: string;
   size?: number;
   results?: unknown;
+  examens_2023_2024?: unknown;
+  examens_bron?: string;
   admissions?: unknown;
   source?: string;
   sourceUrl?: string;
@@ -80,7 +82,20 @@ async function getSampleSchools(): Promise<School[]> {
     concepts: s.concepts ?? [],
     denomination: s.denomination ?? null,
     size: s.size ?? null,
-    results: (s.results ?? null) as Prisma.JsonValue | null,
+    results: (() => {
+      const hasExamData =
+        s.examens_2023_2024 !== undefined || s.examens_bron !== undefined;
+      if (!hasExamData) return (s.results ?? null) as Prisma.JsonValue | null;
+
+      const base =
+        s.results && typeof s.results === "object" ? (s.results as Record<string, unknown>) : {};
+
+      return {
+        ...base,
+        examens_2023_2024: s.examens_2023_2024 ?? null,
+        examens_bron: s.examens_bron ?? null,
+      } as Prisma.JsonValue;
+    })(),
     admissions: (s.admissions ?? null) as Prisma.JsonValue | null,
     source: s.source ?? "sample",
     sourceUrl: s.sourceUrl ?? null,

@@ -16,7 +16,16 @@
       "Gymnasium"
     ],
     "denomination": "Openbaar",
-    "source": "sample"
+    "source": "sample",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 112,
+        "geslaagden": 102,
+        "slagingspercentage": 91.1,
+        "gem_cijfer_lijst": 6.97
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Barlaeus Gymnasium"
   },
   {
     "brin": "00AB",
@@ -29,7 +38,7 @@
     "lat": 52.3555,
     "lon": 4.8829,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -37,7 +46,28 @@
       "Montessori"
     ],
     "denomination": "Bijzonder",
-    "source": "sample"
+    "source": "sample",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 256,
+        "geslaagden": 219,
+        "slagingspercentage": 85.5,
+        "gem_cijfer_lijst": 6.43
+      },
+      "VMBO_TL": {
+        "kandidaten": 55,
+        "geslaagden": 48,
+        "slagingspercentage": 87.3,
+        "gem_cijfer_lijst": 6.43
+      },
+      "VWO": {
+        "kandidaten": 209,
+        "geslaagden": 188,
+        "slagingspercentage": 90.0,
+        "gem_cijfer_lijst": 6.91
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Montessori SGM Amsterdam"
   },
   {
     "brin": "00AC",
@@ -57,7 +87,16 @@
       "Technasium"
     ],
     "denomination": "Bijzonder",
-    "source": "sample"
+    "source": "sample",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 135,
+        "geslaagden": 126,
+        "slagingspercentage": 93.3,
+        "gem_cijfer_lijst": 6.74
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: loc, Hyperion Lyceum"
   },
   {
     "brin": "21AF",
@@ -76,7 +115,16 @@
       "Gymnasium"
     ],
     "denomination": "Openbaar",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 133,
+        "geslaagden": 127,
+        "slagingspercentage": 95.5,
+        "gem_cijfer_lijst": 7.16
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Vossius Gymnasium"
   },
   {
     "brin": "01ET",
@@ -95,7 +143,16 @@
       "Gymnasium"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 110,
+        "geslaagden": 101,
+        "slagingspercentage": 91.8,
+        "gem_cijfer_lijst": 6.85
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: St. Ignatiusgymnasium"
   },
   {
     "brin": "14SE",
@@ -115,7 +172,22 @@
       "Tweetalig"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 86,
+        "geslaagden": 79,
+        "slagingspercentage": 91.9,
+        "gem_cijfer_lijst": 6.56
+      },
+      "VWO": {
+        "kandidaten": 105,
+        "geslaagden": 100,
+        "slagingspercentage": 95.2,
+        "gem_cijfer_lijst": 6.92
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: St. Nicolaaslyceum"
   },
   {
     "brin": "21BH",
@@ -128,7 +200,7 @@
     "lat": 52.3479,
     "lon": 4.8687,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -137,7 +209,28 @@
       "Gymnasium"
     ],
     "denomination": "Openbaar",
-    "source": "DUO/allecijfers.nl/Wikipedia"
+    "source": "DUO/allecijfers.nl/Wikipedia",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 87,
+        "geslaagden": 74,
+        "slagingspercentage": 85.1,
+        "gem_cijfer_lijst": 6.52
+      },
+      "VMBO_TL": {
+        "kandidaten": 47,
+        "geslaagden": 41,
+        "slagingspercentage": 87.2,
+        "gem_cijfer_lijst": 6.35
+      },
+      "VWO": {
+        "kandidaten": 94,
+        "geslaagden": 89,
+        "slagingspercentage": 94.7,
+        "gem_cijfer_lijst": 6.8
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: SGM Dalton Spinozalyceum"
   },
   {
     "brin": "14RF",
@@ -155,7 +248,22 @@
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 56,
+        "geslaagden": 52,
+        "slagingspercentage": 92.9,
+        "gem_cijfer_lijst": 6.68
+      },
+      "VWO": {
+        "kandidaten": 39,
+        "geslaagden": 36,
+        "slagingspercentage": 92.3,
+        "gem_cijfer_lijst": 6.8
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: ZAAM Oost"
   },
   {
     "brin": "14RF",
@@ -174,7 +282,16 @@
       "Gymnasium"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 102,
+        "geslaagden": 98,
+        "slagingspercentage": 96.1,
+        "gem_cijfer_lijst": 6.98
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Cygnus Gymnasium"
   },
   {
     "brin": "14RF",
@@ -191,7 +308,16 @@
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/scholenopdekaart.nl"
+    "source": "DUO/scholenopdekaart.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 69,
+        "geslaagden": 56,
+        "slagingspercentage": 81.2,
+        "gem_cijfer_lijst": 6.56
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Havo de Hof"
   },
   {
     "brin": "17YS",
@@ -204,9 +330,9 @@
     "lat": 52.3533,
     "lon": 4.9023,
     "levels": [
-      "VMBO_B",
-      "VMBO_K",
-      "VMBO_T",
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -214,7 +340,40 @@
       "Tweetalig"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 190,
+        "geslaagden": 127,
+        "slagingspercentage": 66.8,
+        "gem_cijfer_lijst": 6.58
+      },
+      "VMBO_TL": {
+        "kandidaten": 192,
+        "geslaagden": 128,
+        "slagingspercentage": 66.7,
+        "gem_cijfer_lijst": 6.21
+      },
+      "VWO": {
+        "kandidaten": 140,
+        "geslaagden": 111,
+        "slagingspercentage": 79.3,
+        "gem_cijfer_lijst": 6.49
+      },
+      "VMBO_BL": {
+        "kandidaten": 11,
+        "geslaagden": 6,
+        "slagingspercentage": 54.5,
+        "gem_cijfer_lijst": 5.95
+      },
+      "VMBO_KL": {
+        "kandidaten": 44,
+        "geslaagden": 40,
+        "slagingspercentage": 90.9,
+        "gem_cijfer_lijst": 6.25
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Esprit Scholengroep"
   },
   {
     "brin": "21GD",
@@ -227,7 +386,7 @@
     "lat": 52.3713,
     "lon": 4.8165,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -238,7 +397,28 @@
       "Topsport"
     ],
     "denomination": "Openbaar",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 125,
+        "geslaagden": 85,
+        "slagingspercentage": 68.0,
+        "gem_cijfer_lijst": 6.3
+      },
+      "VMBO_TL": {
+        "kandidaten": 139,
+        "geslaagden": 97,
+        "slagingspercentage": 69.8,
+        "gem_cijfer_lijst": 6.13
+      },
+      "VWO": {
+        "kandidaten": 75,
+        "geslaagden": 57,
+        "slagingspercentage": 76.0,
+        "gem_cijfer_lijst": 6.52
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Calandlyceum"
   },
   {
     "brin": "21GD",
@@ -251,7 +431,7 @@
     "lat": 52.3698,
     "lon": 4.8276,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -259,7 +439,28 @@
       "Gepersonaliseerd leren"
     ],
     "denomination": "Openbaar",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 136,
+        "geslaagden": 102,
+        "slagingspercentage": 75.0,
+        "gem_cijfer_lijst": 6.53
+      },
+      "VMBO_TL": {
+        "kandidaten": 64,
+        "geslaagden": 51,
+        "slagingspercentage": 79.7,
+        "gem_cijfer_lijst": 6.2
+      },
+      "VWO": {
+        "kandidaten": 37,
+        "geslaagden": 28,
+        "slagingspercentage": 75.7,
+        "gem_cijfer_lijst": 6.52
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: locatie, Lumion"
   },
   {
     "brin": "02AN",
@@ -277,7 +478,22 @@
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 70,
+        "geslaagden": 61,
+        "slagingspercentage": 87.1,
+        "gem_cijfer_lijst": 6.42
+      },
+      "VWO": {
+        "kandidaten": 98,
+        "geslaagden": 89,
+        "slagingspercentage": 90.8,
+        "gem_cijfer_lijst": 6.67
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Fons Vitae Lyceum"
   },
   {
     "brin": "02AR",
@@ -295,7 +511,22 @@
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/scholenopdekaart.nl"
+    "source": "DUO/scholenopdekaart.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 62,
+        "geslaagden": 49,
+        "slagingspercentage": 79.0,
+        "gem_cijfer_lijst": 6.44
+      },
+      "VWO": {
+        "kandidaten": 52,
+        "geslaagden": 45,
+        "slagingspercentage": 86.5,
+        "gem_cijfer_lijst": 6.67
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Het Hervormd Lyc Zuid"
   },
   {
     "brin": "02AP",
@@ -314,7 +545,16 @@
       "Gymnasium"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "VWO": {
+        "kandidaten": 142,
+        "geslaagden": 134,
+        "slagingspercentage": 94.4,
+        "gem_cijfer_lijst": 6.73
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Het Amsterdams Lyceum"
   },
   {
     "brin": "01TC",
@@ -327,7 +567,7 @@
     "lat": 52.3726,
     "lon": 4.8304,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -336,7 +576,28 @@
       "Gymnasium"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 65,
+        "geslaagden": 52,
+        "slagingspercentage": 80.0,
+        "gem_cijfer_lijst": 6.38
+      },
+      "VMBO_TL": {
+        "kandidaten": 70,
+        "geslaagden": 60,
+        "slagingspercentage": 85.7,
+        "gem_cijfer_lijst": 6.33
+      },
+      "VWO": {
+        "kandidaten": 22,
+        "geslaagden": 17,
+        "slagingspercentage": 77.3,
+        "gem_cijfer_lijst": 6.7
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Hervormd Lyceum West"
   },
   {
     "brin": "21ET",
@@ -347,14 +608,29 @@
     "postalCode": "1077DT",
     "city": "Amsterdam",
     "lat": 52.3508,
-    "lon": 4.8790,
+    "lon": 4.879,
     "levels": [
       "HAVO",
       "VWO"
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/allecijfers.nl"
+    "source": "DUO/allecijfers.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 88,
+        "geslaagden": 77,
+        "slagingspercentage": 87.5,
+        "gem_cijfer_lijst": 6.58
+      },
+      "VWO": {
+        "kandidaten": 58,
+        "geslaagden": 46,
+        "slagingspercentage": 79.3,
+        "gem_cijfer_lijst": 6.64
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: ZAAM Zuid"
   },
   {
     "brin": "16TS",
@@ -374,7 +650,28 @@
       "Vrije School"
     ],
     "denomination": "Bijzonder",
-    "source": "DUO/scholenopdekaart.nl"
+    "source": "DUO/scholenopdekaart.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 73,
+        "geslaagden": 64,
+        "slagingspercentage": 87.7,
+        "gem_cijfer_lijst": 6.64
+      },
+      "VMBO_TL": {
+        "kandidaten": 62,
+        "geslaagden": 58,
+        "slagingspercentage": 93.5,
+        "gem_cijfer_lijst": 6.77
+      },
+      "VWO": {
+        "kandidaten": 34,
+        "geslaagden": 29,
+        "slagingspercentage": 85.3,
+        "gem_cijfer_lijst": 6.68
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Vrije School Noord-Holland"
   },
   {
     "brin": "21BH",
@@ -387,7 +684,7 @@
     "lat": 52.3545,
     "lon": 4.8766,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -395,7 +692,28 @@
       "Dalton"
     ],
     "denomination": "Openbaar",
-    "source": "scholenopdekaart.nl"
+    "source": "scholenopdekaart.nl",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 38,
+        "geslaagden": 26,
+        "slagingspercentage": 68.4,
+        "gem_cijfer_lijst": 6.13
+      },
+      "VMBO_TL": {
+        "kandidaten": 32,
+        "geslaagden": 29,
+        "slagingspercentage": 90.6,
+        "gem_cijfer_lijst": 6.5
+      },
+      "VWO": {
+        "kandidaten": 21,
+        "geslaagden": 11,
+        "slagingspercentage": 52.4,
+        "gem_cijfer_lijst": 6.83
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Spinoza20First"
   },
   {
     "brin": "20TS",
@@ -408,12 +726,14 @@
     "lat": 52.3655,
     "lon": 4.8302,
     "levels": [
-      "VMBO_T",
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
     "concepts": [],
     "denomination": "Bijzonder",
-    "source": "DUO/scholenopdekaart.nl"
+    "source": "DUO/scholenopdekaart.nl",
+    "examens_2023_2024": null,
+    "examens_bron": "DUO 2023-2024 – niet gevonden in dataset"
   }
 ]

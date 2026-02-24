@@ -3,6 +3,34 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getSchoolsByIds } from "@/server/schoolsStore";
 
+function formatPassRate(school: unknown) {
+  const results = (school as { results?: unknown } | null)?.results as any;
+  const exams = results?.examens_2023_2024 as Record<string, any> | null | undefined;
+  if (!exams || typeof exams !== "object") return "—";
+
+  const prefer = [
+    "VWO",
+    "HAVO",
+    "VMBO_TL",
+    "VMBO",
+    "VMBO-KL",
+    "VMBO_BL",
+  ];
+
+  for (const key of prefer) {
+    const v = exams[key];
+    const p = v?.slagingspercentage;
+    if (typeof p === "number" && Number.isFinite(p)) return `${p.toFixed(1)}%`;
+  }
+
+  for (const v of Object.values(exams)) {
+    const p = (v as any)?.slagingspercentage;
+    if (typeof p === "number" && Number.isFinite(p)) return `${p.toFixed(1)}%`;
+  }
+
+  return "—";
+}
+
 export default async function ComparePage({
   searchParams,
 }: {
@@ -67,6 +95,16 @@ export default async function ComparePage({
                 {schools.map((s) => (
                   <td key={s.id} className="p-4">
                     {(s.levels ?? []).join(" / ") || "—"}
+                  </td>
+                ))}
+              </tr>
+              <tr className="border-b border-black/5 dark:border-white/10">
+                <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
+                  {tTable("passRate")}
+                </td>
+                {schools.map((s) => (
+                  <td key={s.id} className="p-4">
+                    {formatPassRate(s)}
                   </td>
                 ))}
               </tr>

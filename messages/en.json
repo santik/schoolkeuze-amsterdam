@@ -74,6 +74,7 @@
   "CompareTable": {
     "property": "Property",
     "level": "Level",
+    "passRate": "Pass rate (2023–2024)",
     "concept": "Concept",
     "address": "Address",
     "website": "Website"
