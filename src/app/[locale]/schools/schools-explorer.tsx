@@ -81,6 +81,29 @@ export function SchoolsExplorer() {
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
   const [compareIds, setCompareIds] = React.useState<string[]>([]);
 
+  const sortedSchools = React.useMemo(() => {
+    const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
+    const rank = (s: SchoolDTO) => {
+      const set = new Set((s.levels ?? []).map(normalize));
+      if (set.has("VWO")) return 2;
+      if (set.has("HAVO")) return 1;
+      if (set.has("VMBO")) return 0;
+      return -1;
+    };
+
+    return [...schools].sort((a, b) => {
+      const aFav = has(a.id);
+      const bFav = has(b.id);
+      if (aFav !== bFav) return aFav ? -1 : 1;
+
+      const ar = rank(a);
+      const br = rank(b);
+      if (ar !== br) return br - ar;
+
+      return (a.name ?? "").localeCompare(b.name ?? "", undefined, { sensitivity: "base" });
+    });
+  }, [schools, has]);
+
   React.useEffect(() => {
     if (!useMyLocation) {
       setLat(undefined);
@@ -283,12 +306,12 @@ export function SchoolsExplorer() {
             <div>
               {loading
                 ? t("loading")
-                : t("schoolsCount", { count: schools.length })}
+                : t("schoolsCount", { count: sortedSchools.length })}
             </div>
           </div>
 
           <div className="grid gap-2">
-            {schools.map((s) => (
+            {sortedSchools.map((s) => (
               <div
                 key={s.id}
                 className={[
@@ -360,7 +383,7 @@ export function SchoolsExplorer() {
 
       <div className="lg:sticky lg:top-20 lg:self-start">
         <SchoolsMap
-          schools={schools}
+          schools={sortedSchools}
           selectedId={selectedId}
           onSelect={(id: string) => setSelectedId(id)}
           userLocation={
