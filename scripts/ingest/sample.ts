@@ -42,8 +42,9 @@ async function main() {
   const raw = await fs.readFile(filePath, "utf8");
   const schools = JSON.parse(raw) as InputSchool[];
 
+  let index = 0;
   for (const s of schools) {
-    const brin = s.brin ?? `${s.name.toLowerCase().replaceAll(/\s+/g, "-")}-sample`;
+    const brin = s.brin ? `${s.brin}_${index}` : `${s.name.toLowerCase().replaceAll(/\s+/g, "-")}-sample_${index}`;
     const levels = (s.levels ?? [])
       .map(toLevel)
       .filter((x): x is SchoolLevel => x !== null);
@@ -90,6 +91,8 @@ async function main() {
         sourceUrl: s.sourceUrl,
       },
     });
+
+    index++;
   }
 
   await prisma.$disconnect();

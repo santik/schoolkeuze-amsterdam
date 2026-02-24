@@ -48,9 +48,9 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
   const c =
     s1 * s1 +
     Math.cos((aLat * Math.PI) / 180) *
-      Math.cos((bLat * Math.PI) / 180) *
-      s2 *
-      s2;
+    Math.cos((bLat * Math.PI) / 180) *
+    s2 *
+    s2;
   const v = 2 * Math.atan2(Math.sqrt(c), Math.sqrt(1 - c));
   return R * v;
 }
@@ -63,8 +63,8 @@ async function getSampleSchools(): Promise<School[]> {
   const parsed = JSON.parse(raw) as SampleSchool[];
 
   // Map sample -> Prisma-like shape. IDs are stable-ish for demos.
-  sampleCache = parsed.map((s) => ({
-    id: `sample_${(s.brin ?? s.name).toLowerCase().replaceAll(/\W+/g, "_")}`,
+  sampleCache = parsed.map((s, index) => ({
+    id: `sample_${(s.brin ?? s.name).toLowerCase().replaceAll(/\W+/g, "_")}_${index}`,
     brin: s.brin ?? null,
     name: s.name,
     websiteUrl: s.websiteUrl ?? null,

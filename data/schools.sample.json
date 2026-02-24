@@ -9,8 +9,12 @@
     "city": "Amsterdam",
     "lat": 52.3629,
     "lon": 4.8926,
-    "levels": ["VWO"],
-    "concepts": ["Gymnasium"],
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium"
+    ],
     "denomination": "Openbaar",
     "source": "sample"
   },
@@ -24,8 +28,14 @@
     "city": "Amsterdam",
     "lat": 52.3555,
     "lon": 4.8829,
-    "levels": ["HAVO", "VWO"],
-    "concepts": ["Montessori"],
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Montessori"
+    ],
     "denomination": "Bijzonder",
     "source": "sample"
   },
@@ -39,10 +49,371 @@
     "city": "Amsterdam",
     "lat": 52.3659,
     "lon": 4.9445,
-    "levels": ["VWO"],
-    "concepts": ["Tweetalig", "Technasium"],
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Tweetalig",
+      "Technasium"
+    ],
     "denomination": "Bijzonder",
     "source": "sample"
+  },
+  {
+    "brin": "21AF",
+    "name": "Vossius Gymnasium",
+    "websiteUrl": "https://www.vossius.nl",
+    "street": "Messchaertstraat",
+    "houseNumber": "1",
+    "postalCode": "1077WS",
+    "city": "Amsterdam",
+    "lat": 52.3491,
+    "lon": 4.8694,
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium"
+    ],
+    "denomination": "Openbaar",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "01ET",
+    "name": "St. Ignatiusgymnasium",
+    "websiteUrl": "https://www.ignatiusgymnasium.nl",
+    "street": "Jan van Eijckstraat",
+    "houseNumber": "47",
+    "postalCode": "1077LH",
+    "city": "Amsterdam",
+    "lat": 52.3504,
+    "lon": 4.8763,
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "14SE",
+    "name": "St. Nicolaaslyceum",
+    "websiteUrl": "https://www.nicolaaslyceum.nl",
+    "street": "Beethovenplein",
+    "houseNumber": "2",
+    "postalCode": "1077WM",
+    "city": "Amsterdam",
+    "lat": 52.3467,
+    "lon": 4.8741,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Tweetalig"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "21BH",
+    "name": "Spinoza Lyceum Amsterdam",
+    "websiteUrl": "https://spinozalyceum.nl",
+    "street": "Peter van Anrooystraat",
+    "houseNumber": "8",
+    "postalCode": "1077VS",
+    "city": "Amsterdam",
+    "lat": 52.3479,
+    "lon": 4.8687,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Dalton",
+      "Gymnasium"
+    ],
+    "denomination": "Openbaar",
+    "source": "DUO/allecijfers.nl/Wikipedia"
+  },
+  {
+    "brin": "14RF",
+    "name": "Pieter Nieuwland College",
+    "websiteUrl": "https://www.pieternieuwland.nl",
+    "street": "Nobelweg",
+    "houseNumber": "6",
+    "postalCode": "1097AR",
+    "city": "Amsterdam",
+    "lat": 52.3535,
+    "lon": 4.9423,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "14RF",
+    "name": "Cygnus Gymnasium",
+    "websiteUrl": "https://www.cygnusgymnasium.nl",
+    "street": "Vrolikstraat",
+    "houseNumber": "8",
+    "postalCode": "1091VG",
+    "city": "Amsterdam",
+    "lat": 52.3591,
+    "lon": 4.9209,
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "14RF",
+    "name": "Havo De Hof",
+    "websiteUrl": "https://www.zaam.nl/scholen/havo-de-hof",
+    "street": "Vrolikstraat",
+    "houseNumber": "8",
+    "postalCode": "1091VG",
+    "city": "Amsterdam",
+    "lat": 52.3591,
+    "lon": 4.9209,
+    "levels": [
+      "HAVO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/scholenopdekaart.nl"
+  },
+  {
+    "brin": "17YS",
+    "name": "Berlage Lyceum",
+    "websiteUrl": "https://berlage.espritscholen.nl",
+    "street": "Pieter Lodewijk Takstraat",
+    "houseNumber": "33-34",
+    "postalCode": "1073KJ",
+    "city": "Amsterdam",
+    "lat": 52.3533,
+    "lon": 4.9023,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Tweetalig"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "21GD",
+    "name": "Calandlyceum",
+    "websiteUrl": "https://calandlyceum.nl",
+    "street": "Pieter Calandlaan",
+    "houseNumber": "182",
+    "postalCode": "1068NT",
+    "city": "Amsterdam",
+    "lat": 52.3713,
+    "lon": 4.8165,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium",
+      "Dalton",
+      "Technasium",
+      "Topsport"
+    ],
+    "denomination": "Openbaar",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "21GD",
+    "name": "Lumion",
+    "websiteUrl": "https://www.lumion.nl",
+    "street": "Vlaardingenlaan",
+    "houseNumber": "25",
+    "postalCode": "1062HM",
+    "city": "Amsterdam",
+    "lat": 52.3698,
+    "lon": 4.8276,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Gepersonaliseerd leren"
+    ],
+    "denomination": "Openbaar",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "02AN",
+    "name": "Fons Vitae Lyceum",
+    "websiteUrl": "https://www.fonsvitaelyceum.nl",
+    "street": "Mr. Treublaan",
+    "houseNumber": "1",
+    "postalCode": "1097DP",
+    "city": "Amsterdam",
+    "lat": 52.3576,
+    "lon": 4.9334,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "02AR",
+    "name": "Hervormd Lyceum Zuid (HLZ)",
+    "websiteUrl": "https://www.hlz.nl",
+    "street": "Churchilllaan",
+    "houseNumber": "1",
+    "postalCode": "1078BA",
+    "city": "Amsterdam",
+    "lat": 52.3488,
+    "lon": 4.8855,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/scholenopdekaart.nl"
+  },
+  {
+    "brin": "02AP",
+    "name": "Het Amsterdams Lyceum",
+    "websiteUrl": "https://www.hetamsterdamslyceum.nl",
+    "street": "Valeriusplein",
+    "houseNumber": "15",
+    "postalCode": "1075BJ",
+    "city": "Amsterdam",
+    "lat": 52.3575,
+    "lon": 4.8659,
+    "levels": [
+      "VWO"
+    ],
+    "concepts": [
+      "Gymnasium"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "01TC",
+    "name": "Hervormd Lyceum West (HLW)",
+    "websiteUrl": "https://www.hlw.nl",
+    "street": "Hemsterhuisstraat",
+    "houseNumber": "79",
+    "postalCode": "1065JX",
+    "city": "Amsterdam",
+    "lat": 52.3726,
+    "lon": 4.8304,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Tweetalig",
+      "Gymnasium"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "21ET",
+    "name": "Gerrit van der Veen College",
+    "websiteUrl": "https://www.gerritvanderveen.nl",
+    "street": "Gerrit van der Veenstraat",
+    "houseNumber": "99",
+    "postalCode": "1077DT",
+    "city": "Amsterdam",
+    "lat": 52.3508,
+    "lon": 4.8790,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/allecijfers.nl"
+  },
+  {
+    "brin": "16TS",
+    "name": "Geert Groote College Amsterdam",
+    "websiteUrl": "https://www.geertgrootecollege.nl",
+    "street": "Stadionkade",
+    "houseNumber": "56",
+    "postalCode": "1076BG",
+    "city": "Amsterdam",
+    "lat": 52.3416,
+    "lon": 4.8629,
+    "levels": [
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Vrije School"
+    ],
+    "denomination": "Bijzonder",
+    "source": "DUO/scholenopdekaart.nl"
+  },
+  {
+    "brin": "21BH",
+    "name": "Spinoza20first",
+    "websiteUrl": "https://spinoza20first.nl",
+    "street": "Roelof Hartstraat",
+    "houseNumber": "2",
+    "postalCode": "1071VH",
+    "city": "Amsterdam",
+    "lat": 52.3545,
+    "lon": 4.8766,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Dalton"
+    ],
+    "denomination": "Openbaar",
+    "source": "scholenopdekaart.nl"
+  },
+  {
+    "brin": "20TS",
+    "name": "Comenius Lyceum Amsterdam",
+    "websiteUrl": "https://www.comeniuslyceum.nl",
+    "street": "Jan Tooropstraat",
+    "houseNumber": "2",
+    "postalCode": "1062BW",
+    "city": "Amsterdam",
+    "lat": 52.3655,
+    "lon": 4.8302,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "DUO/scholenopdekaart.nl"
   }
 ]
-
