@@ -52,6 +52,11 @@
     "details": "Details",
     "compare": "Compare"
   },
+  "SchoolsMap": {
+    "title": "Map",
+    "yourLocation": "Your location",
+    "selected": "Selected"
+  },
   "SchoolDetails": {
     "backToSchools": "← Back to schools",
     "compare": "Compare",

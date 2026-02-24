@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 
 import L from "leaflet";
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 type SchoolMarker = {
@@ -35,6 +36,8 @@ export default function SchoolsMap({
   onSelect,
   userLocation,
 }: Props) {
+  const t = useTranslations("SchoolsMap");
+
   const center: [number, number] = userLocation
     ? [userLocation.lat, userLocation.lon]
     : [52.3702, 4.8952];
@@ -47,7 +50,7 @@ export default function SchoolsMap({
   return (
     <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
       <div className="border-b border-black/5 px-4 py-3 text-sm font-semibold dark:border-white/10">
-        Kaart
+        {t("title")}
       </div>
       <div className="h-[420px] w-full">
         <MapContainer
@@ -66,7 +69,7 @@ export default function SchoolsMap({
               position={[userLocation.lat, userLocation.lon]}
               icon={DefaultIcon}
             >
-              <Popup>Jouw locatie</Popup>
+              <Popup>{t("yourLocation")}</Popup>
             </Marker>
           ) : null}
 
@@ -83,7 +86,7 @@ export default function SchoolsMap({
                 <div className="text-sm font-semibold">{s.name}</div>
                 {selectedId === s.id ? (
                   <div className="mt-1 text-xs text-zinc-600">
-                    geselecteerd
+                    {t("selected")}
                   </div>
                 ) : null}
               </Popup>

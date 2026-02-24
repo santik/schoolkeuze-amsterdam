@@ -52,6 +52,11 @@
     "details": "Details",
     "compare": "Vergelijken"
   },
+  "SchoolsMap": {
+    "title": "Kaart",
+    "yourLocation": "Jouw locatie",
+    "selected": "Geselecteerd"
+  },
   "SchoolDetails": {
     "backToSchools": "← Terug naar scholen",
     "compare": "Vergelijken",
