@@ -25,7 +25,6 @@
     "searchLabel": "Search",
     "searchPlaceholder": "e.g. Montessori, Barlaeus...",
     "levelLabel": "Level",
-    "levelAll": "All",
     "conceptLabel": "Concept",
     "conceptPlaceholder": "Montessori, Dalton...",
     "postalCodeLabel": "Postal code",
@@ -79,16 +78,7 @@
     "website": "Website"
   },
   "Profile": {
-    "title": "Your profile (prototype)",
-    "adviceLabel": "Advice/level",
-    "conceptLabel": "Preferred concept (optional)",
-    "suggestionsTitle": "Suggestions",
-    "allSchools": "All schools →",
-    "noSuggestions": "No suggestions.",
-    "hasAdvice": "Has {advice}",
-    "conceptMatch": "Concept match: {concept}",
-    "withinRadius": "{km} km (within radius)",
-    "outsideRadius": "{km} km (outside radius)",
-    "scoreLabel": "Score:"
+    "title": "Your profile",
+    "adviceLabel": "Advice/level"
   }
 }

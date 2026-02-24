@@ -25,7 +25,6 @@
     "searchLabel": "Zoek",
     "searchPlaceholder": "Bijv. Montessori, Barlaeus...",
     "levelLabel": "Niveau",
-    "levelAll": "Alle",
     "conceptLabel": "Concept",
     "conceptPlaceholder": "Montessori, Dalton...",
     "postalCodeLabel": "Postcode",
@@ -80,15 +79,6 @@
   },
   "Profile": {
     "title": "Jouw profiel",
-    "adviceLabel": "Advies/niveau",
-    "conceptLabel": "Voorkeursconcept (optioneel)",
-    "suggestionsTitle": "Suggesties",
-    "allSchools": "Alle scholen →",
-    "noSuggestions": "Geen suggesties.",
-    "hasAdvice": "Heeft {advice}",
-    "conceptMatch": "Concept match: {concept}",
-    "withinRadius": "{km} km (binnen radius)",
-    "outsideRadius": "{km} km (buiten radius)",
-    "scoreLabel": "Score:"
+    "adviceLabel": "Advies/niveau"
   }
 }
