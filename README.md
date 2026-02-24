@@ -41,6 +41,13 @@ npm run db:migrate
 npm run db:seed
 ```
 
+For hosted environments (e.g. Railway), use:
+
+```bash
+npm run db:deploy
+npm run db:seed
+```
+
 ### 3) Run the app
 
 ```bash
