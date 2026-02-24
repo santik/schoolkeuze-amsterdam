@@ -48,9 +48,9 @@ export default function SchoolsMap({
   );
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
-      <div className="border-b border-black/5 px-4 py-3 text-sm font-semibold dark:border-white/10">
-        {t("title")}
+    <div className="overflow-hidden rounded-3xl border border-sky-200 bg-white/90 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10">
+      <div className="border-b border-sky-200 px-4 py-3 text-sm font-bold text-sky-900 dark:border-sky-300/20 dark:text-sky-100">
+        🗺️ {t("title")}
       </div>
       <div className="h-[420px] w-full">
         <MapContainer
@@ -83,9 +83,9 @@ export default function SchoolsMap({
               }}
             >
               <Popup>
-                <div className="text-sm font-semibold">{s.name}</div>
+                <div className="text-sm font-semibold text-indigo-950">{s.name}</div>
                 {selectedId === s.id ? (
-                  <div className="mt-1 text-xs text-zinc-600">
+                  <div className="mt-1 text-xs text-indigo-700">
                     {t("selected")}
                   </div>
                 ) : null}
@@ -97,4 +97,3 @@ export default function SchoolsMap({
     </div>
   );
 }
-

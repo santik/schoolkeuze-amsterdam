@@ -26,7 +26,7 @@ type SchoolDTO = {
 const SchoolsMap = dynamic(() => import("@/components/schools-map"), {
   ssr: false,
   loading: () => (
-    <div className="h-[420px] w-full animate-pulse rounded-2xl bg-black/5 dark:bg-white/10" />
+    <div className="h-[420px] w-full animate-pulse rounded-3xl bg-sky-100 dark:bg-sky-500/20" />
   ),
 });
 
@@ -70,7 +70,7 @@ export function SchoolsExplorer() {
   const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
   const [concept, setConcept] = React.useState("");
   const [postalCode, setPostalCode] = React.useState("");
-  const [radiusKm, setRadiusKm] = React.useState(3);
+  const [bikeMinutes, setBikeMinutes] = React.useState(30);
   const [useMyLocation, setUseMyLocation] = React.useState(false);
   const [lat, setLat] = React.useState<number | undefined>(undefined);
   const [lon, setLon] = React.useState<number | undefined>(undefined);
@@ -141,7 +141,7 @@ export function SchoolsExplorer() {
       postalCode,
       lat,
       lon,
-      radiusKm: useMyLocation ? radiusKm : undefined,
+      bikeMinutes: useMyLocation ? bikeMinutes : undefined,
       take: 100,
     });
 
@@ -171,7 +171,7 @@ export function SchoolsExplorer() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, selectedLevels, concept, postalCode, lat, lon, radiusKm, useMyLocation]);
+  }, [q, selectedLevels, concept, postalCode, lat, lon, bikeMinutes, useMyLocation]);
 
   function toggleLevel(level: string) {
     setSelectedLevels(prev => 
@@ -190,21 +190,21 @@ export function SchoolsExplorer() {
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_420px]">
       <div className="grid gap-3">
-        <div className="grid gap-3 rounded-2xl border border-black/5 bg-white p-4 dark:border-white/10 dark:bg-white/5">
+        <div className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <label className="grid gap-1 text-sm">
-              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("searchLabel")}
               </span>
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t("searchPlaceholder")}
-                className="h-10 w-full min-w-0 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
+                className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
               />
             </label>
             <label className="grid gap-2 text-sm">
-              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("levelLabel")}
               </span>
               <div className="flex flex-wrap gap-3">
@@ -213,7 +213,7 @@ export function SchoolsExplorer() {
                     type="checkbox"
                     checked={selectedLevels.includes("VMBO")}
                     onChange={() => toggleLevel("VMBO")}
-                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                    className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
                   />
                   <span>VMBO</span>
                 </label>
@@ -222,7 +222,7 @@ export function SchoolsExplorer() {
                     type="checkbox"
                     checked={selectedLevels.includes("HAVO")}
                     onChange={() => toggleLevel("HAVO")}
-                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                    className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
                   />
                   <span>HAVO</span>
                 </label>
@@ -231,32 +231,32 @@ export function SchoolsExplorer() {
                     type="checkbox"
                     checked={selectedLevels.includes("VWO")}
                     onChange={() => toggleLevel("VWO")}
-                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                    className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
                   />
                   <span>VWO</span>
                 </label>
               </div>
             </label>
             <label className="grid gap-1 text-sm">
-              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("conceptLabel")}
               </span>
               <input
                 value={concept}
                 onChange={(e) => setConcept(e.target.value)}
                 placeholder={t("conceptPlaceholder")}
-                className="h-10 w-full min-w-0 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
+                className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
               />
             </label>
             <label className="grid gap-1 text-sm">
-              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("postalCodeLabel")}
               </span>
               <input
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
                 placeholder={t("postalCodePlaceholder")}
-                className="h-10 w-full min-w-0 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
+                className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
               />
             </label>
           </div>
@@ -272,23 +272,24 @@ export function SchoolsExplorer() {
             </label>
 
             <label className="flex items-center gap-2 text-sm">
-              <span className="text-xs text-zinc-600 dark:text-zinc-400">
-                {t("radiusLabel")}
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                {t("bikeTimeLabel")}
               </span>
               <input
                 type="range"
-                min={1}
-                max={10}
-                value={radiusKm}
-                onChange={(e) => setRadiusKm(Number(e.target.value))}
+                min={5}
+                max={45}
+                step={5}
+                value={bikeMinutes}
+                onChange={(e) => setBikeMinutes(Number(e.target.value))}
                 disabled={!useMyLocation}
               />
-              <span className="tabular-nums">{radiusKm} km</span>
+              <span className="tabular-nums">{bikeMinutes} min</span>
             </label>
 
             <Link
               href={`/compare?ids=${encodeURIComponent(compareIds.join(","))}`}
-              className="inline-flex h-9 items-center justify-center rounded-full border border-black/10 px-4 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+              className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-white px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
             >
               {t("compareCta")} ({compareIds.length})
             </Link>
@@ -302,7 +303,7 @@ export function SchoolsExplorer() {
         ) : null}
 
         <div className="grid gap-3">
-          <div className="flex items-center justify-between text-sm text-zinc-600 dark:text-zinc-400">
+          <div className="flex items-center justify-between text-sm text-indigo-700/90 dark:text-indigo-200/90">
             <div>
               {loading
                 ? t("loading")
@@ -315,21 +316,21 @@ export function SchoolsExplorer() {
               <div
                 key={s.id}
                 className={[
-                  "rounded-2xl border bg-white p-4 dark:bg-white/5",
+                  "rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id
-                    ? "border-black/20 dark:border-white/30"
-                    : "border-black/5 dark:border-white/10",
+                    ? "border-amber-300 dark:border-amber-300/40"
+                    : "border-indigo-100 dark:border-indigo-300/20",
                 ].join(" ")}
                 onMouseEnter={() => setSelectedId(s.id)}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <div className="truncate font-semibold">{s.name}</div>
-                    <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                    <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">{s.name}</div>
+                    <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                       {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                       {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
                     </div>
-                    <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                    <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                       {[s.postalCode, s.city].filter(Boolean).join(" ") || "—"}
                     </div>
                     {useMyLocation &&
@@ -337,7 +338,7 @@ export function SchoolsExplorer() {
                       lon != null &&
                       s.lat != null &&
                       s.lon != null ? (
-                      <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                      <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                         {(() => {
                           const km = haversineKm(lat, lon, s.lat!, s.lon!);
                           const bikeMin = Math.round((km / 15) * 60);
@@ -353,14 +354,14 @@ export function SchoolsExplorer() {
                   <div className="flex shrink-0 flex-col items-end gap-2">
                     <div className="flex gap-2">
                       <button
-                        className="h-9 rounded-full border border-black/10 px-3 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+                        className="h-9 rounded-full border border-emerald-300 bg-emerald-50 px-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20"
                         onClick={() => toggle(s.id)}
                         type="button"
                       >
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
                       </button>
                       <button
-                        className="h-9 rounded-full border border-black/10 px-3 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+                        className="h-9 rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
                         onClick={() => toggleCompare(s.id)}
                         type="button"
                       >
@@ -368,7 +369,7 @@ export function SchoolsExplorer() {
                       </button>
                       <Link
                         href={`/schools/${s.id}`}
-                        className="inline-flex h-9 items-center rounded-full bg-black px-3 text-sm font-medium text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
+                        className="inline-flex h-9 items-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-3 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400"
                       >
                         {t("detailsCta")}
                       </Link>
@@ -394,4 +395,3 @@ export function SchoolsExplorer() {
     </div>
   );
 }
-

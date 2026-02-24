@@ -7,9 +7,10 @@ export default async function ProfilePage() {
 
   return (
     <div className="grid gap-4">
-      <h1 className="text-2xl font-semibold tracking-tight">{t("profile")}</h1>
+      <h1 className="text-2xl font-bold tracking-tight text-indigo-950 dark:text-indigo-100">
+        {t("profile")}
+      </h1>
       <ProfileClient />
     </div>
   );
 }
-

@@ -13,7 +13,7 @@ function LocaleSwitcher({ locale }: { locale: AppLocale }) {
     <Link
       href="/"
       locale={other}
-      className="flex h-8 items-center justify-center rounded-full border border-black/10 px-3 text-sm font-medium hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+      className="flex h-9 items-center justify-center rounded-full border border-sky-200 bg-white/80 px-3 text-xs font-bold tracking-wide text-sky-700 hover:bg-white dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
     >
       {other.toUpperCase()}
     </Link>
@@ -38,22 +38,25 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <div className="min-h-dvh bg-zinc-50 text-zinc-950 dark:bg-black dark:text-zinc-50">
-          <header className="sticky top-0 z-10 border-b border-black/5 bg-zinc-50/80 backdrop-blur dark:border-white/10 dark:bg-black/60">
+        <div className="min-h-dvh text-zinc-950 dark:text-zinc-50">
+          <header className="sticky top-0 z-10 border-b border-white/40 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/65">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-              <Link href="/" className="font-semibold tracking-tight">
-                {tApp("name")}
+              <Link
+                href="/"
+                className="rounded-full bg-white/70 px-4 py-2 text-sm font-bold tracking-wide text-indigo-700 shadow-sm ring-1 ring-indigo-200/70 dark:bg-indigo-500/10 dark:text-indigo-100 dark:ring-indigo-300/30"
+              >
+                🧭 {tApp("name")}
               </Link>
               <nav className="flex items-center gap-2">
                 <Link
                   href="/schools"
-                  className="rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+                  className="rounded-full bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-900 hover:bg-amber-200 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/20"
                 >
                   {tNav("schools")}
                 </Link>
                 <Link
                   href="/profile"
-                  className="rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+                  className="rounded-full bg-emerald-100 px-3 py-1.5 text-sm font-semibold text-emerald-900 hover:bg-emerald-200 dark:bg-emerald-400/15 dark:text-emerald-200 dark:hover:bg-emerald-400/20"
                 >
                   {tNav("profile")}
                 </Link>
@@ -72,4 +75,3 @@ export default async function LocaleLayout({
     </NextIntlClientProvider>
   );
 }
-

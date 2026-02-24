@@ -30,7 +30,7 @@
     "postalCodeLabel": "Postal code",
     "postalCodePlaceholder": "1017",
     "useLocation": "Use my location (distance)",
-    "radiusLabel": "Radius",
+    "bikeTimeLabel": "Bike travel time",
     "compareCta": "Compare",
     "loading": "Loading...",
     "schoolsCount": "{count} schools",

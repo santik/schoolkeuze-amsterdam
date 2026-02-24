@@ -30,7 +30,7 @@
     "postalCodeLabel": "Postcode",
     "postalCodePlaceholder": "1017",
     "useLocation": "Gebruik mijn locatie (afstand)",
-    "radiusLabel": "Radius",
+    "bikeTimeLabel": "Fietstijd",
     "compareCta": "Vergelijken",
     "loading": "Laden...",
     "schoolsCount": "{count} scholen",

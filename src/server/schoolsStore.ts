@@ -13,7 +13,7 @@ export type SchoolListFilters = {
   postalCode?: string;
   lat?: number;
   lon?: number;
-  radiusKm?: number;
+  bikeMinutes?: number;
   take?: number;
 };
 
@@ -133,48 +133,44 @@ export async function listSchools(filters: SchoolListFilters = {}) {
           .map((x) => rank[x])
           .filter((x): x is number => typeof x === "number")
       );
-
       results = results.filter((s) => {
-        const school = new Set((s.levels ?? []).map(normalizeLevel));
-
-        // required: selected levels must exist
-        for (const x of selected) {
-          if (!school.has(x)) return false;
+        const levels = (s.levels ?? []).map(normalizeLevel);
+        const hasAny = levels.some((l) => selected.has(l));
+        if (!hasAny) return false;
+        // If only VWO is selected, exclude schools that also offer HAVO/VMBO
+        if (selected.size === 1 && selected.has("VWO")) {
+          return levels.length === 1 && levels[0] === "VWO";
         }
-
-        // forbidden: any unselected level below the highest selected level
-        for (const [lvl, r] of Object.entries(rank)) {
-          if (r < maxSelectedRank && !selected.has(lvl) && school.has(lvl)) {
-            return false;
-          }
+        // If only HAVO is selected, exclude schools that also offer VWO
+        if (selected.size === 1 && selected.has("HAVO")) {
+          return !levels.includes("VWO");
         }
-
         return true;
       });
     }
     if (filters.concept) {
       const c = filters.concept.toLowerCase();
       results = results.filter((s) =>
-        s.concepts.some((x) => x.toLowerCase().includes(c))
+        (s.concepts ?? []).some((x) => x.toLowerCase().includes(c))
       );
     }
     if (filters.postalCode) {
-      const p = filters.postalCode.replaceAll(/\s+/g, "").toUpperCase();
       results = results.filter((s) =>
-        (s.postalCode ?? "").replaceAll(/\s+/g, "").toUpperCase().startsWith(p)
+        s.postalCode?.startsWith(filters.postalCode!.replaceAll(/\s+/g, "").toUpperCase())
       );
     }
+
+    // Convert bikeMinutes to km using 15 km/h average bike speed.
+    const bikeSpeedKmh = 15;
+    const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
     if (
       typeof filters.lat === "number" &&
       typeof filters.lon === "number" &&
-      typeof filters.radiusKm === "number"
+      typeof radiusKm === "number"
     ) {
       results = results.filter((s) => {
         if (s.lat == null || s.lon == null) return false;
-        return (
-          haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <=
-          filters.radiusKm!
-        );
+        return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <= radiusKm!;
       });
     }
 
@@ -297,7 +293,10 @@ export async function listSchools(filters: SchoolListFilters = {}) {
   }
 
   // Radius filtering: do a light pre-filter in SQL, then precise haversine in JS.
-  const candidateTake = Math.min(take * 4, 200);
+  // Convert bikeMinutes to km using 15 km/h average bike speed.
+  const bikeSpeedKmh = 15;
+  const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
+  const candidateTake = radiusKm != null ? Math.min(take * 4, 200) : take;
   let candidates = await prisma.school.findMany({
     where,
     take: candidateTake,
@@ -314,12 +313,11 @@ export async function listSchools(filters: SchoolListFilters = {}) {
   if (
     typeof filters.lat === "number" &&
     typeof filters.lon === "number" &&
-    typeof filters.radiusKm === "number"
+    typeof radiusKm === "number"
   ) {
     candidates = candidates.filter((s) => {
       if (s.lat == null || s.lon == null) return false;
-      return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <=
-        filters.radiusKm!;
+      return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <= radiusKm!;
     });
   }
 

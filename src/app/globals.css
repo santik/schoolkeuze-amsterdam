@@ -4,8 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f9ff;
+  --foreground: #1f2450;
 }
 
 @theme inline {
@@ -14,12 +14,22 @@
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #12172d;
+  --foreground: #edf1ff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", "Avenir Next", "Segoe UI", sans-serif;
+  background-image:
+    radial-gradient(circle at 10% 5%, rgba(254, 215, 170, 0.65) 0, transparent 38%),
+    radial-gradient(circle at 95% 20%, rgba(191, 219, 254, 0.55) 0, transparent 42%),
+    radial-gradient(circle at 50% 110%, rgba(217, 249, 157, 0.5) 0, transparent 43%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(251, 191, 36, 0.45);
+  color: #1f2450;
 }

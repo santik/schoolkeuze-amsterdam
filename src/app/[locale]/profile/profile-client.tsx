@@ -39,17 +39,19 @@ export function ProfileClient() {
 
   return (
     <div className="grid gap-4 lg:grid-cols-[360px_1fr] items-start">
-      <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-6 dark:border-white/10 dark:bg-white/5">
-        <div className="text-sm font-semibold">{tProfile("title")}</div>
+      <section className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-6 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
+        <div className="text-sm font-bold text-indigo-900 dark:text-indigo-100">
+          👤 {tProfile("title")}
+        </div>
 
         <label className="grid gap-1 text-sm">
-          <span className="text-xs text-zinc-600 dark:text-zinc-400">
+          <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
             {tProfile("adviceLabel")}
           </span>
           <select
             value={advice}
             onChange={(e) => setAdvice(e.target.value)}
-            className="h-10 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
+            className="h-10 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
           >
             <option value="VMBO">VMBO</option>
             <option value="HAVO">HAVO</option>
@@ -57,11 +59,12 @@ export function ProfileClient() {
           </select>
         </label>
 
-        <label className="flex items-center gap-2 text-sm">
+        <label className="flex items-center gap-2 text-sm text-indigo-900 dark:text-indigo-100">
           <input
             type="checkbox"
             checked={useMyLocation}
             onChange={(e) => setUseMyLocation(e.target.checked)}
+            className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
           />
           {tSchools("useLocation")}
         </label>
@@ -76,4 +79,3 @@ export function ProfileClient() {
     </div>
   );
 }
-

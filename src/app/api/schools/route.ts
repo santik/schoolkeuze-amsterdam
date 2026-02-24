@@ -20,7 +20,7 @@ export async function GET(req: Request) {
     postalCode: url.searchParams.get("postalCode") ?? undefined,
     lat: toFloat(url.searchParams.get("lat")),
     lon: toFloat(url.searchParams.get("lon")),
-    radiusKm: toFloat(url.searchParams.get("radiusKm")),
+    bikeMinutes: toFloat(url.searchParams.get("bikeMinutes")),
     take: toFloat(url.searchParams.get("take")),
   });
 

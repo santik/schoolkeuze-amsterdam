@@ -122,7 +122,7 @@ export function FavoritesClient({
 
   if (!hydrated) {
     return (
-      <div className="rounded-2xl border border-black/5 bg-white p-6 text-sm text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">
+      <div className="rounded-3xl border border-indigo-100 bg-white/85 p-6 text-sm text-indigo-800 dark:border-indigo-300/20 dark:bg-white/5 dark:text-indigo-200">
         {tSchools("loading")}
       </div>
     );
@@ -130,9 +130,9 @@ export function FavoritesClient({
 
   if (ids.length === 0) {
     return (
-      <div className="rounded-2xl border border-black/5 bg-white p-6 text-sm text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">
+      <div className="rounded-3xl border border-indigo-100 bg-white/85 p-6 text-sm text-indigo-800 dark:border-indigo-300/20 dark:bg-white/5 dark:text-indigo-200">
         {tFav("empty")}{" "}
-        <Link href="/schools" className="underline">
+        <Link href="/schools" className="font-semibold underline decoration-indigo-300 underline-offset-2">
           Scholen
         </Link>{" "}
         .
@@ -143,7 +143,7 @@ export function FavoritesClient({
   return (
     <div className="grid gap-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="text-sm text-zinc-600 dark:text-zinc-400">
+        <div className="text-sm text-indigo-700/90 dark:text-indigo-200/90">
           {loading
             ? tSchools("loading")
             : tFav("count", { count: schools.length })}{" "}
@@ -152,13 +152,13 @@ export function FavoritesClient({
         <div className="flex flex-wrap gap-2">
           <Link
             href={`/compare?ids=${encodeURIComponent(ids.join(","))}`}
-            className="inline-flex h-9 items-center justify-center rounded-full border border-black/10 px-4 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+            className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-white px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
           >
             {tFav("compare")}
           </Link>
           <button
             type="button"
-            className="inline-flex h-9 items-center justify-center rounded-full bg-black px-4 text-sm font-medium text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
+            className="inline-flex h-9 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-4 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400"
             onClick={() => downloadText("schoolkeuze-ranking.txt", rankedText || "")}
           >
             {tFav("export")}
@@ -176,10 +176,10 @@ export function FavoritesClient({
             return (
           <li
             key={s.id}
-            className={`flex items-center justify-between gap-3 rounded-2xl border p-4 ${
+            className={`flex items-center justify-between gap-3 rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md ${
               showMismatch
-                ? "border-amber-200 bg-amber-50/40 dark:border-amber-300/20 dark:bg-amber-300/5"
-                : "border-black/5 bg-white dark:border-white/10 dark:bg-white/5"
+                ? "border-amber-300 dark:border-amber-300/30 dark:bg-amber-300/5"
+                : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
             }`}
             draggable
             onDragStart={(e) => {
@@ -206,11 +206,11 @@ export function FavoritesClient({
             }}
           >
             <div className="min-w-0">
-              <div className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">
+              <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 #{idx + 1}
               </div>
-              <div className="truncate font-semibold">{s.name}</div>
-              <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+              <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">{s.name}</div>
+              <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                 {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                 {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
               </div>
@@ -220,7 +220,7 @@ export function FavoritesClient({
                 </div>
               ) : null}
               {userLocation && distanceLabelById.has(s.id) ? (
-                <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                   {distanceLabelById.get(s.id)}
                 </div>
               ) : null}
@@ -229,13 +229,13 @@ export function FavoritesClient({
             <div className="flex shrink-0 items-center gap-2">
               <Link
                 href={`/schools/${s.id}`}
-                className="inline-flex h-9 items-center justify-center rounded-full border border-black/10 px-3 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+                className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
               >
                 {tFav("details")}
               </Link>
               <button
                 type="button"
-                className="inline-flex h-9 items-center justify-center rounded-full border border-black/10 px-3 text-sm hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
+                className="inline-flex h-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 px-3 text-sm font-semibold text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
                 onClick={() => remove(s.id)}
               >
                 {tFav("remove")}
