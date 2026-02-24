@@ -52,18 +52,6 @@ export default async function LocaleLayout({
                   {tNav("schools")}
                 </Link>
                 <Link
-                  href="/favorites"
-                  className="hidden rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10 sm:inline-flex"
-                >
-                  {tNav("favorites")}
-                </Link>
-                <Link
-                  href="/guide"
-                  className="hidden rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10 sm:inline-flex"
-                >
-                  {tNav("guide")}
-                </Link>
-                <Link
                   href="/profile"
                   className="hidden rounded-full px-3 py-1 text-sm hover:bg-black/5 dark:hover:bg-white/10 sm:inline-flex"
                 >

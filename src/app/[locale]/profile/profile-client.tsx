@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
 
-import { FavoritesClient } from "@/app/[locale]/favorites/favorites-client";
+import { FavoritesClient } from "./favorites-client";
 
 export function ProfileClient() {
   const tSchools = useTranslations("Schools");
