@@ -64,7 +64,10 @@ export function ProfileClient() {
       </section>
 
       <section className="grid min-w-0">
-        <FavoritesClient userLocation={lat != null && lon != null ? { lat, lon } : null} />
+        <FavoritesClient
+          userLocation={lat != null && lon != null ? { lat, lon } : null}
+          adviceLevel={advice}
+        />
       </section>
     </div>
   );

@@ -47,6 +47,7 @@
     "empty": "Je hebt nog geen favorieten.",
     "count": "{count} favorieten",
     "dragToRank": "Sleep om te rangschikken",
+    "levelMismatch": "Biedt geen {level}",
     "export": "Exporteer lijst",
     "remove": "Verwijder",
     "details": "Details",

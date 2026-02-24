@@ -47,6 +47,7 @@
     "empty": "You don't have any favorites yet.",
     "count": "{count} favorites",
     "dragToRank": "Drag to rank",
+    "levelMismatch": "Doesn't offer {level}",
     "export": "Export list",
     "remove": "Remove",
     "details": "Details",

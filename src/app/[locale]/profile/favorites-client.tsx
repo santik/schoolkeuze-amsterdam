@@ -40,10 +40,18 @@ function downloadText(filename: string, text: string) {
   URL.revokeObjectURL(url);
 }
 
+function normalizeLevel(level: string) {
+  const upper = level.trim().toUpperCase();
+  if (upper.startsWith("VMBO")) return "VMBO";
+  return upper;
+}
+
 export function FavoritesClient({
   userLocation,
+  adviceLevel,
 }: {
   userLocation: { lat: number; lon: number } | null;
+  adviceLevel: string;
 }) {
   const tFav = useTranslations("Favorites");
   const tSchools = useTranslations("Schools");
@@ -160,9 +168,19 @@ export function FavoritesClient({
 
       <ol className="grid gap-2">
         {schools.map((s, idx) => (
+          (() => {
+            const advice = normalizeLevel(adviceLevel);
+            const offersAdvice = (s.levels ?? []).some((l) => normalizeLevel(l) === advice);
+            const showMismatch = Boolean(advice) && !offersAdvice;
+
+            return (
           <li
             key={s.id}
-            className="flex items-center justify-between gap-3 rounded-2xl border border-black/5 bg-white p-4 dark:border-white/10 dark:bg-white/5"
+            className={`flex items-center justify-between gap-3 rounded-2xl border p-4 ${
+              showMismatch
+                ? "border-amber-200 bg-amber-50/40 dark:border-amber-300/20 dark:bg-amber-300/5"
+                : "border-black/5 bg-white dark:border-white/10 dark:bg-white/5"
+            }`}
             draggable
             onDragStart={(e) => {
               e.dataTransfer.setData("text/plain", s.id);
@@ -196,6 +214,11 @@ export function FavoritesClient({
                 {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                 {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
               </div>
+              {showMismatch ? (
+                <div className="mt-1 text-xs font-medium text-amber-800 dark:text-amber-300">
+                  {tFav("levelMismatch", { level: advice })}
+                </div>
+              ) : null}
               {userLocation && distanceLabelById.has(s.id) ? (
                 <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
                   {distanceLabelById.get(s.id)}
@@ -219,6 +242,8 @@ export function FavoritesClient({
               </button>
             </div>
           </li>
+            );
+          })()
         ))}
       </ol>
     </div>
