@@ -5,18 +5,14 @@ import { useTranslations } from "next-intl";
 
 import { FavoritesClient } from "./favorites-client";
 import { normalizeProfileId } from "@/lib/profile-id";
-import { useLocalStorageState } from "@/lib/useLocalStorageState";
 import { useProfileId } from "@/lib/useProfileId";
+import { useProfileSettings } from "@/lib/useProfileSettings";
 
 export function ProfileClient() {
   const tSchools = useTranslations("Schools");
   const tProfile = useTranslations("Profile");
   const { profileId, hydrated: profileHydrated, setProfileId } = useProfileId();
-
-  const [advice, setAdvice] = useLocalStorageState<string>(
-    "schoolkeuze:profile:adviceLevel:v1",
-    "VWO"
-  );
+  const { adviceLevel, setAdviceLevel } = useProfileSettings();
   const [profileInput, setProfileInput] = React.useState("");
   const [profileMessage, setProfileMessage] = React.useState("");
   const [useMyLocation, setUseMyLocation] = React.useState(false);
@@ -85,8 +81,8 @@ export function ProfileClient() {
             {tProfile("adviceLabel")}
           </span>
           <select
-            value={advice}
-            onChange={(e) => setAdvice(e.target.value)}
+            value={adviceLevel}
+            onChange={(e) => setAdviceLevel(e.target.value as "VMBO" | "HAVO" | "VWO")}
             className="h-10 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
           >
             <option value="VMBO">VMBO</option>
@@ -143,7 +139,7 @@ export function ProfileClient() {
       <section className="grid min-w-0">
         <FavoritesClient
           userLocation={lat != null && lon != null ? { lat, lon } : null}
-          adviceLevel={advice}
+          adviceLevel={adviceLevel}
         />
       </section>
     </div>

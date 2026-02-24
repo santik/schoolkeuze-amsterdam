@@ -16,6 +16,12 @@ enum SchoolLevel {
   VWO
 }
 
+enum AdviceLevel {
+  VMBO
+  HAVO
+  VWO
+}
+
 model School {
   id          String        @id @default(cuid())
   sourceKey   String?       @unique
@@ -71,4 +77,11 @@ model SchoolNote {
 
   @@unique([profileId, schoolId])
   @@index([profileId])
+}
+
+model ProfileSettings {
+  profileId   String      @id
+  adviceLevel AdviceLevel @default(VWO)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
