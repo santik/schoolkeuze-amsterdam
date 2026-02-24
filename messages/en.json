@@ -81,6 +81,15 @@
   },
   "Profile": {
     "title": "Your profile",
-    "adviceLabel": "Advice/level"
+    "adviceLabel": "Advice/level",
+    "profileIdLabel": "Profile ID",
+    "profileIdPlaceholder": "Enter a profile ID",
+    "loadProfile": "Load profile",
+    "copyShareLink": "Copy share link",
+    "shareHint": "Share this ID/link so someone can open the same favorites and notes.",
+    "shareCopied": "Share link copied.",
+    "shareCopyFailed": "Could not copy link.",
+    "profileIdInvalid": "Invalid profile ID.",
+    "profileIdLoaded": "Profile loaded."
   }
 }

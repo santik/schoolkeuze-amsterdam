@@ -4,19 +4,29 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 
 import { FavoritesClient } from "./favorites-client";
+import { normalizeProfileId } from "@/lib/profile-id";
 import { useLocalStorageState } from "@/lib/useLocalStorageState";
+import { useProfileId } from "@/lib/useProfileId";
 
 export function ProfileClient() {
   const tSchools = useTranslations("Schools");
   const tProfile = useTranslations("Profile");
+  const { profileId, hydrated: profileHydrated, setProfileId } = useProfileId();
 
   const [advice, setAdvice] = useLocalStorageState<string>(
     "schoolkeuze:profile:adviceLevel:v1",
     "VWO"
   );
+  const [profileInput, setProfileInput] = React.useState("");
+  const [profileMessage, setProfileMessage] = React.useState("");
   const [useMyLocation, setUseMyLocation] = React.useState(false);
   const [lat, setLat] = React.useState<number | null>(null);
   const [lon, setLon] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    if (!profileHydrated) return;
+    setProfileInput(profileId);
+  }, [profileHydrated, profileId]);
 
   React.useEffect(() => {
     if (!useMyLocation) {
@@ -36,6 +46,32 @@ export function ProfileClient() {
       { enableHighAccuracy: false, maximumAge: 60_000, timeout: 10_000 }
     );
   }, [useMyLocation]);
+
+  function onLoadProfile() {
+    const normalized = normalizeProfileId(profileInput);
+    if (!normalized) {
+      setProfileMessage(tProfile("profileIdInvalid"));
+      return;
+    }
+    const ok = setProfileId(normalized);
+    if (!ok) {
+      setProfileMessage(tProfile("profileIdInvalid"));
+      return;
+    }
+    setProfileMessage(tProfile("profileIdLoaded"));
+  }
+
+  async function onCopyShareLink() {
+    if (!profileId) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set("profileId", profileId);
+    try {
+      await navigator.clipboard.writeText(url.toString());
+      setProfileMessage(tProfile("shareCopied"));
+    } catch {
+      setProfileMessage(tProfile("shareCopyFailed"));
+    }
+  }
 
   return (
     <div className="grid gap-4 lg:grid-cols-[360px_1fr] items-start">
@@ -58,6 +94,40 @@ export function ProfileClient() {
             <option value="VWO">VWO</option>
           </select>
         </label>
+
+        <div className="grid gap-2 rounded-2xl border border-sky-200 bg-white/70 p-3 dark:border-sky-300/30 dark:bg-sky-500/10">
+          <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+            {tProfile("profileIdLabel")}
+          </div>
+          <input
+            value={profileInput}
+            onChange={(e) => {
+              setProfileInput(e.target.value);
+              if (profileMessage) setProfileMessage("");
+            }}
+            placeholder={tProfile("profileIdPlaceholder")}
+            className="h-10 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
+          />
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={onLoadProfile}
+              className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
+            >
+              {tProfile("loadProfile")}
+            </button>
+            <button
+              type="button"
+              onClick={onCopyShareLink}
+              className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-sky-50 px-3 text-sm font-semibold text-sky-900 hover:bg-sky-100 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
+            >
+              {tProfile("copyShareLink")}
+            </button>
+          </div>
+          <div className="text-xs text-indigo-700/90 dark:text-indigo-200/90">
+            {profileMessage || tProfile("shareHint")}
+          </div>
+        </div>
 
         <label className="flex items-center gap-2 text-sm text-indigo-900 dark:text-indigo-100">
           <input

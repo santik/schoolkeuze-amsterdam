@@ -6,3 +6,8 @@ export function isValidProfileId(profileId: unknown): profileId is string {
   if (!trimmed) return false;
   return trimmed.length <= 128;
 }
+
+export function normalizeProfileId(profileId: unknown): string | null {
+  if (!isValidProfileId(profileId)) return null;
+  return profileId.trim();
+}

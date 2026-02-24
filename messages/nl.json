@@ -81,6 +81,15 @@
   },
   "Profile": {
     "title": "Jouw profiel",
-    "adviceLabel": "Advies/niveau"
+    "adviceLabel": "Advies/niveau",
+    "profileIdLabel": "Profiel-ID",
+    "profileIdPlaceholder": "Voer een profiel-ID in",
+    "loadProfile": "Profiel laden",
+    "copyShareLink": "Deellink kopiëren",
+    "shareHint": "Deel dit ID/deze link zodat iemand dezelfde favorieten en notities kan openen.",
+    "shareCopied": "Deellink gekopieerd.",
+    "shareCopyFailed": "Kon link niet kopiëren.",
+    "profileIdInvalid": "Ongeldig profiel-ID.",
+    "profileIdLoaded": "Profiel geladen."
   }
 }
