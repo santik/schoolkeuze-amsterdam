@@ -8,6 +8,7 @@ import { prisma } from "@/server/db";
 export type SchoolListFilters = {
   q?: string;
   level?: SchoolLevel;
+  levels?: string[];
   concept?: string;
   postalCode?: string;
   lat?: number;
@@ -101,42 +102,40 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     const all = await getSampleSchools();
     let results = all;
 
+    const normalizeLevel = (level: SchoolLevel) =>
+      String(level).startsWith("VMBO") ? "VMBO" : String(level);
+
+    const rank: Record<string, number> = { VMBO: 0, HAVO: 1, VWO: 2 };
+
     if (filters.q) {
       const q = filters.q.toLowerCase();
       results = results.filter((s) => s.name.toLowerCase().includes(q));
     }
-    if (filters.level) {
-      if (filters.level === "VMBO") {
-        // For VMBO, include schools that have VMBO (any variant) - may also have other levels
-        results = results.filter((s) => 
-          s.levels.some(level => 
-            level === "VMBO" || 
-            level.startsWith("VMBO_") ||
-            level.startsWith("VMBO-")
-          )
-        );
-      } else if (filters.level === "HAVO") {
-        // For HAVO, include all schools that have HAVO (but not VMBO)
-        results = results.filter((s) => 
-          s.levels.includes("HAVO") &&
-          !s.levels.some(level => 
-            level === "VMBO" || 
-            level.startsWith("VMBO_") ||
-            level.startsWith("VMBO-")
-          )
-        );
-      } else if (filters.level === "VWO") {
-        // For VWO, include schools that have VWO only (no HAVO, no VMBO)
-        results = results.filter((s) => 
-          s.levels.includes("VWO") && 
-          !s.levels.includes("HAVO") && 
-          !s.levels.some(level => 
-            level === "VMBO" || 
-            level.startsWith("VMBO_") ||
-            level.startsWith("VMBO-")
-          )
-        );
-      }
+    if (filters.levels && filters.levels.length > 0) {
+      const selected = new Set(filters.levels.map((x) => x.toUpperCase()));
+      const maxSelectedRank = Math.max(
+        ...Array.from(selected)
+          .map((x) => rank[x])
+          .filter((x): x is number => typeof x === "number")
+      );
+
+      results = results.filter((s) => {
+        const school = new Set((s.levels ?? []).map(normalizeLevel));
+
+        // required: selected levels must exist
+        for (const x of selected) {
+          if (!school.has(x)) return false;
+        }
+
+        // forbidden: any unselected level below the highest selected level
+        for (const [lvl, r] of Object.entries(rank)) {
+          if (r < maxSelectedRank && !selected.has(lvl) && school.has(lvl)) {
+            return false;
+          }
+        }
+
+        return true;
+      });
     }
     if (filters.concept) {
       const c = filters.concept.toLowerCase();
@@ -174,7 +173,46 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       { brin: { contains: filters.q, mode: "insensitive" } },
     ];
   }
-  if (filters.level) {
+  if (filters.levels && filters.levels.length > 0) {
+      const rank: Record<string, number> = { VMBO: 0, HAVO: 1, VWO: 2 };
+      const selected = new Set(filters.levels.map((x) => x.toUpperCase()));
+      const maxSelectedRank = Math.max(
+        ...Array.from(selected)
+          .map((x) => rank[x])
+          .filter((x): x is number => typeof x === "number")
+      );
+
+      const vmboOr: Prisma.SchoolWhereInput = {
+        OR: [
+          { levels: { has: "VMBO" as SchoolLevel } },
+          { levels: { has: "VMBO_T" as SchoolLevel } },
+          { levels: { has: "VMBO_B" as SchoolLevel } },
+          { levels: { has: "VMBO_K" as SchoolLevel } },
+        ],
+      };
+
+      const and: Prisma.SchoolWhereInput[] = [];
+
+      // required: selected levels must exist
+      if (selected.has("VMBO")) and.push(vmboOr);
+      if (selected.has("HAVO")) and.push({ levels: { has: "HAVO" as SchoolLevel } });
+      if (selected.has("VWO")) and.push({ levels: { has: "VWO" as SchoolLevel } });
+
+      // forbidden: any unselected level below the highest selected level
+      if (maxSelectedRank > rank.VMBO && !selected.has("VMBO")) {
+        and.push({ NOT: vmboOr });
+      }
+      if (maxSelectedRank > rank.HAVO && !selected.has("HAVO")) {
+        and.push({ NOT: { levels: { has: "HAVO" as SchoolLevel } } });
+      }
+
+      const existingAnd = where.AND
+        ? Array.isArray(where.AND)
+          ? where.AND
+          : [where.AND]
+        : [];
+      where.AND = [...existingAnd, ...and];
+    } else if (filters.level) {
       if (filters.level === "VMBO") {
         // For VMBO, include schools that have VMBO (any variant) - may also have other levels
         const levelConditions = [

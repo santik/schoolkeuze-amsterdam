@@ -30,13 +30,18 @@ const SchoolsMap = dynamic(() => import("@/components/schools-map"), {
   ),
 });
 
-function buildQuery(params: Record<string, string | number | undefined>) {
+function buildQuery(params: Record<string, string | number | string[] | undefined>) {
   const q = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) {
     if (v === undefined) continue;
-    const s = String(v).trim();
-    if (!s) continue;
-    q.set(k, s);
+    if (Array.isArray(v)) {
+      if (v.length === 0) continue;
+      q.set(k, v.join(','));
+    } else {
+      const s = String(v).trim();
+      if (!s) continue;
+      q.set(k, s);
+    }
   }
   return q.toString();
 }
@@ -62,7 +67,7 @@ export function SchoolsExplorer() {
   const { has, toggle } = useFavorites();
 
   const [q, setQ] = React.useState("");
-  const [level, setLevel] = React.useState("");
+  const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
   const [concept, setConcept] = React.useState("");
   const [postalCode, setPostalCode] = React.useState("");
   const [radiusKm, setRadiusKm] = React.useState(3);
@@ -108,7 +113,7 @@ export function SchoolsExplorer() {
 
     const query = buildQuery({
       q,
-      level,
+      levels: selectedLevels,
       concept,
       postalCode,
       lat,
@@ -143,7 +148,15 @@ export function SchoolsExplorer() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, level, concept, postalCode, lat, lon, radiusKm, useMyLocation]);
+  }, [q, selectedLevels, concept, postalCode, lat, lon, radiusKm, useMyLocation]);
+
+  function toggleLevel(level: string) {
+    setSelectedLevels(prev => 
+      prev.includes(level) 
+        ? prev.filter(l => l !== level)
+        : [...prev, level]
+    );
+  }
 
   function toggleCompare(id: string) {
     setCompareIds((prev) =>
@@ -167,20 +180,39 @@ export function SchoolsExplorer() {
                 className="h-10 w-full min-w-0 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
               />
             </label>
-            <label className="grid gap-1 text-sm">
+            <label className="grid gap-2 text-sm">
               <span className="text-xs text-zinc-600 dark:text-zinc-400">
                 {t("levelLabel")}
               </span>
-              <select
-                value={level}
-                onChange={(e) => setLevel(e.target.value)}
-                className="h-10 w-full min-w-0 rounded-xl border border-black/10 bg-transparent px-3 text-sm outline-none focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:focus:ring-white/15"
-              >
-                <option value="">{t("levelAll")}</option>
-                <option value="VMBO">VMBO</option>
-                <option value="HAVO">HAVO</option>
-                <option value="VWO">VWO</option>
-              </select>
+              <div className="flex flex-wrap gap-3">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={selectedLevels.includes("VMBO")}
+                    onChange={() => toggleLevel("VMBO")}
+                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                  />
+                  <span>VMBO</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={selectedLevels.includes("HAVO")}
+                    onChange={() => toggleLevel("HAVO")}
+                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                  />
+                  <span>HAVO</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={selectedLevels.includes("VWO")}
+                    onChange={() => toggleLevel("VWO")}
+                    className="rounded border-black/10 bg-transparent text-black focus:ring-2 focus:ring-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white dark:focus:ring-white/15"
+                  />
+                  <span>VWO</span>
+                </label>
+              </div>
             </label>
             <label className="grid gap-1 text-sm">
               <span className="text-xs text-zinc-600 dark:text-zinc-400">
