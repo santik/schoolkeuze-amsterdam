@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
 import { Link } from "@/i18n/navigation";
+import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
 import { getSchoolById } from "@/server/schoolsStore";
 
 export default async function SchoolDetailPage({
@@ -66,6 +67,8 @@ export default async function SchoolDetailPage({
           </Link>
         </div>
       </section>
+
+      <NotesClient schoolId={school.id} />
 
       <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
         <h2 className="text-lg font-semibold tracking-tight">

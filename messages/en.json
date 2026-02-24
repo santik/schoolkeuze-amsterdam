@@ -57,6 +57,12 @@
     "yourLocation": "Your location",
     "selected": "Selected"
   },
+  "Notes": {
+    "title": "Notes",
+    "placeholder": "Write your notes about this school…",
+    "saving": "Saving…",
+    "autosaved": "Saved"
+  },
   "SchoolDetails": {
     "backToSchools": "← Back to schools",
     "compare": "Compare",
@@ -75,7 +81,6 @@
     "title": "Your profile (prototype)",
     "adviceLabel": "Advice/level",
     "conceptLabel": "Preferred concept (optional)",
-    "prototypeNote": "This is an initial prototype of \"suggestions\". In production, this will include more: interests, bridge class profiles, admission rules, travel time (bike/PT) and an explanation of why something fits.",
     "suggestionsTitle": "Suggestions",
     "allSchools": "All schools →",
     "noSuggestions": "No suggestions.",

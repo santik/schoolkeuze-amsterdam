@@ -57,6 +57,12 @@
     "yourLocation": "Jouw locatie",
     "selected": "Geselecteerd"
   },
+  "Notes": {
+    "title": "Notities",
+    "placeholder": "Schrijf je notities over deze school…",
+    "saving": "Opslaan…",
+    "autosaved": "Opgeslagen"
+  },
   "SchoolDetails": {
     "backToSchools": "← Terug naar scholen",
     "compare": "Vergelijken",
@@ -75,7 +81,6 @@
     "title": "Jouw profiel (prototype)",
     "adviceLabel": "Advies/niveau",
     "conceptLabel": "Voorkeursconcept (optioneel)",
-    "prototypeNote": "Dit is een eerste prototype van “suggesties”. In productie komt hier meer: interesses, brugklasprofielen, toelatingsregels, reistijd (fiets/OV) en uitleg waarom iets past.",
     "suggestionsTitle": "Suggesties",
     "allSchools": "Alle scholen →",
     "noSuggestions": "Geen suggesties.",

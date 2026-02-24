@@ -61,10 +61,6 @@ export function ProfileClient() {
           />
           {tSchools("useLocation")}
         </label>
-
-        <div className="text-xs text-zinc-600 dark:text-zinc-400">
-          {tProfile("prototypeNote")}
-        </div>
       </section>
 
       <section className="grid min-w-0">
