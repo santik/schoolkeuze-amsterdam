@@ -208,6 +208,15 @@ export function SchoolsExplorer() {
                 <label className="flex items-center gap-2">
                   <input
                     type="checkbox"
+                    checked={selectedLevels.includes("PRAKTIJKONDERWIJS")}
+                    onChange={() => toggleLevel("PRAKTIJKONDERWIJS")}
+                    className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
+                  />
+                  <span>Praktijk</span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
                     checked={selectedLevels.includes("VMBO")}
                     onChange={() => toggleLevel("VMBO")}
                     className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
@@ -231,15 +240,6 @@ export function SchoolsExplorer() {
                     className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
                   />
                   <span>VWO</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={selectedLevels.includes("PRAKTIJKONDERWIJS")}
-                    onChange={() => toggleLevel("PRAKTIJKONDERWIJS")}
-                    className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
-                  />
-                  <span>PRO</span>
                 </label>
               </div>
             </label>
