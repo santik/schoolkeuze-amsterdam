@@ -234,33 +234,40 @@ export function SchoolsExplorer() {
             </label>
           </div>
 
-          <div className="grid gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
-            <label className="flex min-w-0 items-center gap-2 text-sm">
-              <input
-                type="checkbox"
-                checked={useMyLocation}
-                onChange={(e) => setUseMyLocation(e.target.checked)}
-              />
-              {t("useLocation")}
-            </label>
+          <div className="grid gap-3">
+            <div className="grid gap-2 rounded-2xl border border-indigo-200 bg-white/70 p-3 dark:border-indigo-300/30 dark:bg-indigo-500/10">
+              <label className="flex min-w-0 items-center gap-2 text-sm font-medium text-indigo-900 dark:text-indigo-100">
+                <input
+                  type="checkbox"
+                  checked={useMyLocation}
+                  onChange={(e) => setUseMyLocation(e.target.checked)}
+                  className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
+                />
+                {t("useLocation")}
+              </label>
 
-            <label className="grid min-w-0 gap-1 text-sm sm:flex sm:items-center sm:gap-2">
-              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-                {t("bikeTimeLabel")}
-              </span>
-              <input
-                type="range"
-                className="w-full min-w-0 sm:w-44"
-                min={5}
-                max={45}
-                step={5}
-                value={bikeMinutes}
-                onChange={(e) => setBikeMinutes(Number(e.target.value))}
-                disabled={!useMyLocation}
-              />
-              <span className="tabular-nums">{bikeMinutes} min</span>
-            </label>
-
+              <label
+                className={[
+                  "grid min-w-0 gap-1 text-sm sm:flex sm:items-center sm:gap-2",
+                  useMyLocation ? "" : "opacity-60",
+                ].join(" ")}
+              >
+                <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                  {t("bikeTimeLabel")}
+                </span>
+                <input
+                  type="range"
+                  className="w-full min-w-0 sm:w-44"
+                  min={5}
+                  max={45}
+                  step={5}
+                  value={bikeMinutes}
+                  onChange={(e) => setBikeMinutes(Number(e.target.value))}
+                  disabled={!useMyLocation}
+                />
+                <span className="tabular-nums">{bikeMinutes} min</span>
+              </label>
+            </div>
           </div>
         </div>
 

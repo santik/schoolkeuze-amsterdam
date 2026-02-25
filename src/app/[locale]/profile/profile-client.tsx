@@ -73,10 +73,6 @@ export function ProfileClient() {
   return (
     <div className="grid gap-4 lg:grid-cols-[360px_1fr] items-start">
       <section className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-6 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
-        <div className="text-sm font-bold text-indigo-900 dark:text-indigo-100">
-          👤 {tProfile("title")}
-        </div>
-
         <label className="grid gap-1 text-sm">
           <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
             {tProfile("adviceLabel")}
