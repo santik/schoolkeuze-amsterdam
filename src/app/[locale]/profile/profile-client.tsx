@@ -15,6 +15,7 @@ export function ProfileClient() {
   const { adviceLevel, setAdviceLevel } = useProfileSettings();
   const [profileInput, setProfileInput] = React.useState("");
   const [profileMessage, setProfileMessage] = React.useState("");
+  const [isProfileIdOpen, setIsProfileIdOpen] = React.useState(false);
   const [useMyLocation, setUseMyLocation] = React.useState(false);
   const [lat, setLat] = React.useState<number | null>(null);
   const [lon, setLon] = React.useState<number | null>(null);
@@ -92,37 +93,49 @@ export function ProfileClient() {
         </label>
 
         <div className="grid gap-2 rounded-2xl border border-sky-200 bg-white/70 p-3 dark:border-sky-300/30 dark:bg-sky-500/10">
-          <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-            {tProfile("profileIdLabel")}
-          </div>
-          <input
-            value={profileInput}
-            onChange={(e) => {
-              setProfileInput(e.target.value);
-              if (profileMessage) setProfileMessage("");
-            }}
-            placeholder={tProfile("profileIdPlaceholder")}
-            className="h-10 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
-          />
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={onLoadProfile}
-              className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
-            >
-              {tProfile("loadProfile")}
-            </button>
-            <button
-              type="button"
-              onClick={onCopyShareLink}
-              className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-sky-50 px-3 text-sm font-semibold text-sky-900 hover:bg-sky-100 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
-            >
-              {tProfile("copyShareLink")}
-            </button>
-          </div>
-          <div className="text-xs text-indigo-700/90 dark:text-indigo-200/90">
-            {profileMessage || tProfile("shareHint")}
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsProfileIdOpen((prev) => !prev)}
+            aria-expanded={isProfileIdOpen}
+            aria-controls="profile-id-panel"
+            className="flex items-center justify-between text-left text-xs font-semibold text-indigo-700 dark:text-indigo-200"
+          >
+            <span>{tProfile("profileIdLabel")}</span>
+            <span>{isProfileIdOpen ? "▾" : "▸"}</span>
+          </button>
+
+          {isProfileIdOpen ? (
+            <>
+              <input
+                value={profileInput}
+                onChange={(e) => {
+                  setProfileInput(e.target.value);
+                  if (profileMessage) setProfileMessage("");
+                }}
+                placeholder={tProfile("profileIdPlaceholder")}
+                className="h-10 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
+              />
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={onLoadProfile}
+                  className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
+                >
+                  {tProfile("loadProfile")}
+                </button>
+                <button
+                  type="button"
+                  onClick={onCopyShareLink}
+                  className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-sky-50 px-3 text-sm font-semibold text-sky-900 hover:bg-sky-100 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
+                >
+                  {tProfile("copyShareLink")}
+                </button>
+              </div>
+              <div id="profile-id-panel" className="text-xs text-indigo-700/90 dark:text-indigo-200/90">
+                {profileMessage || tProfile("shareHint")}
+              </div>
+            </>
+          ) : null}
         </div>
 
         <label className="flex items-center gap-2 text-sm text-indigo-900 dark:text-indigo-100">
