@@ -28,48 +28,6 @@
     "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Barlaeus Gymnasium"
   },
   {
-    "brin": "00AB",
-    "name": "Montessori Lyceum Amsterdam",
-    "websiteUrl": "https://mla.nl",
-    "street": "Pieter de Hoochstraat",
-    "houseNumber": "59",
-    "postalCode": "1071ED",
-    "city": "Amsterdam",
-    "lat": 52.3555,
-    "lon": 4.8829,
-    "levels": [
-      "VMBO-T",
-      "HAVO",
-      "VWO"
-    ],
-    "concepts": [
-      "Montessori"
-    ],
-    "denomination": "Bijzonder",
-    "source": "sample",
-    "examens_2023_2024": {
-      "HAVO": {
-        "kandidaten": 256,
-        "geslaagden": 219,
-        "slagingspercentage": 85.5,
-        "gem_cijfer_lijst": 6.43
-      },
-      "VMBO_TL": {
-        "kandidaten": 55,
-        "geslaagden": 48,
-        "slagingspercentage": 87.3,
-        "gem_cijfer_lijst": 6.43
-      },
-      "VWO": {
-        "kandidaten": 209,
-        "geslaagden": 188,
-        "slagingspercentage": 90.0,
-        "gem_cijfer_lijst": 6.91
-      }
-    },
-    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Montessori SGM Amsterdam"
-  },
-  {
     "brin": "00AC",
     "name": "Hyperion Lyceum",
     "websiteUrl": "https://hyperionlyceum.nl",
@@ -643,6 +601,7 @@
     "lat": 52.3416,
     "lon": 4.8629,
     "levels": [
+      "VMBO-T",
       "HAVO",
       "VWO"
     ],
@@ -1024,7 +983,8 @@
     "lon": 4.8869,
     "levels": [
       "VMBO-T",
-      "HAVO"
+      "HAVO",
+      "KOVO"
     ],
     "concepts": [
       "KOVO"
@@ -1281,7 +1241,8 @@
     "lon": 4.9266,
     "levels": [
       "HAVO",
-      "VWO"
+      "VWO",
+      "KOVO"
     ],
     "concepts": [
       "Montessori",
@@ -1309,27 +1270,6 @@
       "Dalton"
     ],
     "denomination": "Openbaar",
-    "source": "allecijfers.nl/DUO"
-  },
-  {
-    "brin": "16PS",
-    "name": "Montessori Lyceum Amsterdam (MLA)",
-    "websiteUrl": "https://mla.nl",
-    "street": "Pieter de Hoochstraat",
-    "houseNumber": "59",
-    "postalCode": "1071ED",
-    "city": "Amsterdam",
-    "lat": 52.3555,
-    "lon": 4.8829,
-    "levels": [
-      "VMBO-T",
-      "HAVO",
-      "VWO"
-    ],
-    "concepts": [
-      "Montessori"
-    ],
-    "denomination": "Bijzonder",
     "source": "allecijfers.nl/DUO"
   },
   {
@@ -1411,7 +1351,8 @@
     "levels": [
       "VMBO-B",
       "VMBO-K",
-      "VMBO-T"
+      "VMBO-T",
+      "Praktijkonderwijs"
     ],
     "concepts": [],
     "denomination": "Bijzonder",
@@ -1469,7 +1410,7 @@
     "levels": [
       "VMBO-B",
       "VMBO-K",
-      "VMBO-GL"
+      "KOVO"
     ],
     "concepts": [
       "Vrije School"
@@ -1489,7 +1430,8 @@
     "lon": 4.9198,
     "levels": [
       "VMBO-B",
-      "VMBO-K"
+      "VMBO-K",
+      "VMBO-T"
     ],
     "concepts": [],
     "denomination": "Bijzonder",
@@ -1535,5 +1477,560 @@
     "concepts": [],
     "denomination": "Bijzonder",
     "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21ET",
+    "name": "Sweelinck College",
+    "websiteUrl": "https://sweelinckcollege.nl",
+    "street": "Moreelsestraat",
+    "houseNumber": "19-21",
+    "postalCode": "1055XE",
+    "city": "Amsterdam",
+    "lat": 52.3776,
+    "lon": 4.8621,
+    "levels": [
+      "VMBO-T",
+      "HAVO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21ET",
+    "name": "Vinse School",
+    "websiteUrl": "https://vinse.nl",
+    "street": "Haarlemmerstraat",
+    "houseNumber": "132-136",
+    "postalCode": "1013EK",
+    "city": "Amsterdam",
+    "lat": 52.3825,
+    "lon": 4.8957,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "31GH",
+    "name": "Spring High",
+    "websiteUrl": "https://springhigh.nl",
+    "street": "Herman Poortstraat",
+    "houseNumber": "17",
+    "postalCode": "1077JN",
+    "city": "Amsterdam",
+    "lat": 52.344,
+    "lon": 4.8848,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "23YV",
+    "name": "Vechtstede College",
+    "websiteUrl": "https://vechtstedecollege.nl",
+    "street": "Amstellandlaan",
+    "houseNumber": "1-A",
+    "postalCode": "1382GV",
+    "city": "Weesp",
+    "lat": 52.309,
+    "lon": 5.0456,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "30GS",
+    "name": "TASC",
+    "websiteUrl": "https://tasc.nl",
+    "street": "Darlingstraat",
+    "houseNumber": "2",
+    "postalCode": "1061RJ",
+    "city": "Amsterdam",
+    "lat": 52.3726,
+    "lon": 4.83,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T"
+    ],
+    "concepts": [
+      "Techniek"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Hogelant",
+    "websiteUrl": "https://hogelant.nl",
+    "street": "Duinluststraat",
+    "houseNumber": "20",
+    "postalCode": "1022PK",
+    "city": "Amsterdam",
+    "lat": 52.3927,
+    "lon": 4.9262,
+    "levels": [
+      "VMBO-B",
+      "KOVO"
+    ],
+    "concepts": [
+      "KOVO"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "02TR",
+    "name": "Iedersland College",
+    "websiteUrl": "https://iedersland.nl",
+    "street": "Zekeringstraat",
+    "houseNumber": "38-40",
+    "postalCode": "1014BT",
+    "city": "Amsterdam",
+    "lat": 52.3875,
+    "lon": 4.8562,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T",
+      "KOVO"
+    ],
+    "concepts": [
+      "KOVO"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "14RL",
+    "name": "Hubertus & Berkhoff",
+    "websiteUrl": "https://hubertusenberkhoff.nl",
+    "street": "Betuwestraat",
+    "houseNumber": "29",
+    "postalCode": "1078TA",
+    "city": "Amsterdam",
+    "lat": 52.3399,
+    "lon": 4.8838,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K"
+    ],
+    "concepts": [
+      "Horeca",
+      "Culinair"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "17VF",
+    "name": "Yuverta vmbo Amsterdam-West",
+    "websiteUrl": "https://yuverta.nl",
+    "street": "Jan van Zutphenstraat",
+    "houseNumber": "60",
+    "postalCode": "1055LG",
+    "city": "Amsterdam",
+    "lat": 52.3775,
+    "lon": 4.8534,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T"
+    ],
+    "concepts": [
+      "Groen"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "17VF",
+    "name": "Yuverta vmbo en pro Amsterdam-Oost",
+    "websiteUrl": "https://yuverta.nl",
+    "street": "Archimedesplantsoen",
+    "houseNumber": "87",
+    "postalCode": "1098JB",
+    "city": "Amsterdam",
+    "lat": 52.3573,
+    "lon": 4.9479,
+    "levels": [
+      "VMBO-B",
+      "VMBO-K",
+      "Praktijkonderwijs"
+    ],
+    "concepts": [
+      "Groen"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "23GF",
+    "name": "Jordaan College",
+    "websiteUrl": "https://jordaancollege.nl",
+    "street": "Nassaukade",
+    "houseNumber": "366",
+    "postalCode": "1054AH",
+    "city": "Amsterdam",
+    "lat": 52.376,
+    "lon": 4.872,
+    "levels": [
+      "VMBO-K",
+      "VMBO-T",
+      "VSO"
+    ],
+    "concepts": [
+      "VSO"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom Praktijkcollege De Atlant",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Teilingen",
+    "houseNumber": "4",
+    "postalCode": "1082HK",
+    "city": "Amsterdam",
+    "lat": 52.335,
+    "lon": 4.8945,
+    "levels": [
+      "Praktijkonderwijs"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom Praktijkcollege De Dreef",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Alexander Dumaslaan",
+    "houseNumber": "7",
+    "postalCode": "1102CE",
+    "city": "Amsterdam",
+    "lat": 52.3162,
+    "lon": 4.9614,
+    "levels": [
+      "Praktijkonderwijs"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom Praktijkcollege Het Plein",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Jan de Louterpad",
+    "houseNumber": "5",
+    "postalCode": "1067JX",
+    "city": "Amsterdam",
+    "lat": 52.372,
+    "lon": 4.8189,
+    "levels": [
+      "Praktijkonderwijs"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom Praktijkcollege Noord",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Oostzanerdijk",
+    "houseNumber": "139",
+    "postalCode": "1021CK",
+    "city": "Amsterdam",
+    "lat": 52.3993,
+    "lon": 4.9308,
+    "levels": [
+      "Praktijkonderwijs"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "14RL",
+    "name": "LUCA",
+    "websiteUrl": "https://luca-praktijkschool.nl",
+    "street": "Javaplantsoen",
+    "houseNumber": "24",
+    "postalCode": "1094HM",
+    "city": "Amsterdam",
+    "lat": 52.3615,
+    "lon": 4.9419,
+    "levels": [
+      "Praktijkonderwijs",
+      "VMBO-B"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25LK",
+    "name": "Kentalis Signis",
+    "websiteUrl": "https://kentalis.nl",
+    "street": "Meer en Vaart",
+    "houseNumber": "300",
+    "postalCode": "1068LE",
+    "city": "Amsterdam",
+    "lat": 52.3633,
+    "lon": 4.8103,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [
+      "Doof/slechthorend"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom VSO Alphons Laudy",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Teilingen",
+    "houseNumber": "4",
+    "postalCode": "1082HK",
+    "city": "Amsterdam",
+    "lat": 52.335,
+    "lon": 4.8945,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "21VN",
+    "name": "Kolom VSO De Heldring",
+    "websiteUrl": "https://kolomonderwijs.nl",
+    "street": "Heldringstraat",
+    "houseNumber": "17",
+    "postalCode": "1064PA",
+    "city": "Amsterdam",
+    "lat": 52.3705,
+    "lon": 4.8199,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25PG",
+    "name": "Meiberg College",
+    "websiteUrl": "https://meibergcollege.nl",
+    "street": "Meibergdreef",
+    "houseNumber": "9",
+    "postalCode": "1105AZ",
+    "city": "Amsterdam",
+    "lat": 52.2973,
+    "lon": 4.9671,
+    "levels": [
+      "VSO",
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25NK",
+    "name": "Orion College Amstel",
+    "websiteUrl": "https://orioncollege.nl",
+    "street": "Javaplantsoen",
+    "houseNumber": "2",
+    "postalCode": "1094HM",
+    "city": "Amsterdam",
+    "lat": 52.3615,
+    "lon": 4.9417,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25NK",
+    "name": "Orion College Drostenburg",
+    "websiteUrl": "https://orioncollege.nl",
+    "street": "Drostenburg",
+    "houseNumber": "50",
+    "postalCode": "1103BC",
+    "city": "Amsterdam",
+    "lat": 52.3137,
+    "lon": 4.971,
+    "levels": [
+      "VSO",
+      "VMBO-B",
+      "VMBO-K",
+      "VMBO-T",
+      "HAVO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25NK",
+    "name": "Orion College Noord",
+    "websiteUrl": "https://orioncollege.nl",
+    "street": "Rode Kruisstraat",
+    "houseNumber": "60",
+    "postalCode": "1025KV",
+    "city": "Amsterdam",
+    "lat": 52.3958,
+    "lon": 4.9201,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25NK",
+    "name": "Orion College Zuidoost",
+    "websiteUrl": "https://orioncollege.nl",
+    "street": "Gulden Kruis",
+    "houseNumber": "5",
+    "postalCode": "1103BB",
+    "city": "Amsterdam",
+    "lat": 52.313,
+    "lon": 4.974,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "28FP",
+    "name": "VierTaal College Amsterdam",
+    "websiteUrl": "https://viertaal.nl",
+    "street": "Polderweg",
+    "houseNumber": "1",
+    "postalCode": "1093KK",
+    "city": "Amsterdam",
+    "lat": 52.3651,
+    "lon": 4.9342,
+    "levels": [
+      "VSO",
+      "VMBO-T"
+    ],
+    "concepts": [
+      "Taalontwikkeling"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "25NR",
+    "name": "Visio Onderwijs Amsterdam",
+    "websiteUrl": "https://visio.org",
+    "street": "Onderwijsboulevard",
+    "houseNumber": "1",
+    "postalCode": "1034DG",
+    "city": "Amsterdam",
+    "lat": 52.3986,
+    "lon": 4.9327,
+    "levels": [
+      "VSO",
+      "VMBO-T",
+      "HAVO"
+    ],
+    "concepts": [
+      "Visueel beperkt"
+    ],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "28RG",
+    "name": "Voort College",
+    "websiteUrl": "https://voortcollege.nl",
+    "street": "Joop Geesinkweg",
+    "houseNumber": "901",
+    "postalCode": "1096AX",
+    "city": "Amsterdam",
+    "lat": 52.3475,
+    "lon": 4.9592,
+    "levels": [
+      "VSO"
+    ],
+    "concepts": [],
+    "denomination": "Bijzonder",
+    "source": "allecijfers.nl/DUO"
+  },
+  {
+    "brin": "16PS",
+    "name": "Montessori Lyceum Amsterdam (MLA)",
+    "websiteUrl": "https://mla.nl",
+    "street": "Pieter de Hoochstraat",
+    "houseNumber": "59",
+    "postalCode": "1071ED",
+    "city": "Amsterdam",
+    "lat": 52.3555,
+    "lon": 4.8829,
+    "levels": [
+      "VMBO-T",
+      "HAVO",
+      "VWO"
+    ],
+    "concepts": [
+      "Montessori"
+    ],
+    "denomination": "Bijzonder",
+    "source": "sample",
+    "examens_2023_2024": {
+      "HAVO": {
+        "kandidaten": 256,
+        "geslaagden": 219,
+        "slagingspercentage": 85.5,
+        "gem_cijfer_lijst": 6.43
+      },
+      "VMBO_TL": {
+        "kandidaten": 55,
+        "geslaagden": 48,
+        "slagingspercentage": 87.3,
+        "gem_cijfer_lijst": 6.43
+      },
+      "VWO": {
+        "kandidaten": 209,
+        "geslaagden": 188,
+        "slagingspercentage": 90.0,
+        "gem_cijfer_lijst": 6.91
+      }
+    },
+    "examens_bron": "DUO geslaagden-gezakten-en-cijfers-2023-2024 – vestiging: Montessori SGM Amsterdam"
   }
 ]
