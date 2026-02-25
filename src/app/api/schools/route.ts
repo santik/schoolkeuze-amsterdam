@@ -17,7 +17,6 @@ export async function GET(req: Request) {
     q: url.searchParams.get("q") ?? undefined,
     levels: levels,
     concept: url.searchParams.get("concept") ?? undefined,
-    postalCode: url.searchParams.get("postalCode") ?? undefined,
     lat: toFloat(url.searchParams.get("lat")),
     lon: toFloat(url.searchParams.get("lon")),
     bikeMinutes: toFloat(url.searchParams.get("bikeMinutes")),
@@ -26,4 +25,3 @@ export async function GET(req: Request) {
 
   return NextResponse.json({ schools });
 }
-

@@ -10,7 +10,6 @@ export type SchoolListFilters = {
   level?: SchoolLevel;
   levels?: string[];
   concept?: string;
-  postalCode?: string;
   lat?: number;
   lon?: number;
   bikeMinutes?: number;
@@ -185,12 +184,6 @@ export async function listSchools(filters: SchoolListFilters = {}) {
         (s.concepts ?? []).some((x) => x.toLowerCase().includes(c))
       );
     }
-    if (filters.postalCode) {
-      results = results.filter((s) =>
-        s.postalCode?.startsWith(filters.postalCode!.replaceAll(/\s+/g, "").toUpperCase())
-      );
-    }
-
     // Convert bikeMinutes to km using 15 km/h average bike speed.
     const bikeSpeedKmh = 15;
     const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
@@ -251,14 +244,6 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       and.push({ NOT: { levels: { has: "HAVO" as SchoolLevel } } });
     }
   }
-  if (filters.postalCode) {
-    and.push({
-      postalCode: {
-        startsWith: filters.postalCode.replaceAll(/\s+/g, "").toUpperCase(),
-      },
-    });
-  }
-
   const where: Prisma.SchoolWhereInput = and.length > 0 ? { AND: and } : {};
 
   // Radius filtering: do a light pre-filter in SQL, then precise haversine in JS.
