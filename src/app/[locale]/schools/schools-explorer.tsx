@@ -355,9 +355,15 @@ export function SchoolsExplorer() {
                   <div className="w-full sm:w-auto">
                     <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:flex-nowrap sm:justify-end">
                       <button
-                        className="h-9 min-w-0 flex-1 rounded-full border border-emerald-300 bg-emerald-50 px-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 sm:flex-none dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20"
+                        className={[
+                          "h-10 min-w-0 flex-1 rounded-full border px-3 text-xl leading-none font-semibold sm:flex-none",
+                          has(s.id)
+                            ? "border-amber-300 bg-amber-100 text-amber-700 hover:bg-amber-200 dark:border-amber-300/40 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/25"
+                            : "border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20",
+                        ].join(" ")}
                         onClick={() => toggle(s.id)}
                         type="button"
+                        aria-label={has(s.id) ? "Remove favorite" : "Add favorite"}
                       >
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
                       </button>
