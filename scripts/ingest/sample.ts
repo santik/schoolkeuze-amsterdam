@@ -26,6 +26,7 @@ type InputSchool = {
 
 function toLevel(v: string): SchoolLevel | null {
   const key = v.toUpperCase().trim().replaceAll("-", "_");
+  if (key === "PRAKTIJKONDERWIJS") return SchoolLevel.PRAKTIJKONDERWIJS;
   if (key === "VMBO") return SchoolLevel.VMBO;
   if (key === "VMBO_T") return SchoolLevel.VMBO_T;
   if (key === "VMBO_B") return SchoolLevel.VMBO_B;

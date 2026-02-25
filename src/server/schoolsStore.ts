@@ -111,7 +111,8 @@ function hasDb() {
   return Boolean(process.env.DATABASE_URL);
 }
 
-const LEVEL_RANK: Record<"VMBO" | "HAVO" | "VWO", number> = {
+const LEVEL_RANK: Record<"PRAKTIJKONDERWIJS" | "VMBO" | "HAVO" | "VWO", number> = {
+  PRAKTIJKONDERWIJS: -1,
   VMBO: 0,
   HAVO: 1,
   VWO: 2,
@@ -129,7 +130,7 @@ function normalizeSelectedLevels(filters: SchoolListFilters) {
     new Set(
       raw
         .map((x) => x.toUpperCase().trim())
-        .filter((x): x is "VMBO" | "HAVO" | "VWO" => x in LEVEL_RANK)
+        .filter((x): x is "PRAKTIJKONDERWIJS" | "VMBO" | "HAVO" | "VWO" => x in LEVEL_RANK)
     )
   );
 
@@ -165,7 +166,12 @@ export async function listSchools(filters: SchoolListFilters = {}) {
         }
 
         for (const schoolLevel of levelSet) {
-          if (schoolLevel in LEVEL_RANK && LEVEL_RANK[schoolLevel as "VMBO" | "HAVO" | "VWO"] < minSelectedRank) {
+          if (
+            schoolLevel in LEVEL_RANK &&
+            LEVEL_RANK[
+              schoolLevel as "PRAKTIJKONDERWIJS" | "VMBO" | "HAVO" | "VWO"
+            ] < minSelectedRank
+          ) {
             return false;
           }
         }
@@ -218,6 +224,9 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       ...selectedLevels.map((x) => LEVEL_RANK[x])
     );
 
+    const praktijkFilter: Prisma.SchoolWhereInput = {
+      levels: { has: "PRAKTIJKONDERWIJS" as SchoolLevel },
+    };
     const vmboOr: Prisma.SchoolWhereInput = {
       OR: [
         { levels: { has: "VMBO" as SchoolLevel } },
@@ -227,10 +236,14 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       ],
     };
 
+    if (selected.has("PRAKTIJKONDERWIJS")) and.push(praktijkFilter);
     if (selected.has("VMBO")) and.push(vmboOr);
     if (selected.has("HAVO")) and.push({ levels: { has: "HAVO" as SchoolLevel } });
     if (selected.has("VWO")) and.push({ levels: { has: "VWO" as SchoolLevel } });
 
+    if (minSelectedRank > LEVEL_RANK.PRAKTIJKONDERWIJS) {
+      and.push({ NOT: praktijkFilter });
+    }
     if (minSelectedRank > LEVEL_RANK.VMBO) {
       and.push({ NOT: vmboOr });
     }
