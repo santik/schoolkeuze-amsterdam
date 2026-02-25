@@ -58,6 +58,8 @@ export function FavoritesClient({
   const { ids, setIds, remove, hydrated } = useFavorites();
   const [schools, setSchools] = React.useState<SchoolDTO[]>([]);
   const [loading, setLoading] = React.useState(false);
+  const [draggingId, setDraggingId] = React.useState<string | null>(null);
+  const [dropTargetId, setDropTargetId] = React.useState<string | null>(null);
 
   const distanceById = React.useMemo(() => {
     if (!userLocation) return new Map<string, number>();
@@ -159,7 +161,7 @@ export function FavoritesClient({
           {loading
             ? tSchools("loading")
             : tFav("count", { count: schools.length })}{" "}
-          · {tFav("dragToRank")}
+          · {tFav("dragToRank")} · {tFav("dragHint")}
         </div>
         <div className="flex flex-wrap gap-2">
           <Link
@@ -192,18 +194,28 @@ export function FavoritesClient({
               showMismatch
                 ? "border-amber-300 dark:border-amber-300/30 dark:bg-amber-300/5"
                 : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
+            } ${draggingId === s.id ? "opacity-70 ring-2 ring-violet-300/60 dark:ring-violet-300/40" : ""} ${
+              dropTargetId === s.id && draggingId !== s.id
+                ? "ring-2 ring-sky-300/70 dark:ring-sky-300/50"
+                : ""
             }`}
             draggable
             onDragStart={(e) => {
               e.dataTransfer.setData("text/plain", s.id);
               e.dataTransfer.effectAllowed = "move";
+              setDraggingId(s.id);
             }}
             onDragOver={(e) => {
               e.preventDefault();
               e.dataTransfer.dropEffect = "move";
+              setDropTargetId(s.id);
+            }}
+            onDragLeave={() => {
+              if (dropTargetId === s.id) setDropTargetId(null);
             }}
             onDrop={(e) => {
               e.preventDefault();
+              setDropTargetId(null);
               const draggedId = e.dataTransfer.getData("text/plain");
               if (!draggedId || draggedId === s.id) return;
               setIds((prev) => {
@@ -216,8 +228,20 @@ export function FavoritesClient({
                 return copy;
               });
             }}
+            onDragEnd={() => {
+              setDraggingId(null);
+              setDropTargetId(null);
+            }}
           >
-            <div className="min-w-0">
+            <div className="flex min-w-0 items-start gap-3">
+              <div
+                className="inline-flex h-9 w-9 shrink-0 select-none items-center justify-center rounded-full border border-indigo-300 bg-indigo-50 text-base font-bold tracking-tight text-indigo-900 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200"
+                title={tFav("dragHandle")}
+                aria-label={tFav("dragHandle")}
+              >
+                ≡
+              </div>
+              <div className="min-w-0">
               <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 #{idx + 1}
               </div>
@@ -236,6 +260,7 @@ export function FavoritesClient({
                   {distanceLabelById.get(s.id)}
                 </div>
               ) : null}
+              </div>
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
