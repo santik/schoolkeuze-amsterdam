@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
+import { jsPDF } from "jspdf";
 
 import { Link } from "@/i18n/navigation";
 import { useFavorites } from "@/lib/useFavorites";
@@ -19,6 +20,15 @@ type SchoolDTO = {
   concepts: string[];
 };
 
+type ExportEntry = {
+  rank: number;
+  name: string;
+  levels: string;
+  concepts: string;
+  address: string;
+  distance: string;
+};
+
 function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
   const R = 6371;
   const dLat = ((bLat - aLat) * Math.PI) / 180;
@@ -30,14 +40,81 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
   return R * v;
 }
 
-function downloadText(filename: string, text: string) {
-  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
+function downloadPdf(filename: string, title: string, entries: ExportEntry[]) {
+  const doc = new jsPDF({ unit: "pt", format: "a4" });
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const margin = 48;
+  const contentWidth = pageWidth - margin * 2;
+
+  function drawHeader(count: number) {
+    doc.setFillColor(36, 54, 114);
+    doc.roundedRect(margin, margin - 8, contentWidth, 74, 16, 16, "F");
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(20);
+    doc.text(title, margin + 16, margin + 20);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.setTextColor(210, 220, 255);
+    doc.text(
+      `${new Date().toLocaleDateString()}  •  ${count} schools`,
+      margin + 16,
+      margin + 40
+    );
+
+    doc.setTextColor(28, 31, 45);
+  }
+
+  drawHeader(entries.length);
+
+  let y = margin + 84;
+
+  for (const entry of entries) {
+    const cardX = margin;
+    const cardW = contentWidth;
+    const cardH = 92;
+
+    if (y + cardH > pageHeight - margin) {
+      doc.addPage();
+      drawHeader(entries.length);
+      y = margin + 84;
+    }
+
+    doc.setFillColor(244, 247, 255);
+    doc.roundedRect(cardX, y, cardW, cardH, 12, 12, "F");
+
+    doc.setFillColor(108, 129, 214);
+    doc.circle(cardX + 18, y + 18, 10, "F");
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
+    doc.text(String(entry.rank), cardX + 15.2, y + 21.5);
+
+    doc.setTextColor(35, 43, 79);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.text(entry.name, cardX + 36, y + 22, { maxWidth: cardW - 48 });
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(85, 94, 130);
+    doc.setFontSize(10);
+    const metaLine = `${entry.levels || "—"} • ${entry.concepts || "—"}`;
+    doc.text(metaLine, cardX + 36, y + 39, { maxWidth: cardW - 48 });
+
+    doc.setTextColor(66, 74, 107);
+    const addressLines = doc.splitTextToSize(entry.address || "—", cardW - 48);
+    doc.text(addressLines.slice(0, 2), cardX + 36, y + 56);
+
+    doc.setTextColor(23, 99, 173);
+    doc.text(entry.distance || " ", cardX + 36, y + 78, { maxWidth: cardW - 48 });
+
+    y += cardH + 10;
+  }
+
+  doc.save(filename);
 }
 
 function normalizeLevel(level: string) {
@@ -107,20 +184,21 @@ export function FavoritesClient({
     };
   }, [hydrated, ids]);
 
-  const rankedText = React.useMemo(() => {
-    if (schools.length === 0) return "";
-    return schools
-      .map((s, idx) => {
-        const address = [
-          [s.street, s.houseNumber].filter(Boolean).join(" "),
-          [s.postalCode, s.city].filter(Boolean).join(" "),
-        ]
-          .filter(Boolean)
-          .join(", ");
-        return `${idx + 1}. ${s.name}${address ? ` — ${address}` : ""}`;
-      })
-      .join("\n");
-  }, [schools]);
+  const exportEntries = React.useMemo<ExportEntry[]>(() => {
+    return schools.map((s, idx) => ({
+      rank: idx + 1,
+      name: s.name,
+      levels: (s.levels ?? []).join(" / "),
+      concepts: (s.concepts ?? []).slice(0, 3).join(", "),
+      address: [
+        [s.street, s.houseNumber].filter(Boolean).join(" "),
+        [s.postalCode, s.city].filter(Boolean).join(" "),
+      ]
+        .filter(Boolean)
+        .join(", "),
+      distance: distanceLabelById.get(s.id) ?? "",
+    }));
+  }, [schools, distanceLabelById]);
 
   if (!hydrated) {
     return (
@@ -161,7 +239,7 @@ export function FavoritesClient({
           <button
             type="button"
             className="inline-flex h-9 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-4 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400"
-            onClick={() => downloadText("schoolkeuze-ranking.txt", rankedText || "")}
+            onClick={() => downloadPdf("schoolkeuze-ranking.pdf", "Schoolkeuze ranking", exportEntries)}
           >
             {tFav("export")}
           </button>
