@@ -35,7 +35,7 @@
     "loading": "Loading...",
     "schoolsCount": "{count} schools",
     "distanceEstimate": "{km} km · ~{minutes} min bike",
-    "detailsCta": "Details",
+    "detailsCta": "Info",
     "favoriteOn": "★",
     "favoriteOff": "☆"
   },

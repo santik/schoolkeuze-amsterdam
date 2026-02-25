@@ -369,7 +369,7 @@ export function SchoolsExplorer() {
                           "h-9 min-w-0 flex-1 rounded-full border px-3 text-lg leading-none font-semibold sm:flex-none",
                           has(s.id)
                             ? "border-amber-300 bg-amber-100 text-amber-700 hover:bg-amber-200 dark:border-amber-300/40 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/25"
-                            : "border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20",
+                            : "border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20",
                         ].join(" ")}
                         onClick={() => toggle(s.id)}
                         type="button"
@@ -378,7 +378,7 @@ export function SchoolsExplorer() {
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
                       </button>
                       <button
-                        className="h-9 min-w-0 flex-1 rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 sm:flex-none dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
+                        className="h-9 min-w-0 flex-1 rounded-full border border-indigo-300 bg-indigo-50 px-3 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 sm:flex-none dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20"
                         onClick={() => toggleCompare(s.id)}
                         type="button"
                       >
@@ -386,7 +386,7 @@ export function SchoolsExplorer() {
                       </button>
                       <Link
                         href={`/schools/${s.id}`}
-                        className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-3 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400 sm:flex-none"
+                        className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 sm:flex-none dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
                       >
                         {t("detailsCta")}
                       </Link>
