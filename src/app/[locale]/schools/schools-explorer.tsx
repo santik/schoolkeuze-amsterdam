@@ -90,17 +90,13 @@ export function SchoolsExplorer() {
     };
 
     return [...schools].sort((a, b) => {
-      const aFav = has(a.id);
-      const bFav = has(b.id);
-      if (aFav !== bFav) return aFav ? -1 : 1;
-
       const ar = rank(a);
       const br = rank(b);
       if (ar !== br) return br - ar;
 
       return (a.name ?? "").localeCompare(b.name ?? "", undefined, { sensitivity: "base" });
     });
-  }, [schools, has]);
+  }, [schools]);
 
   React.useEffect(() => {
     if (!useMyLocation) {
