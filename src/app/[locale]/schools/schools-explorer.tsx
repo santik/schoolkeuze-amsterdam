@@ -324,7 +324,7 @@ export function SchoolsExplorer() {
                 ].join(" ")}
                 onMouseEnter={() => setSelectedId(s.id)}
               >
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
                     <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">{s.name}</div>
                     <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
@@ -352,17 +352,17 @@ export function SchoolsExplorer() {
                     ) : null}
                   </div>
 
-                  <div className="flex shrink-0 flex-col items-end gap-2">
-                    <div className="flex gap-2">
+                  <div className="w-full sm:w-auto">
+                    <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:flex-nowrap sm:justify-end">
                       <button
-                        className="h-9 rounded-full border border-emerald-300 bg-emerald-50 px-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20"
+                        className="h-9 min-w-0 flex-1 rounded-full border border-emerald-300 bg-emerald-50 px-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 sm:flex-none dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20"
                         onClick={() => toggle(s.id)}
                         type="button"
                       >
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
                       </button>
                       <button
-                        className="h-9 rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
+                        className="h-9 min-w-0 flex-1 rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 sm:flex-none dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
                         onClick={() => toggleCompare(s.id)}
                         type="button"
                       >
@@ -370,7 +370,7 @@ export function SchoolsExplorer() {
                       </button>
                       <Link
                         href={`/schools/${s.id}`}
-                        className="inline-flex h-9 items-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-3 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400"
+                        className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-3 text-sm font-bold text-white hover:from-orange-400 hover:to-pink-400 sm:flex-none"
                       >
                         {t("detailsCta")}
                       </Link>
