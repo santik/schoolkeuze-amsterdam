@@ -267,10 +267,11 @@ export function FavoritesClient({
               </Link>
               <button
                 type="button"
-                className="inline-flex h-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 px-3 text-sm font-semibold text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 text-base font-semibold leading-none text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
                 onClick={() => remove(s.id)}
+                aria-label={tFav("remove")}
               >
-                {tFav("remove")}
+                ×
               </button>
             </div>
           </li>
