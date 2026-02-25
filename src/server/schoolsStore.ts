@@ -9,7 +9,6 @@ export type SchoolListFilters = {
   q?: string;
   level?: SchoolLevel;
   levels?: string[];
-  concept?: string;
   lat?: number;
   lon?: number;
   bikeMinutes?: number;
@@ -178,12 +177,6 @@ export async function listSchools(filters: SchoolListFilters = {}) {
         return true;
       });
     }
-    if (filters.concept) {
-      const c = filters.concept.toLowerCase();
-      results = results.filter((s) =>
-        (s.concepts ?? []).some((x) => x.toLowerCase().includes(c))
-      );
-    }
     // Convert bikeMinutes to km using 15 km/h average bike speed.
     const bikeSpeedKmh = 15;
     const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
@@ -256,13 +249,6 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     take: candidateTake,
     orderBy: { name: "asc" },
   });
-
-  if (filters.concept) {
-    const c = filters.concept.toLowerCase();
-    candidates = candidates.filter((s) =>
-      (s.concepts ?? []).some((x) => x.toLowerCase().includes(c))
-    );
-  }
 
   if (
     typeof filters.lat === "number" &&

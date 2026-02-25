@@ -68,7 +68,6 @@ export function SchoolsExplorer() {
 
   const [q, setQ] = React.useState("");
   const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
-  const [concept, setConcept] = React.useState("");
   const [bikeMinutes, setBikeMinutes] = React.useState(30);
   const [useMyLocation, setUseMyLocation] = React.useState(false);
   const [lat, setLat] = React.useState<number | undefined>(undefined);
@@ -137,7 +136,6 @@ export function SchoolsExplorer() {
     const query = buildQuery({
       q,
       levels: selectedLevels,
-      concept,
       lat,
       lon,
       bikeMinutes: useMyLocation ? bikeMinutes : undefined,
@@ -170,7 +168,7 @@ export function SchoolsExplorer() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, selectedLevels, concept, lat, lon, bikeMinutes, useMyLocation]);
+  }, [q, selectedLevels, lat, lon, bikeMinutes, useMyLocation]);
 
   function toggleLevel(level: string) {
     setSelectedLevels(prev => 
@@ -190,7 +188,7 @@ export function SchoolsExplorer() {
     <div className="grid min-w-0 gap-4 lg:grid-cols-[1fr_420px]">
       <div className="grid min-w-0 gap-3">
         <div className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("searchLabel")}
@@ -244,17 +242,6 @@ export function SchoolsExplorer() {
                   <span>PRO</span>
                 </label>
               </div>
-            </label>
-            <label className="grid gap-1 text-sm">
-              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-                {t("conceptLabel")}
-              </span>
-              <input
-                value={concept}
-                onChange={(e) => setConcept(e.target.value)}
-                placeholder={t("conceptPlaceholder")}
-                className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
-              />
             </label>
           </div>
 

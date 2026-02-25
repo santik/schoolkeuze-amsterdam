@@ -16,7 +16,6 @@ export async function GET(req: Request) {
   const schools = await listSchools({
     q: url.searchParams.get("q") ?? undefined,
     levels: levels,
-    concept: url.searchParams.get("concept") ?? undefined,
     lat: toFloat(url.searchParams.get("lat")),
     lon: toFloat(url.searchParams.get("lon")),
     bikeMinutes: toFloat(url.searchParams.get("bikeMinutes")),
