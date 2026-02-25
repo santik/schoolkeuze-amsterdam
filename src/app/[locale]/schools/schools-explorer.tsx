@@ -366,7 +366,7 @@ export function SchoolsExplorer() {
                     <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:flex-nowrap sm:justify-end">
                       <button
                         className={[
-                          "h-10 min-w-0 flex-1 rounded-full border px-3 text-xl leading-none font-semibold sm:flex-none",
+                          "h-9 min-w-0 flex-1 rounded-full border px-3 text-lg leading-none font-semibold sm:flex-none",
                           has(s.id)
                             ? "border-amber-300 bg-amber-100 text-amber-700 hover:bg-amber-200 dark:border-amber-300/40 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/25"
                             : "border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20",
