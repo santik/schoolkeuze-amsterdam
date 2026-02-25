@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { isAppLocale, type AppLocale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { TopNav } from "@/components/top-nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
@@ -47,24 +48,16 @@ export default async function LocaleLayout({
               >
                 🧭 {tApp("name")}
               </Link>
-              <nav className="flex items-center gap-2">
-                <Link
-                  href="/schools"
-                  className="rounded-full bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-900 hover:bg-amber-200 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/20"
-                >
-                  {tNav("schools")}
-                </Link>
-                <Link
-                  href="/profile"
-                  className="rounded-full bg-emerald-100 px-3 py-1.5 text-sm font-semibold text-emerald-900 hover:bg-emerald-200 dark:bg-emerald-400/15 dark:text-emerald-200 dark:hover:bg-emerald-400/20"
-                >
-                  {tNav("profile")}
-                </Link>
+              <div className="flex items-center gap-2">
+                <TopNav
+                  schoolsLabel={tNav("schools")}
+                  profileLabel={tNav("profile")}
+                />
                 <div className="flex items-center gap-2 ml-2">
                   <ThemeSwitcher />
                   <LocaleSwitcher locale={locale as AppLocale} />
                 </div>
-              </nav>
+              </div>
             </div>
           </header>
           <main className="mx-auto w-full max-w-6xl px-4 py-10">
