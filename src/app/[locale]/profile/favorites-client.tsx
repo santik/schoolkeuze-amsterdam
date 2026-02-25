@@ -122,18 +122,6 @@ export function FavoritesClient({
       .join("\n");
   }, [schools]);
 
-  function moveBy(id: string, direction: -1 | 1) {
-    setIds((prev) => {
-      const from = prev.indexOf(id);
-      if (from === -1) return prev;
-      const to = from + direction;
-      if (to < 0 || to >= prev.length) return prev;
-      const copy = [...prev];
-      [copy[from], copy[to]] = [copy[to], copy[from]];
-      return copy;
-    });
-  }
-
   if (!hydrated) {
     return (
       <div className="rounded-3xl border border-indigo-100 bg-white/85 p-6 text-sm text-indigo-800 dark:border-indigo-300/20 dark:bg-white/5 dark:text-indigo-200">
@@ -233,15 +221,7 @@ export function FavoritesClient({
               setDropTargetId(null);
             }}
           >
-            <div className="flex min-w-0 items-start gap-3">
-              <div
-                className="inline-flex h-9 w-9 shrink-0 select-none items-center justify-center rounded-full border border-indigo-300 bg-indigo-50 text-base font-bold tracking-tight text-indigo-900 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200"
-                title={tFav("dragHandle")}
-                aria-label={tFav("dragHandle")}
-              >
-                ≡
-              </div>
-              <div className="min-w-0">
+            <div className="min-w-0">
               <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 #{idx + 1}
               </div>
@@ -260,30 +240,9 @@ export function FavoritesClient({
                   {distanceLabelById.get(s.id)}
                 </div>
               ) : null}
-              </div>
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
-              {idx > 0 ? (
-                <button
-                  type="button"
-                  className="inline-flex h-9 items-center justify-center rounded-full border border-indigo-300 bg-indigo-50 px-3 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20"
-                  onClick={() => moveBy(s.id, -1)}
-                  aria-label="Move up"
-                >
-                  ↑
-                </button>
-              ) : null}
-              {idx < schools.length - 1 ? (
-                <button
-                  type="button"
-                  className="inline-flex h-9 items-center justify-center rounded-full border border-indigo-300 bg-indigo-50 px-3 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20"
-                  onClick={() => moveBy(s.id, 1)}
-                  aria-label="Move down"
-                >
-                  ↓
-                </button>
-              ) : null}
               <Link
                 href={`/schools/${s.id}`}
                 className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
