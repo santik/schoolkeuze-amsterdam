@@ -188,8 +188,8 @@ export function SchoolsExplorer() {
   }
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[1fr_420px]">
-      <div className="grid gap-3">
+    <div className="grid min-w-0 gap-4 lg:grid-cols-[1fr_420px]">
+      <div className="grid min-w-0 gap-3">
         <div className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <label className="grid gap-1 text-sm">
@@ -261,8 +261,8 @@ export function SchoolsExplorer() {
             </label>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <label className="flex items-center gap-2 text-sm">
+          <div className="grid gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
+            <label className="flex min-w-0 items-center gap-2 text-sm">
               <input
                 type="checkbox"
                 checked={useMyLocation}
@@ -271,12 +271,13 @@ export function SchoolsExplorer() {
               {t("useLocation")}
             </label>
 
-            <label className="flex items-center gap-2 text-sm">
+            <label className="grid min-w-0 gap-1 text-sm sm:flex sm:items-center sm:gap-2">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("bikeTimeLabel")}
               </span>
               <input
                 type="range"
+                className="w-full min-w-0 sm:w-44"
                 min={5}
                 max={45}
                 step={5}
@@ -289,7 +290,7 @@ export function SchoolsExplorer() {
 
             <Link
               href={`/compare?ids=${encodeURIComponent(compareIds.join(","))}`}
-              className="inline-flex h-9 items-center justify-center rounded-full border border-sky-300 bg-white px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50 dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
+              className="inline-flex h-9 w-full items-center justify-center rounded-full border border-sky-300 bg-white px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50 sm:w-auto dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
             >
               {t("compareCta")} ({compareIds.length})
             </Link>
