@@ -77,7 +77,6 @@ export function SchoolsExplorer() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
-  const [compareIds, setCompareIds] = React.useState<string[]>([]);
 
   const sortedSchools = React.useMemo(() => {
     const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
@@ -178,12 +177,6 @@ export function SchoolsExplorer() {
     );
   }
 
-  function toggleCompare(id: string) {
-    setCompareIds((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id].slice(0, 6)
-    );
-  }
-
   return (
     <div className="grid min-w-0 gap-4 lg:grid-cols-[1fr_420px]">
       <div className="grid min-w-0 gap-3">
@@ -272,12 +265,6 @@ export function SchoolsExplorer() {
               <span className="tabular-nums">{bikeMinutes} min</span>
             </label>
 
-            <Link
-              href={`/compare?ids=${encodeURIComponent(compareIds.join(","))}`}
-              className="inline-flex h-9 w-full items-center justify-center rounded-full border border-sky-300 bg-white px-4 text-sm font-semibold text-sky-800 hover:bg-sky-50 sm:w-auto dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
-            >
-              {t("compareCta")} ({compareIds.length})
-            </Link>
           </div>
         </div>
 
@@ -350,13 +337,6 @@ export function SchoolsExplorer() {
                         aria-label={has(s.id) ? "Remove favorite" : "Add favorite"}
                       >
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
-                      </button>
-                      <button
-                        className="h-9 min-w-0 flex-1 rounded-full border border-indigo-300 bg-indigo-50 px-3 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 sm:flex-none dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20"
-                        onClick={() => toggleCompare(s.id)}
-                        type="button"
-                      >
-                        {compareIds.includes(s.id) ? "✓" : "+"}
                       </button>
                       <Link
                         href={`/schools/${s.id}`}
