@@ -5,13 +5,14 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 
 type SchoolMarker = {
   id: string;
   name: string;
   lat: number | null;
   lon: number | null;
+  levels?: string[];
 };
 
 const DefaultIcon = L.icon({
@@ -99,6 +100,12 @@ export default function SchoolsMap({
                 click: () => onSelect(s.id),
               }}
             >
+              <Tooltip direction="top" offset={[0, -28]} opacity={0.95}>
+                <div className="text-xs font-semibold">{s.name}</div>
+                <div className="text-[11px] text-zinc-700">
+                  {(s.levels ?? []).join(" / ") || "—"}
+                </div>
+              </Tooltip>
               <Popup>
                 <div className="text-sm font-semibold text-indigo-950">{s.name}</div>
                 {selectedId === s.id ? (

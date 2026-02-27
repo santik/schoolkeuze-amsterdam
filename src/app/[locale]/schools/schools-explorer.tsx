@@ -76,6 +76,7 @@ export function SchoolsExplorer() {
   const [zipLocation, setZipLocation] = React.useState<{ lat: number; lon: number } | null>(null);
   const [zipLoading, setZipLoading] = React.useState(false);
   const [zipError, setZipError] = React.useState<string | null>(null);
+  const [isMapOpen, setIsMapOpen] = React.useState(false);
   const [lat, setLat] = React.useState<number | undefined>(undefined);
   const [lon, setLon] = React.useState<number | undefined>(undefined);
 
@@ -83,6 +84,7 @@ export function SchoolsExplorer() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
+  const rowRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
 
   const sortedSchools = React.useMemo(() => {
     const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
@@ -242,8 +244,15 @@ export function SchoolsExplorer() {
     );
   }
 
+  const handleMapSelect = React.useCallback((id: string) => {
+    setSelectedId(id);
+    const el = rowRefs.current[id];
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, []);
+
   return (
-    <div className="grid min-w-0 gap-4 lg:grid-cols-[1fr_420px]">
+    <div className="grid min-w-0 gap-4">
       <div className="grid min-w-0 gap-3">
         <div className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -375,6 +384,26 @@ export function SchoolsExplorer() {
           </div>
         </div>
 
+        <div className="grid gap-2 rounded-3xl border border-sky-200 bg-white/90 p-3 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10">
+          <button
+            type="button"
+            onClick={() => setIsMapOpen((prev) => !prev)}
+            aria-expanded={isMapOpen}
+            className="flex items-center justify-between text-left text-sm font-semibold text-sky-900 dark:text-sky-100"
+          >
+            <span>Map</span>
+            <span>{isMapOpen ? "▾" : "▸"}</span>
+          </button>
+          {isMapOpen ? (
+            <SchoolsMap
+              schools={sortedSchools}
+              selectedId={selectedId}
+              onSelect={handleMapSelect}
+              userLocation={distanceOrigin}
+            />
+          ) : null}
+        </div>
+
         {error ? (
           <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4 text-sm">
             {error}
@@ -394,6 +423,9 @@ export function SchoolsExplorer() {
             {sortedSchools.map((s) => (
               <div
                 key={s.id}
+                ref={(el) => {
+                  rowRefs.current[s.id] = el;
+                }}
                 className={[
                   "cursor-pointer rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id
@@ -467,15 +499,6 @@ export function SchoolsExplorer() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="lg:sticky lg:top-20 lg:self-start">
-        <SchoolsMap
-          schools={sortedSchools}
-          selectedId={selectedId}
-          onSelect={(id: string) => setSelectedId(id)}
-          userLocation={distanceOrigin}
-        />
       </div>
     </div>
   );
