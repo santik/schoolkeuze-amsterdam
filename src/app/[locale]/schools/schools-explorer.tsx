@@ -70,6 +70,11 @@ export function SchoolsExplorer() {
   const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
   const [bikeMinutes, setBikeMinutes] = React.useState(30);
   const [useMyLocation, setUseMyLocation] = React.useState(false);
+  const [isDistanceOpen, setIsDistanceOpen] = React.useState(false);
+  const [zipCode, setZipCode] = React.useState("");
+  const [zipLocation, setZipLocation] = React.useState<{ lat: number; lon: number } | null>(null);
+  const [zipLoading, setZipLoading] = React.useState(false);
+  const [zipError, setZipError] = React.useState<string | null>(null);
   const [lat, setLat] = React.useState<number | undefined>(undefined);
   const [lon, setLon] = React.useState<number | undefined>(undefined);
 
@@ -123,6 +128,69 @@ export function SchoolsExplorer() {
     return () => navigator.geolocation.clearWatch(watch);
   }, [useMyLocation]);
 
+  const normalizedZip = React.useMemo(
+    () => zipCode.trim().toUpperCase().replace(/\s+/g, ""),
+    [zipCode]
+  );
+  const validZip = /^\d{4}[A-Z]{2}$/.test(normalizedZip);
+
+  React.useEffect(() => {
+    if (!normalizedZip) {
+      setZipLocation(null);
+      setZipError(null);
+      setZipLoading(false);
+      return;
+    }
+    if (!validZip) {
+      setZipLocation(null);
+      setZipLoading(false);
+      setZipError("Enter a valid zip code (e.g. 1017AB)");
+      return;
+    }
+
+    let cancelled = false;
+    setZipLoading(true);
+    setZipError(null);
+
+    const timer = window.setTimeout(() => {
+      fetch(`/api/geocode-zip?zip=${encodeURIComponent(normalizedZip)}`)
+        .then(async (r) => {
+          const body = await r.json();
+          if (!r.ok) throw new Error(body?.error ?? "Zip lookup failed");
+          return body as { lat: number; lon: number };
+        })
+        .then((body) => {
+          if (cancelled) return;
+          setZipLocation({ lat: body.lat, lon: body.lon });
+          setZipError(null);
+        })
+        .catch((e) => {
+          if (cancelled) return;
+          setZipLocation(null);
+          setZipError(e?.message ?? "Zip lookup failed");
+        })
+        .finally(() => {
+          if (cancelled) return;
+          setZipLoading(false);
+        });
+    }, 350);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [normalizedZip, validZip]);
+
+  const distanceOrigin = React.useMemo(
+    () =>
+      zipLocation
+        ? { lat: zipLocation.lat, lon: zipLocation.lon }
+        : useMyLocation && lat != null && lon != null
+          ? { lat, lon }
+          : null,
+    [zipLocation, useMyLocation, lat, lon]
+  );
+
   React.useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -131,9 +199,9 @@ export function SchoolsExplorer() {
     const query = buildQuery({
       q,
       levels: selectedLevels,
-      lat,
-      lon,
-      bikeMinutes: useMyLocation ? bikeMinutes : undefined,
+      lat: distanceOrigin?.lat,
+      lon: distanceOrigin?.lon,
+      bikeMinutes: distanceOrigin ? bikeMinutes : undefined,
       take: 100,
     });
 
@@ -163,7 +231,7 @@ export function SchoolsExplorer() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, selectedLevels, lat, lon, bikeMinutes, useMyLocation]);
+  }, [q, selectedLevels, bikeMinutes, distanceOrigin]);
 
   function toggleLevel(level: string) {
     setSelectedLevels(prev => 
@@ -236,37 +304,72 @@ export function SchoolsExplorer() {
 
           <div className="grid gap-3">
             <div className="grid gap-2 rounded-2xl border border-indigo-200 bg-white/70 p-3 dark:border-indigo-300/30 dark:bg-indigo-500/10">
-              <label className="flex min-w-0 items-center gap-2 text-sm font-medium text-indigo-900 dark:text-indigo-100">
-                <input
-                  type="checkbox"
-                  checked={useMyLocation}
-                  onChange={(e) => setUseMyLocation(e.target.checked)}
-                  className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
-                />
-                {t("useLocation")}
-              </label>
-
-              <label
-                className={[
-                  "grid min-w-0 gap-1 text-sm sm:flex sm:items-center sm:gap-2",
-                  useMyLocation ? "" : "opacity-60",
-                ].join(" ")}
+              <button
+                type="button"
+                onClick={() => setIsDistanceOpen((prev) => !prev)}
+                aria-expanded={isDistanceOpen}
+                className="flex items-center justify-between text-left text-sm font-semibold text-indigo-900 dark:text-indigo-100"
               >
-                <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-                  {t("bikeTimeLabel")}
-                </span>
-                <input
-                  type="range"
-                  className="w-full min-w-0 sm:w-44"
-                  min={5}
-                  max={45}
-                  step={5}
-                  value={bikeMinutes}
-                  onChange={(e) => setBikeMinutes(Number(e.target.value))}
-                  disabled={!useMyLocation}
-                />
-                <span className="tabular-nums">{bikeMinutes} min</span>
-              </label>
+                <span>Distance & bike time</span>
+                <span>{isDistanceOpen ? "▾" : "▸"}</span>
+              </button>
+
+              {isDistanceOpen ? (
+                <>
+                  <label className="flex min-w-0 items-center gap-2 text-sm font-medium text-indigo-900 dark:text-indigo-100">
+                    <input
+                      type="checkbox"
+                      checked={useMyLocation}
+                      onChange={(e) => setUseMyLocation(e.target.checked)}
+                      className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
+                    />
+                    {t("useLocation")}
+                  </label>
+
+                  <label className="grid gap-1 text-sm">
+                    <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                      Zip code for distance
+                    </span>
+                    <input
+                      value={zipCode}
+                      onChange={(e) => setZipCode(e.target.value)}
+                      placeholder="1017AB"
+                      className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm uppercase outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
+                    />
+                    <span className="text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                      {zipLoading
+                        ? "Looking up zip code..."
+                        : zipError
+                          ? zipError
+                          : zipLocation
+                            ? "Using zip code for distance"
+                            : "If valid, zip code is used for bike distance."}
+                    </span>
+                  </label>
+
+                  <label
+                    className={[
+                      "grid min-w-0 gap-1 text-sm sm:flex sm:items-center sm:gap-2",
+                      distanceOrigin ? "" : "opacity-60",
+                    ].join(" ")}
+                  >
+                    <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                      {t("bikeTimeLabel")}
+                    </span>
+                    <input
+                      type="range"
+                      className="w-full min-w-0 sm:w-44"
+                      min={5}
+                      max={45}
+                      step={5}
+                      value={bikeMinutes}
+                      onChange={(e) => setBikeMinutes(Number(e.target.value))}
+                      disabled={!distanceOrigin}
+                    />
+                    <span className="tabular-nums">{bikeMinutes} min</span>
+                  </label>
+                </>
+              ) : null}
             </div>
           </div>
         </div>
@@ -308,14 +411,17 @@ export function SchoolsExplorer() {
                     <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                       {[s.postalCode, s.city].filter(Boolean).join(" ") || "—"}
                     </div>
-                    {useMyLocation &&
-                      lat != null &&
-                      lon != null &&
+                    {distanceOrigin &&
                       s.lat != null &&
                       s.lon != null ? (
                       <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                         {(() => {
-                          const km = haversineKm(lat, lon, s.lat!, s.lon!);
+                          const km = haversineKm(
+                            distanceOrigin.lat,
+                            distanceOrigin.lon,
+                            s.lat!,
+                            s.lon!
+                          );
                           const bikeMin = Math.round((km / 15) * 60);
                           return t("distanceEstimate", {
                             km: km.toFixed(1),
@@ -361,9 +467,7 @@ export function SchoolsExplorer() {
           schools={sortedSchools}
           selectedId={selectedId}
           onSelect={(id: string) => setSelectedId(id)}
-          userLocation={
-            useMyLocation && lat != null && lon != null ? { lat, lon } : null
-          }
+          userLocation={distanceOrigin}
         />
       </div>
     </div>
