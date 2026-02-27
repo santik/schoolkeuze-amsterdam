@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import * as React from "react";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useFavorites } from "@/lib/useFavorites";
 
 type SchoolDTO = {
@@ -64,6 +64,7 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
 
 export function SchoolsExplorer() {
   const t = useTranslations("Schools");
+  const router = useRouter();
   const { has, toggle } = useFavorites();
 
   const [q, setQ] = React.useState("");
@@ -394,12 +395,21 @@ export function SchoolsExplorer() {
               <div
                 key={s.id}
                 className={[
-                  "rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
+                  "cursor-pointer rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id
                     ? "border-amber-300 dark:border-amber-300/40"
                     : "border-indigo-100 dark:border-indigo-300/20",
                 ].join(" ")}
                 onMouseEnter={() => setSelectedId(s.id)}
+                onClick={() => router.push(`/schools/${s.id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    router.push(`/schools/${s.id}`);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
@@ -441,18 +451,15 @@ export function SchoolsExplorer() {
                             ? "border-amber-300 bg-amber-100 text-amber-700 hover:bg-amber-200 dark:border-amber-300/40 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/25"
                             : "border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20",
                         ].join(" ")}
-                        onClick={() => toggle(s.id)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggle(s.id);
+                        }}
                         type="button"
                         aria-label={has(s.id) ? "Remove favorite" : "Add favorite"}
                       >
                         {has(s.id) ? t("favoriteOn") : t("favoriteOff")}
                       </button>
-                      <Link
-                        href={`/schools/${s.id}`}
-                        className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 sm:flex-none dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
-                      >
-                        {t("detailsCta")}
-                      </Link>
                     </div>
                   </div>
                 </div>
