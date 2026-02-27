@@ -40,7 +40,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <div className="min-h-dvh text-zinc-950 dark:text-zinc-50">
-          <header className="sticky top-0 z-10 border-b border-white/40 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/65">
+          <header className="sticky top-0 z-[1200] border-b border-white/40 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/65">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
               <Link
                 href="/"

@@ -65,7 +65,7 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
 export function SchoolsExplorer() {
   const t = useTranslations("Schools");
   const router = useRouter();
-  const { has, toggle } = useFavorites();
+  const { ids, has, toggle } = useFavorites();
 
   const [q, setQ] = React.useState("");
   const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
@@ -84,7 +84,6 @@ export function SchoolsExplorer() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
-  const rowRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
 
   const sortedSchools = React.useMemo(() => {
     const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
@@ -244,13 +243,6 @@ export function SchoolsExplorer() {
     );
   }
 
-  const handleMapSelect = React.useCallback((id: string) => {
-    setSelectedId(id);
-    const el = rowRefs.current[id];
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, []);
-
   return (
     <div className="grid min-w-0 gap-4">
       <div className="grid min-w-0 gap-3">
@@ -398,7 +390,8 @@ export function SchoolsExplorer() {
             <SchoolsMap
               schools={sortedSchools}
               selectedId={selectedId}
-              onSelect={handleMapSelect}
+              favoriteIds={ids}
+              onSelect={(id: string) => setSelectedId(id)}
               userLocation={distanceOrigin}
             />
           ) : null}
@@ -423,9 +416,6 @@ export function SchoolsExplorer() {
             {sortedSchools.map((s) => (
               <div
                 key={s.id}
-                ref={(el) => {
-                  rowRefs.current[s.id] = el;
-                }}
                 className={[
                   "cursor-pointer rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id

@@ -5,7 +5,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Link } from "@/i18n/navigation";
 
 type SchoolMarker = {
   id: string;
@@ -34,6 +35,16 @@ const SelectedIcon = L.icon({
   iconAnchor: [12, 41],
 });
 
+const FavoriteIcon = L.icon({
+  iconUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png",
+  iconRetinaUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
 const UserIcon = L.divIcon({
   html: '<div style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9999px;background:#2563eb;color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🧍</div>',
   className: "",
@@ -44,6 +55,7 @@ const UserIcon = L.divIcon({
 type Props = {
   schools: SchoolMarker[];
   selectedId: string | null;
+  favoriteIds: string[];
   onSelect: (id: string) => void;
   userLocation: { lat: number; lon: number } | null;
 };
@@ -51,10 +63,14 @@ type Props = {
 export default function SchoolsMap({
   schools,
   selectedId,
+  favoriteIds,
   onSelect,
   userLocation,
 }: Props) {
   const t = useTranslations("SchoolsMap");
+  const markerRefs = React.useRef<Record<string, L.Marker | null>>({});
+  const [pinnedId, setPinnedId] = React.useState<string | null>(null);
+  const favoriteSet = React.useMemo(() => new Set(favoriteIds), [favoriteIds]);
 
   const center: [number, number] = userLocation
     ? [userLocation.lat, userLocation.lon]
@@ -64,6 +80,19 @@ export default function SchoolsMap({
     () => schools.filter((s) => s.lat != null && s.lon != null),
     [schools]
   );
+  const activePopupId = pinnedId;
+
+  React.useEffect(() => {
+    for (const s of markers) {
+      const marker = markerRefs.current[s.id];
+      if (!marker) continue;
+      if (activePopupId === s.id) {
+        marker.openPopup();
+      } else {
+        marker.closePopup();
+      }
+    }
+  }, [activePopupId, markers]);
 
   return (
     <div className="overflow-hidden rounded-3xl border border-sky-200 bg-white/90 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10">
@@ -94,24 +123,46 @@ export default function SchoolsMap({
           {markers.map((s) => (
             <Marker
               key={s.id}
+              ref={(el) => {
+                markerRefs.current[s.id] = el;
+              }}
               position={[s.lat!, s.lon!]}
-              icon={selectedId === s.id ? SelectedIcon : DefaultIcon}
+              icon={
+                selectedId === s.id
+                  ? SelectedIcon
+                  : favoriteSet.has(s.id)
+                    ? FavoriteIcon
+                    : DefaultIcon
+              }
               eventHandlers={{
-                click: () => onSelect(s.id),
+                click: () => {
+                  setPinnedId(s.id);
+                  onSelect(s.id);
+                },
+                popupclose: () => {
+                  setPinnedId((prev) => (prev === s.id ? null : prev));
+                },
               }}
             >
-              <Tooltip direction="top" offset={[0, -28]} opacity={0.95}>
-                <div className="text-xs font-semibold">{s.name}</div>
-                <div className="text-[11px] text-zinc-700">
+              <Popup
+                autoClose={false}
+                closeOnClick={false}
+                closeButton
+                autoPan={pinnedId === s.id}
+                offset={[0, -30]}
+                className="map-popup-pinned"
+              >
+                <div className="text-sm font-semibold text-indigo-950">{s.name}</div>
+                <div className="mt-1 text-xs text-indigo-700">
                   {(s.levels ?? []).join(" / ") || "—"}
                 </div>
-              </Tooltip>
-              <Popup>
-                <div className="text-sm font-semibold text-indigo-950">{s.name}</div>
-                {selectedId === s.id ? (
-                  <div className="mt-1 text-xs text-indigo-700">
-                    {t("selected")}
-                  </div>
+                {pinnedId === s.id ? (
+                  <Link
+                    href={`/schools/${s.id}`}
+                    className="mt-2 inline-flex h-8 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-xs font-semibold text-violet-900 hover:bg-violet-100"
+                  >
+                    Info
+                  </Link>
                 ) : null}
               </Popup>
             </Marker>

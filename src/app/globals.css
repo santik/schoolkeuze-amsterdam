@@ -33,3 +33,7 @@ body {
   background: rgba(251, 191, 36, 0.45);
   color: #1f2450;
 }
+
+.map-popup-hover {
+  pointer-events: none;
+}
