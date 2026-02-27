@@ -184,10 +184,10 @@ export function SchoolsExplorer() {
 
   const distanceOrigin = React.useMemo(
     () =>
-      zipLocation
-        ? { lat: zipLocation.lat, lon: zipLocation.lon }
-        : useMyLocation && lat != null && lon != null
-          ? { lat, lon }
+      useMyLocation && lat != null && lon != null
+        ? { lat, lon }
+        : zipLocation
+          ? { lat: zipLocation.lat, lon: zipLocation.lon }
           : null,
     [zipLocation, useMyLocation, lat, lon]
   );

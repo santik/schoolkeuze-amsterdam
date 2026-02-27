@@ -23,6 +23,23 @@ const DefaultIcon = L.icon({
   iconAnchor: [12, 41],
 });
 
+const SelectedIcon = L.icon({
+  iconUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+  iconRetinaUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+const UserIcon = L.divIcon({
+  html: '<div style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9999px;background:#2563eb;color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🧍</div>',
+  className: "",
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+});
+
 type Props = {
   schools: SchoolMarker[];
   selectedId: string | null;
@@ -67,7 +84,7 @@ export default function SchoolsMap({
           {userLocation ? (
             <Marker
               position={[userLocation.lat, userLocation.lon]}
-              icon={DefaultIcon}
+              icon={UserIcon}
             >
               <Popup>{t("yourLocation")}</Popup>
             </Marker>
@@ -77,7 +94,7 @@ export default function SchoolsMap({
             <Marker
               key={s.id}
               position={[s.lat!, s.lon!]}
-              icon={DefaultIcon}
+              icon={selectedId === s.id ? SelectedIcon : DefaultIcon}
               eventHandlers={{
                 click: () => onSelect(s.id),
               }}
