@@ -35,7 +35,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
         <Link
           href="/schools"
           className="rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-100 p-6 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:border-amber-300/20 dark:from-amber-500/10 dark:to-orange-500/10"
@@ -47,14 +47,6 @@ export default async function HomePage() {
             {t("feature1Desc")}
           </div>
         </Link>
-        <div className="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-lime-100 p-6 shadow-sm dark:border-emerald-300/20 dark:from-emerald-500/10 dark:to-lime-500/10">
-          <div className="text-sm font-bold text-emerald-900 dark:text-emerald-100">
-            🧩 {t("feature2Title")}
-          </div>
-          <div className="mt-2 text-sm text-emerald-900/85 dark:text-emerald-100/80">
-            {t("feature2Desc")}
-          </div>
-        </div>
         <Link
           href="/profile"
           className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-cyan-100 p-6 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:border-sky-300/20 dark:from-sky-500/10 dark:to-cyan-500/10"

@@ -28,11 +28,6 @@ export default async function GuidePage({
               ? "Save favorites and build a ranked list."
               : "Bewaar favorieten en bouw een voorkeursvolgorde."}
           </li>
-          <li>
-            {isEn
-              ? "Use the Profile page for basic suggestions (prototype scoring)."
-              : "Gebruik Profiel voor eerste suggesties (prototype-score)."}
-          </li>
         </ol>
       </section>
 
@@ -40,21 +35,89 @@ export default async function GuidePage({
         <h2 className="text-lg font-semibold tracking-tight">
           {isEn ? "Admissions & lottery" : "Toelating & loting"}
         </h2>
-        <div className="text-sm text-zinc-700 dark:text-zinc-300">
+        <ul className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           {isEn ? (
             <>
-              Amsterdam has specific rules and a central process. This prototype
-              will pull data from public sources (e.g. OSVO, DUO) and attach
-              school-specific notes (priority rules, capacity, open days).
+              <li>
+                For school year 2026-2027, Amsterdam uses one central matching
+                process (Centrale Loting & Matching).
+              </li>
+              <li>
+                Main timeline: final primary-school advice by March 24, 2026;
+                central application week March 25-31, 2026; placement result on
+                April 9, 2026.
+              </li>
+              <li>
+                You submit one ranked preference list. Schools first place
+                students with priority (for example sibling rules), then
+                remaining seats are assigned by lottery number and preference
+                order.
+              </li>
+              <li>
+                Not every program participates in this central matching.
+                Practical education (`praktijkonderwijs`), international
+                transition classes, and some special schools can have separate
+                admission procedures.
+              </li>
+              <li>
+                Official info and yearly updates:{" "}
+                <a
+                  href="https://schoolkeuze020.nl/naar-de-middelbare-school/"
+                  className="underline underline-offset-2"
+                >
+                  schoolkeuze020.nl
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://www.osvo.nl"
+                  className="underline underline-offset-2"
+                >
+                  osvo.nl
+                </a>
+                .
+              </li>
             </>
           ) : (
             <>
-              Amsterdam heeft specifieke regels en een centrale procedure. Dit
-              prototype gaat data uit openbare bronnen (bijv. OSVO, DUO)
-              ophalen en per school tonen (voorrang, capaciteit, open dagen).
+              <li>
+                Voor schooljaar 2026-2027 werkt Amsterdam met 1 centrale
+                procedure: Centrale Loting & Matching.
+              </li>
+              <li>
+                Belangrijke data: definitief basisschooladvies uiterlijk 24
+                maart 2026; centrale aanmeldweek 25 t/m 31 maart 2026;
+                plaatsingsuitslag op 9 april 2026.
+              </li>
+              <li>
+                Je levert 1 voorkeurslijst in. Scholen plaatsen eerst leerlingen
+                met voorrang (bijvoorbeeld broertjes/zusjes), daarna worden de
+                overige plekken toegewezen op lotnummer en voorkeursvolgorde.
+              </li>
+              <li>
+                Niet alle routes vallen onder de centrale matching.
+                Praktijkonderwijs, internationale schakelklassen en sommige
+                speciale scholen hebben (deels) aparte toelatingsprocedures.
+              </li>
+              <li>
+                Officiële informatie en jaarlijkse updates:{" "}
+                <a
+                  href="https://schoolkeuze020.nl/naar-de-middelbare-school/"
+                  className="underline underline-offset-2"
+                >
+                  schoolkeuze020.nl
+                </a>{" "}
+                en{" "}
+                <a
+                  href="https://www.osvo.nl"
+                  className="underline underline-offset-2"
+                >
+                  osvo.nl
+                </a>
+                .
+              </li>
             </>
           )}
-        </div>
+        </ul>
         <div className="text-xs text-zinc-600 dark:text-zinc-400">
           {isEn
             ? "Note: informational only; always verify with official sources."
@@ -64,4 +127,3 @@ export default async function GuidePage({
     </div>
   );
 }
-

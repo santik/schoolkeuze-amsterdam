@@ -146,7 +146,7 @@ export function SchoolsExplorer() {
     if (!validZip) {
       setZipLocation(null);
       setZipLoading(false);
-      setZipError("Enter a valid zip code (e.g. 1017AB)");
+      setZipError(t("zipInvalid"));
       return;
     }
 
@@ -181,7 +181,7 @@ export function SchoolsExplorer() {
       cancelled = true;
       window.clearTimeout(timer);
     };
-  }, [normalizedZip, validZip]);
+  }, [normalizedZip, validZip, t]);
 
   const distanceOrigin = React.useMemo(
     () =>
@@ -312,7 +312,7 @@ export function SchoolsExplorer() {
                 aria-expanded={isDistanceOpen}
                 className="flex items-center justify-between text-left text-sm font-semibold text-indigo-900 dark:text-indigo-100"
               >
-                <span>Distance & bike time</span>
+                <span>{t("distanceBikeTitle")}</span>
                 <span>{isDistanceOpen ? "▾" : "▸"}</span>
               </button>
 
@@ -330,7 +330,7 @@ export function SchoolsExplorer() {
 
                   <label className="grid gap-1 text-sm">
                     <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-                      Zip code for distance
+                      {t("zipDistanceLabel")}
                     </span>
                     <input
                       value={zipCode}
@@ -340,12 +340,12 @@ export function SchoolsExplorer() {
                     />
                     <span className="text-xs text-indigo-700/85 dark:text-indigo-200/80">
                       {zipLoading
-                        ? "Looking up zip code..."
+                        ? t("zipLookupLoading")
                         : zipError
                           ? zipError
                           : zipLocation
-                            ? "Using zip code for distance"
-                            : "If valid, zip code is used for bike distance."}
+                            ? t("zipLookupUsing")
+                            : t("zipLookupHint")}
                     </span>
                   </label>
 
@@ -383,7 +383,7 @@ export function SchoolsExplorer() {
             aria-expanded={isMapOpen}
             className="flex items-center justify-between text-left text-sm font-semibold text-sky-900 dark:text-sky-100"
           >
-            <span>Map</span>
+            <span>{t("mapLabel")}</span>
             <span>{isMapOpen ? "▾" : "▸"}</span>
           </button>
           {isMapOpen ? (

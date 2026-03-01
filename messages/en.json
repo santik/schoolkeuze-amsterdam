@@ -1,6 +1,6 @@
 {
   "App": {
-    "name": "Amsterdam School Choice"
+    "name": "School Choice"
   },
   "Nav": {
     "schools": "Schools",
@@ -25,6 +25,13 @@
     "searchLabel": "Search",
     "searchPlaceholder": "e.g. Montessori, Barlaeus...",
     "levelLabel": "Level",
+    "distanceBikeTitle": "Distance & bike time",
+    "zipDistanceLabel": "Zip code for distance",
+    "zipLookupLoading": "Looking up zip code...",
+    "zipLookupUsing": "Using zip code for distance",
+    "zipLookupHint": "If valid, zip code is used for bike distance.",
+    "zipInvalid": "Enter a valid zip code (e.g. 1017AB)",
+    "mapLabel": "Map",
     "conceptLabel": "Concept",
     "conceptPlaceholder": "Montessori, Dalton...",
     "postalCodeLabel": "Postal code",

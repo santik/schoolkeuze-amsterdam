@@ -60,7 +60,7 @@ export default async function LocaleLayout({
               </div>
             </div>
           </header>
-          <main className="mx-auto w-full max-w-6xl px-4 py-10">
+          <main className="mx-auto w-full max-w-6xl px-4 pt-4 pb-10">
             {children}
           </main>
         </div>

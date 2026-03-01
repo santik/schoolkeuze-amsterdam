@@ -227,7 +227,7 @@ export function FavoritesClient({
           {loading
             ? tSchools("loading")
             : tFav("count", { count: schools.length })}{" "}
-          · {tFav("dragToRank")} · {tFav("dragHint")}
+          · {tFav("dragToRank")}
         </div>
         <div className="flex flex-wrap gap-2">
           <Link

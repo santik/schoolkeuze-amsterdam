@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Schoolkeuze Amsterdam",
+  title: "School choice",
   description: "Zoek, filter en vergelijk middelbare scholen in Amsterdam.",
 };
 
