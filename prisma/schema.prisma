@@ -9,6 +9,7 @@ datasource db {
 
 enum SchoolLevel {
   PRAKTIJKONDERWIJS
+  VSO
   VMBO
   VMBO_T
   VMBO_B
