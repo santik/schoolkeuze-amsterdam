@@ -4,6 +4,7 @@ import path from "node:path";
 import type { Prisma, School, SchoolLevel } from "@prisma/client";
 
 import { prisma } from "@/server/db";
+import { buildAdmissionsInfo } from "@/lib/admissions-info";
 
 export type SchoolListFilters = {
   q?: string;
@@ -34,6 +35,7 @@ type SampleSchool = {
   examens_2023_2024?: unknown;
   examens_bron?: string;
   admissions?: unknown;
+  admissionsInfo?: unknown;
   source?: string;
   sourceUrl?: string;
 };
@@ -96,6 +98,12 @@ async function getSampleSchools(): Promise<School[]> {
       } as Prisma.JsonValue;
     })(),
     admissions: (s.admissions ?? null) as Prisma.JsonValue | null,
+    admissionsInfo: (s.admissionsInfo ??
+      buildAdmissionsInfo({
+        name: s.name,
+        websiteUrl: s.websiteUrl ?? null,
+        levels: s.levels ?? [],
+      })) as Prisma.JsonValue,
     source: s.source ?? "sample",
     sourceUrl: s.sourceUrl ?? null,
     updatedAt: new Date(),

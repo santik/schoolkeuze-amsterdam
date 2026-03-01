@@ -76,8 +76,8 @@
     "backToSchools": "← Terug naar scholen",
     "compare": "Vergelijken",
     "website": "Website",
-    "admissionsTitle": "Toelating & loting (prototype)",
-    "admissionsDesc": "Deze sectie wordt gevuld vanuit openbare bronnen (OSVO/DUO/gemeente) en wordt per school specifieker gemaakt. Voor nu is dit een placeholder."
+    "admissionsTitle": "Toelating & loting",
+    "admissionsDesc": "Toelatingsinformatie is op dit moment niet beschikbaar voor deze school."
   },
   "CompareTable": {
     "property": "Eigenschap",

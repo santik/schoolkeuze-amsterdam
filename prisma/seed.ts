@@ -1,6 +1,7 @@
 import { Prisma, PrismaClient, SchoolLevel } from "@prisma/client";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { buildAdmissionsInfo } from "../src/lib/admissions-info";
 
 type SeedSchool = {
   brin?: string;
@@ -19,6 +20,7 @@ type SeedSchool = {
   size?: number;
   results?: unknown;
   admissions?: unknown;
+  admissionsInfo?: unknown;
   source?: string;
   sourceUrl?: string;
 };
@@ -57,6 +59,13 @@ async function main() {
       .filter((x): x is SchoolLevel => x !== null);
 
     const sourceKey = `${SOURCE}:${s.brin?.trim() || "no-brin"}:${slugify(s.name)}`;
+    const admissionsInfo =
+      (s.admissionsInfo as Prisma.InputJsonValue | undefined) ??
+      (buildAdmissionsInfo({
+        name: s.name,
+        websiteUrl: s.websiteUrl,
+        levels,
+      }) as Prisma.InputJsonValue);
 
     await prisma.school.upsert({
       where: { sourceKey },
@@ -78,6 +87,7 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
+        admissionsInfo,
         source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },
@@ -99,6 +109,7 @@ async function main() {
         size: s.size,
         results: s.results as Prisma.InputJsonValue,
         admissions: s.admissions as Prisma.InputJsonValue,
+        admissionsInfo,
         source: s.source ?? SOURCE,
         sourceUrl: s.sourceUrl,
       },

@@ -76,8 +76,8 @@
     "backToSchools": "← Back to schools",
     "compare": "Compare",
     "website": "Website",
-    "admissionsTitle": "Admissions & lottery (prototype)",
-    "admissionsDesc": "This section is filled from public sources (OSVO/DUO/municipality) and will be made more specific per school. For now this is a placeholder."
+    "admissionsTitle": "Admissions & lottery",
+    "admissionsDesc": "Admissions information is currently unavailable for this school."
   },
   "CompareTable": {
     "property": "Property",

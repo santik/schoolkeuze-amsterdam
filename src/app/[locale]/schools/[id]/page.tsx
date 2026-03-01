@@ -1,10 +1,18 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
 import { Link } from "@/i18n/navigation";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
 import { getSchoolById } from "@/server/schoolsStore";
+import type { AdmissionsInfo } from "@/lib/admissions-info";
+
+function parseAdmissionsInfo(value: unknown): AdmissionsInfo | null {
+  if (!value || typeof value !== "object") return null;
+  const v = value as Record<string, unknown>;
+  if (!v.nl || !v.en || !v.sources) return null;
+  return value as AdmissionsInfo;
+}
 
 export default async function SchoolDetailPage({
   params,
@@ -16,6 +24,10 @@ export default async function SchoolDetailPage({
   if (!school) notFound();
 
   const t = await getTranslations("SchoolDetails");
+  const locale = await getLocale();
+  const admissionsInfo = parseAdmissionsInfo((school as { admissionsInfo?: unknown }).admissionsInfo);
+  const lang = locale === "nl" ? "nl" : "en";
+  const admissionsText = admissionsInfo?.[lang];
 
   const address = [
     [school.street, school.houseNumber].filter(Boolean).join(" "),
@@ -74,11 +86,69 @@ export default async function SchoolDetailPage({
         <h2 className="text-lg font-semibold tracking-tight">
           {t("admissionsTitle")}
         </h2>
-        <div className="text-sm text-zinc-700 dark:text-zinc-300">
-          {t("admissionsDesc")}
-        </div>
+        {admissionsText ? (
+          <div className="grid gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+            <p>{admissionsText.summary}</p>
+
+            <div>
+              <div className="font-semibold text-zinc-900 dark:text-zinc-100">
+                {lang === "nl" ? "Belangrijke data" : "Key dates"}
+              </div>
+              <ul className="mt-1 list-disc pl-5">
+                {admissionsText.timeline.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <div className="font-semibold text-zinc-900 dark:text-zinc-100">
+                {lang === "nl" ? "Specifiek voor deze school" : "Specific for this school"}
+              </div>
+              <ul className="mt-1 list-disc pl-5">
+                {admissionsText.schoolSpecific.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <div className="font-semibold text-zinc-900 dark:text-zinc-100">
+                {lang === "nl" ? "Aanvullende regels" : "Additional rules"}
+              </div>
+              <ul className="mt-1 list-disc pl-5">
+                {admissionsText.notes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <div className="font-semibold text-zinc-900 dark:text-zinc-100">
+                {lang === "nl" ? "Bronnen" : "Sources"}
+              </div>
+              <ul className="mt-1 list-disc pl-5">
+                {admissionsInfo.sources.map((source) => (
+                  <li key={`${source.label}:${source.url}`}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline underline-offset-2"
+                    >
+                      {source.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="text-sm text-zinc-700 dark:text-zinc-300">
+            {t("admissionsDesc")}
+          </div>
+        )}
       </section>
     </div>
   );
 }
-

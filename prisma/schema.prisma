@@ -46,6 +46,7 @@ model School {
   size        Int?          // approximate student count
   results     Json?         // DUO/other metrics (prototype)
   admissions  Json?         // lottery/admissions notes (prototype)
+  admissionsInfo Json?      // structured admissions rules and school-specific notes (nl/en)
 
   source      String?       // which dataset populated this record
   sourceUrl   String?
