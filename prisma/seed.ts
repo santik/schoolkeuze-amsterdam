@@ -19,6 +19,8 @@ type SeedSchool = {
   denomination?: string;
   size?: number;
   results?: unknown;
+  examens_2023_2024?: unknown;
+  examens_bron?: string;
   admissions?: unknown;
   admissionsInfo?: unknown;
   source?: string;
@@ -66,6 +68,22 @@ async function main() {
         websiteUrl: s.websiteUrl,
         levels,
       }) as Prisma.InputJsonValue);
+    const hasExamData =
+      s.examens_2023_2024 !== undefined || s.examens_bron !== undefined;
+    const results: Prisma.InputJsonValue | undefined = (() => {
+      if (!hasExamData) return s.results as Prisma.InputJsonValue | undefined;
+
+      const base =
+        s.results && typeof s.results === "object"
+          ? (s.results as Record<string, unknown>)
+          : {};
+
+      return {
+        ...base,
+        examens_2023_2024: s.examens_2023_2024 ?? null,
+        examens_bron: s.examens_bron ?? null,
+      } as Prisma.InputJsonValue;
+    })();
 
     await prisma.school.upsert({
       where: { sourceKey },
@@ -85,7 +103,7 @@ async function main() {
         concepts: s.concepts ?? [],
         denomination: s.denomination,
         size: s.size,
-        results: s.results as Prisma.InputJsonValue,
+        results,
         admissions: s.admissions as Prisma.InputJsonValue,
         admissionsInfo,
         source: s.source ?? SOURCE,
@@ -107,7 +125,7 @@ async function main() {
         concepts: s.concepts ?? [],
         denomination: s.denomination,
         size: s.size,
-        results: s.results as Prisma.InputJsonValue,
+        results,
         admissions: s.admissions as Prisma.InputJsonValue,
         admissionsInfo,
         source: s.source ?? SOURCE,

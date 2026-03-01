@@ -4,8 +4,14 @@ import { Link } from "@/i18n/navigation";
 import { getSchoolsByIds } from "@/server/schoolsStore";
 
 function formatPassRate(school: unknown) {
-  const results = (school as { results?: unknown } | null)?.results as any;
-  const exams = results?.examens_2023_2024 as Record<string, any> | null | undefined;
+  const results = (school as { results?: unknown } | null)?.results as
+    | { examens_2023_2024?: unknown }
+    | null
+    | undefined;
+  const exams = results?.examens_2023_2024 as
+    | Record<string, { slagingspercentage?: unknown }>
+    | null
+    | undefined;
   if (!exams || typeof exams !== "object") return "—";
 
   const prefer = [
@@ -24,7 +30,7 @@ function formatPassRate(school: unknown) {
   }
 
   for (const v of Object.values(exams)) {
-    const p = (v as any)?.slagingspercentage;
+    const p = v?.slagingspercentage;
     if (typeof p === "number" && Number.isFinite(p)) return `${p.toFixed(1)}%`;
   }
 
@@ -161,4 +167,3 @@ export default async function ComparePage({
     </div>
   );
 }
-
