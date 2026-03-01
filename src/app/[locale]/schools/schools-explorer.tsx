@@ -30,6 +30,16 @@ const SchoolsMap = dynamic(() => import("@/components/schools-map"), {
   ),
 });
 
+async function parseJsonSafe(response: Response): Promise<unknown> {
+  const text = await response.text();
+  if (!text) return null;
+  try {
+    return JSON.parse(text) as unknown;
+  } catch {
+    return null;
+  }
+}
+
 function buildQuery(params: Record<string, string | number | string[] | undefined>) {
   const q = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) {
@@ -157,9 +167,12 @@ export function SchoolsExplorer() {
     const timer = window.setTimeout(() => {
       fetch(`/api/geocode-zip?zip=${encodeURIComponent(normalizedZip)}`)
         .then(async (r) => {
-          const body = await r.json();
+          const body = (await parseJsonSafe(r)) as { error?: string; lat?: number; lon?: number } | null;
           if (!r.ok) throw new Error(body?.error ?? "Zip lookup failed");
-          return body as { lat: number; lon: number };
+          if (typeof body?.lat !== "number" || typeof body?.lon !== "number") {
+            throw new Error("Zip lookup failed");
+          }
+          return { lat: body.lat, lon: body.lon };
         })
         .then((body) => {
           if (cancelled) return;
@@ -209,9 +222,11 @@ export function SchoolsExplorer() {
 
     fetch(`/api/schools?${query}`)
       .then(async (r) => {
-        const body = await r.json();
+        const body = (await parseJsonSafe(r)) as
+          | { error?: string; schools?: SchoolDTO[] }
+          | null;
         if (!r.ok) throw new Error(body?.error ?? "Request failed");
-        return body as { schools: SchoolDTO[] };
+        return { schools: body?.schools ?? [] } as { schools: SchoolDTO[] };
       })
       .then((body) => {
         if (cancelled) return;
@@ -259,7 +274,7 @@ export function SchoolsExplorer() {
                 className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
               />
             </label>
-            <label className="grid gap-2 text-sm">
+            <div className="grid gap-2 text-sm">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("levelLabel")}
               </span>
@@ -301,7 +316,7 @@ export function SchoolsExplorer() {
                   <span>VWO</span>
                 </label>
               </div>
-            </label>
+            </div>
           </div>
 
           <div className="grid gap-3">
@@ -322,7 +337,13 @@ export function SchoolsExplorer() {
                     <input
                       type="checkbox"
                       checked={useMyLocation}
-                      onChange={(e) => setUseMyLocation(e.target.checked)}
+                      onChange={(e) => {
+                        setUseMyLocation(e.target.checked);
+                        setZipCode("");
+                        setZipLocation(null);
+                        setZipError(null);
+                        setZipLoading(false);
+                      }}
                       className="rounded border-indigo-300 bg-white text-indigo-700 focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-100 dark:focus:ring-indigo-300/30"
                     />
                     {t("useLocation")}

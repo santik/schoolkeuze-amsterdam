@@ -9,18 +9,28 @@ function toFloat(v: string | null) {
 }
 
 export async function GET(req: Request) {
-  const url = new URL(req.url);
-  const levelsRaw = url.searchParams.get("levels");
-  const levels = levelsRaw ? levelsRaw.split(',').filter(l => l.trim()) : undefined;
+  try {
+    const url = new URL(req.url);
+    const levelsRaw = url.searchParams.get("levels");
+    const levels = levelsRaw
+      ? levelsRaw
+          .split(",")
+          .map((l) => l.trim())
+          .filter(Boolean)
+      : undefined;
 
-  const schools = await listSchools({
-    q: url.searchParams.get("q") ?? undefined,
-    levels: levels,
-    lat: toFloat(url.searchParams.get("lat")),
-    lon: toFloat(url.searchParams.get("lon")),
-    bikeMinutes: toFloat(url.searchParams.get("bikeMinutes")),
-    take: toFloat(url.searchParams.get("take")),
-  });
+    const schools = await listSchools({
+      q: url.searchParams.get("q") ?? undefined,
+      levels,
+      lat: toFloat(url.searchParams.get("lat")),
+      lon: toFloat(url.searchParams.get("lon")),
+      bikeMinutes: toFloat(url.searchParams.get("bikeMinutes")),
+      take: toFloat(url.searchParams.get("take")),
+    });
 
-  return NextResponse.json({ schools });
+    return NextResponse.json({ schools });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Failed to load schools";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
