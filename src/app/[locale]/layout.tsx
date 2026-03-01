@@ -46,7 +46,8 @@ export default async function LocaleLayout({
                 href="/"
                 className="rounded-full bg-white/70 px-4 py-2 text-sm font-bold tracking-wide text-indigo-700 shadow-sm ring-1 ring-indigo-200/70 dark:bg-indigo-500/10 dark:text-indigo-100 dark:ring-indigo-300/30"
               >
-                🧭 {tApp("name")}
+                <span aria-hidden>🧭</span>
+                <span className="hidden sm:inline"> {tApp("name")}</span>
               </Link>
               <div className="flex items-center gap-2">
                 <TopNav
