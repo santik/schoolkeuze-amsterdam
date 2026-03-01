@@ -113,5 +113,17 @@
     "shareCopyFailed": "Could not copy link.",
     "profileIdInvalid": "Invalid profile ID.",
     "profileIdLoaded": "Profile loaded."
+  },
+  "SEO": {
+    "siteName": "School Choice",
+    "defaultDescription": "Find and compare secondary schools in Amsterdam. Available in Dutch and English.",
+    "homeTitle": "School choice Amsterdam",
+    "homeDescription": "Search schools, filter by level and distance, save favorites and build your ranking list.",
+    "schoolsTitle": "Schools",
+    "schoolsDescription": "Browse Amsterdam secondary schools and filter by level, distance and travel time.",
+    "profileTitle": "Profile",
+    "profileDescription": "Manage your school favorites, ranking, notes and shareable profile link.",
+    "guideTitle": "Guide",
+    "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools."
   }
 }

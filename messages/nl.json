@@ -113,5 +113,17 @@
     "shareCopyFailed": "Kon link niet kopiëren.",
     "profileIdInvalid": "Ongeldig profiel-ID.",
     "profileIdLoaded": "Profiel geladen."
+  },
+  "SEO": {
+    "siteName": "Schoolkeuze",
+    "defaultDescription": "Vind en vergelijk middelbare scholen in Amsterdam. Beschikbaar in het Nederlands en Engels.",
+    "homeTitle": "Schoolkeuze Amsterdam",
+    "homeDescription": "Zoek scholen, filter op niveau en afstand, bewaar favorieten en maak je voorkeurslijst.",
+    "schoolsTitle": "Scholen",
+    "schoolsDescription": "Bekijk middelbare scholen in Amsterdam en filter op niveau, afstand en reistijd.",
+    "profileTitle": "Profiel",
+    "profileDescription": "Beheer favorieten, volgorde, notities en je deelbare profiel-link.",
+    "guideTitle": "Uitleg",
+    "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken."
   }
 }

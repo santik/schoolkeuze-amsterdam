@@ -1,10 +1,36 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import { getSiteUrl } from "@/lib/seo";
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  title: "School choice",
-  description: "Zoek, filter en vergelijk middelbare scholen in Amsterdam.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "School Choice",
+    template: "%s | School Choice",
+  },
+  description: "Schoolkeuze Amsterdam in Dutch and English.",
+  applicationName: "School Choice",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "School Choice",
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 256,
+        height: 256,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default async function RootLayout({

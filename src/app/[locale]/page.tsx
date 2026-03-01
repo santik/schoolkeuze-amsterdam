@@ -1,12 +1,59 @@
-import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
+import { isAppLocale, type AppLocale } from "@/i18n/routing";
+import { languageAlternates, localizedPath } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isAppLocale(locale)) return {};
+  const tSeo = await getTranslations({ locale, namespace: "SEO" });
+  const appLocale = locale as AppLocale;
+
+  return {
+    title: tSeo("homeTitle"),
+    description: tSeo("homeDescription"),
+    alternates: {
+      canonical: localizedPath(appLocale, "/"),
+      languages: languageAlternates("/"),
+    },
+    openGraph: {
+      title: tSeo("homeTitle"),
+      description: tSeo("homeDescription"),
+      locale: locale === "nl" ? "nl_NL" : "en_US",
+    },
+  };
+}
 
 export default async function HomePage() {
   const t = await getTranslations("Home");
+  const locale = await getLocale();
+  const tSeo = await getTranslations("SEO");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: tSeo("siteName"),
+    url: `${siteUrl}/${locale}`,
+    inLanguage: locale,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/${locale}/schools?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
 
   return (
     <div className="grid gap-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="rounded-[2rem] border border-indigo-100 bg-gradient-to-br from-yellow-100 via-orange-50 to-sky-100 p-8 shadow-lg shadow-indigo-200/40 dark:border-indigo-300/20 dark:from-indigo-500/15 dark:via-slate-900 dark:to-sky-500/10 dark:shadow-black/20">
         <div className="grid gap-3">
           <span className="inline-flex w-fit rounded-full bg-white/80 px-3 py-1 text-xs font-bold tracking-wide text-indigo-700 ring-1 ring-indigo-200 dark:bg-indigo-200/10 dark:text-indigo-200 dark:ring-indigo-200/20">

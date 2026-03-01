@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -7,6 +8,38 @@ import { Link } from "@/i18n/navigation";
 import { TopNav } from "@/components/top-nav";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { languageAlternates, localizedPath } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isAppLocale(locale)) return {};
+
+  const tSeo = await getTranslations({ locale, namespace: "SEO" });
+  const appLocale = locale as AppLocale;
+
+  return {
+    title: tSeo("homeTitle"),
+    description: tSeo("defaultDescription"),
+    alternates: {
+      canonical: localizedPath(appLocale, "/"),
+      languages: languageAlternates("/"),
+    },
+    openGraph: {
+      title: tSeo("homeTitle"),
+      description: tSeo("defaultDescription"),
+      locale: locale === "nl" ? "nl_NL" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      title: tSeo("homeTitle"),
+      description: tSeo("defaultDescription"),
+    },
+  };
+}
 
 function LocaleSwitcher({ locale }: { locale: AppLocale }) {
   const other = locale === "nl" ? ("en" as const) : ("nl" as const);
