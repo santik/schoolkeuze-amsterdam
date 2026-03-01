@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
-import { Link } from "@/i18n/navigation";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
 import { getSchoolById } from "@/server/schoolsStore";
 import type { AdmissionsInfo } from "@/lib/admissions-info";
@@ -68,20 +67,13 @@ export default async function SchoolDetailPage({
 
   return (
     <div className="grid gap-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link
-          href="/schools"
-          className="text-sm text-zinc-700 hover:underline dark:text-zinc-300"
-        >
-          {t("backToSchools")}
-        </Link>
-        <FavoriteButton schoolId={school.id} />
-      </div>
-
       <section className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-white/5">
-        <h1 className="text-balance text-3xl font-semibold tracking-tight">
-          {school.name}
-        </h1>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight">
+            {school.name}
+          </h1>
+          <FavoriteButton schoolId={school.id} />
+        </div>
         <div className="mt-2 grid gap-1 text-sm text-zinc-700 dark:text-zinc-300">
           <div>{address || "—"}</div>
           <div>

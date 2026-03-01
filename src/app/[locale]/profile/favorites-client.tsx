@@ -4,7 +4,7 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { jsPDF } from "jspdf";
 
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useFavorites } from "@/lib/useFavorites";
 
 type SchoolDTO = {
@@ -130,6 +130,7 @@ export function FavoritesClient({
   userLocation: { lat: number; lon: number } | null;
   adviceLevel: string;
 }) {
+  const router = useRouter();
   const tFav = useTranslations("Favorites");
   const tSchools = useTranslations("Schools");
   const { ids, setIds, remove, hydrated } = useFavorites();
@@ -137,6 +138,7 @@ export function FavoritesClient({
   const [loading, setLoading] = React.useState(false);
   const [draggingId, setDraggingId] = React.useState<string | null>(null);
   const [dropTargetId, setDropTargetId] = React.useState<string | null>(null);
+  const suppressNextClickRef = React.useRef(false);
 
   const distanceById = React.useMemo(() => {
     if (!userLocation) return new Map<string, number>();
@@ -269,6 +271,7 @@ export function FavoritesClient({
             onDragStart={(e) => {
               e.dataTransfer.setData("text/plain", s.id);
               e.dataTransfer.effectAllowed = "move";
+              suppressNextClickRef.current = true;
               setDraggingId(s.id);
             }}
             onDragOver={(e) => {
@@ -297,7 +300,23 @@ export function FavoritesClient({
             onDragEnd={() => {
               setDraggingId(null);
               setDropTargetId(null);
+              window.setTimeout(() => {
+                suppressNextClickRef.current = false;
+              }, 0);
             }}
+            onClick={() => {
+              if (suppressNextClickRef.current) return;
+              router.push(`/schools/${s.id}`);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                if (suppressNextClickRef.current) return;
+                router.push(`/schools/${s.id}`);
+              }
+            }}
+            role="button"
+            tabIndex={0}
           >
             <div className="min-w-0">
               <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
@@ -321,16 +340,13 @@ export function FavoritesClient({
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
-              <Link
-                href={`/schools/${s.id}`}
-                className="inline-flex h-9 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-sm font-semibold text-violet-900 hover:bg-violet-100 dark:border-violet-300/30 dark:bg-violet-500/10 dark:text-violet-200 dark:hover:bg-violet-500/20"
-              >
-                {tFav("details")}
-              </Link>
               <button
                 type="button"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 text-base font-semibold leading-none text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
-                onClick={() => remove(s.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  remove(s.id);
+                }}
                 aria-label={tFav("remove")}
               >
                 ×

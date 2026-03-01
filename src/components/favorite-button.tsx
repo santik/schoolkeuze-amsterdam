@@ -10,15 +10,15 @@ export function FavoriteButton({ schoolId }: { schoolId: string }) {
     <button
       type="button"
       onClick={() => toggle(schoolId)}
+      aria-label={active ? "Remove favorite" : "Add favorite"}
       className={[
-        "inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-medium transition-colors",
+        "inline-flex h-9 min-w-0 items-center justify-center rounded-full border px-3 text-lg leading-none font-semibold transition-colors",
         active
-          ? "border-black/20 bg-black/5 hover:bg-black/10 dark:border-white/30 dark:bg-white/10 dark:hover:bg-white/15"
-          : "border-black/10 hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10",
+          ? "border-amber-300 bg-amber-100 text-amber-700 hover:bg-amber-200 dark:border-amber-300/40 dark:bg-amber-400/15 dark:text-amber-200 dark:hover:bg-amber-400/25"
+          : "border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20",
       ].join(" ")}
     >
-      {active ? "★ Favoriet" : "☆ Favoriet"}
+      {active ? "★" : "☆"}
     </button>
   );
 }
-
