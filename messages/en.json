@@ -125,5 +125,32 @@
     "profileDescription": "Manage your school favorites, ranking, notes and shareable profile link.",
     "guideTitle": "Guide",
     "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools."
+  },
+  "Impression": {
+    "title": "Your Impression (custom metrics)",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "yes": "Yes",
+    "no": "No",
+    "canImagineYourself": "Can you imagine yourself here?",
+    "overallVibe": "Overall atmosphere / vibe",
+    "teachingImpression": "Teaching impression",
+    "bikeRoute": "Bike route",
+    "extracurricularMatch": "Extracurricular activities match",
+    "hasLockerForEveryStudent": "Is there a locker for every student?",
+    "hasIndoorBreakSpace": "Is there an indoor space to hang out during breaks?",
+    "hasProperGym": "Is there a proper gym / sports hall?",
+    "buildingModern": "Is the building modern / well-maintained?",
+    "buildingVibe": "How's the general vibe / atmosphere of the building?",
+    "hasCanteen": "Is there a canteen / lunch option?",
+    "hasHealthyFood": "Is there healthy food available?",
+    "publicTransportAccess": "Accessed by tram/metro?",
+    "canBringOwnLunch": "Can you bring your own lunch and eat it comfortably?",
+    "foodQuality": "Quality of the food",
+    "foodPrice": "Price of the food (from cheap to expensive)",
+    "homeworkLoad": "Homework load expectation (from light to heavy)",
+    "hasChoirBandOrchestra": "Is there a school choir / band / orchestra?",
+    "hasSportsTeams": "Are there sports teams?",
+    "hasClubs": "Are there clubs or after-school activities?"
   }
 }

@@ -6,6 +6,10 @@ import { useProfileId } from "@/lib/useProfileId";
 
 type NotesState = Record<string, string>;
 
+function notesStorageKey(profileId: string) {
+  return `schoolkeuze:notes:v1:${profileId}`;
+}
+
 export function useNotes() {
   const { profileId, hydrated: profileHydrated } = useProfileId();
   const [notesById, setNotesById] = React.useState<NotesState>({});
@@ -23,11 +27,20 @@ export function useNotes() {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Request failed"))))
       .then((body: { notesById?: NotesState }) => {
         if (cancelled) return;
-        setNotesById(body.notesById && typeof body.notesById === "object" ? body.notesById : {});
+        const next =
+          body.notesById && typeof body.notesById === "object" ? body.notesById : {};
+        setNotesById(next);
+        localStorage.setItem(notesStorageKey(profileId), JSON.stringify(next));
       })
       .catch(() => {
         if (cancelled) return;
-        setNotesById({});
+        try {
+          const raw = localStorage.getItem(notesStorageKey(profileId));
+          const parsed = raw ? (JSON.parse(raw) as unknown) : {};
+          setNotesById(parsed && typeof parsed === "object" ? (parsed as NotesState) : {});
+        } catch {
+          setNotesById({});
+        }
       })
       .finally(() => {
         if (cancelled) return;
@@ -53,6 +66,9 @@ export function useNotes() {
           delete copy[id];
         } else {
           copy[id] = next;
+        }
+        if (profileId) {
+          localStorage.setItem(notesStorageKey(profileId), JSON.stringify(copy));
         }
         return copy;
       });

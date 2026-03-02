@@ -117,6 +117,16 @@ function hasDb() {
   return Boolean(process.env.DATABASE_URL);
 }
 
+function isPoolTimeoutError(error: unknown) {
+  if (!error || typeof error !== "object") return false;
+  const e = error as { code?: unknown; message?: unknown };
+  if (e.code === "P2024") return true;
+  if (typeof e.message === "string" && e.message.includes("connection pool")) {
+    return true;
+  }
+  return false;
+}
+
 const LEVEL_RANK: Record<"PRAKTIJKONDERWIJS" | "VMBO" | "HAVO" | "VWO", number> = {
   PRAKTIJKONDERWIJS: -1,
   VMBO: 0,
@@ -252,11 +262,18 @@ export async function listSchools(filters: SchoolListFilters = {}) {
   const bikeSpeedKmh = 15;
   const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
   const candidateTake = radiusKm != null ? Math.min(take * 4, 200) : take;
-  let candidates = await prisma.school.findMany({
-    where,
-    take: candidateTake,
-    orderBy: { name: "asc" },
-  });
+  let candidates: School[];
+  try {
+    candidates = await prisma.school.findMany({
+      where,
+      take: candidateTake,
+      orderBy: { name: "asc" },
+    });
+  } catch (error) {
+    if (!isPoolTimeoutError(error)) throw error;
+    const all = await getSampleSchools();
+    candidates = all;
+  }
 
   if (
     typeof filters.lat === "number" &&
@@ -277,7 +294,13 @@ export async function getSchoolById(id: string) {
     const all = await getSampleSchools();
     return all.find((s) => s.id === id) ?? null;
   }
-  return prisma.school.findUnique({ where: { id } });
+  try {
+    return await prisma.school.findUnique({ where: { id } });
+  } catch (error) {
+    if (!isPoolTimeoutError(error)) throw error;
+    const all = await getSampleSchools();
+    return all.find((s) => s.id === id) ?? null;
+  }
 }
 
 export async function getSchoolsByIds(ids: string[]) {
@@ -289,10 +312,17 @@ export async function getSchoolsByIds(ids: string[]) {
     return all.filter((s) => uniq.includes(s.id));
   }
 
-  const schools = await prisma.school.findMany({
-    where: { id: { in: uniq } },
-    orderBy: { name: "asc" },
-  });
+  let schools: School[];
+  try {
+    schools = await prisma.school.findMany({
+      where: { id: { in: uniq } },
+      orderBy: { name: "asc" },
+    });
+  } catch (error) {
+    if (!isPoolTimeoutError(error)) throw error;
+    const all = await getSampleSchools();
+    schools = all.filter((s) => uniq.includes(s.id));
+  }
 
   // Preserve input order
   const byId = new Map(schools.map((s) => [s.id, s]));

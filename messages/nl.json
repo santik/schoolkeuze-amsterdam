@@ -125,5 +125,32 @@
     "profileDescription": "Beheer favorieten, volgorde, notities en je deelbare profiel-link.",
     "guideTitle": "Uitleg",
     "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken."
+  },
+  "Impression": {
+    "title": "Jouw indruk (eigen criteria)",
+    "saving": "Opslaan…",
+    "saved": "Opgeslagen",
+    "yes": "Ja",
+    "no": "Nee",
+    "canImagineYourself": "Kun je jezelf hier zien?",
+    "overallVibe": "Algemene sfeer / vibe",
+    "teachingImpression": "Indruk van het lesgeven",
+    "bikeRoute": "Fietsroute",
+    "extracurricularMatch": "Past het aanbod aan activiteiten?",
+    "hasLockerForEveryStudent": "Is er een kluisje voor elke leerling?",
+    "hasIndoorBreakSpace": "Is er binnenruimte om te zitten in de pauze?",
+    "hasProperGym": "Is er een goede gymzaal / sporthal?",
+    "buildingModern": "Is het gebouw modern / goed onderhouden?",
+    "buildingVibe": "Hoe is de algemene sfeer van het gebouw?",
+    "hasCanteen": "Is er een kantine / lunchoptie?",
+    "hasHealthyFood": "Is er gezond eten beschikbaar?",
+    "publicTransportAccess": "Bereikbaarheid met tram/metro?",
+    "canBringOwnLunch": "Kun je je eigen lunch meenemen en prettig opeten?",
+    "foodQuality": "Kwaliteit van het eten",
+    "foodPrice": "Prijs van het eten (van goedkoop naar duur)",
+    "homeworkLoad": "Verwachte huiswerkdruk (van licht naar zwaar)",
+    "hasChoirBandOrchestra": "Is er een schoolkoor / band / orkest?",
+    "hasSportsTeams": "Zijn er sportteams?",
+    "hasClubs": "Zijn er clubs of naschoolse activiteiten?"
   }
 }

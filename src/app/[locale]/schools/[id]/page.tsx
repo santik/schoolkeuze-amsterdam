@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
+import { ImpressionClient } from "@/app/[locale]/schools/[id]/impression-client";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
 import { getSchoolById } from "@/server/schoolsStore";
 import type { AdmissionsInfo } from "@/lib/admissions-info";
@@ -168,6 +169,7 @@ export default async function SchoolDetailPage({
       </section>
 
       <NotesClient schoolId={school.id} />
+      <ImpressionClient schoolId={school.id} />
 
       <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
         <h2 className="text-lg font-semibold tracking-tight">

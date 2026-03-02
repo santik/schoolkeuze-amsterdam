@@ -82,6 +82,18 @@ model SchoolNote {
   @@index([profileId])
 }
 
+model SchoolImpression {
+  id        String   @id @default(cuid())
+  profileId String
+  schoolId  String
+  metrics   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([profileId, schoolId])
+  @@index([profileId])
+}
+
 model ProfileSettings {
   profileId   String      @id
   adviceLevel AdviceLevel @default(VWO)

@@ -4,6 +4,10 @@ import * as React from "react";
 
 import { useProfileId } from "@/lib/useProfileId";
 
+function favoritesStorageKey(profileId: string) {
+  return `schoolkeuze:favorites:v1:${profileId}`;
+}
+
 export function useFavorites() {
   const { profileId, hydrated: profileHydrated } = useProfileId();
   const [ids, setIdsState] = React.useState<string[]>([]);
@@ -13,6 +17,7 @@ export function useFavorites() {
     async (nextIds: string[]) => {
       if (!profileId) return;
       const uniqueIds = Array.from(new Set(nextIds.map((x) => x.trim()).filter(Boolean))).slice(0, 100);
+      localStorage.setItem(favoritesStorageKey(profileId), JSON.stringify(uniqueIds));
       try {
         await fetch("/api/profile/favorites", {
           method: "PUT",
@@ -37,11 +42,23 @@ export function useFavorites() {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Request failed"))))
       .then((body: { ids?: string[] }) => {
         if (cancelled) return;
-        setIdsState(Array.isArray(body.ids) ? body.ids : []);
+        const next = Array.isArray(body.ids) ? body.ids : [];
+        setIdsState(next);
+        localStorage.setItem(favoritesStorageKey(profileId), JSON.stringify(next));
       })
       .catch(() => {
         if (cancelled) return;
-        setIdsState([]);
+        try {
+          const raw = localStorage.getItem(favoritesStorageKey(profileId));
+          const parsed = raw ? (JSON.parse(raw) as unknown) : [];
+          setIdsState(
+            Array.isArray(parsed)
+              ? parsed.filter((x): x is string => typeof x === "string")
+              : []
+          );
+        } catch {
+          setIdsState([]);
+        }
       })
       .finally(() => {
         if (cancelled) return;
