@@ -31,6 +31,30 @@ type ImpressionMetrics = {
   hasClubs: RatingValue | null;
 };
 
+type MetricKey = keyof ImpressionMetrics;
+
+type WeightedField = {
+  key: MetricKey;
+  weight: number;
+};
+
+type SectionConfig = {
+  id: string;
+  titleKey:
+    | "groupFitLearning"
+    | "groupAtmosphereBuilding"
+    | "groupTravelAccess"
+    | "groupFoodBreaks"
+    | "groupActivitiesSports";
+  weight: number;
+  fields: WeightedField[];
+};
+
+type ScoreSummary = {
+  score: number | null;
+  confidence: number;
+};
+
 const defaultMetrics: ImpressionMetrics = {
   canImagineYourself: null,
   overallVibe: null,
@@ -53,6 +77,102 @@ const defaultMetrics: ImpressionMetrics = {
   hasSportsTeams: null,
   hasClubs: null,
 };
+
+const sectionConfigs: SectionConfig[] = [
+  {
+    id: "fit-learning",
+    titleKey: "groupFitLearning",
+    weight: 0.28,
+    fields: [
+      { key: "canImagineYourself", weight: 1.2 },
+      { key: "teachingImpression", weight: 1.2 },
+      { key: "homeworkLoad", weight: 1 },
+    ],
+  },
+  {
+    id: "atmosphere-building",
+    titleKey: "groupAtmosphereBuilding",
+    weight: 0.24,
+    fields: [
+      { key: "overallVibe", weight: 1.2 },
+      { key: "buildingVibe", weight: 1.1 },
+      { key: "buildingModern", weight: 1 },
+      { key: "hasLockerForEveryStudent", weight: 0.8 },
+      { key: "hasIndoorBreakSpace", weight: 0.8 },
+    ],
+  },
+  {
+    id: "travel-access",
+    titleKey: "groupTravelAccess",
+    weight: 0.16,
+    fields: [
+      { key: "bikeRoute", weight: 1 },
+      { key: "publicTransportAccess", weight: 1 },
+    ],
+  },
+  {
+    id: "food-breaks",
+    titleKey: "groupFoodBreaks",
+    weight: 0.14,
+    fields: [
+      { key: "hasCanteen", weight: 0.9 },
+      { key: "hasHealthyFood", weight: 1 },
+      { key: "canBringOwnLunch", weight: 0.8 },
+      { key: "foodQuality", weight: 1 },
+      { key: "foodPrice", weight: 0.9 },
+    ],
+  },
+  {
+    id: "activities-sports",
+    titleKey: "groupActivitiesSports",
+    weight: 0.18,
+    fields: [
+      { key: "hasProperGym", weight: 1 },
+      { key: "hasChoirBandOrchestra", weight: 0.8 },
+      { key: "hasSportsTeams", weight: 0.9 },
+      { key: "hasClubs", weight: 1 },
+    ],
+  },
+];
+
+function metricToPercent(value: ImpressionMetrics[MetricKey]): number | null {
+  if (value == null) return null;
+  if (typeof value === "number") return value * 20;
+  return value === "yes" ? 100 : 0;
+}
+
+function calculateSummary(
+  metrics: ImpressionMetrics,
+  fields: WeightedField[]
+): ScoreSummary {
+  const totalWeight = fields.reduce((acc, field) => acc + field.weight, 0);
+  if (totalWeight <= 0) {
+    return { score: null, confidence: 0 };
+  }
+
+  let answeredWeight = 0;
+  let weightedTotal = 0;
+
+  for (const field of fields) {
+    const score = metricToPercent(metrics[field.key]);
+    if (score == null) continue;
+    answeredWeight += field.weight;
+    weightedTotal += score * field.weight;
+  }
+
+  const confidence = (answeredWeight / totalWeight) * 100;
+  if (answeredWeight <= 0) {
+    return { score: null, confidence };
+  }
+
+  const score = weightedTotal / answeredWeight;
+  return { score, confidence };
+}
+
+function formatPercent(value: number | null): string {
+  if (value == null) return "—";
+  return `${Math.round(value)}%`;
+}
 
 function impressionStorageKey(profileId: string, schoolId: string) {
   return `schoolkeuze:impression:v1:${profileId}:${schoolId}`;
@@ -183,6 +303,36 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
     setMetrics((prev) => ({ ...prev, [key]: value }));
   };
 
+  const sectionSummaries = React.useMemo(() => {
+    return sectionConfigs.map((section) => ({
+      ...section,
+      summary: calculateSummary(metrics, section.fields),
+    }));
+  }, [metrics]);
+
+  const overallSummary = React.useMemo<ScoreSummary>(() => {
+    const totalWeight = sectionConfigs.reduce((acc, section) => acc + section.weight, 0);
+    if (totalWeight <= 0) return { score: null, confidence: 0 };
+
+    let weightedScoreTotal = 0;
+    let answeredSectionWeight = 0;
+    let weightedConfidenceTotal = 0;
+
+    for (const section of sectionSummaries) {
+      weightedConfidenceTotal += section.summary.confidence * section.weight;
+      if (section.summary.score == null) continue;
+      answeredSectionWeight += section.weight;
+      weightedScoreTotal += section.summary.score * section.weight;
+    }
+
+    const confidence = weightedConfidenceTotal / totalWeight;
+    if (answeredSectionWeight <= 0) {
+      return { score: null, confidence };
+    }
+    const score = weightedScoreTotal / answeredSectionWeight;
+    return { score, confidence };
+  }, [sectionSummaries]);
+
   const ratingInput = (key: keyof ImpressionMetrics) => {
     const current = (metrics[key] as number | null) ?? null;
     return (
@@ -259,85 +409,188 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
       </div>
 
       <div className="grid gap-3 text-sm">
-        <div className="grid gap-1">
-          <span>{t("canImagineYourself")}</span>
-          {ratingInput("canImagineYourself")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("overallVibe")}</span>
-          {ratingInput("overallVibe")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("teachingImpression")}</span>
-          {ratingInput("teachingImpression")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("bikeRoute")}</span>
-          {ratingInput("bikeRoute")}
-        </div>
-
-        <div className="grid gap-1">
-          <span>{t("hasLockerForEveryStudent")}</span>
-          {yesNoInput("hasLockerForEveryStudent")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("hasIndoorBreakSpace")}</span>
-          {yesNoInput("hasIndoorBreakSpace")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("hasProperGym")}</span>
-          {yesNoInput("hasProperGym")}
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("overall")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(overallSummary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(overallSummary.confidence)}</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-1">
-          <span>{t("buildingModern")}</span>
-          {ratingInput("buildingModern")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("buildingVibe")}</span>
-          {ratingInput("buildingVibe")}
-        </div>
-
-        <div className="grid gap-1">
-          <span>{t("hasCanteen")}</span>
-          {yesNoInput("hasCanteen")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("hasHealthyFood")}</span>
-          {yesNoInput("hasHealthyFood")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("publicTransportAccess")}</span>
-          {ratingInput("publicTransportAccess")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("canBringOwnLunch")}</span>
-          {yesNoInput("canBringOwnLunch")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("foodQuality")}</span>
-          {ratingInput("foodQuality")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("foodPrice")}</span>
-          {ratingInput("foodPrice")}
-        </div>
-        <div className="grid gap-1">
-          <span>{t("homeworkLoad")}</span>
-          {ratingInput("homeworkLoad")}
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("groupFitLearning")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[0].summary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[0].summary.confidence)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-1">
+            <span>{t("canImagineYourself")}</span>
+            {ratingInput("canImagineYourself")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("teachingImpression")}</span>
+            {ratingInput("teachingImpression")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("homeworkLoad")}</span>
+            {ratingInput("homeworkLoad")}
+          </div>
         </div>
 
-        <div className="grid gap-1">
-          <span>{t("hasChoirBandOrchestra")}</span>
-          {yesNoInput("hasChoirBandOrchestra")}
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("groupAtmosphereBuilding")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[1].summary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[1].summary.confidence)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-1">
+            <span>{t("overallVibe")}</span>
+            {ratingInput("overallVibe")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("buildingVibe")}</span>
+            {ratingInput("buildingVibe")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("buildingModern")}</span>
+            {ratingInput("buildingModern")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasLockerForEveryStudent")}</span>
+            {yesNoInput("hasLockerForEveryStudent")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasIndoorBreakSpace")}</span>
+            {yesNoInput("hasIndoorBreakSpace")}
+          </div>
         </div>
-        <div className="grid gap-1">
-          <span>{t("hasSportsTeams")}</span>
-          {yesNoInput("hasSportsTeams")}
+
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("groupTravelAccess")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[2].summary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[2].summary.confidence)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-1">
+            <span>{t("bikeRoute")}</span>
+            {ratingInput("bikeRoute")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("publicTransportAccess")}</span>
+            {ratingInput("publicTransportAccess")}
+          </div>
         </div>
-        <div className="grid gap-1">
-          <span>{t("hasClubs")}</span>
-          {ratingInput("hasClubs")}
+
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("groupFoodBreaks")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[3].summary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[3].summary.confidence)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasCanteen")}</span>
+            {yesNoInput("hasCanteen")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasHealthyFood")}</span>
+            {yesNoInput("hasHealthyFood")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("canBringOwnLunch")}</span>
+            {yesNoInput("canBringOwnLunch")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("foodQuality")}</span>
+            {ratingInput("foodQuality")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("foodPrice")}</span>
+            {ratingInput("foodPrice")}
+          </div>
+        </div>
+
+        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
+              {t("groupActivitiesSports")}
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+              <div>
+                <span className="font-medium">{t("scoreLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[4].summary.score)}</span>
+              </div>
+              <div>
+                <span className="font-medium">{t("confidenceLabel")}: </span>
+                <span>{formatPercent(sectionSummaries[4].summary.confidence)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasProperGym")}</span>
+            {yesNoInput("hasProperGym")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasChoirBandOrchestra")}</span>
+            {yesNoInput("hasChoirBandOrchestra")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasSportsTeams")}</span>
+            {yesNoInput("hasSportsTeams")}
+          </div>
+          <div className="grid gap-1">
+            <span>{t("hasClubs")}</span>
+            {ratingInput("hasClubs")}
+          </div>
         </div>
       </div>
     </section>
