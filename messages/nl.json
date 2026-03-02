@@ -127,7 +127,7 @@
     "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken."
   },
   "Impression": {
-    "title": "Jouw indruk (eigen criteria)",
+    "title": "Jouw indruk",
     "saving": "Opslaan…",
     "saved": "Opgeslagen",
     "yes": "Ja",
@@ -136,7 +136,6 @@
     "overallVibe": "Algemene sfeer / vibe",
     "teachingImpression": "Indruk van het lesgeven",
     "bikeRoute": "Fietsroute",
-    "extracurricularMatch": "Past het aanbod aan activiteiten?",
     "hasLockerForEveryStudent": "Is er een kluisje voor elke leerling?",
     "hasIndoorBreakSpace": "Is er binnenruimte om te zitten in de pauze?",
     "hasProperGym": "Is er een goede gymzaal / sporthal?",
@@ -151,6 +150,6 @@
     "homeworkLoad": "Verwachte huiswerkdruk (van licht naar zwaar)",
     "hasChoirBandOrchestra": "Is er een schoolkoor / band / orkest?",
     "hasSportsTeams": "Zijn er sportteams?",
-    "hasClubs": "Zijn er clubs of naschoolse activiteiten?"
+    "hasClubs": "Clubs of naschoolse activiteiten"
   }
 }

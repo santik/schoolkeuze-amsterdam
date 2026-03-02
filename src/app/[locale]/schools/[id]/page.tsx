@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
+import { ExamResultsCollapsible } from "@/app/[locale]/schools/[id]/exam-results-collapsible";
 import { ImpressionClient } from "@/app/[locale]/schools/[id]/impression-client";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
 import { getSchoolById } from "@/server/schoolsStore";
@@ -68,32 +69,19 @@ export default async function SchoolDetailPage({
 
   return (
     <div className="grid gap-6">
-      <section className="rounded-3xl border border-black/5 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-white/5">
+      <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <h1 className="text-balance text-3xl font-semibold tracking-tight">
             {school.name}
           </h1>
           <FavoriteButton schoolId={school.id} />
         </div>
-        <div className="mt-2 grid gap-1 text-sm text-zinc-700 dark:text-zinc-300">
-          <div>{address || "—"}</div>
-          <div>
-            {(school.levels ?? []).join(" / ") || "—"} ·{" "}
-            {(school.concepts ?? []).join(", ") || "—"}
-          </div>
-        </div>
-      </section>
-
-      <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
-        <h2 className="text-lg font-semibold tracking-tight">{t("schoolFactsTitle")}</h2>
 
         <div className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <div>
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("levelsOffered")}:</span>{" "}
             {(school.levels ?? []).join(" / ") || "—"}
           </div>
           <div>
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("addressLabel")}:</span>{" "}
             {address || "—"}{" "}
             {mapHref ? (
               <a
@@ -107,7 +95,6 @@ export default async function SchoolDetailPage({
             ) : null}
           </div>
           <div>
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("websiteLabel")}:</span>{" "}
             {school.websiteUrl ? (
               <a
                 href={school.websiteUrl}
@@ -131,45 +118,20 @@ export default async function SchoolDetailPage({
           </div>
         </div>
 
-        <div className="grid gap-2">
-          <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">{t("examResults")}</h3>
-          {examRows.length === 0 ? (
-            <div className="text-sm text-zinc-700 dark:text-zinc-300">{t("noExamResults")}</div>
-          ) : (
-            <div className="overflow-x-auto rounded-2xl border border-black/10 dark:border-white/10">
-              <table className="min-w-[560px] w-full text-left text-sm">
-                <thead className="border-b border-black/10 dark:border-white/10">
-                  <tr>
-                    <th className="p-3">{t("levelHeader")}</th>
-                    <th className="p-3">{t("candidatesHeader")}</th>
-                    <th className="p-3">{t("passedHeader")}</th>
-                    <th className="p-3">{t("passRateHeader")}</th>
-                    <th className="p-3">{t("avgGradeHeader")}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {examRows.map((row) => (
-                    <tr key={row.level} className="border-b border-black/5 last:border-b-0 dark:border-white/10">
-                      <td className="p-3">{row.level}</td>
-                      <td className="p-3">{typeof row.kandidaten === "number" ? row.kandidaten : "—"}</td>
-                      <td className="p-3">{typeof row.geslaagden === "number" ? row.geslaagden : "—"}</td>
-                      <td className="p-3">
-                        {typeof row.slagingspercentage === "number" ? `${row.slagingspercentage.toFixed(1)}%` : "—"}
-                      </td>
-                      <td className="p-3">
-                        {typeof row.gem_cijfer_lijst === "number" ? row.gem_cijfer_lijst.toFixed(2) : "—"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
+        <ExamResultsCollapsible
+          title={t("examResults")}
+          noResultsLabel={t("noExamResults")}
+          levelHeader={t("levelHeader")}
+          candidatesHeader={t("candidatesHeader")}
+          passedHeader={t("passedHeader")}
+          passRateHeader={t("passRateHeader")}
+          avgGradeHeader={t("avgGradeHeader")}
+          rows={examRows}
+        />
       </section>
 
-      <NotesClient schoolId={school.id} />
       <ImpressionClient schoolId={school.id} />
+      <NotesClient schoolId={school.id} />
 
       <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
         <h2 className="text-lg font-semibold tracking-tight">

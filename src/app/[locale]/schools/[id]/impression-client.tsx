@@ -28,7 +28,7 @@ type ImpressionMetrics = {
   homeworkLoad: RatingValue | null;
   hasChoirBandOrchestra: YesNoValue | null;
   hasSportsTeams: YesNoValue | null;
-  hasClubs: YesNoValue | null;
+  hasClubs: RatingValue | null;
 };
 
 const defaultMetrics: ImpressionMetrics = {
@@ -259,90 +259,86 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
       </div>
 
       <div className="grid gap-3 text-sm">
-        <label className="grid gap-1">
+        <div className="grid gap-1">
           <span>{t("canImagineYourself")}</span>
           {ratingInput("canImagineYourself")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("overallVibe")}</span>
           {ratingInput("overallVibe")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("teachingImpression")}</span>
           {ratingInput("teachingImpression")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("bikeRoute")}</span>
           {ratingInput("bikeRoute")}
-        </label>
+        </div>
 
-        <label className="grid gap-1">
-          <span>{t("extracurricularMatch")}</span>
-          {yesNoInput("extracurricularMatch")}
-        </label>
-        <label className="grid gap-1">
+        <div className="grid gap-1">
           <span>{t("hasLockerForEveryStudent")}</span>
           {yesNoInput("hasLockerForEveryStudent")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("hasIndoorBreakSpace")}</span>
           {yesNoInput("hasIndoorBreakSpace")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("hasProperGym")}</span>
           {yesNoInput("hasProperGym")}
-        </label>
+        </div>
 
-        <label className="grid gap-1">
+        <div className="grid gap-1">
           <span>{t("buildingModern")}</span>
           {ratingInput("buildingModern")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("buildingVibe")}</span>
           {ratingInput("buildingVibe")}
-        </label>
+        </div>
 
-        <label className="grid gap-1">
+        <div className="grid gap-1">
           <span>{t("hasCanteen")}</span>
           {yesNoInput("hasCanteen")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("hasHealthyFood")}</span>
           {yesNoInput("hasHealthyFood")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("publicTransportAccess")}</span>
           {ratingInput("publicTransportAccess")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("canBringOwnLunch")}</span>
           {yesNoInput("canBringOwnLunch")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("foodQuality")}</span>
           {ratingInput("foodQuality")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("foodPrice")}</span>
           {ratingInput("foodPrice")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("homeworkLoad")}</span>
           {ratingInput("homeworkLoad")}
-        </label>
+        </div>
 
-        <label className="grid gap-1">
+        <div className="grid gap-1">
           <span>{t("hasChoirBandOrchestra")}</span>
           {yesNoInput("hasChoirBandOrchestra")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("hasSportsTeams")}</span>
           {yesNoInput("hasSportsTeams")}
-        </label>
-        <label className="grid gap-1">
+        </div>
+        <div className="grid gap-1">
           <span>{t("hasClubs")}</span>
-          {yesNoInput("hasClubs")}
-        </label>
+          {ratingInput("hasClubs")}
+        </div>
       </div>
     </section>
   );

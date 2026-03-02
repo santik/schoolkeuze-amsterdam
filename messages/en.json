@@ -127,7 +127,7 @@
     "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools."
   },
   "Impression": {
-    "title": "Your Impression (custom metrics)",
+    "title": "Your Impression",
     "saving": "Saving…",
     "saved": "Saved",
     "yes": "Yes",
@@ -136,7 +136,6 @@
     "overallVibe": "Overall atmosphere / vibe",
     "teachingImpression": "Teaching impression",
     "bikeRoute": "Bike route",
-    "extracurricularMatch": "Extracurricular activities match",
     "hasLockerForEveryStudent": "Is there a locker for every student?",
     "hasIndoorBreakSpace": "Is there an indoor space to hang out during breaks?",
     "hasProperGym": "Is there a proper gym / sports hall?",
@@ -151,6 +150,6 @@
     "homeworkLoad": "Homework load expectation (from light to heavy)",
     "hasChoirBandOrchestra": "Is there a school choir / band / orchestra?",
     "hasSportsTeams": "Are there sports teams?",
-    "hasClubs": "Are there clubs or after-school activities?"
+    "hasClubs": "Clubs or after-school activities"
   }
 }
