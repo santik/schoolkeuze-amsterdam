@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { isAppLocale, type AppLocale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { TopNav } from "@/components/top-nav";
+import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { languageAlternates, localizedPath } from "@/lib/seo";
@@ -39,19 +40,6 @@ export async function generateMetadata({
       description: tSeo("defaultDescription"),
     },
   };
-}
-
-function LocaleSwitcher({ locale }: { locale: AppLocale }) {
-  const other = locale === "nl" ? ("en" as const) : ("nl" as const);
-  return (
-    <Link
-      href="/"
-      locale={other}
-      className="flex h-9 items-center justify-center rounded-full border border-sky-200 bg-white/80 px-3 text-xs font-bold tracking-wide text-sky-700 hover:bg-white dark:border-sky-300/30 dark:bg-sky-500/10 dark:text-sky-200 dark:hover:bg-sky-500/20"
-    >
-      {other.toUpperCase()}
-    </Link>
-  );
 }
 
 export default async function LocaleLayout({

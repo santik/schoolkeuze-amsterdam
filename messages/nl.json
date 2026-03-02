@@ -11,15 +11,15 @@
   },
   "Home": {
     "title": "Kies een middelbare school in Amsterdam",
-    "subtitle": "Zoek, filter en vergelijk scholen. Bewaar favorieten en stel een volgorde samen voor je lijst.",
+    "subtitle": "Zoek scholen met slimme filters, kaart, fietstijd-afstand en postcode/locatie-berekening. Bewaar favorieten, deel je profiel en geef scholen een eigen indrukscore.",
     "ctaPrimary": "Scholen bekijken",
     "ctaSecondary": "Hoe werkt het?",
     "feature1Title": "Zoeken & filteren",
-    "feature1Desc": "Filter op niveau (vmbo/havo/vwo), profiel (Montessori/Jenaplan), denominatie en afstand.",
+    "feature1Desc": "Filter op niveau (inclusief Praktijk), gebruik de kaart met marker-popups en bereken fietsafstand vanaf je locatie of postcode.",
     "feature2Title": "Vergelijken",
     "feature2Desc": "Zet scholen naast elkaar en vergelijk wat voor jullie belangrijk is.",
     "feature3Title": "Favorieten & lijst",
-    "feature3Desc": "Bewaar favorieten en bouw een volgorde voor je voorkeurslijst."
+    "feature3Desc": "Bewaar favorieten, orden je lijst, bekijk Mijn score op basis van je beoordelingen, exporteer een nette PDF en deel/laad hetzelfde profiel via ID."
   },
   "Schools": {
     "searchLabel": "Zoek",

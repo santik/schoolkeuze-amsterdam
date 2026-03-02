@@ -11,15 +11,15 @@
   },
   "Home": {
     "title": "Choose a secondary school in Amsterdam",
-    "subtitle": "Search, filter and compare schools. Save favorites and build a ranked list.",
+    "subtitle": "Search schools with smart filters, map, bike-time distance and ZIP/location routing. Save favorites, share your profile, and score schools by your own impression.",
     "ctaPrimary": "Browse schools",
     "ctaSecondary": "How does it work?",
     "feature1Title": "Search & filter",
-    "feature1Desc": "Filter by level (vmbo/havo/vwo), profile (Montessori/Jenaplan), denomination and distance.",
+    "feature1Desc": "Filter by level (including Praktijk), use map + marker popups, and calculate bike distance from your location or ZIP code.",
     "feature2Title": "Compare",
     "feature2Desc": "Put schools side by side and compare what is important to you.",
     "feature3Title": "Favorites & list",
-    "feature3Desc": "Save favorites and build an order for your preference list."
+    "feature3Desc": "Save favorites, reorder your list, view My Score from your ratings, export a styled PDF, and share/load the same profile by ID."
   },
   "Schools": {
     "searchLabel": "Search",

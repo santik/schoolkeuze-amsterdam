@@ -44,13 +44,33 @@ export default async function GuidePage({
         <ol className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <li>
             {isEn
-              ? "Browse and filter schools, then open details."
-              : "Bekijk scholen, filter, en open de detailpagina."}
+              ? "Browse schools and use search filters by level, bike time, location or ZIP code."
+              : "Bekijk scholen en gebruik filters op niveau, fietstijd, locatie of postcode."}
           </li>
           <li>
             {isEn
-              ? "Save favorites and build a ranked list."
-              : "Bewaar favorieten en bouw een voorkeursvolgorde."}
+              ? "Use the map under filters: click school markers for quick name/level info."
+              : "Gebruik de kaart onder de filters: klik op school-markers voor snelle naam/niveau-info."}
+          </li>
+          <li>
+            {isEn
+              ? "Open school details to fill in your own impression metrics (stars + toggles); the app calculates score and confidence."
+              : "Open schooldetails en vul je eigen indrukcriteria in (sterren + schakelaars); de app berekent score en betrouwbaarheid."}
+          </li>
+          <li>
+            {isEn
+              ? "Save favorites in your profile, reorder them, and see My Score in the favorites list when available."
+              : "Bewaar favorieten in je profiel, orden ze opnieuw en zie Mijn score in de favorietenlijst wanneer beschikbaar."}
+          </li>
+          <li>
+            {isEn
+              ? "Share your Profile ID/link to load the same favorites, notes and settings on another device."
+              : "Deel je profiel-ID/link om dezelfde favorieten, notities en instellingen op een ander apparaat te openen."}
+          </li>
+          <li>
+            {isEn
+              ? "Export your favorites ranking to a styled PDF from the profile page."
+              : "Exporteer je favorietenvolgorde als nette PDF vanaf de profielpagina."}
           </li>
         </ol>
       </section>
