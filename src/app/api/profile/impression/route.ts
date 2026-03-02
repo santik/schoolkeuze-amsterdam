@@ -20,8 +20,36 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const profileId = url.searchParams.get("profileId");
   const schoolId = url.searchParams.get("schoolId");
+  const schoolIdsRaw = url.searchParams.get("schoolIds");
 
   if (!isValidProfileId(profileId)) return badRequest("Invalid profileId");
+
+  if (typeof schoolIdsRaw === "string" && schoolIdsRaw.trim()) {
+    const schoolIds = schoolIdsRaw
+      .split(",")
+      .map((x) => x.trim())
+      .filter(Boolean);
+    if (schoolIds.length === 0) return badRequest("Invalid schoolIds");
+
+    const items = await prisma.schoolImpression.findMany({
+      where: {
+        profileId,
+        schoolId: { in: schoolIds },
+      },
+      select: {
+        schoolId: true,
+        metrics: true,
+      },
+    });
+
+    return NextResponse.json({
+      items: items.map((item) => ({
+        schoolId: item.schoolId,
+        metrics: (item.metrics ?? {}) as Record<string, unknown>,
+      })),
+    });
+  }
+
   if (typeof schoolId !== "string" || !schoolId.trim()) return badRequest("Invalid schoolId");
 
   const item = await prisma.schoolImpression.findUnique({

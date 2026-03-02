@@ -12,6 +12,7 @@ import {
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { useFavorites } from "@/lib/useFavorites";
+import { useProfileId } from "@/lib/useProfileId";
 
 type SchoolDTO = {
   id: string;
@@ -25,6 +26,65 @@ type SchoolDTO = {
   levels: string[];
   concepts: string[];
 };
+
+type ImpressionMetrics = Record<string, unknown>;
+
+type WeightedField = {
+  key: string;
+  weight: number;
+};
+
+type SectionConfig = {
+  weight: number;
+  fields: WeightedField[];
+};
+
+const scoreSections: SectionConfig[] = [
+  {
+    weight: 0.28,
+    fields: [
+      { key: "canImagineYourself", weight: 1.2 },
+      { key: "teachingImpression", weight: 1.2 },
+      { key: "homeworkLoad", weight: 1 },
+    ],
+  },
+  {
+    weight: 0.24,
+    fields: [
+      { key: "overallVibe", weight: 1.2 },
+      { key: "buildingVibe", weight: 1.1 },
+      { key: "buildingModern", weight: 1 },
+      { key: "hasLockerForEveryStudent", weight: 0.8 },
+      { key: "hasIndoorBreakSpace", weight: 0.8 },
+    ],
+  },
+  {
+    weight: 0.16,
+    fields: [
+      { key: "bikeRoute", weight: 1 },
+      { key: "publicTransportAccess", weight: 1 },
+    ],
+  },
+  {
+    weight: 0.14,
+    fields: [
+      { key: "hasCanteen", weight: 0.9 },
+      { key: "hasHealthyFood", weight: 1 },
+      { key: "canBringOwnLunch", weight: 0.8 },
+      { key: "foodQuality", weight: 1 },
+      { key: "foodPrice", weight: 0.9 },
+    ],
+  },
+  {
+    weight: 0.18,
+    fields: [
+      { key: "hasProperGym", weight: 1 },
+      { key: "hasChoirBandOrchestra", weight: 0.8 },
+      { key: "hasSportsTeams", weight: 0.9 },
+      { key: "hasClubs", weight: 1 },
+    ],
+  },
+];
 
 type ExportEntry = {
   rank: number;
@@ -129,6 +189,50 @@ function normalizeLevel(level: string) {
   return upper;
 }
 
+function impressionStorageKey(profileId: string, schoolId: string) {
+  return `schoolkeuze:impression:v1:${profileId}:${schoolId}`;
+}
+
+function metricToPercent(value: unknown): number | null {
+  if (typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 5) {
+    return value * 20;
+  }
+  if (value === "yes") return 100;
+  if (value === "no") return 0;
+  return null;
+}
+
+function weightedScore(metrics: ImpressionMetrics, fields: WeightedField[]): number | null {
+  const totalWeight = fields.reduce((acc, field) => acc + field.weight, 0);
+  if (totalWeight <= 0) return null;
+  let weightedTotal = 0;
+  let answeredWeight = 0;
+  for (const field of fields) {
+    const value = metricToPercent(metrics[field.key]);
+    if (value == null) continue;
+    weightedTotal += value * field.weight;
+    answeredWeight += field.weight;
+  }
+  if (answeredWeight <= 0) return null;
+  return weightedTotal / answeredWeight;
+}
+
+function overallImpressionScore(metrics: ImpressionMetrics): number | null {
+  const totalSectionWeight = scoreSections.reduce((acc, section) => acc + section.weight, 0);
+  if (totalSectionWeight <= 0) return null;
+
+  let totalScore = 0;
+  let answeredSectionWeight = 0;
+  for (const section of scoreSections) {
+    const sectionScore = weightedScore(metrics, section.fields);
+    if (sectionScore == null) continue;
+    totalScore += sectionScore * section.weight;
+    answeredSectionWeight += section.weight;
+  }
+  if (answeredSectionWeight <= 0) return null;
+  return totalScore / answeredSectionWeight;
+}
+
 export function FavoritesClient({
   userLocation,
   adviceLevel,
@@ -139,8 +243,12 @@ export function FavoritesClient({
   const router = useRouter();
   const tFav = useTranslations("Favorites");
   const tSchools = useTranslations("Schools");
+  const { profileId, hydrated: profileHydrated } = useProfileId();
   const { ids, setIds, remove, hydrated } = useFavorites();
   const [schools, setSchools] = React.useState<SchoolDTO[]>([]);
+  const [scoreBySchoolId, setScoreBySchoolId] = React.useState<Map<string, number>>(
+    () => new Map()
+  );
   const [loading, setLoading] = React.useState(false);
   const [draggingId, setDraggingId] = React.useState<string | null>(null);
   const suppressNextClickRef = React.useRef(false);
@@ -191,6 +299,72 @@ export function FavoritesClient({
     }
     return m;
   }, [distanceById, tSchools]);
+
+  React.useEffect(() => {
+    if (!hydrated || !profileHydrated || !profileId) {
+      setScoreBySchoolId(new Map());
+      return;
+    }
+    if (ids.length === 0) {
+      setScoreBySchoolId(new Map());
+      return;
+    }
+    let cancelled = false;
+
+    fetch(
+      `/api/profile/impression?profileId=${encodeURIComponent(profileId)}&schoolIds=${encodeURIComponent(ids.join(","))}`
+    )
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Request failed"))))
+      .then((body: { items?: Array<{ schoolId: string; metrics?: unknown }> }) => {
+        if (cancelled) return;
+        const next = new Map<string, number>();
+        const items = Array.isArray(body.items) ? body.items : [];
+
+        for (const item of items) {
+          if (!item || typeof item.schoolId !== "string") continue;
+          const metrics =
+            item.metrics && typeof item.metrics === "object"
+              ? (item.metrics as ImpressionMetrics)
+              : {};
+          const score = overallImpressionScore(metrics);
+          if (score != null) next.set(item.schoolId, score);
+        }
+
+        for (const schoolId of ids) {
+          if (next.has(schoolId)) continue;
+          try {
+            const raw = localStorage.getItem(impressionStorageKey(profileId, schoolId));
+            if (!raw) continue;
+            const parsed = JSON.parse(raw) as ImpressionMetrics;
+            const score = overallImpressionScore(parsed);
+            if (score != null) next.set(schoolId, score);
+          } catch {
+            // best-effort local fallback
+          }
+        }
+        setScoreBySchoolId(next);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        const next = new Map<string, number>();
+        for (const schoolId of ids) {
+          try {
+            const raw = localStorage.getItem(impressionStorageKey(profileId, schoolId));
+            if (!raw) continue;
+            const parsed = JSON.parse(raw) as ImpressionMetrics;
+            const score = overallImpressionScore(parsed);
+            if (score != null) next.set(schoolId, score);
+          } catch {
+            // best-effort local fallback
+          }
+        }
+        setScoreBySchoolId(next);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [hydrated, profileHydrated, profileId, ids]);
 
   React.useEffect(() => {
     if (!hydrated) return;
@@ -339,6 +513,11 @@ export function FavoritesClient({
                           <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">
                             {s.name}
                           </div>
+                          {scoreBySchoolId.has(s.id) ? (
+                            <div className="mt-1 text-xs font-semibold text-indigo-800 dark:text-indigo-200">
+                              {tFav("score")}: {Math.round(scoreBySchoolId.get(s.id) ?? 0)}%
+                            </div>
+                          ) : null}
                           <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                             {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                             {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}

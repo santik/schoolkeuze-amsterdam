@@ -59,7 +59,8 @@
     "export": "Exporteer lijst",
     "remove": "Verwijder",
     "details": "Info",
-    "compare": "Vergelijken"
+    "compare": "Vergelijken",
+    "score": "Mijn score"
   },
   "SchoolsMap": {
     "title": "Kaart",
@@ -155,7 +156,7 @@
     "publicTransportAccess": "Bereikbaarheid met tram/metro?",
     "canBringOwnLunch": "Kun je je eigen lunch meenemen en prettig opeten?",
     "foodQuality": "Kwaliteit van het eten",
-    "foodPrice": "Prijs van het eten (van goedkoop naar duur)",
+    "foodPrice": "Prijs van het eten (van duur naar goedkoop)",
     "homeworkLoad": "Verwachte huiswerkdruk (van zwaar naar licht)",
     "hasChoirBandOrchestra": "Is er een schoolkoor / band / orkest?",
     "hasSportsTeams": "Zijn er sportteams?",

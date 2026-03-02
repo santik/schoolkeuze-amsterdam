@@ -59,7 +59,8 @@
     "export": "Export list",
     "remove": "Remove",
     "details": "Info",
-    "compare": "Compare"
+    "compare": "Compare",
+    "score": "My Score"
   },
   "SchoolsMap": {
     "title": "Map",
@@ -155,7 +156,7 @@
     "publicTransportAccess": "Accessed by tram/metro?",
     "canBringOwnLunch": "Can you bring your own lunch and eat it comfortably?",
     "foodQuality": "Quality of the food",
-    "foodPrice": "Price of the food (from cheap to expensive)",
+    "foodPrice": "Price of the food (from expensive to cheap)",
     "homeworkLoad": "Homework load expectation (from heavy to light)",
     "hasChoirBandOrchestra": "Is there a school choir / band / orchestra?",
     "hasSportsTeams": "Are there sports teams?",
