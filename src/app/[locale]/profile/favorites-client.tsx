@@ -3,6 +3,12 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
 import { jsPDF } from "jspdf";
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  type DropResult,
+} from "@hello-pangea/dnd";
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { useFavorites } from "@/lib/useFavorites";
@@ -137,8 +143,35 @@ export function FavoritesClient({
   const [schools, setSchools] = React.useState<SchoolDTO[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [draggingId, setDraggingId] = React.useState<string | null>(null);
-  const [dropTargetId, setDropTargetId] = React.useState<string | null>(null);
   const suppressNextClickRef = React.useRef(false);
+
+  const handleDragEnd = React.useCallback(
+    (result: DropResult) => {
+      setDraggingId(null);
+      window.setTimeout(() => {
+        suppressNextClickRef.current = false;
+      }, 0);
+
+      const destination = result.destination;
+      if (!destination) return;
+      if (destination.index === result.source.index) return;
+
+      setSchools((prevSchools) => {
+        const copy = [...prevSchools];
+        const [moved] = copy.splice(result.source.index, 1);
+        if (!moved) return prevSchools;
+        copy.splice(destination.index, 0, moved);
+        const reorderedVisibleIds = copy.map((s) => s.id);
+        setIds((prevIds) => {
+          const visible = new Set(reorderedVisibleIds);
+          const rest = prevIds.filter((id) => !visible.has(id));
+          return [...reorderedVisibleIds, ...rest];
+        });
+        return copy;
+      });
+    },
+    [setIds]
+  );
 
   const distanceById = React.useMemo(() => {
     if (!userLocation) return new Map<string, number>();
@@ -248,115 +281,103 @@ export function FavoritesClient({
         </div>
       </div>
 
-      <ol className="grid gap-2">
-        {schools.map((s, idx) => (
-          (() => {
-            const advice = normalizeLevel(adviceLevel);
-            const offersAdvice = (s.levels ?? []).some((l) => normalizeLevel(l) === advice);
-            const showMismatch = Boolean(advice) && !offersAdvice;
+      <DragDropContext
+        onDragStart={(start) => {
+          suppressNextClickRef.current = true;
+          setDraggingId(start.draggableId);
+        }}
+        onDragEnd={handleDragEnd}
+      >
+        <Droppable droppableId="favorites-list">
+          {(dropProvided) => (
+            <ol
+              ref={dropProvided.innerRef}
+              {...dropProvided.droppableProps}
+              className="grid gap-2"
+            >
+              {schools.map((s, idx) => {
+                const advice = normalizeLevel(adviceLevel);
+                const offersAdvice = (s.levels ?? []).some(
+                  (l) => normalizeLevel(l) === advice
+                );
+                const showMismatch = Boolean(advice) && !offersAdvice;
 
-            return (
-          <li
-            key={s.id}
-            className={`flex items-center justify-between gap-3 rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md ${
-              showMismatch
-                ? "border-amber-300 dark:border-amber-300/30 dark:bg-amber-300/5"
-                : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
-            } ${draggingId === s.id ? "opacity-70 ring-2 ring-violet-300/60 dark:ring-violet-300/40" : ""} ${
-              dropTargetId === s.id && draggingId !== s.id
-                ? "ring-2 ring-sky-300/70 dark:ring-sky-300/50"
-                : ""
-            }`}
-            draggable
-            onDragStart={(e) => {
-              e.dataTransfer.setData("text/plain", s.id);
-              e.dataTransfer.effectAllowed = "move";
-              suppressNextClickRef.current = true;
-              setDraggingId(s.id);
-            }}
-            onDragOver={(e) => {
-              e.preventDefault();
-              e.dataTransfer.dropEffect = "move";
-              setDropTargetId(s.id);
-            }}
-            onDragLeave={() => {
-              if (dropTargetId === s.id) setDropTargetId(null);
-            }}
-            onDrop={(e) => {
-              e.preventDefault();
-              setDropTargetId(null);
-              const draggedId = e.dataTransfer.getData("text/plain");
-              if (!draggedId || draggedId === s.id) return;
-              setIds((prev) => {
-                const from = prev.indexOf(draggedId);
-                const to = prev.indexOf(s.id);
-                if (from === -1 || to === -1) return prev;
-                const copy = [...prev];
-                copy.splice(from, 1);
-                copy.splice(to, 0, draggedId);
-                return copy;
-              });
-            }}
-            onDragEnd={() => {
-              setDraggingId(null);
-              setDropTargetId(null);
-              window.setTimeout(() => {
-                suppressNextClickRef.current = false;
-              }, 0);
-            }}
-            onClick={() => {
-              if (suppressNextClickRef.current) return;
-              router.push(`/schools/${s.id}`);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                if (suppressNextClickRef.current) return;
-                router.push(`/schools/${s.id}`);
-              }
-            }}
-            role="button"
-            tabIndex={0}
-          >
-            <div className="min-w-0">
-              <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
-                #{idx + 1}
-              </div>
-              <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">{s.name}</div>
-              <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
-                {(s.levels ?? []).join(" / ") || "—"} ·{" "}
-                {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
-              </div>
-              {showMismatch ? (
-                <div className="mt-1 text-xs font-medium text-amber-800 dark:text-amber-300">
-                  {tFav("levelMismatch", { level: advice })}
-                </div>
-              ) : null}
-              {userLocation && distanceLabelById.has(s.id) ? (
-                <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
-                  {distanceLabelById.get(s.id)}
-                </div>
-              ) : null}
-            </div>
+                return (
+                  <Draggable key={s.id} draggableId={s.id} index={idx}>
+                    {(dragProvided, dragSnapshot) => (
+                      <li
+                        ref={dragProvided.innerRef}
+                        {...dragProvided.draggableProps}
+                        {...dragProvided.dragHandleProps}
+                        className={`flex items-center justify-between gap-3 rounded-3xl border bg-white/90 p-4 shadow-sm transition-shadow hover:shadow-md ${
+                          showMismatch
+                            ? "border-amber-300 dark:border-amber-300/30 dark:bg-amber-300/5"
+                            : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
+                        } ${
+                          draggingId === s.id || dragSnapshot.isDragging
+                            ? "opacity-70 ring-2 ring-violet-300/60 dark:ring-violet-300/40"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          if (suppressNextClickRef.current) return;
+                          router.push(`/schools/${s.id}`);
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            if (suppressNextClickRef.current) return;
+                            router.push(`/schools/${s.id}`);
+                          }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <div className="min-w-0">
+                          <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                            #{idx + 1}
+                          </div>
+                          <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">
+                            {s.name}
+                          </div>
+                          <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                            {(s.levels ?? []).join(" / ") || "—"} ·{" "}
+                            {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
+                          </div>
+                          {showMismatch ? (
+                            <div className="mt-1 text-xs font-medium text-amber-800 dark:text-amber-300">
+                              {tFav("levelMismatch", { level: advice })}
+                            </div>
+                          ) : null}
+                          {userLocation && distanceLabelById.has(s.id) ? (
+                            <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                              {distanceLabelById.get(s.id)}
+                            </div>
+                          ) : null}
+                        </div>
 
-            <div className="flex shrink-0 items-center gap-2">
-              <button
-                type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 text-base font-semibold leading-none text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  remove(s.id);
-                }}
-                aria-label={tFav("remove")}
-              >
-                ×
-              </button>
-            </div>
-          </li>
-            );
-          })()
-        ))}
-      </ol>
+                        <div className="flex shrink-0 items-center gap-2">
+                          <button
+                            type="button"
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rose-300 bg-rose-50 text-base font-semibold leading-none text-rose-900 hover:bg-rose-100 dark:border-rose-300/30 dark:bg-rose-500/10 dark:text-rose-200 dark:hover:bg-rose-500/20"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              remove(s.id);
+                            }}
+                            aria-label={tFav("remove")}
+                          >
+                            ×
+                          </button>
+                        </div>
+                      </li>
+                    )}
+                  </Draggable>
+                );
+              })}
+              {dropProvided.placeholder}
+            </ol>
+          )}
+        </Droppable>
+      </DragDropContext>
     </div>
   );
 }
