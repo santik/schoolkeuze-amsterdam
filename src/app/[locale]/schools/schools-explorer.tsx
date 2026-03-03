@@ -356,7 +356,14 @@ export function SchoolsExplorer() {
                     </span>
                     <input
                       value={zipCode}
-                      onChange={(e) => setZipCode(e.target.value)}
+                      onChange={(e) => {
+                        const next = e.target.value;
+                        setZipCode(next);
+                        const normalized = next.trim().toUpperCase().replace(/\s+/g, "");
+                        if (/^\d{4}[A-Z]{2}$/.test(normalized) && useMyLocation) {
+                          setUseMyLocation(false);
+                        }
+                      }}
                       placeholder="1017AB"
                       className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm uppercase outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
                     />
