@@ -5,6 +5,7 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 
 import { useRouter } from "@/i18n/navigation";
+import { bikeMinutesFromKm } from "@/lib/bike";
 import { useFavorites } from "@/lib/useFavorites";
 
 type SchoolDTO = {
@@ -475,7 +476,7 @@ export function SchoolsExplorer() {
                             s.lat!,
                             s.lon!
                           );
-                          const bikeMin = Math.round((km / 15) * 60);
+                          const bikeMin = bikeMinutesFromKm(km);
                           return t("distanceEstimate", {
                             km: km.toFixed(1),
                             minutes: bikeMin,

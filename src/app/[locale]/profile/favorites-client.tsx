@@ -11,6 +11,7 @@ import {
 } from "@hello-pangea/dnd";
 
 import { Link, useRouter } from "@/i18n/navigation";
+import { bikeMinutesFromKm } from "@/lib/bike";
 import { useFavorites } from "@/lib/useFavorites";
 import { useProfileId } from "@/lib/useProfileId";
 
@@ -294,7 +295,7 @@ export function FavoritesClient({
   const distanceLabelById = React.useMemo(() => {
     const m = new Map<string, string>();
     for (const [id, km] of distanceById.entries()) {
-      const bikeMin = Math.round((km / 15) * 60);
+      const bikeMin = bikeMinutesFromKm(km);
       m.set(id, tSchools("distanceEstimate", { km: km.toFixed(1), minutes: bikeMin }));
     }
     return m;

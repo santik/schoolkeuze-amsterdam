@@ -5,6 +5,7 @@ import type { Prisma, School, SchoolLevel } from "@prisma/client";
 
 import { prisma } from "@/server/db";
 import { buildAdmissionsInfo } from "@/lib/admissions-info";
+import { bikeRadiusKmFromMinutes } from "@/lib/bike";
 
 export type SchoolListFilters = {
   q?: string;
@@ -195,9 +196,10 @@ export async function listSchools(filters: SchoolListFilters = {}) {
         return true;
       });
     }
-    // Convert bikeMinutes to km using 15 km/h average bike speed.
-    const bikeSpeedKmh = 15;
-    const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
+    const radiusKm =
+      filters.bikeMinutes != null
+        ? bikeRadiusKmFromMinutes(filters.bikeMinutes)
+        : undefined;
     if (
       typeof filters.lat === "number" &&
       typeof filters.lon === "number" &&
@@ -258,9 +260,10 @@ export async function listSchools(filters: SchoolListFilters = {}) {
   const where: Prisma.SchoolWhereInput = and.length > 0 ? { AND: and } : {};
 
   // Radius filtering: do a light pre-filter in SQL, then precise haversine in JS.
-  // Convert bikeMinutes to km using 15 km/h average bike speed.
-  const bikeSpeedKmh = 15;
-  const radiusKm = filters.bikeMinutes != null ? filters.bikeMinutes * (bikeSpeedKmh / 60) : undefined;
+  const radiusKm =
+    filters.bikeMinutes != null
+      ? bikeRadiusKmFromMinutes(filters.bikeMinutes)
+      : undefined;
   const candidateTake = radiusKm != null ? Math.min(take * 4, 200) : take;
   let candidates: School[];
   try {
