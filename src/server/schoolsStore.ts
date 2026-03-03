@@ -60,14 +60,14 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
 }
 
 async function getSampleSchools(): Promise<School[]> {
-  if (sampleCache) return sampleCache;
+  if (process.env.NODE_ENV !== "development" && sampleCache) return sampleCache;
 
   const filePath = path.join(process.cwd(), "data", "schools.sample.json");
   const raw = await fs.readFile(filePath, "utf8");
   const parsed = JSON.parse(raw) as SampleSchool[];
 
   // Map sample -> Prisma-like shape. IDs are stable-ish for demos.
-  sampleCache = parsed.map((s, index) => ({
+  const mapped = parsed.map((s, index) => ({
     id: `sample_${(s.brin ?? s.name).toLowerCase().replaceAll(/\W+/g, "_")}_${index}`,
     sourceKey: null,
     brin: s.brin ?? null,
@@ -111,7 +111,59 @@ async function getSampleSchools(): Promise<School[]> {
     createdAt: new Date(),
   }));
 
-  return sampleCache ?? [];
+  if (process.env.NODE_ENV !== "development") {
+    sampleCache = mapped;
+  }
+
+  return mapped;
+}
+
+async function buildSampleSizeByKey() {
+  const sample = await getSampleSchools();
+  const byName = new Map<string, number>();
+  const byBrin = new Map<string, number>();
+  const brinCount = new Map<string, number>();
+  for (const s of sample) {
+    if (typeof s.size !== "number") continue;
+    byName.set(s.name.toLowerCase(), s.size);
+    if (s.brin) {
+      const key = s.brin.toLowerCase();
+      brinCount.set(key, (brinCount.get(key) ?? 0) + 1);
+      byBrin.set(key, s.size);
+    }
+  }
+  return { byName, byBrin, brinCount };
+}
+
+async function withSizeFallback(school: School | null): Promise<School | null> {
+  if (!school) return null;
+  if (typeof school.size === "number") return school;
+
+  const { byName, byBrin, brinCount } = await buildSampleSizeByKey();
+  const fallback =
+    byName.get(school.name.toLowerCase()) ??
+    (school.brin && brinCount.get(school.brin.toLowerCase()) === 1
+      ? byBrin.get(school.brin.toLowerCase())
+      : undefined);
+
+  if (typeof fallback !== "number") return school;
+  return { ...school, size: fallback };
+}
+
+async function withSizeFallbackMany(schools: School[]): Promise<School[]> {
+  if (schools.every((s) => typeof s.size === "number")) return schools;
+
+  const { byName, byBrin, brinCount } = await buildSampleSizeByKey();
+  return schools.map((school) => {
+    if (typeof school.size === "number") return school;
+    const fallback =
+      byName.get(school.name.toLowerCase()) ??
+      (school.brin && brinCount.get(school.brin.toLowerCase()) === 1
+        ? byBrin.get(school.brin.toLowerCase())
+        : undefined);
+    if (typeof fallback !== "number") return school;
+    return { ...school, size: fallback };
+  });
 }
 
 function hasDb() {
@@ -289,7 +341,7 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     });
   }
 
-  return candidates.slice(0, take);
+  return withSizeFallbackMany(candidates.slice(0, take));
 }
 
 export async function getSchoolById(id: string) {
@@ -298,7 +350,8 @@ export async function getSchoolById(id: string) {
     return all.find((s) => s.id === id) ?? null;
   }
   try {
-    return await prisma.school.findUnique({ where: { id } });
+    const school = await prisma.school.findUnique({ where: { id } });
+    return withSizeFallback(school);
   } catch (error) {
     if (!isPoolTimeoutError(error)) throw error;
     const all = await getSampleSchools();
@@ -329,5 +382,6 @@ export async function getSchoolsByIds(ids: string[]) {
 
   // Preserve input order
   const byId = new Map(schools.map((s) => [s.id, s]));
-  return uniq.map((id) => byId.get(id)).filter((x): x is School => Boolean(x));
+  const ordered = uniq.map((id) => byId.get(id)).filter((x): x is School => Boolean(x));
+  return withSizeFallbackMany(ordered);
 }
