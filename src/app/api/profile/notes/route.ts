@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
 
 import { isValidProfileId } from "@/lib/profile-id";
+import { enforceMaxLength, sanitizePlainTextStrict } from "@/lib/text-sanitize";
 import { prisma } from "@/server/db";
 
 function badRequest(message: string) {
   return NextResponse.json({ error: message }, { status: 400 });
 }
+
+const MAX_NOTE_LENGTH = 3000;
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -36,7 +39,11 @@ export async function PUT(req: Request) {
 
   const profileId = body.profileId;
   const schoolId = body.schoolId.trim();
-  const note = body.note.trim();
+  const note = sanitizePlainTextStrict(body.note);
+
+  if (!enforceMaxLength(note, MAX_NOTE_LENGTH)) {
+    return badRequest("Note is too long");
+  }
 
   if (!note) {
     await prisma.schoolNote.deleteMany({ where: { profileId, schoolId } });
@@ -53,4 +60,3 @@ export async function PUT(req: Request) {
 
   return NextResponse.json({ ok: true });
 }
-
