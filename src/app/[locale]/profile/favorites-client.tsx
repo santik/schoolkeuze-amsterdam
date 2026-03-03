@@ -250,7 +250,6 @@ export function FavoritesClient({
   const [scoreBySchoolId, setScoreBySchoolId] = React.useState<Map<string, number>>(
     () => new Map()
   );
-  const [loading, setLoading] = React.useState(false);
   const [draggingId, setDraggingId] = React.useState<string | null>(null);
   const suppressNextClickRef = React.useRef(false);
 
@@ -374,7 +373,6 @@ export function FavoritesClient({
       return;
     }
     let cancelled = false;
-    setLoading(true);
 
     fetch(`/api/compare?ids=${encodeURIComponent(ids.join(","))}`)
       .then((r) => r.json())
@@ -383,10 +381,6 @@ export function FavoritesClient({
         // Preserve ranking order
         const byId = new Map(body.schools.map((s) => [s.id, s]));
         setSchools(ids.map((id) => byId.get(id)).filter(Boolean) as SchoolDTO[]);
-      })
-      .finally(() => {
-        if (cancelled) return;
-        setLoading(false);
       });
 
     return () => {
@@ -434,10 +428,7 @@ export function FavoritesClient({
     <div className="grid gap-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="text-sm text-indigo-700/90 dark:text-indigo-200/90">
-          {loading
-            ? tSchools("loading")
-            : tFav("count", { count: schools.length })}{" "}
-          · {tFav("dragToRank")}
+          {tFav("count", { count: schools.length })} · {tFav("dragToRank")}
         </div>
         <div className="flex flex-wrap gap-2">
           <Link
