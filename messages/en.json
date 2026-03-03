@@ -19,7 +19,17 @@
     "feature2Title": "Compare",
     "feature2Desc": "Put schools side by side and compare what is important to you.",
     "feature3Title": "Favorites & list",
-    "feature3Desc": "Save favorites, reorder your list, view My Score from your ratings, export a styled PDF, and share/load the same profile by ID."
+    "feature3Desc": "Save favorites, reorder your list, view My Score from your ratings, export a styled PDF, and share/load the same profile by ID.",
+    "feedbackLink": "Send feedback"
+  },
+  "Feedback": {
+    "title": "Feedback",
+    "fieldLabel": "Your feedback",
+    "placeholder": "Share one idea or issue...",
+    "send": "Send",
+    "sending": "Sending...",
+    "sendError": "Could not send feedback.",
+    "thankYou": "Thank you for your feedback!"
   },
   "Schools": {
     "searchLabel": "Search",
@@ -124,6 +134,8 @@
     "schoolsDescription": "Browse Amsterdam secondary schools and filter by level, distance and travel time.",
     "profileTitle": "Profile",
     "profileDescription": "Manage your school favorites, ranking, notes and shareable profile link.",
+    "feedbackTitle": "Feedback",
+    "feedbackDescription": "Send feedback about the School Choice app.",
     "guideTitle": "Guide",
     "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools."
   },

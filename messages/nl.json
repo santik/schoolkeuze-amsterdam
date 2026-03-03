@@ -19,7 +19,17 @@
     "feature2Title": "Vergelijken",
     "feature2Desc": "Zet scholen naast elkaar en vergelijk wat voor jullie belangrijk is.",
     "feature3Title": "Favorieten & lijst",
-    "feature3Desc": "Bewaar favorieten, orden je lijst, bekijk Mijn score op basis van je beoordelingen, exporteer een nette PDF en deel/laad hetzelfde profiel via ID."
+    "feature3Desc": "Bewaar favorieten, orden je lijst, bekijk Mijn score op basis van je beoordelingen, exporteer een nette PDF en deel/laad hetzelfde profiel via ID.",
+    "feedbackLink": "Stuur feedback"
+  },
+  "Feedback": {
+    "title": "Feedback",
+    "fieldLabel": "Jouw feedback",
+    "placeholder": "Deel een idee of probleem...",
+    "send": "Verstuur",
+    "sending": "Versturen...",
+    "sendError": "Feedback versturen is niet gelukt.",
+    "thankYou": "Bedankt voor je feedback!"
   },
   "Schools": {
     "searchLabel": "Zoek",
@@ -124,6 +134,8 @@
     "schoolsDescription": "Bekijk middelbare scholen in Amsterdam en filter op niveau, afstand en reistijd.",
     "profileTitle": "Profiel",
     "profileDescription": "Beheer favorieten, volgorde, notities en je deelbare profiel-link.",
+    "feedbackTitle": "Feedback",
+    "feedbackDescription": "Stuur feedback over de Schoolkeuze-app.",
     "guideTitle": "Uitleg",
     "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken."
   },

@@ -79,6 +79,12 @@ export default async function HomePage() {
           >
             🧭 {t("ctaSecondary")}
           </Link>
+          <Link
+            href="/feedback"
+            className="inline-flex h-11 items-center justify-center rounded-full border border-emerald-200 bg-white/75 px-5 text-sm font-bold text-emerald-800 hover:bg-white dark:border-emerald-300/30 dark:bg-emerald-500/10 dark:text-emerald-200 dark:hover:bg-emerald-500/20"
+          >
+            💬 {t("feedbackLink")}
+          </Link>
         </div>
       </section>
 
