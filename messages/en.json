@@ -109,6 +109,8 @@
     "level": "Level",
     "passRate": "Pass rate (2023–2024)",
     "concept": "Concept",
+    "size": "Student count",
+    "score": "My Score",
     "address": "Address",
     "website": "Website"
   },

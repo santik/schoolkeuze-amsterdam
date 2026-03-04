@@ -109,6 +109,8 @@
     "level": "Niveau",
     "passRate": "Slagingspercentage (2023–2024)",
     "concept": "Concept",
+    "size": "Aantal leerlingen",
+    "score": "Mijn score",
     "address": "Adres",
     "website": "Website"
   },
