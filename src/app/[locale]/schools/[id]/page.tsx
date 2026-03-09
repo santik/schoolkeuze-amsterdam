@@ -112,10 +112,6 @@ export default async function SchoolDetailPage({
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("studentCount")}:</span>{" "}
             {typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}
           </div>
-          <div>
-            <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("denomination")}:</span>{" "}
-            {school.denomination || "—"}
-          </div>
         </div>
 
         <ExamResultsCollapsible
