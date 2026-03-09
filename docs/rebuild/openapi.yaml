@@ -1,0 +1,540 @@
+openapi: 3.1.0
+info:
+  title: School Choice API
+  version: 1.0.0
+  description: |
+    API contract for the School Choice application.
+    This contract mirrors currently implemented routes under /api in Next.js.
+servers:
+  - url: http://localhost:3000
+    description: Local development
+tags:
+  - name: Schools
+  - name: Profile
+  - name: Feedback
+paths:
+  /api/schools:
+    get:
+      tags: [Schools]
+      summary: List schools with optional filters
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+          description: Name/BRIN query string
+        - in: query
+          name: levels
+          schema: { type: string }
+          description: Comma-separated levels, e.g. PRAKTIJKONDERWIJS,VMBO,HAVO,VWO
+        - in: query
+          name: lat
+          schema: { type: number }
+        - in: query
+          name: lon
+          schema: { type: number }
+        - in: query
+          name: bikeMinutes
+          schema: { type: number }
+        - in: query
+          name: take
+          schema: { type: number }
+      responses:
+        "200":
+          description: Schools loaded
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [schools]
+                properties:
+                  schools:
+                    type: array
+                    items: { $ref: "#/components/schemas/School" }
+        "500":
+          description: Failed to load schools
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/schools/{id}:
+    get:
+      tags: [Schools]
+      summary: Get school by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: School found
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [school]
+                properties:
+                  school: { $ref: "#/components/schemas/School" }
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/compare:
+    get:
+      tags: [Schools]
+      summary: Get multiple schools for compare/favorites by ids
+      parameters:
+        - in: query
+          name: ids
+          required: false
+          schema: { type: string }
+          description: Comma-separated school IDs
+      responses:
+        "200":
+          description: Schools returned in input order
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [schools]
+                properties:
+                  schools:
+                    type: array
+                    items: { $ref: "#/components/schemas/School" }
+
+  /api/geocode-zip:
+    get:
+      tags: [Schools]
+      summary: Resolve Dutch ZIP to coordinates
+      parameters:
+        - in: query
+          name: zip
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{4}\s?[A-Za-z]{2}$'
+      responses:
+        "200":
+          description: ZIP resolved
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [lat, lon, zip]
+                properties:
+                  lat: { type: number }
+                  lon: { type: number }
+                  zip: { type: string }
+        "400":
+          description: Invalid ZIP
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+        "404":
+          description: ZIP not found
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+        "502":
+          description: Upstream geocoding error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/profile/favorites:
+    get:
+      tags: [Profile]
+      summary: Get favorite school IDs for profile
+      parameters:
+        - in: query
+          name: profileId
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 128
+      responses:
+        "200":
+          description: Favorite IDs returned in rank order
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ids]
+                properties:
+                  ids:
+                    type: array
+                    items: { type: string }
+        "400":
+          description: Invalid profileId
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+    put:
+      tags: [Profile]
+      summary: Replace profile favorites order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [profileId, ids]
+              properties:
+                profileId:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                ids:
+                  type: array
+                  items: { type: string }
+      responses:
+        "200":
+          description: Favorites saved
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, ids]
+                properties:
+                  ok: { type: boolean, const: true }
+                  ids:
+                    type: array
+                    items: { type: string }
+        "400":
+          description: Invalid payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/profile/notes:
+    get:
+      tags: [Profile]
+      summary: Get all notes for profile
+      parameters:
+        - in: query
+          name: profileId
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 128
+      responses:
+        "200":
+          description: Notes dictionary by schoolId
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [notesById]
+                properties:
+                  notesById:
+                    type: object
+                    additionalProperties: { type: string }
+        "400":
+          description: Invalid profileId
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+    put:
+      tags: [Profile]
+      summary: Upsert or delete note for school/profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [profileId, schoolId, note]
+              properties:
+                profileId:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                schoolId: { type: string }
+                note:
+                  type: string
+                  description: Strict sanitized, max length 3000
+      responses:
+        "200":
+          description: Note saved or deleted
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    required: [ok]
+                    properties:
+                      ok: { type: boolean, const: true }
+                  - type: object
+                    required: [ok, deleted]
+                    properties:
+                      ok: { type: boolean, const: true }
+                      deleted: { type: boolean, const: true }
+        "400":
+          description: Invalid payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/profile/settings:
+    get:
+      tags: [Profile]
+      summary: Get profile settings
+      parameters:
+        - in: query
+          name: profileId
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 128
+      responses:
+        "200":
+          description: Settings found or default returned
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [adviceLevel]
+                properties:
+                  adviceLevel: { $ref: "#/components/schemas/AdviceLevel" }
+        "400":
+          description: Invalid profileId
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+    put:
+      tags: [Profile]
+      summary: Upsert profile advice level
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [profileId, adviceLevel]
+              properties:
+                profileId:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                adviceLevel: { $ref: "#/components/schemas/AdviceLevel" }
+      responses:
+        "200":
+          description: Settings saved
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok]
+                properties:
+                  ok: { type: boolean, const: true }
+        "400":
+          description: Invalid payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/profile/impression:
+    get:
+      tags: [Profile]
+      summary: Get impression metrics for one school or multiple schools
+      description: |
+        Two modes are implemented:
+        1) Single school mode with `profileId` + `schoolId`
+        2) Multi school mode with `profileId` + `schoolIds` (comma-separated)
+      parameters:
+        - in: query
+          name: profileId
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 128
+        - in: query
+          name: schoolId
+          required: false
+          schema: { type: string }
+        - in: query
+          name: schoolIds
+          required: false
+          schema: { type: string }
+          description: Comma-separated school IDs
+      responses:
+        "200":
+          description: Impression metrics returned
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    required: [metrics]
+                    properties:
+                      metrics:
+                        type: object
+                        additionalProperties: true
+                  - type: object
+                    required: [items]
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          required: [schoolId, metrics]
+                          properties:
+                            schoolId: { type: string }
+                            metrics:
+                              type: object
+                              additionalProperties: true
+        "400":
+          description: Invalid query
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+    put:
+      tags: [Profile]
+      summary: Upsert or delete school impression metrics
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [profileId, schoolId, metrics]
+              properties:
+                profileId:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                schoolId: { type: string }
+                metrics:
+                  type: object
+                  additionalProperties: true
+      responses:
+        "200":
+          description: Impression saved or deleted
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    required: [ok]
+                    properties:
+                      ok: { type: boolean, const: true }
+                  - type: object
+                    required: [ok, deleted]
+                    properties:
+                      ok: { type: boolean, const: true }
+                      deleted: { type: boolean, const: true }
+        "400":
+          description: Invalid payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+  /api/feedback:
+    post:
+      tags: [Feedback]
+      summary: Submit feedback message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message]
+              properties:
+                message:
+                  type: string
+                  description: Strict sanitized, max length 4000
+                locale:
+                  type: [string, "null"]
+      responses:
+        "200":
+          description: Feedback saved
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok]
+                properties:
+                  ok: { type: boolean, const: true }
+        "400":
+          description: Invalid payload
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ErrorResponse" }
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+
+    AdviceLevel:
+      type: string
+      enum: [VMBO, HAVO, VWO]
+
+    SchoolLevel:
+      type: string
+      enum:
+        - PRAKTIJKONDERWIJS
+        - VSO
+        - VMBO
+        - VMBO_T
+        - VMBO_B
+        - VMBO_K
+        - HAVO
+        - VWO
+
+    School:
+      type: object
+      required:
+        - id
+        - name
+        - levels
+        - concepts
+      properties:
+        id: { type: string }
+        sourceKey: { type: [string, "null"] }
+        brin: { type: [string, "null"] }
+        name: { type: string }
+        websiteUrl: { type: [string, "null"] }
+        phone: { type: [string, "null"] }
+        street: { type: [string, "null"] }
+        houseNumber: { type: [string, "null"] }
+        postalCode: { type: [string, "null"] }
+        city: { type: [string, "null"] }
+        lat: { type: [number, "null"] }
+        lon: { type: [number, "null"] }
+        levels:
+          type: array
+          items: { $ref: "#/components/schemas/SchoolLevel" }
+        concepts:
+          type: array
+          items: { type: string }
+        denomination: { type: [string, "null"] }
+        size: { type: [integer, "null"] }
+        results:
+          description: Exam data and other metrics
+          type: [object, "null"]
+          additionalProperties: true
+        admissions:
+          type: [object, "null"]
+          additionalProperties: true
+        admissionsInfo:
+          type: [object, "null"]
+          additionalProperties: true
+        source: { type: [string, "null"] }
+        sourceUrl: { type: [string, "null"] }
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
