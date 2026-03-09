@@ -365,35 +365,57 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
   const yesNoInput = (key: keyof ImpressionMetrics) => {
     const current = (metrics[key] as YesNoValue | null) ?? null;
     const isYes = current === "yes";
+    const isNo = current === "no";
     return (
-      <button
-        type="button"
-        role="switch"
-        aria-checked={isYes}
-        onClick={() =>
-          setMetric(
-            key,
-            (isYes ? "no" : "yes") as ImpressionMetrics[typeof key]
-          )
-        }
-        className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 px-2 py-1 text-xs dark:border-white/15"
+      <div
+        role="radiogroup"
+        aria-label={String(key)}
+        className="inline-flex w-fit items-center gap-0.5 rounded-full border border-black/10 bg-zinc-100 p-0.5 text-[10px] shadow-inner dark:border-white/15 dark:bg-white/10"
       >
-        <span className={isYes ? "text-zinc-400 dark:text-zinc-500" : ""}>{t("no")}</span>
-        <span
+        <button
+          type="button"
+          role="radio"
+          aria-checked={isNo}
+          onClick={() => setMetric(key, "no" as ImpressionMetrics[typeof key])}
           className={[
-            "relative inline-flex h-5 w-10 items-center rounded-full transition-colors",
-            isYes ? "bg-emerald-500" : "bg-zinc-300 dark:bg-zinc-700",
+            "h-6 min-w-[36px] rounded-full px-2 font-semibold leading-none transition-colors",
+            isNo
+              ? "bg-red-500 text-white shadow-sm"
+              : "bg-white/70 text-zinc-700 hover:bg-white dark:bg-white/10 dark:text-zinc-200 dark:hover:bg-white/15",
           ].join(" ")}
         >
-          <span
-            className={[
-              "inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform",
-              isYes ? "translate-x-5" : "translate-x-1",
-            ].join(" ")}
-          />
-        </span>
-        <span className={isYes ? "" : "text-zinc-400 dark:text-zinc-500"}>{t("yes")}</span>
-      </button>
+          {t("no")}
+        </button>
+        <button
+          type="button"
+          role="radio"
+          aria-checked={current == null}
+          onClick={() => setMetric(key, null as ImpressionMetrics[typeof key])}
+          className={[
+            "h-6 min-w-[36px] rounded-full px-2 font-semibold leading-none transition-colors",
+            current == null
+              ? "bg-zinc-400 text-zinc-900 shadow-sm dark:bg-zinc-600 dark:text-zinc-100"
+              : "bg-white/70 text-zinc-700 hover:bg-white dark:bg-white/10 dark:text-zinc-200 dark:hover:bg-white/15",
+          ].join(" ")}
+          aria-label="Unresolved"
+        >
+          —
+        </button>
+        <button
+          type="button"
+          role="radio"
+          aria-checked={isYes}
+          onClick={() => setMetric(key, "yes" as ImpressionMetrics[typeof key])}
+          className={[
+            "h-6 min-w-[36px] rounded-full px-2 font-semibold leading-none transition-colors",
+            isYes
+              ? "bg-emerald-500 text-white shadow-sm"
+              : "bg-white/70 text-zinc-700 hover:bg-white dark:bg-white/10 dark:text-zinc-200 dark:hover:bg-white/15",
+          ].join(" ")}
+        >
+          {t("yes")}
+        </button>
+      </div>
     );
   };
 
