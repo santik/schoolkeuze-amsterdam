@@ -174,3 +174,12 @@ Response:
 - `200 { ok: true }`
 - `400 { error: string }`
 
+## 9. Profile ID Generator
+
+## `GET /api/profile/new-id`
+
+Response:
+- `200 { id: string }`
+
+Behavior:
+- generates `AdjectiveNoun1234` format on the server using stored word lists.

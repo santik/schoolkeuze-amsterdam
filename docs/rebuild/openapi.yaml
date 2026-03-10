@@ -468,6 +468,23 @@ paths:
             application/json:
               schema: { $ref: "#/components/schemas/ErrorResponse" }
 
+  /api/profile/new-id:
+    get:
+      tags: [Profile]
+      summary: Generate a new human-readable profile ID
+      description: |
+        Returns a server-generated ID based on adjective+noun+4 digits.
+      responses:
+        "200":
+          description: Generated profile ID
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [id]
+                properties:
+                  id: { type: string }
+
 components:
   schemas:
     ErrorResponse:

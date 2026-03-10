@@ -4,13 +4,6 @@ import * as React from "react";
 
 import { normalizeProfileId, PROFILE_ID_STORAGE_KEY } from "@/lib/profile-id";
 
-function createId() {
-  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
-    return crypto.randomUUID();
-  }
-  return `profile_${Math.random().toString(36).slice(2)}`;
-}
-
 export function useProfileId() {
   const [profileId, setProfileIdState] = React.useState<string>("");
   const [hydrated, setHydrated] = React.useState(false);
@@ -24,17 +17,50 @@ export function useProfileId() {
   }, []);
 
   React.useEffect(() => {
-    try {
-      const url = new URL(window.location.href);
-      const fromQuery = normalizeProfileId(url.searchParams.get("profileId"));
-      const existing = normalizeProfileId(localStorage.getItem(PROFILE_ID_STORAGE_KEY));
+    let cancelled = false;
 
-      const next = fromQuery ?? existing ?? createId();
-      localStorage.setItem(PROFILE_ID_STORAGE_KEY, next);
-      setProfileIdState(next);
-    } finally {
-      setHydrated(true);
-    }
+    (async () => {
+      try {
+        const url = new URL(window.location.href);
+        const fromQuery = normalizeProfileId(url.searchParams.get("profileId"));
+        const existing = normalizeProfileId(
+          localStorage.getItem(PROFILE_ID_STORAGE_KEY)
+        );
+
+        const nextExisting = fromQuery ?? existing;
+        if (nextExisting) {
+          localStorage.setItem(PROFILE_ID_STORAGE_KEY, nextExisting);
+          setProfileIdState(nextExisting);
+          return;
+        }
+
+        let generated = "";
+        try {
+          const res = await fetch("/api/profile/new-id");
+          const body = (await res.json().catch(() => null)) as
+            | { id?: unknown }
+            | null;
+          if (res.ok && body && typeof body.id === "string") {
+            generated = body.id;
+          }
+        } catch {
+          // fall back below
+        }
+
+        if (!generated) {
+          generated = `profile_${Math.random().toString(36).slice(2, 10)}`;
+        }
+
+        localStorage.setItem(PROFILE_ID_STORAGE_KEY, generated);
+        setProfileIdState(generated);
+      } finally {
+        if (!cancelled) setHydrated(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { profileId, hydrated, setProfileId };
