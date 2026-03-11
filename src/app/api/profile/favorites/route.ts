@@ -11,6 +11,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const profileId = url.searchParams.get("profileId");
   if (!isValidProfileId(profileId)) return badRequest("Invalid profileId");
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   const favorites = await prisma.favorite.findMany({
     where: { profileId },
@@ -31,6 +34,10 @@ export async function PUT(req: Request) {
   const uniqueIds = Array.from(new Set(ids));
   const profileId = body.profileId;
 
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
+
   await prisma.$transaction(async (tx) => {
     await tx.favorite.deleteMany({ where: { profileId } });
     if (uniqueIds.length === 0) return;
@@ -45,4 +52,3 @@ export async function PUT(req: Request) {
 
   return NextResponse.json({ ok: true, ids: uniqueIds });
 }
-

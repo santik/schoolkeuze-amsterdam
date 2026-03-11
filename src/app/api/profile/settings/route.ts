@@ -13,6 +13,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const profileId = url.searchParams.get("profileId");
   if (!isValidProfileId(profileId)) return badRequest("Invalid profileId");
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   const settings = await prisma.profileSettings.findUnique({
     where: { profileId },
@@ -34,6 +37,10 @@ export async function PUT(req: Request) {
   const profileId = body.profileId;
   const adviceLevel = body.adviceLevel as "VMBO" | "HAVO" | "VWO";
 
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
+
   await prisma.profileSettings.upsert({
     where: { profileId },
     create: { profileId, adviceLevel },
@@ -42,4 +49,3 @@ export async function PUT(req: Request) {
 
   return NextResponse.json({ ok: true });
 }
-
