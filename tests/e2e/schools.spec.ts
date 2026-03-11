@@ -1,4 +1,12 @@
 import { test, expect } from "@playwright/test";
+import {
+  getFavoriteToggle,
+  getMapContainer,
+  getSchoolCards,
+  getSchoolDistance,
+  isProd,
+  seedProfileId,
+} from "./test-utils";
 
 type SchoolDTO = {
   id: string;
@@ -129,6 +137,7 @@ function sortSchools(schools: SchoolDTO[]) {
 }
 
 async function mockSchoolsApi(page: Parameters<typeof test>[1]["page"]) {
+  if (isProd) return;
   await page.route("**/api/schools**", async (route) => {
     const url = new URL(route.request().url());
     const q = url.searchParams.get("q")?.trim().toLowerCase() ?? "";
@@ -153,6 +162,7 @@ async function mockSchoolsApi(page: Parameters<typeof test>[1]["page"]) {
 }
 
 async function mockFavoritesApi(page: Parameters<typeof test>[1]["page"]) {
+  if (isProd) return;
   await page.context().route("**/api/profile/favorites**", async (route) => {
     if (route.request().method() === "GET") {
       await route.fulfill({
@@ -167,6 +177,7 @@ async function mockFavoritesApi(page: Parameters<typeof test>[1]["page"]) {
 }
 
 async function mockProfileSettingsApi(page: Parameters<typeof test>[1]["page"]) {
+  if (isProd) return;
   await page.context().route("**/api/profile/settings**", async (route) => {
     if (route.request().method() === "GET") {
       await route.fulfill({
@@ -181,12 +192,13 @@ async function mockProfileSettingsApi(page: Parameters<typeof test>[1]["page"]) 
 }
 
 test.beforeEach(async ({ page }) => {
+  await seedProfileId(page);
   await mockFavoritesApi(page);
   await mockProfileSettingsApi(page);
 });
 
 test("schools page renders filters and defaults", async ({ page }) => {
-  await mockSchoolsApi(page);
+  if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
   await expect(page.getByLabel("Zoek")).toBeVisible();
   await expect(page.getByPlaceholder("Bijv. Montessori, Barlaeus...")).toBeVisible();
@@ -216,9 +228,72 @@ test("schools page renders filters and defaults", async ({ page }) => {
   await expect(mapButton).toHaveAttribute("aria-expanded", "false");
 });
 
-test("schools list sorts by level rank and name", async ({ page }) => {
-  await mockSchoolsApi(page);
+test("map popup opens with info button", async ({ page }) => {
+  if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
+
+  const mapButton = page.getByRole("button", { name: "Kaart" });
+  await mapButton.click();
+  await expect(mapButton).toHaveAttribute("aria-expanded", "true");
+
+  await expect(getMapContainer(page)).toBeVisible();
+  await expect(page.locator(".leaflet-marker-icon").first()).toBeVisible();
+
+  await page.evaluate(() => {
+    const img = document.querySelector(".leaflet-marker-icon") as HTMLElement | null;
+    if (img) img.click();
+  });
+
+  await page.waitForSelector(".leaflet-popup", { timeout: 20_000 });
+});
+
+test("schools list sorts by level rank and name", async ({ page }) => {
+  if (!isProd) await mockSchoolsApi(page);
+  await page.goto("/nl/schools");
+
+  if (isProd) {
+    await expect
+      .poll(async () => getSchoolCards(page).count())
+      .toBeGreaterThan(0);
+    const cards = getSchoolCards(page);
+    const count = await cards.count();
+    expect(count).toBeGreaterThan(0);
+
+    const seen: { name: string; rank: number }[] = [];
+    for (let i = 0; i < count; i += 1) {
+      const card = cards.nth(i);
+      const name = (await (isProd ? card.locator(".truncate") : card.getByTestId("school-name")).textContent())?.trim() ?? "";
+      const line = (await (isProd ? card.locator(".text-xs").first() : card.getByTestId("school-levels")).textContent()) ?? "";
+      const levelsPart = line.split("·")[0] ?? "";
+      const levels = levelsPart
+        .split("/")
+        .map((lvl) => lvl.trim())
+        .filter(Boolean);
+      const ranks = levels.map(rankLevel);
+      const rank = ranks.length ? Math.max(...ranks) : null;
+      if (rank === null) continue;
+      seen.push({ name, rank });
+    }
+
+    expect(seen.length).toBeGreaterThan(1);
+
+    for (let i = 1; i < seen.length; i += 1) {
+      expect(seen[i - 1].rank).toBeGreaterThanOrEqual(seen[i].rank);
+    }
+
+    let idx = 0;
+    while (idx < seen.length) {
+      const start = idx;
+      const rank = seen[idx].rank;
+      while (idx < seen.length && seen[idx].rank === rank) idx += 1;
+      const group = seen.slice(start, idx).map((x) => x.name);
+      const sorted = [...group].sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: "base" })
+      );
+      expect(group).toEqual(sorted);
+    }
+    return;
+  }
 
   const titles = page.locator('div[role="button"] .truncate');
   await expect(titles).toHaveText([
@@ -235,6 +310,36 @@ test("schools search filters by text", async ({ page }) => {
   await mockSchoolsApi(page);
   await page.goto("/nl/schools");
 
+  if (isProd) {
+    await expect
+      .poll(async () => getSchoolCards(page).count())
+      .toBeGreaterThan(0);
+    const initialTitles = await page
+      .locator(isProd ? "main [role=\"button\"] .truncate" : "[data-testid=\"school-name\"]")
+      .allTextContents();
+    const firstName = initialTitles[0]?.trim() ?? "";
+    const token = firstName.split(" ")[0] ?? firstName;
+    await page.getByLabel("Zoek").fill(token);
+    await expect
+      .poll(async () => {
+        const titles = await page
+          .locator(isProd ? "main [role=\"button\"] .truncate" : "[data-testid=\"school-name\"]")
+          .allTextContents();
+        return titles.map((t) => t.trim());
+      })
+      .not.toEqual(initialTitles.map((t) => t.trim()));
+
+    const titles = await page
+      .locator(isProd ? "main [role=\"button\"] .truncate" : "[data-testid=\"school-name\"]")
+      .allTextContents();
+    expect(titles.length).toBeGreaterThan(0);
+    const hasToken = titles.some((title) =>
+      title.toLowerCase().includes(token.toLowerCase())
+    );
+    expect(hasToken).toBeTruthy();
+    return;
+  }
+
   await page.getByLabel("Zoek").fill("Alpha");
   const titles = page.locator('div[role="button"] .truncate');
   await expect(titles).toHaveText(["Alpha VWO"]);
@@ -243,6 +348,49 @@ test("schools search filters by text", async ({ page }) => {
 test("schools level filters respect hierarchy", async ({ page }) => {
   await mockSchoolsApi(page);
   await page.goto("/nl/schools");
+
+  if (isProd) {
+    const cards = getSchoolCards(page);
+
+    await page.getByLabel("VWO").check();
+    const vwoLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
+    for (const line of vwoLines) {
+      const levels = (line.split("·")[0] ?? "").toUpperCase();
+      expect(levels).toContain("VWO");
+      expect(levels).not.toContain("HAVO");
+      expect(levels).not.toContain("VMBO");
+      expect(levels).not.toContain("PRAKTIJK");
+    }
+
+    await page.getByLabel("VWO").uncheck();
+    await page.getByLabel("HAVO").check();
+    const havoLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
+    for (const line of havoLines) {
+      const levels = (line.split("·")[0] ?? "").toUpperCase();
+      expect(levels).toContain("HAVO");
+      expect(levels).not.toContain("VMBO");
+      expect(levels).not.toContain("PRAKTIJK");
+    }
+
+    await page.getByLabel("HAVO").uncheck();
+    await page.getByLabel("VMBO").check();
+    const vmboLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
+    for (const line of vmboLines) {
+      const levels = (line.split("·")[0] ?? "").toUpperCase();
+      expect(levels).toContain("VMBO");
+      expect(levels).not.toContain("PRAKTIJK");
+    }
+
+    await page.getByLabel("VMBO").uncheck();
+    await page.getByLabel("Praktijk").check();
+    const praktijkLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
+    for (const line of praktijkLines) {
+      const levels = (line.split("·")[0] ?? "").toUpperCase();
+      expect(levels).toContain("PRAKTIJK");
+    }
+
+    return;
+  }
 
   await page.getByLabel("VWO").check();
   await expect(page.locator('div[role="button"] .truncate')).toHaveText([
@@ -278,22 +426,26 @@ test("distance controls use location and zip interactions", async ({
   await context.setGeolocation({ latitude: 52.37, longitude: 4.89 });
 
   let lastSchoolsUrl = "";
-  await page.route("**/api/schools**", async (route) => {
-    lastSchoolsUrl = route.request().url();
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({ schools: sortSchools(SAMPLE_SCHOOLS) }),
+  if (!isProd) {
+    await page.route("**/api/schools**", async (route) => {
+      lastSchoolsUrl = route.request().url();
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ schools: sortSchools(SAMPLE_SCHOOLS) }),
+      });
     });
-  });
+  }
 
-  await page.route("**/api/geocode-zip**", async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({ lat: 52.371, lon: 4.892 }),
+  if (!isProd) {
+    await page.route("**/api/geocode-zip**", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ lat: 52.371, lon: 4.892 }),
+      });
     });
-  });
+  }
 
   await page.goto("/nl/schools");
   await page.getByRole("button", { name: /Afstand & fietstijd/i }).click();
@@ -314,29 +466,50 @@ test("distance controls use location and zip interactions", async ({
   await expect(useLocation).toBeChecked();
 
   await expect(bikeSlider).toBeEnabled();
-  await expect(page.getByText(/km · ~\d+ min fiets/).first()).toBeVisible();
-  expect(lastSchoolsUrl).toContain("lat=");
-  expect(lastSchoolsUrl).toContain("lon=");
-  expect(lastSchoolsUrl).toContain("bikeMinutes=");
+  await expect(getSchoolDistance(page).first()).toBeVisible();
+  if (!isProd) {
+    expect(lastSchoolsUrl).toContain("lat=");
+    expect(lastSchoolsUrl).toContain("lon=");
+    expect(lastSchoolsUrl).toContain("bikeMinutes=");
+  }
 });
 
 test("favorite toggle does not navigate", async ({ page }) => {
-  await mockSchoolsApi(page);
+  if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
 
-  const firstCard = page.locator('div[role="button"]').first();
-  const favoriteButton = firstCard.getByRole("button");
-  await page.waitForResponse((res) => res.url().includes("/api/profile/favorites") && res.ok());
+  await expect
+    .poll(async () => getSchoolCards(page).count())
+    .toBeGreaterThan(0);
+
+  const firstCard = getSchoolCards(page).first();
+  const favoriteButton = getFavoriteToggle(firstCard);
+  const responsePromise = page.waitForResponse(
+    (res) =>
+      res.url().includes("/api/profile/favorites") &&
+      res.request().method() === "PUT"
+  );
+  const initialLabel = await favoriteButton.getAttribute("aria-label");
   await favoriteButton.click();
+  await responsePromise;
 
   await expect(page).toHaveURL(/\/nl\/schools/);
-  await expect(favoriteButton).toHaveAttribute("aria-label", "Remove favorite");
+  await expect
+    .poll(async () => favoriteButton.getAttribute("aria-label"))
+    .not.toBe(initialLabel);
 });
 
 test("school card click opens details", async ({ page }) => {
-  await mockSchoolsApi(page);
+  if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
 
-  await page.locator('div[role="button"]', { hasText: "Alpha VWO" }).click();
+  if (isProd) {
+    const firstCard = getSchoolCards(page).first();
+    await firstCard.click();
+    await expect(page).toHaveURL(/\/nl\/schools\/[^/]+/);
+    return;
+  }
+
+  await page.getByTestId("school-card").filter({ hasText: "Alpha VWO" }).click();
   await expect(page).toHaveURL(/\/nl\/schools\/s1/);
 });

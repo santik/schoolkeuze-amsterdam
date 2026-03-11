@@ -441,10 +441,12 @@ export function SchoolsExplorer() {
             </div>
           </div>
 
-          <div className="grid gap-2">
+            <div className="grid gap-2">
             {sortedSchools.map((s) => (
               <div
                 key={s.id}
+                data-testid="school-card"
+                data-school-id={s.id}
                 className={[
                   "cursor-pointer rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id
@@ -464,18 +466,32 @@ export function SchoolsExplorer() {
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
-                    <div className="truncate font-semibold text-indigo-950 dark:text-indigo-100">{s.name}</div>
-                    <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                    <div
+                      data-testid="school-name"
+                      className="truncate font-semibold text-indigo-950 dark:text-indigo-100"
+                    >
+                      {s.name}
+                    </div>
+                    <div
+                      data-testid="school-levels"
+                      className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80"
+                    >
                       {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                       {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}
                     </div>
-                    <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                    <div
+                      data-testid="school-address"
+                      className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80"
+                    >
                       {[s.postalCode, s.city].filter(Boolean).join(" ") || "—"}
                     </div>
                     {distanceOrigin &&
                       s.lat != null &&
                       s.lon != null ? (
-                      <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                      <div
+                        data-testid="school-distance"
+                        className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80"
+                      >
                         {(() => {
                           const km = haversineKm(
                             distanceOrigin.lat,
@@ -496,6 +512,7 @@ export function SchoolsExplorer() {
                   <div className="w-full sm:w-auto">
                     <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:flex-nowrap sm:justify-end">
                       <button
+                        data-testid="favorite-toggle"
                         className={[
                           "h-9 min-w-0 flex-1 rounded-full border px-3 text-lg leading-none font-semibold sm:flex-none",
                           has(s.id)

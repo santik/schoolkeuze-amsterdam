@@ -1,4 +1,9 @@
 import { test, expect } from "@playwright/test";
+import { seedProfileId, isProd } from "./test-utils";
+
+test.beforeEach(async ({ page }) => {
+  await seedProfileId(page);
+});
 
 test("home page renders in default locale", async ({ page }) => {
   await page.goto("/nl");
@@ -20,6 +25,7 @@ test("home page links navigate correctly", async ({ page }) => {
   await page.goto("/nl");
   await page.locator("nav").getByRole("link", { name: /Profiel|Profile/i }).click();
   await expect(page).toHaveURL(/\/nl\/profile/);
+  await expect(page.locator('button[aria-controls="profile-id-panel"]')).toBeVisible();
 
   await page.goto("/nl");
   await page.getByRole("link", { name: /Scholen bekijken|Browse schools/i }).click();

@@ -95,7 +95,10 @@ export default function SchoolsMap({
   }, [activePopupId, markers]);
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-sky-200 bg-white/90 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10">
+    <div
+      data-testid="schools-map"
+      className="overflow-hidden rounded-3xl border border-sky-200 bg-white/90 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10"
+    >
       <div className="border-b border-sky-200 px-4 py-3 text-sm font-bold text-sky-900 dark:border-sky-300/20 dark:text-sky-100">
         🗺️ {t("title")}
       </div>
@@ -145,6 +148,7 @@ export default function SchoolsMap({
               }}
             >
               <Popup
+                data-testid="map-popup"
                 autoClose={false}
                 closeOnClick={false}
                 closeButton
@@ -152,12 +156,15 @@ export default function SchoolsMap({
                 offset={[0, -30]}
                 className="map-popup-pinned"
               >
-                <div className="text-sm font-semibold text-indigo-950">{s.name}</div>
-                <div className="mt-1 text-xs text-indigo-700">
+                <div data-testid="map-popup-name" className="text-sm font-semibold text-indigo-950">
+                  {s.name}
+                </div>
+                <div data-testid="map-popup-levels" className="mt-1 text-xs text-indigo-700">
                   {(s.levels ?? []).join(" / ") || "—"}
                 </div>
                 {pinnedId === s.id ? (
                   <Link
+                    data-testid="map-popup-info"
                     href={`/schools/${s.id}`}
                     className="mt-2 inline-flex h-8 items-center justify-center rounded-full border border-violet-300 bg-violet-50 px-3 text-xs font-semibold text-violet-900 hover:bg-violet-100"
                   >

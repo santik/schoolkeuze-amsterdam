@@ -88,7 +88,10 @@ export function ProfileClient() {
           </select>
         </label>
 
-        <div className="grid gap-2 rounded-2xl border border-sky-200 bg-white/70 p-3 dark:border-sky-300/30 dark:bg-sky-500/10">
+        <div
+          data-testid="profile-id-panel"
+          className="grid gap-2 rounded-2xl border border-sky-200 bg-white/70 p-3 dark:border-sky-300/30 dark:bg-sky-500/10"
+        >
           <button
             type="button"
             onClick={() => setIsProfileIdOpen((prev) => !prev)}
