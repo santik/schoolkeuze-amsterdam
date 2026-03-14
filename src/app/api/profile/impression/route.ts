@@ -23,6 +23,9 @@ export async function GET(req: Request) {
   const schoolIdsRaw = url.searchParams.get("schoolIds");
 
   if (!isValidProfileId(profileId)) return badRequest("Invalid profileId");
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   if (typeof schoolIdsRaw === "string" && schoolIdsRaw.trim()) {
     const schoolIds = schoolIdsRaw
@@ -73,6 +76,10 @@ export async function PUT(req: Request) {
   const profileId = body.profileId;
   const schoolId = body.schoolId.trim();
   const metrics = body.metrics;
+
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   if (!hasAnyDefined(metrics)) {
     await prisma.schoolImpression.deleteMany({ where: { profileId, schoolId } });

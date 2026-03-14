@@ -3,8 +3,12 @@ import {
   getFavoriteToggle,
   getMapContainer,
   getSchoolCards,
+  getSchoolNames,
   getSchoolDistance,
+  getSchoolLevelsFromCard,
+  getSchoolNameFromCard,
   isProd,
+  ensureProfileLoaded,
   seedProfileId,
 } from "./test-utils";
 
@@ -193,6 +197,7 @@ async function mockProfileSettingsApi(page: Parameters<typeof test>[1]["page"]) 
 
 test.beforeEach(async ({ page }) => {
   await seedProfileId(page);
+  await ensureProfileLoaded(page);
   await mockFavoritesApi(page);
   await mockProfileSettingsApi(page);
 });
@@ -226,6 +231,13 @@ test("schools page renders filters and defaults", async ({ page }) => {
 
   const mapButton = page.getByRole("button", { name: "Kaart" });
   await expect(mapButton).toHaveAttribute("aria-expanded", "false");
+
+  if (isProd) {
+    await expect(page.getByText(/\d+\s+scholen|\d+\s+schools/i)).toBeVisible();
+  } else {
+    await expect(page.getByTestId("schools-count")).toBeVisible();
+  }
+  await expect(page.getByText(/Vergelijken|Compare/i)).toHaveCount(0);
 });
 
 test("map popup opens with info button", async ({ page }) => {
@@ -245,6 +257,156 @@ test("map popup opens with info button", async ({ page }) => {
   });
 
   await page.waitForSelector(".leaflet-popup", { timeout: 20_000 });
+  await expect(page.locator(".leaflet-popup-close-button")).toBeVisible();
+  await expect(page.getByTestId("map-popup-info")).toBeVisible();
+  const infoLink = page.getByTestId("map-popup-info");
+  await expect(infoLink).toHaveAttribute("href", /\/schools\//);
+});
+
+test("map popup does not open on hover", async ({ page }) => {
+  if (!isProd) await mockSchoolsApi(page);
+  await page.goto("/nl/schools");
+
+  const mapButton = page.getByRole("button", { name: "Kaart" });
+  await mapButton.click();
+  await expect(mapButton).toHaveAttribute("aria-expanded", "true");
+
+  await expect(getMapContainer(page)).toBeVisible();
+  const markerIcon = page.locator(".leaflet-marker-icon").first();
+  await expect(markerIcon).toBeVisible();
+  await page.evaluate(() => {
+    const marker = document.querySelector(".leaflet-marker-icon");
+    if (!marker) return;
+    marker.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+    marker.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
+  });
+
+  await expect(page.locator(".leaflet-popup")).toHaveCount(0);
+});
+
+test("map markers reflect selection and favorites", async ({ page, request }) => {
+  if (!isProd) await mockSchoolsApi(page);
+
+  if (isProd) {
+    const res = await request.get("/api/schools?take=2");
+    const body = (await res.json()) as { schools?: Array<{ id: string }> };
+    const ids = (body.schools ?? []).map((s) => s.id).filter(Boolean);
+    if (ids.length >= 1) {
+      await request.put("/api/profile/favorites", {
+        data: { profileId: "856ebfdf-ef05-49e2-b22b-0d851944062a", ids },
+      });
+    }
+  }
+  await page.goto("/nl/schools");
+
+  const mapButton = page.getByRole("button", { name: "Kaart" });
+  await mapButton.click();
+  await expect(mapButton).toHaveAttribute("aria-expanded", "true");
+
+  const cards = getSchoolCards(page);
+  await expect.poll(async () => cards.count()).toBeGreaterThan(1);
+
+  const firstName = (await getSchoolNames(page).first().textContent())?.trim() ?? "";
+  const secondName = (await getSchoolNames(page).nth(1).textContent())?.trim() ?? "";
+
+  if (!isProd) {
+    const secondCard = cards.nth(1);
+    const favoriteButton = getFavoriteToggle(secondCard);
+    await favoriteButton.click();
+    await expect(favoriteButton).toHaveAttribute("aria-label", /Remove favorite|Favoriet verwijderen|Verwijder/);
+  }
+
+  const firstCard = cards.first();
+  await firstCard.scrollIntoViewIfNeeded();
+  await firstCard.evaluate((card) => {
+    card.dispatchEvent(new MouseEvent("mouseenter", { bubbles: true }));
+    card.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
+  });
+  if (isProd) {
+    await expect
+      .poll(async () => {
+        return page.evaluate(() => {
+          return Array.from(
+            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
+          ).some((img) => (img.getAttribute("src") || "").includes("red"));
+        });
+      })
+      .toBeTruthy();
+  } else {
+    await expect
+      .poll(async () => {
+        return page.evaluate((name) => {
+          const img = Array.from(
+            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
+          ).find((node) => node.getAttribute("title") === name);
+          return img?.getAttribute("src") ?? "";
+        }, firstName);
+      })
+      .toMatch(/red/i);
+  }
+
+  if (isProd) {
+    await expect
+      .poll(async () => {
+        return page.evaluate(() => {
+          return Array.from(
+            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
+          ).some((img) => (img.getAttribute("src") || "").includes("yellow"));
+        });
+      })
+      .toBeTruthy();
+  } else {
+    await expect
+      .poll(async () => {
+        return page.evaluate((name) => {
+          const img = Array.from(
+            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
+          ).find((node) => node.getAttribute("title") === name);
+          return img?.getAttribute("src") ?? "";
+        }, secondName);
+      })
+      .toMatch(/yellow/i);
+  }
+});
+
+test("map shows user location marker when enabled", async ({ page, context }) => {
+  if (!isProd) await mockSchoolsApi(page);
+  await context.grantPermissions(["geolocation"]);
+  await context.setGeolocation({ latitude: 52.37, longitude: 4.89 });
+
+  await page.goto("/nl/schools");
+  await page.getByRole("button", { name: /Afstand & fietstijd/i }).click();
+  await page.getByLabel("Gebruik mijn locatie (afstand)").check();
+
+  const mapButton = page.getByRole("button", { name: "Kaart" });
+  await mapButton.click();
+  await expect(mapButton).toHaveAttribute("aria-expanded", "true");
+
+  const userMarker = page.locator(".leaflet-marker-icon", { hasText: "🧍" });
+  await expect(userMarker).toBeVisible();
+});
+
+test("schools filters do not overflow on mobile", async ({ page }) => {
+  if (!isProd) await mockSchoolsApi(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/nl/schools");
+
+  if (isProd) {
+    const input = page.getByLabel("Zoek");
+    await expect(input).toBeVisible();
+    const fits = await input.evaluate((el) => {
+      const rect = el.getBoundingClientRect();
+      return rect.width <= window.innerWidth + 1;
+    });
+    expect(fits).toBeTruthy();
+  } else {
+    const container = page.getByTestId("schools-filters");
+    await expect(container).toBeVisible();
+    const fits = await container.evaluate(
+      (el) => el.scrollWidth - el.clientWidth <= 1
+    );
+    expect(fits).toBeTruthy();
+  }
 });
 
 test("schools list sorts by level rank and name", async ({ page }) => {
@@ -262,8 +424,8 @@ test("schools list sorts by level rank and name", async ({ page }) => {
     const seen: { name: string; rank: number }[] = [];
     for (let i = 0; i < count; i += 1) {
       const card = cards.nth(i);
-      const name = (await (isProd ? card.locator(".truncate") : card.getByTestId("school-name")).textContent())?.trim() ?? "";
-      const line = (await (isProd ? card.locator(".text-xs").first() : card.getByTestId("school-levels")).textContent()) ?? "";
+      const name = (await getSchoolNameFromCard(card).textContent())?.trim() ?? "";
+      const line = (await getSchoolLevelsFromCard(card).textContent()) ?? "";
       const levelsPart = line.split("·")[0] ?? "";
       const levels = levelsPart
         .split("/")
@@ -304,6 +466,28 @@ test("schools list sorts by level rank and name", async ({ page }) => {
     "Gamma VMBO",
     "Delta Praktijk",
   ]);
+});
+
+test("schools list does not reorder after favoriting", async ({ page }) => {
+  if (!isProd) await mockSchoolsApi(page);
+  await page.goto("/nl/schools");
+
+  const cards = getSchoolCards(page);
+  await expect.poll(async () => cards.count()).toBeGreaterThan(0);
+  const before = await cards.locator(".truncate").allTextContents();
+
+  const firstCard = cards.first();
+  const favoriteButton = getFavoriteToggle(firstCard);
+  const responsePromise = page.waitForResponse(
+    (res) =>
+      res.url().includes("/api/profile/favorites") &&
+      res.request().method() === "PUT"
+  ).catch(() => null);
+  await favoriteButton.click();
+  await responsePromise;
+
+  const after = await cards.locator(".truncate").allTextContents();
+  expect(after).toEqual(before);
 });
 
 test("schools search filters by text", async ({ page }) => {
@@ -471,6 +655,56 @@ test("distance controls use location and zip interactions", async ({
     expect(lastSchoolsUrl).toContain("lat=");
     expect(lastSchoolsUrl).toContain("lon=");
     expect(lastSchoolsUrl).toContain("bikeMinutes=");
+  }
+});
+
+test("bike slider changes trigger new bikeMinutes request", async ({ page, context }) => {
+  await context.grantPermissions(["geolocation"]);
+  await context.setGeolocation({ latitude: 52.37, longitude: 4.89 });
+
+  let lastUrl = "";
+  if (!isProd) {
+    await page.route("**/api/schools**", async (route) => {
+      lastUrl = route.request().url();
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ schools: sortSchools(SAMPLE_SCHOOLS) }),
+      });
+    });
+  }
+
+  await page.goto("/nl/schools");
+  await page.getByRole("button", { name: /Afstand & fietstijd/i }).click();
+
+  const useLocation = page.getByLabel("Gebruik mijn locatie (afstand)");
+  await useLocation.check();
+
+  const slider = page.locator('input[type="range"]');
+  await expect(slider).toBeEnabled();
+
+  const readyRequest = page.waitForRequest(
+    (req) => req.url().includes("/api/schools?") && req.url().includes("lat="),
+    { timeout: 15_000 }
+  ).catch(() => null);
+  await readyRequest;
+
+  const requestPromise = page.waitForRequest(
+    (req) =>
+      req.url().includes("/api/schools?") &&
+      req.url().includes("bikeMinutes=15"),
+    { timeout: 15_000 }
+  ).catch(() => null);
+
+  await slider.focus();
+  await page.keyboard.press("ArrowLeft");
+  await page.keyboard.press("ArrowLeft");
+  await page.keyboard.press("ArrowLeft");
+  await expect(slider).toHaveValue("15");
+  await requestPromise;
+
+  if (!isProd) {
+    expect(lastUrl).toContain("bikeMinutes=15");
   }
 });
 

@@ -188,7 +188,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-black/5 bg-white dark:border-white/10 dark:bg-white/5">
-      <table className="min-w-[720px] w-full text-left text-sm">
+      <table data-testid="compare-table" className="min-w-[720px] w-full text-left text-sm">
         <thead className="border-b border-black/5 dark:border-white/10">
           <tr>
             <th className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
@@ -204,7 +204,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
           </tr>
         </thead>
         <tbody>
-          <tr className="border-b border-black/5 dark:border-white/10">
+          <tr data-testid="compare-row-level" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("level")}
             </td>
@@ -214,7 +214,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
               </td>
             ))}
           </tr>
-          <tr className="border-b border-black/5 dark:border-white/10">
+          <tr data-testid="compare-row-passrate" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("passRate")}
             </td>
@@ -224,7 +224,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
               </td>
             ))}
           </tr>
-          <tr className="border-b border-black/5 dark:border-white/10">
+          <tr data-testid="compare-row-concept" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("concept")}
             </td>
@@ -234,7 +234,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
               </td>
             ))}
           </tr>
-          <tr className="border-b border-black/5 dark:border-white/10">
+          <tr data-testid="compare-row-size" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("size")}
             </td>
@@ -244,7 +244,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
               </td>
             ))}
           </tr>
-          <tr className="border-b border-black/5 dark:border-white/10">
+          <tr data-testid="compare-row-score" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("score")}
             </td>
@@ -256,7 +256,7 @@ export function CompareTableClient({ schools }: { schools: CompareSchool[] }) {
               </td>
             ))}
           </tr>
-          <tr>
+          <tr data-testid="compare-row-website">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
               {tTable("website")}
             </td>

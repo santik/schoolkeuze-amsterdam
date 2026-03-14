@@ -34,12 +34,16 @@ export function ExamResultsCollapsible({
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="grid gap-2 rounded-3xl border border-sky-200 bg-white/90 p-3 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10">
+    <div
+      data-testid="exam-results"
+      className="grid gap-2 rounded-3xl border border-sky-200 bg-white/90 p-3 shadow-sm dark:border-sky-300/20 dark:bg-sky-500/10"
+    >
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         className="flex items-center justify-between text-left text-sm font-semibold text-sky-900 dark:text-sky-100"
+        data-testid="exam-toggle"
       >
         <span>{title}</span>
         <span>{open ? "▾" : "▸"}</span>
@@ -47,10 +51,12 @@ export function ExamResultsCollapsible({
 
       {open ? (
         rows.length === 0 ? (
-          <div className="text-sm text-zinc-700 dark:text-zinc-300">{noResultsLabel}</div>
+          <div data-testid="exam-empty" className="text-sm text-zinc-700 dark:text-zinc-300">
+            {noResultsLabel}
+          </div>
         ) : (
           <div className="overflow-x-auto rounded-2xl border border-black/10 dark:border-white/10">
-            <table className="min-w-[560px] w-full text-left text-sm">
+            <table data-testid="exam-table" className="min-w-[560px] w-full text-left text-sm">
               <thead className="border-b border-black/10 dark:border-white/10">
                 <tr>
                   <th className="p-3">{levelHeader}</th>
@@ -93,4 +99,3 @@ export function ExamResultsCollapsible({
     </div>
   );
 }
-

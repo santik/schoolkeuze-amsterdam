@@ -14,6 +14,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const profileId = url.searchParams.get("profileId");
   if (!isValidProfileId(profileId)) return badRequest("Invalid profileId");
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
+  }
 
   const notes = await prisma.schoolNote.findMany({
     where: { profileId },
@@ -43,6 +46,10 @@ export async function PUT(req: Request) {
 
   if (!enforceMaxLength(note, MAX_NOTE_LENGTH)) {
     return badRequest("Note is too long");
+  }
+
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({ error: "Database unavailable" }, { status: 503 });
   }
 
   if (!note) {

@@ -59,7 +59,10 @@ export function NotesClient({ schoolId }: { schoolId: string }) {
   if (!hydrated) return null;
 
   return (
-    <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
+    <section
+      data-testid="notes-section"
+      className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+    >
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-lg font-semibold tracking-tight">{t("title")}</h2>
         <div className="text-xs text-zinc-600 dark:text-zinc-400">
@@ -72,6 +75,7 @@ export function NotesClient({ schoolId }: { schoolId: string }) {
       </div>
 
       <textarea
+        data-testid="notes-textarea"
         value={draft}
         onChange={(e) => {
           dirtyRef.current = true;

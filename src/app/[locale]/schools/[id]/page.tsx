@@ -69,19 +69,25 @@ export default async function SchoolDetailPage({
 
   return (
     <div className="grid gap-6">
-      <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
+      <section
+        data-testid="details-hero"
+        className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+      >
         <div className="flex flex-wrap items-start justify-between gap-3">
-          <h1 className="text-balance text-3xl font-semibold tracking-tight">
+          <h1
+            data-testid="details-name"
+            className="text-balance text-3xl font-semibold tracking-tight"
+          >
             {school.name}
           </h1>
           <FavoriteButton schoolId={school.id} />
         </div>
 
         <div className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
-          <div>
+          <div data-testid="details-levels">
             {(school.levels ?? []).join(" / ") || "—"}
           </div>
-          <div>
+          <div data-testid="details-address">
             {address || "—"}{" "}
             {mapHref ? (
               <a
@@ -89,18 +95,20 @@ export default async function SchoolDetailPage({
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 underline underline-offset-2"
+                data-testid="details-map-link"
               >
                 📍 {t("openMap")}
               </a>
             ) : null}
           </div>
-          <div>
+          <div data-testid="details-website">
             {school.websiteUrl ? (
               <a
                 href={school.websiteUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="underline underline-offset-2"
+                data-testid="details-website-link"
               >
                 {school.websiteUrl}
               </a>
@@ -108,7 +116,7 @@ export default async function SchoolDetailPage({
               "—"
             )}
           </div>
-          <div>
+          <div data-testid="details-student-count">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("studentCount")}:</span>{" "}
             {typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}
           </div>
@@ -129,7 +137,10 @@ export default async function SchoolDetailPage({
       <ImpressionClient schoolId={school.id} />
       <NotesClient schoolId={school.id} />
 
-      <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
+      <section
+        data-testid="details-admissions"
+        className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+      >
         <h2 className="text-lg font-semibold tracking-tight">
           {t("admissionsTitle")}
         </h2>
@@ -170,7 +181,7 @@ export default async function SchoolDetailPage({
               </ul>
             </div>
 
-            <div>
+            <div data-testid="admissions-sources">
               <div className="font-semibold text-zinc-900 dark:text-zinc-100">
                 {lang === "nl" ? "Bronnen" : "Sources"}
               </div>

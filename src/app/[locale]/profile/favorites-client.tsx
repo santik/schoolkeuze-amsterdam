@@ -427,7 +427,10 @@ export function FavoritesClient({
   return (
     <div className="grid gap-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="text-sm text-indigo-700/90 dark:text-indigo-200/90">
+        <div
+          data-testid="favorites-count"
+          className="text-sm text-indigo-700/90 dark:text-indigo-200/90"
+        >
           {tFav("count", { count: schools.length })} · {tFav("dragToRank")}
         </div>
         <div className="flex flex-wrap gap-2">
@@ -459,6 +462,7 @@ export function FavoritesClient({
             <ol
               ref={dropProvided.innerRef}
               {...dropProvided.droppableProps}
+              data-testid="favorites-list"
               className="grid gap-2"
             >
               {schools.map((s, idx) => {
@@ -475,10 +479,11 @@ export function FavoritesClient({
                         ref={dragProvided.innerRef}
                         {...dragProvided.draggableProps}
                         {...dragProvided.dragHandleProps}
+                        data-testid="favorite-item"
                         className={`flex items-center justify-between gap-3 rounded-3xl border bg-white/90 p-4 shadow-sm transition-shadow hover:shadow-md ${
                           showMismatch
                             ? "border-amber-300 dark:border-amber-300/30 dark:bg-amber-300/5"
-                            : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
+                          : "border-indigo-100 dark:border-indigo-300/20 dark:bg-white/5"
                         } ${
                           draggingId === s.id || dragSnapshot.isDragging
                             ? "opacity-70 ring-2 ring-violet-300/60 dark:ring-violet-300/40"
@@ -506,7 +511,10 @@ export function FavoritesClient({
                             {s.name}
                           </div>
                           {scoreBySchoolId.has(s.id) ? (
-                            <div className="mt-1 text-xs font-semibold text-indigo-800 dark:text-indigo-200">
+                            <div
+                              data-testid="favorite-score"
+                              className="mt-1 text-xs font-semibold text-indigo-800 dark:text-indigo-200"
+                            >
                               {tFav("score")}: {Math.round(scoreBySchoolId.get(s.id) ?? 0)}%
                             </div>
                           ) : null}

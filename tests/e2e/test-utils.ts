@@ -16,6 +16,14 @@ export async function seedProfileId(page: Page) {
   );
 }
 
+export async function ensureProfileLoaded(page: Page) {
+  if (!isProd) return;
+  await page.goto("/nl/profile");
+  await page.waitForSelector('button[aria-controls="profile-id-panel"]', {
+    timeout: 15_000,
+  });
+}
+
 export function getSchoolCards(page: Page) {
   return isProd ? page.locator("main").locator('[role="button"]') : page.getByTestId("school-card");
 }
@@ -42,4 +50,12 @@ export function getMapContainer(page: Page) {
 
 export function getFavoriteToggle(card: ReturnType<typeof getSchoolCards>) {
   return isProd ? card.getByRole("button", { name: /favorite/i }) : card.getByTestId("favorite-toggle");
+}
+
+export function getSchoolNameFromCard(card: ReturnType<typeof getSchoolCards>) {
+  return isProd ? card.locator(".truncate") : card.getByTestId("school-name");
+}
+
+export function getSchoolLevelsFromCard(card: ReturnType<typeof getSchoolCards>) {
+  return isProd ? card.locator(".text-xs").first() : card.getByTestId("school-levels");
 }

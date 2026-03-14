@@ -23,6 +23,7 @@ const DefaultIcon = L.icon({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
+  className: "marker-default",
 });
 
 const SelectedIcon = L.icon({
@@ -33,6 +34,7 @@ const SelectedIcon = L.icon({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
+  className: "marker-selected",
 });
 
 const FavoriteIcon = L.icon({
@@ -43,11 +45,12 @@ const FavoriteIcon = L.icon({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
+  className: "marker-favorite",
 });
 
 const UserIcon = L.divIcon({
   html: '<div style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9999px;background:#2563eb;color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🧍</div>',
-  className: "",
+  className: "marker-user",
   iconSize: [30, 30],
   iconAnchor: [15, 15],
 });
@@ -130,6 +133,7 @@ export default function SchoolsMap({
                 markerRefs.current[s.id] = el;
               }}
               position={[s.lat!, s.lon!]}
+              title={s.name}
               icon={
                 selectedId === s.id
                   ? SelectedIcon

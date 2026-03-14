@@ -262,7 +262,10 @@ export function SchoolsExplorer() {
   return (
     <div className="grid min-w-0 gap-4">
       <div className="grid min-w-0 gap-3">
-        <div className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10">
+        <div
+          data-testid="schools-filters"
+          className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10"
+        >
           <div className="grid gap-3 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
@@ -433,7 +436,10 @@ export function SchoolsExplorer() {
         ) : null}
 
         <div className="grid gap-3">
-          <div className="flex items-center justify-between text-sm text-indigo-700/90 dark:text-indigo-200/90">
+          <div
+            data-testid="schools-count"
+            className="flex items-center justify-between text-sm text-indigo-700/90 dark:text-indigo-200/90"
+          >
             <div>
               {loading
                 ? t("loading")

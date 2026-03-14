@@ -9,6 +9,7 @@ export function FavoriteButton({ schoolId }: { schoolId: string }) {
   return (
     <button
       type="button"
+      data-testid="favorite-toggle"
       onClick={() => toggle(schoolId)}
       aria-label={active ? "Remove favorite" : "Add favorite"}
       className={[

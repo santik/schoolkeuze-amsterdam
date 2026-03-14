@@ -336,7 +336,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
   const ratingInput = (key: keyof ImpressionMetrics) => {
     const current = (metrics[key] as number | null) ?? null;
     return (
-      <div className="inline-flex w-fit items-center gap-1 py-1">
+      <div
+        data-testid={`rating-${String(key)}`}
+        className="inline-flex w-fit items-center gap-1 py-1"
+      >
           {[1, 2, 3, 4, 5].map((n) => (
             <button
               key={`${String(key)}-${n}`}
@@ -368,6 +371,7 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
     const isNo = current === "no";
     return (
       <div
+        data-testid={`toggle-${String(key)}`}
         role="radiogroup"
         aria-label={String(key)}
         className="inline-flex w-fit items-center gap-0.5 rounded-full border border-black/10 bg-zinc-100 p-0.5 text-[10px] shadow-inner dark:border-white/15 dark:bg-white/10"
@@ -422,7 +426,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
   if (!hydrated || !profileId) return null;
 
   return (
-    <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
+    <section
+      data-testid="impression-section"
+      className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+    >
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-lg font-semibold tracking-tight">{t("title")}</h2>
         <div className="text-xs text-zinc-600 dark:text-zinc-400">
@@ -431,7 +438,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
       </div>
 
       <div className="grid gap-3 text-sm">
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-overall"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("overall")}
@@ -449,7 +459,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
           </div>
         </div>
 
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-section-fit"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("groupFitLearning")}
@@ -479,7 +492,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
           </div>
         </div>
 
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-section-atmosphere"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("groupAtmosphereBuilding")}
@@ -517,7 +533,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
           </div>
         </div>
 
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-section-travel"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("groupTravelAccess")}
@@ -543,7 +562,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
           </div>
         </div>
 
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-section-food"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("groupFoodBreaks")}
@@ -581,7 +603,10 @@ export function ImpressionClient({ schoolId }: { schoolId: string }) {
           </div>
         </div>
 
-        <div className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10">
+        <div
+          data-testid="impression-section-activities"
+          className="grid gap-2 rounded-2xl border border-black/10 p-3 dark:border-white/10"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
             <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-300">
               {t("groupActivitiesSports")}
