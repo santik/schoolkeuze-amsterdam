@@ -336,14 +336,10 @@ test("map markers reflect selection and favorites", async ({ page, request }) =>
   });
   if (isProd) {
     await expect
-      .poll(async () => {
-        return page.evaluate(() => {
-          return Array.from(
-            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
-          ).some((img) => (img.getAttribute("src") || "").includes("red"));
-        });
-      })
-      .toBeTruthy();
+      .poll(async () =>
+        page.locator("img.leaflet-marker-icon.marker-selected").count()
+      )
+      .toBeGreaterThan(0);
   } else {
     await expect
       .poll(async () => {
@@ -351,22 +347,18 @@ test("map markers reflect selection and favorites", async ({ page, request }) =>
           const img = Array.from(
             document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
           ).find((node) => node.getAttribute("title") === name);
-          return img?.getAttribute("src") ?? "";
+          return img?.className ?? "";
         }, firstName);
       })
-      .toMatch(/red/i);
+      .toMatch(/marker-selected/);
   }
 
   if (isProd) {
     await expect
-      .poll(async () => {
-        return page.evaluate(() => {
-          return Array.from(
-            document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
-          ).some((img) => (img.getAttribute("src") || "").includes("yellow"));
-        });
-      })
-      .toBeTruthy();
+      .poll(async () =>
+        page.locator("img.leaflet-marker-icon.marker-favorite").count()
+      )
+      .toBeGreaterThan(0);
   } else {
     await expect
       .poll(async () => {
@@ -374,10 +366,10 @@ test("map markers reflect selection and favorites", async ({ page, request }) =>
           const img = Array.from(
             document.querySelectorAll<HTMLImageElement>("img.leaflet-marker-icon")
           ).find((node) => node.getAttribute("title") === name);
-          return img?.getAttribute("src") ?? "";
+          return img?.className ?? "";
         }, secondName);
       })
-      .toMatch(/yellow/i);
+      .toMatch(/marker-favorite/);
   }
 });
 
