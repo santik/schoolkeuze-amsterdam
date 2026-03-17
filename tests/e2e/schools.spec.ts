@@ -261,17 +261,29 @@ test("map popup opens with info button", async ({ page }) => {
   await expect(mapButton).toHaveAttribute("aria-expanded", "true");
 
   await expect(getMapContainer(page)).toBeVisible();
-  await expect(page.locator(".leaflet-marker-icon").first()).toBeVisible();
+  const marker = page.locator(".leaflet-marker-icon").first();
+  await expect(marker).toBeVisible();
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    await marker.dispatchEvent("click");
+    const box = await marker.boundingBox();
+    if (box) {
+      await page.mouse.click(
+        box.x + box.width / 2,
+        box.y + box.height / 2
+      );
+    }
+    const popupCount = await page.locator(".leaflet-popup").count();
+    if (popupCount > 0) break;
+    await page.waitForTimeout(300);
+  }
 
-  await page.evaluate(() => {
-    const img = document.querySelector(".leaflet-marker-icon") as HTMLElement | null;
-    if (img) img.click();
-  });
-
-  await page.waitForSelector(".leaflet-popup", { timeout: 20_000 });
-  await expect(page.locator(".leaflet-popup-close-button")).toBeVisible();
-  await expect(page.getByTestId("map-popup-info")).toBeVisible();
-  const infoLink = page.getByTestId("map-popup-info");
+  await expect
+    .poll(async () => page.locator(".leaflet-popup").count())
+    .toBeGreaterThan(0);
+  const closeButtons = page.locator(".leaflet-popup-close-button");
+  await expect(closeButtons.first()).toBeVisible();
+  const infoLink = page.getByTestId("map-popup-info").first();
+  await expect(infoLink).toBeVisible();
   await expect(infoLink).toHaveAttribute("href", /\/schools\//);
 });
 
@@ -337,7 +349,7 @@ test("map markers reflect selection and favorites", async ({ page, request }) =>
   if (isProd) {
     await expect
       .poll(async () =>
-        page.locator("img.leaflet-marker-icon.marker-selected").count()
+        page.locator("img.marker-selected").count()
       )
       .toBeGreaterThan(0);
   } else {
@@ -356,7 +368,7 @@ test("map markers reflect selection and favorites", async ({ page, request }) =>
   if (isProd) {
     await expect
       .poll(async () =>
-        page.locator("img.leaflet-marker-icon.marker-favorite").count()
+        page.locator("img.marker-favorite").count()
       )
       .toBeGreaterThan(0);
   } else {

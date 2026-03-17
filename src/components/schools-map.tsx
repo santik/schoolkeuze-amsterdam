@@ -126,18 +126,25 @@ export default function SchoolsMap({
             </Marker>
           ) : null}
 
-          {markers.map((s) => (
+          {markers.map((s) => {
+            const iconType =
+              selectedId === s.id
+                ? "selected"
+                : favoriteSet.has(s.id)
+                  ? "favorite"
+                  : "default";
+            return (
             <Marker
-              key={s.id}
+              key={`${s.id}-${iconType}`}
               ref={(el) => {
                 markerRefs.current[s.id] = el;
               }}
               position={[s.lat!, s.lon!]}
               title={s.name}
               icon={
-                selectedId === s.id
+                iconType === "selected"
                   ? SelectedIcon
-                  : favoriteSet.has(s.id)
+                  : iconType === "favorite"
                     ? FavoriteIcon
                     : DefaultIcon
               }
@@ -177,7 +184,8 @@ export default function SchoolsMap({
                 ) : null}
               </Popup>
             </Marker>
-          ))}
+          );
+          })}
         </MapContainer>
       </div>
     </div>
