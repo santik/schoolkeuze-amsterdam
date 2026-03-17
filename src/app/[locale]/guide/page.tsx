@@ -92,10 +92,11 @@ export default async function GuidePage({
                 April 9, 2026.
               </li>
               <li>
-                You submit one ranked preference list. Schools first place
-                students with priority (for example sibling rules), then
-                remaining seats are assigned by lottery number and preference
-                order.
+                You submit one ranked preference list. Remaining seats are
+                assigned by lottery number and preference order. Priority
+                categories are now very limited (for example, hardship clause
+                placements or students coming from a Kopklas at the same
+                school).
               </li>
               <li>
                 Not every program participates in this central matching.
@@ -133,9 +134,10 @@ export default async function GuidePage({
                 plaatsingsuitslag op 9 april 2026.
               </li>
               <li>
-                Je levert 1 voorkeurslijst in. Scholen plaatsen eerst leerlingen
-                met voorrang (bijvoorbeeld broertjes/zusjes), daarna worden de
-                overige plekken toegewezen op lotnummer en voorkeursvolgorde.
+                Je levert 1 voorkeurslijst in. Overige plekken worden toegewezen
+                op lotnummer en voorkeursvolgorde. Voorrangscategorieen zijn nu
+                zeer beperkt (bijvoorbeeld hardheidsclausule of leerlingen uit
+                een Kopklas op dezelfde school).
               </li>
               <li>
                 Niet alle routes vallen onder de centrale matching.
@@ -357,6 +359,43 @@ export default async function GuidePage({
             <hr className="border-black/5 dark:border-white/10" />
 
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              Capacities and chances (last year)
+            </h4>
+            <ul className="list-disc pl-5">
+              <li>
+                Preliminary 2026 capacity list per school/track (indicative,
+                subject to change):{" "}
+                <a
+                  href="https://verenigingosvo.nl/wp-content/uploads/2025/12/Voorlopige-capaciteitsopgave-2026-1.pdf"
+                  className="underline underline-offset-2"
+                >
+                  preliminary capacity PDF
+                </a>
+                .
+              </li>
+              <li>
+                2025 report: 75.2% were placed at their first preference and
+                91.3% within their top 3.
+              </li>
+              <li>
+                By advice (2025): VWO 70.0% first choice; HAVO/VWO 61.7%; HAVO
+                71.7%; VMBO-b t/m VMBO-k 91.1%–98.7% first choice.
+              </li>
+              <li>
+                Full report:{" "}
+                <a
+                  href="https://verenigingosvo.nl/wp-content/uploads/2026/02/Loting-en-Matching-2025-Verslag.pdf"
+                  className="underline underline-offset-2"
+                >
+                  Loting en Matching 2025 – Verslag (PDF)
+                </a>
+                .
+              </li>
+            </ul>
+
+            <hr className="border-black/5 dark:border-white/10" />
+
+            <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               More information
             </h4>
             <ul className="list-disc pl-5">
@@ -570,6 +609,43 @@ export default async function GuidePage({
                 </tbody>
               </table>
             </div>
+
+            <hr className="border-black/5 dark:border-white/10" />
+
+            <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              Capaciteit en kansen (vorig jaar)
+            </h4>
+            <ul className="list-disc pl-5">
+              <li>
+                Voorlopige capaciteitsopgave 2026 per school/afdeling (indicatief,
+                kan wijzigen):{" "}
+                <a
+                  href="https://verenigingosvo.nl/wp-content/uploads/2025/12/Voorlopige-capaciteitsopgave-2026-1.pdf"
+                  className="underline underline-offset-2"
+                >
+                  voorlopige capaciteit PDF
+                </a>
+                .
+              </li>
+              <li>
+                Verslag 2025: 75,2% geplaatst op 1e voorkeur en 91,3% binnen top
+                3.
+              </li>
+              <li>
+                Per advies (2025): vwo 70,0% 1e voorkeur; havo/vwo 61,7%; havo
+                71,7%; vmbo-b t/m vmbo-k 91,1%–98,7% 1e voorkeur.
+              </li>
+              <li>
+                Volledig verslag:{" "}
+                <a
+                  href="https://verenigingosvo.nl/wp-content/uploads/2026/02/Loting-en-Matching-2025-Verslag.pdf"
+                  className="underline underline-offset-2"
+                >
+                  Loting en Matching 2025 – Verslag (PDF)
+                </a>
+                .
+              </li>
+            </ul>
 
             <hr className="border-black/5 dark:border-white/10" />
 
