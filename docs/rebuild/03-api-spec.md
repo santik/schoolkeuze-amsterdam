@@ -9,7 +9,7 @@ All APIs return JSON.
 ## `GET /api/schools`
 
 Query params:
-- `q` (string, optional): name/BRIN search.
+- `q` (string, optional): search across name, BRIN, and address fields (street, house number, postal code, city).
 - `levels` (comma-separated list, optional): `PRAKTIJKONDERWIJS,VMBO,HAVO,VWO`.
 - `lat`, `lon` (number, optional): distance origin.
 - `bikeMinutes` (number, optional): travel-time radius.

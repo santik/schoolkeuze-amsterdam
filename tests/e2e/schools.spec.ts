@@ -15,6 +15,8 @@ import {
 type SchoolDTO = {
   id: string;
   name: string;
+  street?: string | null;
+  houseNumber?: string | null;
   levels: string[];
   concepts: string[];
   postalCode: string | null;
@@ -27,6 +29,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s1",
     name: "Alpha VWO",
+    street: "Herengracht",
+    houseNumber: "1",
     levels: ["VWO"],
     concepts: ["Gymnasium"],
     postalCode: "1011AA",
@@ -37,6 +41,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s2",
     name: "Beta HAVO/VWO",
+    street: "Keizersgracht",
+    houseNumber: "10",
     levels: ["HAVO", "VWO"],
     concepts: ["Dalton"],
     postalCode: "1012BB",
@@ -47,6 +53,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s3",
     name: "Gamma VMBO",
+    street: "Kerkstraat",
+    houseNumber: "5",
     levels: ["VMBO"],
     concepts: ["VMBO"],
     postalCode: "1013CC",
@@ -57,6 +65,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s4",
     name: "Delta Praktijk",
+    street: "Prinsengracht",
+    houseNumber: "20",
     levels: ["Praktijkonderwijs"],
     concepts: ["Praktijk"],
     postalCode: "1014DD",
@@ -67,6 +77,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s5",
     name: "Epsilon HAVO",
+    street: "Rozengracht",
+    houseNumber: "7",
     levels: ["HAVO"],
     concepts: ["Montessori"],
     postalCode: "1015EE",
@@ -77,6 +89,8 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s6",
     name: "Zeta VMBO/HAVO",
+    street: "Haarlemmerdijk",
+    houseNumber: "30",
     levels: ["VMBO", "HAVO"],
     concepts: ["Brede school"],
     postalCode: "1016FF",
@@ -113,7 +127,7 @@ function filterByLevels(schools: SchoolDTO[], selected: string[]) {
   return schools.filter((school) => {
     const levels = school.levels.map(normalizeLevel);
     const levelSet = new Set(levels);
-    return selectedNormalized.some((lvl) => levelSet.has(lvl));
+    return selectedNormalized.every((lvl) => levelSet.has(lvl));
   });
 }
 
@@ -137,7 +151,19 @@ async function mockSchoolsApi(page: Parameters<typeof test>[1]["page"]) {
 
     let results = [...SAMPLE_SCHOOLS];
     if (q) {
-      results = results.filter((s) => s.name.toLowerCase().includes(q));
+      results = results.filter((s) => {
+        const haystack = [
+          s.name,
+          s.street,
+          s.houseNumber,
+          s.postalCode,
+          s.city,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(q);
+      });
     }
     results = filterByLevels(results, levels);
     results = sortSchools(results);
@@ -514,6 +540,12 @@ test("schools search filters by text", async ({ page }) => {
   await page.getByLabel("Zoek").fill("Alpha");
   const titles = page.locator('div[role="button"] .truncate');
   await expect(titles).toHaveText(["Alpha VWO"]);
+
+  await page.getByLabel("Zoek").fill("1014DD");
+  await expect(titles).toHaveText(["Delta Praktijk"]);
+
+  await page.getByLabel("Zoek").fill("Kerkstraat");
+  await expect(titles).toHaveText(["Gamma VMBO"]);
 });
 
 test("schools level filters require all selected levels", async ({ page }) => {
@@ -550,7 +582,8 @@ test("schools level filters require all selected levels", async ({ page }) => {
     const vmboHavoLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
     for (const line of vmboHavoLines) {
       const levels = (line.split("·")[0] ?? "").toUpperCase();
-      expect(levels.includes("VMBO") || levels.includes("HAVO")).toBeTruthy();
+      expect(levels).toContain("VMBO");
+      expect(levels).toContain("HAVO");
     }
 
     await page.getByLabel("VMBO").uncheck();
@@ -594,10 +627,7 @@ test("schools level filters require all selected levels", async ({ page }) => {
     const items = await page.locator('div[role="button"] .truncate').allTextContents();
     return items.map((t) => t.trim());
   }).toEqual([
-    "Beta HAVO/VWO",
     "Zeta VMBO/HAVO",
-    "Gamma VMBO",
-    "Epsilon HAVO",
   ]);
 
   await page.getByLabel("VMBO").uncheck();

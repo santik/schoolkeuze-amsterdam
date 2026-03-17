@@ -36,6 +36,7 @@ Back to [index](../rebuild.md).
 - no width overflow before any checkbox interaction on mobile.
 - filter order is Praktijk, VMBO, HAVO, VWO.
 - concept and postcode text filters are not present in current schools UI.
+- search matches school name and address fields (street, house number, postal code, city).
 - selecting favorite does not reorder list.
 - list order: VWO only, VWO+HAVO, VWO+HAVO+VMBO, HAVO+VMBO, VMBO only.
 

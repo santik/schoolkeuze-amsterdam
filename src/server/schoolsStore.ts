@@ -220,7 +220,20 @@ export async function listSchools(filters: SchoolListFilters = {}) {
 
     if (filters.q) {
       const q = filters.q.toLowerCase();
-      results = results.filter((s) => s.name.toLowerCase().includes(q));
+      results = results.filter((s) => {
+        const haystack = [
+          s.name,
+          s.brin,
+          s.street,
+          s.houseNumber,
+          s.postalCode,
+          s.city,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(q);
+      });
     }
     const selectedLevels = normalizeSelectedLevels(filters);
     if (selectedLevels.length > 0) {
@@ -258,6 +271,10 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       OR: [
         { name: { contains: filters.q, mode: "insensitive" } },
         { brin: { contains: filters.q, mode: "insensitive" } },
+        { street: { contains: filters.q, mode: "insensitive" } },
+        { houseNumber: { contains: filters.q, mode: "insensitive" } },
+        { postalCode: { contains: filters.q, mode: "insensitive" } },
+        { city: { contains: filters.q, mode: "insensitive" } },
       ],
     });
   }
