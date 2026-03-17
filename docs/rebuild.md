@@ -38,5 +38,5 @@ This documentation is intended to let another engineer or GenAI system rebuild t
 - Preserve profile behavior based on `profileId` URL/query/localStorage.
 - Preserve DB-first + localStorage fallback for profile user data.
 - Preserve school read fallback to sample data when DB is unavailable/timeouts.
-- Preserve level hierarchy logic exactly (including Praktijk and VMBO sublevels).
+- Preserve level filter union logic exactly (including Praktijk and VMBO sublevels).
 - Preserve mobile behavior (no horizontal overflow in school controls and cards).

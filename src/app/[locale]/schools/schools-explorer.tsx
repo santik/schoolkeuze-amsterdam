@@ -98,19 +98,25 @@ export function SchoolsExplorer() {
 
   const sortedSchools = React.useMemo(() => {
     const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
-    const rank = (s: SchoolDTO) => {
+    const orderGroup = (s: SchoolDTO) => {
       const set = new Set((s.levels ?? []).map(normalize));
-      if (set.has("VWO")) return 2;
-      if (set.has("HAVO")) return 1;
-      if (set.has("VMBO")) return 0;
-      if (set.has("PRAKTIJKONDERWIJS")) return -1;
-      return -1;
+      const hasVwo = set.has("VWO");
+      const hasHavo = set.has("HAVO");
+      const hasVmbo = set.has("VMBO");
+
+      if (hasVwo && !hasHavo && !hasVmbo) return 0; // VWO only
+      if (hasVwo && hasHavo && !hasVmbo) return 1; // VWO + HAVO
+      if (hasVwo && hasHavo && hasVmbo) return 2; // VWO + HAVO + VMBO
+      if (!hasVwo && hasHavo && hasVmbo) return 3; // HAVO + VMBO
+      if (!hasVwo && !hasHavo && hasVmbo) return 4; // VMBO only
+
+      return 5; // Any other combination (including Praktijk-only)
     };
 
     return [...schools].sort((a, b) => {
-      const ar = rank(a);
-      const br = rank(b);
-      if (ar !== br) return br - ar;
+      const ar = orderGroup(a);
+      const br = orderGroup(b);
+      if (ar !== br) return ar - br;
 
       return (a.name ?? "").localeCompare(b.name ?? "", undefined, { sensitivity: "base" });
     });

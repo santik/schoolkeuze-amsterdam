@@ -2,19 +2,10 @@
 
 Back to [index](../rebuild.md).
 
-## 1. Level Hierarchy and Filtering
+## 1. Level Filtering
 
-Rank mapping:
-- `VWO` = 2
-- `HAVO` = 1
-- `VMBO` = 0
-- `PRAKTIJKONDERWIJS` = -1
-
-Selected levels are normalized to the rankable set above.
-
-Rule set:
-1. School must contain every selected level.
-2. School must not contain any level below the minimum selected rank.
+Selected levels are normalized to `PRAKTIJKONDERWIJS`, `VMBO`, `HAVO`, `VWO`.
+Normalization trims and uppercases level values; `VMBO*` variants collapse to `VMBO`.
 
 VMBO matching:
 - VMBO selection matches any of:
@@ -23,15 +14,25 @@ VMBO matching:
   - `VMBO_B`
   - `VMBO_K`
 
+Rule set:
+1. If any levels are selected, include a school when it offers at least one selected level (OR match).
+2. No exclusion based on higher/lower levels.
+
 Examples:
-- select only `VWO` -> show VWO-only schools.
-- select `HAVO` -> show HAVO and HAVO+VWO, exclude VWO-only and VMBO/praktijk.
-- select `VMBO` -> show VMBO-track schools, exclude praktijk-only mixed-below rank.
+- select only `VWO` -> show all schools with VWO.
+- select `HAVO` -> show all schools with HAVO.
+- select `VMBO + HAVO` -> show all HAVO and VMBO schools.
 
 ## 2. School List Ordering
 
 Sorting keys:
-1. highest level rank offered by school (desc),
+1. level group order (asc):
+   - VWO only
+   - VWO + HAVO
+   - VWO + HAVO + VMBO
+   - HAVO + VMBO
+   - VMBO only
+   - any other combination (including Praktijk-only)
 2. school name (asc, localeCompare base sensitivity).
 
 ## 3. Distance and Bike Time
@@ -121,4 +122,3 @@ When showing score in compare/favorites:
 ## 8. Legacy/Reserved Metric Key
 
 `extracurricularMatch` exists in impression metrics shape for compatibility but is not currently rendered in UI scoring inputs.
-

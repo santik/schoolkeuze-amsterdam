@@ -213,8 +213,10 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     const all = await getSampleSchools();
     let results = all;
 
-    const normalizeLevel = (level: SchoolLevel) =>
-      String(level).startsWith("VMBO") ? "VMBO" : String(level);
+    const normalizeLevel = (level: SchoolLevel) => {
+      const upper = String(level).toUpperCase().trim();
+      return upper.startsWith("VMBO") ? "VMBO" : upper;
+    };
 
     if (filters.q) {
       const q = filters.q.toLowerCase();
@@ -223,29 +225,13 @@ export async function listSchools(filters: SchoolListFilters = {}) {
     const selectedLevels = normalizeSelectedLevels(filters);
     if (selectedLevels.length > 0) {
       const selected = new Set(selectedLevels);
-      const minSelectedRank = Math.min(
-        ...selectedLevels.map((x) => LEVEL_RANK[x])
-      );
 
       results = results.filter((s) => {
         const levelSet = new Set((s.levels ?? []).map(normalizeLevel));
-
         for (const selectedLevel of selected) {
-          if (!levelSet.has(selectedLevel)) return false;
+          if (levelSet.has(selectedLevel)) return true;
         }
-
-        for (const schoolLevel of levelSet) {
-          if (
-            schoolLevel in LEVEL_RANK &&
-            LEVEL_RANK[
-              schoolLevel as "PRAKTIJKONDERWIJS" | "VMBO" | "HAVO" | "VWO"
-            ] < minSelectedRank
-          ) {
-            return false;
-          }
-        }
-
-        return true;
+        return false;
       });
     }
     const radiusKm =
@@ -278,9 +264,6 @@ export async function listSchools(filters: SchoolListFilters = {}) {
   const selectedLevels = normalizeSelectedLevels(filters);
   if (selectedLevels.length > 0) {
     const selected = new Set(selectedLevels);
-    const minSelectedRank = Math.min(
-      ...selectedLevels.map((x) => LEVEL_RANK[x])
-    );
 
     const praktijkFilter: Prisma.SchoolWhereInput = {
       levels: { has: "PRAKTIJKONDERWIJS" as SchoolLevel },
@@ -294,20 +277,13 @@ export async function listSchools(filters: SchoolListFilters = {}) {
       ],
     };
 
-    if (selected.has("PRAKTIJKONDERWIJS")) and.push(praktijkFilter);
-    if (selected.has("VMBO")) and.push(vmboOr);
-    if (selected.has("HAVO")) and.push({ levels: { has: "HAVO" as SchoolLevel } });
-    if (selected.has("VWO")) and.push({ levels: { has: "VWO" as SchoolLevel } });
+    const levelOr: Prisma.SchoolWhereInput[] = [];
+    if (selected.has("PRAKTIJKONDERWIJS")) levelOr.push(praktijkFilter);
+    if (selected.has("VMBO")) levelOr.push(vmboOr);
+    if (selected.has("HAVO")) levelOr.push({ levels: { has: "HAVO" as SchoolLevel } });
+    if (selected.has("VWO")) levelOr.push({ levels: { has: "VWO" as SchoolLevel } });
 
-    if (minSelectedRank > LEVEL_RANK.PRAKTIJKONDERWIJS) {
-      and.push({ NOT: praktijkFilter });
-    }
-    if (minSelectedRank > LEVEL_RANK.VMBO) {
-      and.push({ NOT: vmboOr });
-    }
-    if (minSelectedRank > LEVEL_RANK.HAVO) {
-      and.push({ NOT: { levels: { has: "HAVO" as SchoolLevel } } });
-    }
+    if (levelOr.length > 0) and.push({ OR: levelOr });
   }
   const where: Prisma.SchoolWhereInput = and.length > 0 ? { AND: and } : {};
 

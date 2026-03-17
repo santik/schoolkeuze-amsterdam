@@ -205,12 +205,15 @@ test("profile export list triggers pdf download", async ({ page, request }) => {
 test("profile share link copies URL with profileId", async ({ page }) => {
   await page.addInitScript(() => {
     (window as any).__copiedShareLink = "";
-    (navigator as any).clipboard = {
-      writeText: (text: string) => {
-        (window as any).__copiedShareLink = text;
-        return Promise.resolve();
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: (text: string) => {
+          (window as any).__copiedShareLink = text;
+          return Promise.resolve();
+        },
       },
-    };
+    });
   });
 
   await page.goto("/nl/profile");
@@ -263,5 +266,7 @@ test("profile favorites show distance labels when using my location", async ({
     : page.getByTestId("favorite-item");
   await expect.poll(async () => items.count()).toBeGreaterThan(0);
 
-  await expect(page.getByText(/km · ~\d+ min fiets/)).toBeVisible();
+  const distanceLabels = page.getByText(/km · ~\d+ min fiets/);
+  await expect(distanceLabels).toHaveCount(2);
+  await expect(distanceLabels.first()).toBeVisible();
 });

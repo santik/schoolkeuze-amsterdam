@@ -57,7 +57,7 @@ const SAMPLE_SCHOOLS: SchoolDTO[] = [
   {
     id: "s4",
     name: "Delta Praktijk",
-    levels: ["PRAKTIJKONDERWIJS"],
+    levels: ["Praktijkonderwijs"],
     concepts: ["Praktijk"],
     postalCode: "1014DD",
     city: "Amsterdam",
@@ -92,50 +92,36 @@ function normalizeLevel(level: string) {
   return upper;
 }
 
-function rankLevel(level: string) {
-  switch (normalizeLevel(level)) {
-    case "VWO":
-      return 2;
-    case "HAVO":
-      return 1;
-    case "VMBO":
-      return 0;
-    case "PRAKTIJKONDERWIJS":
-      return -1;
-    default:
-      return -1;
-  }
+function orderGroup(levels: string[]) {
+  const set = new Set(levels.map(normalizeLevel));
+  const hasVwo = set.has("VWO");
+  const hasHavo = set.has("HAVO");
+  const hasVmbo = set.has("VMBO");
+
+  if (hasVwo && !hasHavo && !hasVmbo) return 0;
+  if (hasVwo && hasHavo && !hasVmbo) return 1;
+  if (hasVwo && hasHavo && hasVmbo) return 2;
+  if (!hasVwo && hasHavo && hasVmbo) return 3;
+  if (!hasVwo && !hasHavo && hasVmbo) return 4;
+
+  return 5;
 }
 
 function filterByLevels(schools: SchoolDTO[], selected: string[]) {
   if (!selected.length) return schools;
-  const selectedNormalized = selected.map(normalizeLevel);
-  const minRank = Math.min(...selectedNormalized.map(rankLevel));
+  const selectedNormalized = Array.from(new Set(selected.map(normalizeLevel)));
   return schools.filter((school) => {
     const levels = school.levels.map(normalizeLevel);
     const levelSet = new Set(levels);
-    for (const lvl of selectedNormalized) {
-      if (!levelSet.has(lvl)) return false;
-    }
-    if (levels.some((lvl) => rankLevel(lvl) < minRank)) return false;
-    return true;
+    return selectedNormalized.some((lvl) => levelSet.has(lvl));
   });
 }
 
 function sortSchools(schools: SchoolDTO[]) {
-  const rankSchool = (s: SchoolDTO) => {
-    const set = new Set(s.levels.map(normalizeLevel));
-    if (set.has("VWO")) return 2;
-    if (set.has("HAVO")) return 1;
-    if (set.has("VMBO")) return 0;
-    if (set.has("PRAKTIJKONDERWIJS")) return -1;
-    return -1;
-  };
-
   return [...schools].sort((a, b) => {
-    const ar = rankSchool(a);
-    const br = rankSchool(b);
-    if (ar !== br) return br - ar;
+    const ar = orderGroup(a.levels);
+    const br = orderGroup(b.levels);
+    if (ar !== br) return ar - br;
     return a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
   });
 }
@@ -409,7 +395,7 @@ test("schools filters do not overflow on mobile", async ({ page }) => {
   }
 });
 
-test("schools list sorts by level rank and name", async ({ page }) => {
+test("schools list sorts by level group and name", async ({ page }) => {
   if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
 
@@ -421,7 +407,7 @@ test("schools list sorts by level rank and name", async ({ page }) => {
     const count = await cards.count();
     expect(count).toBeGreaterThan(0);
 
-    const seen: { name: string; rank: number }[] = [];
+    const seen: { name: string; group: number }[] = [];
     for (let i = 0; i < count; i += 1) {
       const card = cards.nth(i);
       const name = (await getSchoolNameFromCard(card).textContent())?.trim() ?? "";
@@ -431,40 +417,41 @@ test("schools list sorts by level rank and name", async ({ page }) => {
         .split("/")
         .map((lvl) => lvl.trim())
         .filter(Boolean);
-      const ranks = levels.map(rankLevel);
-      const rank = ranks.length ? Math.max(...ranks) : null;
-      if (rank === null) continue;
-      seen.push({ name, rank });
+      const group = orderGroup(levels);
+      seen.push({ name, group });
     }
 
     expect(seen.length).toBeGreaterThan(1);
 
     for (let i = 1; i < seen.length; i += 1) {
-      expect(seen[i - 1].rank).toBeGreaterThanOrEqual(seen[i].rank);
+      expect(seen[i - 1].group).toBeLessThanOrEqual(seen[i].group);
     }
 
     let idx = 0;
     while (idx < seen.length) {
       const start = idx;
-      const rank = seen[idx].rank;
-      while (idx < seen.length && seen[idx].rank === rank) idx += 1;
-      const group = seen.slice(start, idx).map((x) => x.name);
-      const sorted = [...group].sort((a, b) =>
+      const group = seen[idx].group;
+      while (idx < seen.length && seen[idx].group === group) idx += 1;
+      const names = seen.slice(start, idx).map((x) => x.name);
+      const sorted = [...names].sort((a, b) =>
         a.localeCompare(b, undefined, { sensitivity: "base" })
       );
-      expect(group).toEqual(sorted);
+      expect(names).toEqual(sorted);
     }
     return;
   }
 
   const titles = page.locator('div[role="button"] .truncate');
-  await expect(titles).toHaveText([
+  await expect.poll(async () => {
+    const items = await titles.allTextContents();
+    return items.map((t) => t.trim());
+  }).toEqual([
     "Alpha VWO",
     "Beta HAVO/VWO",
-    "Epsilon HAVO",
     "Zeta VMBO/HAVO",
     "Gamma VMBO",
     "Delta Praktijk",
+    "Epsilon HAVO",
   ]);
 });
 
@@ -529,7 +516,7 @@ test("schools search filters by text", async ({ page }) => {
   await expect(titles).toHaveText(["Alpha VWO"]);
 });
 
-test("schools level filters respect hierarchy", async ({ page }) => {
+test("schools level filters require all selected levels", async ({ page }) => {
   await mockSchoolsApi(page);
   await page.goto("/nl/schools");
 
@@ -541,9 +528,6 @@ test("schools level filters respect hierarchy", async ({ page }) => {
     for (const line of vwoLines) {
       const levels = (line.split("·")[0] ?? "").toUpperCase();
       expect(levels).toContain("VWO");
-      expect(levels).not.toContain("HAVO");
-      expect(levels).not.toContain("VMBO");
-      expect(levels).not.toContain("PRAKTIJK");
     }
 
     await page.getByLabel("VWO").uncheck();
@@ -552,8 +536,6 @@ test("schools level filters respect hierarchy", async ({ page }) => {
     for (const line of havoLines) {
       const levels = (line.split("·")[0] ?? "").toUpperCase();
       expect(levels).toContain("HAVO");
-      expect(levels).not.toContain("VMBO");
-      expect(levels).not.toContain("PRAKTIJK");
     }
 
     await page.getByLabel("HAVO").uncheck();
@@ -562,10 +544,17 @@ test("schools level filters respect hierarchy", async ({ page }) => {
     for (const line of vmboLines) {
       const levels = (line.split("·")[0] ?? "").toUpperCase();
       expect(levels).toContain("VMBO");
-      expect(levels).not.toContain("PRAKTIJK");
+    }
+
+    await page.getByLabel("HAVO").check();
+    const vmboHavoLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
+    for (const line of vmboHavoLines) {
+      const levels = (line.split("·")[0] ?? "").toUpperCase();
+      expect(levels.includes("VMBO") || levels.includes("HAVO")).toBeTruthy();
     }
 
     await page.getByLabel("VMBO").uncheck();
+    await page.getByLabel("HAVO").uncheck();
     await page.getByLabel("Praktijk").check();
     const praktijkLines = await (isProd ? cards.locator(".text-xs") : cards.getByTestId("school-levels")).allTextContents();
     for (const line of praktijkLines) {
@@ -579,12 +568,17 @@ test("schools level filters respect hierarchy", async ({ page }) => {
   await page.getByLabel("VWO").check();
   await expect(page.locator('div[role="button"] .truncate')).toHaveText([
     "Alpha VWO",
+    "Beta HAVO/VWO",
   ]);
 
   await page.getByLabel("VWO").uncheck();
   await page.getByLabel("HAVO").check();
-  await expect(page.locator('div[role="button"] .truncate')).toHaveText([
+  await expect.poll(async () => {
+    const items = await page.locator('div[role="button"] .truncate').allTextContents();
+    return items.map((t) => t.trim());
+  }).toEqual([
     "Beta HAVO/VWO",
+    "Zeta VMBO/HAVO",
     "Epsilon HAVO",
   ]);
 
@@ -595,7 +589,19 @@ test("schools level filters respect hierarchy", async ({ page }) => {
     "Gamma VMBO",
   ]);
 
+  await page.getByLabel("HAVO").check();
+  await expect.poll(async () => {
+    const items = await page.locator('div[role="button"] .truncate').allTextContents();
+    return items.map((t) => t.trim());
+  }).toEqual([
+    "Beta HAVO/VWO",
+    "Zeta VMBO/HAVO",
+    "Gamma VMBO",
+    "Epsilon HAVO",
+  ]);
+
   await page.getByLabel("VMBO").uncheck();
+  await page.getByLabel("HAVO").uncheck();
   await page.getByLabel("Praktijk").check();
   await expect(page.locator('div[role="button"] .truncate')).toHaveText([
     "Delta Praktijk",

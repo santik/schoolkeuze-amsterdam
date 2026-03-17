@@ -37,13 +37,14 @@ Back to [index](../rebuild.md).
 - filter order is Praktijk, VMBO, HAVO, VWO.
 - concept and postcode text filters are not present in current schools UI.
 - selecting favorite does not reorder list.
+- list order: VWO only, VWO+HAVO, VWO+HAVO+VMBO, HAVO+VMBO, VMBO only.
 
-## 2.3 Hierarchy logic
+## 2.3 Level filter logic
 
-- VWO only -> only VWO-only schools.
-- HAVO -> HAVO and HAVO+VWO, not VWO-only.
-- VMBO -> VMBO tracks with hierarchy constraints.
-- Praktijk treated as lower than VMBO.
+- VWO -> all schools with VWO.
+- HAVO -> all schools with HAVO.
+- VMBO + HAVO -> all schools with VMBO or HAVO.
+- Praktijk -> all schools with Praktijk.
 
 ## 2.4 Distance behavior
 
@@ -108,4 +109,3 @@ Back to [index](../rebuild.md).
 - No authentication/user accounts.
 - No server-side email dispatch for feedback by default.
 - No real route-based biking path API (distance is straight-line estimate).
-
