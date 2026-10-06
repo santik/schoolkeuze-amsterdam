@@ -2,10 +2,15 @@
 
 import dynamic from "next/dynamic";
 import * as React from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { ChevronDown } from "lucide-react";
 
-import { useRouter } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { bikeMinutesFromKm } from "@/lib/bike";
+import { useProfileId } from "@/lib/useProfileId";
+import { useImpressionSummaries } from "@/lib/useImpressionSummaries";
+import { formatPercent } from "@/lib/impression-score";
 import { useFavorites } from "@/lib/useFavorites";
 
 type SchoolDTO = {
@@ -75,15 +80,28 @@ function haversineKm(aLat: number, aLon: number, bLat: number, bLon: number) {
 
 export function SchoolsExplorer() {
   const t = useTranslations("Schools");
-  const router = useRouter();
+  const tImpression = useTranslations("Impression");
+  const { profileId, hydrated } = useProfileId();
+  const [sort, setSort] = React.useState("default");
+  const [ratedOnly, setRatedOnly] = React.useState(false);
   const { ids, has, toggle } = useFavorites();
 
-  const [q, setQ] = React.useState("");
-  const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
-  const [bikeMinutes, setBikeMinutes] = React.useState(30);
-  const [useMyLocation, setUseMyLocation] = React.useState(false);
-  const [isDistanceOpen, setIsDistanceOpen] = React.useState(false);
-  const [zipCode, setZipCode] = React.useState("");
+  const searchParams = useSearchParams();
+  const [q, setQ] = React.useState(() => searchParams.get("q") ?? "");
+  const [selectedLevels, setSelectedLevels] = React.useState<string[]>(() =>
+    (searchParams.get("levels") ?? "")
+      .split(",")
+      .filter((l) => ["PRAKTIJKONDERWIJS", "VMBO", "HAVO", "VWO"].includes(l))
+  );
+  const [bikeMinutes, setBikeMinutes] = React.useState(() => {
+    const n = Number(searchParams.get("bike"));
+    return Number.isFinite(n) && n >= 5 && n <= 45 ? n : 30;
+  });
+  const [useMyLocation, setUseMyLocation] = React.useState(() => searchParams.get("loc") === "1");
+  const [zipCode, setZipCode] = React.useState(() => searchParams.get("zip") ?? "");
+  const [isDistanceOpen, setIsDistanceOpen] = React.useState(
+    () => searchParams.get("loc") === "1" || Boolean(searchParams.get("zip"))
+  );
   const [zipLocation, setZipLocation] = React.useState<{ lat: number; lon: number } | null>(null);
   const [zipLoading, setZipLoading] = React.useState(false);
   const [zipError, setZipError] = React.useState<string | null>(null);
@@ -96,31 +114,6 @@ export function SchoolsExplorer() {
   const [error, setError] = React.useState<string | null>(null);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
 
-  const sortedSchools = React.useMemo(() => {
-    const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
-    const orderGroup = (s: SchoolDTO) => {
-      const set = new Set((s.levels ?? []).map(normalize));
-      const hasVwo = set.has("VWO");
-      const hasHavo = set.has("HAVO");
-      const hasVmbo = set.has("VMBO");
-
-      if (hasVwo && !hasHavo && !hasVmbo) return 0; // VWO only
-      if (hasVwo && hasHavo && !hasVmbo) return 1; // VWO + HAVO
-      if (hasVwo && hasHavo && hasVmbo) return 2; // VWO + HAVO + VMBO
-      if (!hasVwo && hasHavo && hasVmbo) return 3; // HAVO + VMBO
-      if (!hasVwo && !hasHavo && hasVmbo) return 4; // VMBO only
-
-      return 5; // Any other combination (including Praktijk-only)
-    };
-
-    return [...schools].sort((a, b) => {
-      const ar = orderGroup(a);
-      const br = orderGroup(b);
-      if (ar !== br) return ar - br;
-
-      return (a.name ?? "").localeCompare(b.name ?? "", undefined, { sensitivity: "base" });
-    });
-  }, [schools]);
 
   React.useEffect(() => {
     if (!useMyLocation) {
@@ -213,6 +206,64 @@ export function SchoolsExplorer() {
     [zipLocation, useMyLocation, lat, lon]
   );
 
+  // Keep filters in the URL so Back and the detail-page return link restore them.
+  React.useEffect(() => {
+    const params = new URLSearchParams();
+    if (q.trim()) params.set("q", q);
+    if (selectedLevels.length > 0) params.set("levels", selectedLevels.join(","));
+    if (useMyLocation) params.set("loc", "1");
+    else if (normalizedZip) params.set("zip", normalizedZip);
+    if ((useMyLocation || normalizedZip) && bikeMinutes !== 30) params.set("bike", String(bikeMinutes));
+    const qs = params.toString();
+    window.history.replaceState(window.history.state, "", qs ? `?${qs}` : window.location.pathname);
+    try {
+      window.sessionStorage.setItem("schools:last-query", qs);
+    } catch {
+      // storage unavailable
+    }
+  }, [q, selectedLevels, useMyLocation, normalizedZip, bikeMinutes]);
+
+  const summaries = useImpressionSummaries(hydrated ? profileId : "", schools.map(s => s.id));
+
+  const sortedSchools = React.useMemo(() => {
+    const normalize = (lvl: string) => (lvl.toUpperCase().startsWith("VMBO") ? "VMBO" : lvl.toUpperCase());
+    const orderGroup = (s: SchoolDTO) => {
+      const set = new Set((s.levels ?? []).map(normalize));
+      const hasVwo = set.has("VWO");
+      const hasHavo = set.has("HAVO");
+      const hasVmbo = set.has("VMBO");
+
+      if (hasVwo && !hasHavo && !hasVmbo) return 0; // VWO only
+      if (hasVwo && hasHavo && !hasVmbo) return 1; // VWO + HAVO
+      if (hasVwo && hasHavo && hasVmbo) return 2; // VWO + HAVO + VMBO
+      if (!hasVwo && hasHavo && hasVmbo) return 3; // HAVO + VMBO
+      if (!hasVwo && !hasHavo && hasVmbo) return 4; // VMBO only
+
+      return 5; // Any other combination (including Praktijk-only)
+    };
+
+    return schools.filter(s => !ratedOnly || summaries.get(s.id)?.score != null).sort((a, b) => {
+      const alphabetical = a.name.localeCompare(b.name, undefined, { sensitivity: "base" }) || a.id.localeCompare(b.id);
+      if (sort === "name") return alphabetical;
+      if (sort === "score") {
+        const aScore = summaries.get(a.id)?.score ?? -1;
+        const bScore = summaries.get(b.id)?.score ?? -1;
+        return bScore - aScore || alphabetical;
+      }
+      if (sort === "distance" && distanceOrigin) {
+        const distance = (s: SchoolDTO) => s.lat == null || s.lon == null
+          ? Infinity
+          : haversineKm(distanceOrigin.lat, distanceOrigin.lon, s.lat, s.lon);
+        return distance(a) - distance(b) || alphabetical;
+      }
+      const ar = orderGroup(a);
+      const br = orderGroup(b);
+      if (ar !== br) return ar - br;
+
+      return alphabetical;
+    });
+  }, [schools, summaries, ratedOnly, sort, distanceOrigin]);
+
   React.useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -257,6 +308,22 @@ export function SchoolsExplorer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q, selectedLevels, bikeMinutes, distanceOrigin]);
 
+  const activeFilters = [
+    q.trim() ? t("activeSearch", { query: q.trim() }) : null,
+    selectedLevels.length > 0 ? t("activeLevels", { levels: selectedLevels.join(", ") }) : null,
+    distanceOrigin ? t("activeDistance", { minutes: bikeMinutes }) : null,
+    ratedOnly ? t("ratedOnly") : null,
+  ].filter((f): f is string => Boolean(f));
+
+  function resetFilters() {
+    setQ("");
+    setSelectedLevels([]);
+    setUseMyLocation(false);
+    setZipCode("");
+    setBikeMinutes(30);
+    setRatedOnly(false);
+  }
+
   function toggleLevel(level: string) {
     setSelectedLevels(prev => 
       prev.includes(level) 
@@ -272,17 +339,58 @@ export function SchoolsExplorer() {
           data-testid="schools-filters"
           className="grid gap-3 rounded-3xl border border-indigo-100 bg-gradient-to-br from-white via-indigo-50 to-sky-50 p-4 shadow-sm dark:border-indigo-300/20 dark:from-slate-900 dark:via-indigo-500/10 dark:to-sky-500/10"
         >
+          <div className="flex flex-wrap items-center gap-4 text-sm">
+            <label className="grid gap-1">
+              <span>{t("sortLabel")}</span>
+              <div className="relative">
+                <select
+                  data-testid="schools-sort"
+                  value={sort === "distance" && !distanceOrigin ? "default" : sort}
+                  onChange={e => setSort(e.target.value)}
+                  className="h-10 appearance-none rounded-2xl border border-indigo-200 bg-white py-0 pl-3 pr-10 dark:border-indigo-300/30 dark:bg-slate-900"
+                >
+                  <option value="default">{t("sortDefault")}</option>
+                  <option value="name">{t("sortName")}</option>
+                  <option value="score">{t("sortScore")}</option>
+                  {distanceOrigin ? <option value="distance">{t("sortDistance")}</option> : null}
+                </select>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-indigo-600 dark:text-indigo-200"
+                />
+              </div>
+            </label>
+            <div className="grid gap-1">
+              <span aria-hidden="true" className="invisible">{t("sortLabel")}</span>
+              <label className="flex h-10 items-center gap-2">
+                <input type="checkbox" checked={ratedOnly} onChange={e => setRatedOnly(e.target.checked)} />
+                {t("ratedOnly")}
+              </label>
+            </div>
+          </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <label className="grid gap-1 text-sm">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
                 {t("searchLabel")}
               </span>
-              <input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder={t("searchPlaceholder")}
-                className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 px-3 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30"
-              />
+              <div className="relative">
+                <input
+                  type="search"
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  placeholder={t("searchPlaceholder")}
+                  className="h-10 w-full min-w-0 rounded-2xl border border-indigo-200 bg-white/85 pl-3 pr-20 text-sm outline-none focus:ring-2 focus:ring-indigo-200 dark:border-indigo-300/30 dark:bg-slate-900/50 dark:focus:ring-indigo-300/30 [&::-webkit-search-cancel-button]:hidden"
+                />
+                {q ? (
+                  <button
+                    type="button"
+                    onClick={() => setQ("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-2 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 dark:text-indigo-200 dark:hover:bg-indigo-500/20"
+                  >
+                    {t("clearSearch")}
+                  </button>
+                ) : null}
+              </div>
             </label>
             <div className="grid gap-2 text-sm">
               <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
@@ -343,6 +451,9 @@ export function SchoolsExplorer() {
 
               {isDistanceOpen ? (
                 <>
+                  <p className="text-xs text-indigo-700/85 dark:text-indigo-200/80">
+                    {t("distanceOriginHelp")}
+                  </p>
                   <label className="flex min-w-0 items-center gap-2 text-sm font-medium text-indigo-900 dark:text-indigo-100">
                     <input
                       type="checkbox"
@@ -453,28 +564,36 @@ export function SchoolsExplorer() {
             </div>
           </div>
 
+          {!loading && !error && sortedSchools.length === 0 ? (
+            <div data-testid="schools-empty" className="grid gap-2 rounded-2xl border border-indigo-200 bg-white/90 p-4 text-sm dark:border-indigo-300/30 dark:bg-indigo-500/10">
+              <p className="font-semibold">{t("emptyTitle")}</p>
+              {activeFilters.length > 0 ? (
+                <ul className="list-disc pl-5">
+                  {activeFilters.map((f) => <li key={f}>{f}</li>)}
+                </ul>
+              ) : null}
+              {activeFilters.length > 0 ? (
+                <button type="button" onClick={resetFilters} className="w-fit rounded-full border border-indigo-300 px-3 py-1 text-xs font-semibold text-indigo-900 hover:bg-indigo-100 dark:text-indigo-100 dark:hover:bg-indigo-500/20">
+                  {t("resetFilters")}
+                </button>
+              ) : null}
+            </div>
+          ) : null}
+
             <div className="grid gap-2">
             {sortedSchools.map((s) => (
-              <div
+              <Link
                 key={s.id}
+                href={`/schools/${s.id}`}
                 data-testid="school-card"
                 data-school-id={s.id}
                 className={[
-                  "cursor-pointer rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
+                  "block rounded-3xl border bg-white/90 p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md dark:bg-white/5",
                   selectedId === s.id
                     ? "border-amber-300 dark:border-amber-300/40"
                     : "border-indigo-100 dark:border-indigo-300/20",
                 ].join(" ")}
                 onMouseEnter={() => setSelectedId(s.id)}
-                onClick={() => router.push(`/schools/${s.id}`)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    router.push(`/schools/${s.id}`);
-                  }
-                }}
-                role="button"
-                tabIndex={0}
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
@@ -496,6 +615,12 @@ export function SchoolsExplorer() {
                       className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80"
                     >
                       {[s.postalCode, s.city].filter(Boolean).join(" ") || "—"}
+                    </div>
+                    <div data-testid="school-score" className="mt-1 text-xs text-indigo-700 dark:text-indigo-200">
+                      {t("myScore")}: {formatPercent(summaries.get(s.id)?.score ?? null)}
+                      {summaries.get(s.id)?.score != null ? (
+                        <> · {tImpression("confidenceLabel")}: {formatPercent(summaries.get(s.id)!.confidence)}</>
+                      ) : null}
                     </div>
                     {distanceOrigin &&
                       s.lat != null &&
@@ -532,6 +657,7 @@ export function SchoolsExplorer() {
                             : "border-indigo-300 bg-indigo-50 text-indigo-900 hover:bg-indigo-100 dark:border-indigo-300/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:hover:bg-indigo-500/20",
                         ].join(" ")}
                         onClick={(e) => {
+                          e.preventDefault();
                           e.stopPropagation();
                           toggle(s.id);
                         }}
@@ -543,7 +669,7 @@ export function SchoolsExplorer() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

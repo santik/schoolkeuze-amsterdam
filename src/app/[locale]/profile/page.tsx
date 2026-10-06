@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: tSeo("profileTitle"),
     description: tSeo("profileDescription"),
+    robots: { index: false, follow: true },
     alternates: {
       canonical: localizedPath(appLocale, "/profile"),
       languages: languageAlternates("/profile"),

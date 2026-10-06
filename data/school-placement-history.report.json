@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-02T00:00:00.000Z",
+  "unmatchedSourceNames": [],
+  "duplicateMappings": {
+    "ABC Noorderlicht": [
+      "Amsterdams Beroepscollege Noorderlicht",
+      "AB Noorderlicht"
+    ],
+    "Damstede Lyceum": [
+      "Damstede",
+      "Damstede Lyceum"
+    ],
+    "Hervormd Lyceum Zuid (HLZ)": [
+      "HLZ (Hervormd Lyceum Zuid)",
+      "Hervormd Lyceum Zuid"
+    ],
+    "Het Cartesius": [
+      "Cartesius Amsterdam",
+      "Cartesius Lyceum"
+    ],
+    "Vonk Amsterdam": [
+      "VONK",
+      "VONK Amsterdam"
+    ]
+  },
+  "schoolsWithoutCapacity": [],
+  "schoolsWithoutMatching": [
+    "sample:21et:de-apollo",
+    "sample:14rl:luca"
+  ],
+  "missingValues": [],
+  "suspiciousCapacityChanges": [
+    {
+      "schoolKey": "sample:31fg:fiducie-college",
+      "previousCapacity": 125,
+      "currentCapacity": 175,
+      "changePercent": 40.0,
+      "reviewNote": "Capacity groups can differ between publications; verify manually."
+    },
+    {
+      "schoolKey": "sample:17vf:kairos-college",
+      "previousCapacity": 56,
+      "currentCapacity": 112,
+      "changePercent": 100.0,
+      "reviewNote": "Capacity groups can differ between publications; verify manually."
+    },
+    {
+      "schoolKey": "sample:16ps:montessori-lyceum-oostpoort",
+      "previousCapacity": 170,
+      "currentCapacity": 120,
+      "changePercent": -29.4,
+      "reviewNote": "Capacity groups can differ between publications; verify manually."
+    },
+    {
+      "schoolKey": "sample:30gs:tasc",
+      "previousCapacity": 90,
+      "currentCapacity": 120,
+      "changePercent": 33.3,
+      "reviewNote": "Capacity groups can differ between publications; verify manually."
+    }
+  ],
+  "counts": {
+    "schools": 65,
+    "capacityRows": 163,
+    "matchingRows": 152
+  }
+}

@@ -1,0 +1,3707 @@
+{
+  "generatedAt": "2026-10-02T00:00:00.000Z",
+  "capacity": {
+    "academicYear": "2026-2027",
+    "status": "preliminary",
+    "sourceLabel": "OSVO preliminary capacity 2026",
+    "sourceUrl": "https://verenigingosvo.nl/wp-content/uploads/2025/12/Voorlopige-capaciteitsopgave-2026-1.pdf"
+  },
+  "matching": {
+    "academicYear": "2025-2026",
+    "status": "final",
+    "sourceLabel": "OSVO Loting en Matching 2025 report",
+    "sourceUrl": "https://verenigingosvo.nl/wp-content/uploads/2026/02/Loting-en-Matching-2025-Verslag.pdf"
+  },
+  "schools": {
+    "sample:17vf:abc-noorderlicht": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 150,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 150,
+          "firstPreferences": 86,
+          "secondPreferences": 88,
+          "thirdPreferences": 38,
+          "totalPlaced": 91,
+          "placedFirstPreference": 86,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17ys:alasca": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 59,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 59,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 57,
+          "firstPreferences": 28,
+          "secondPreferences": 30,
+          "thirdPreferences": 38,
+          "totalPlaced": 57,
+          "placedFirstPreference": 28,
+          "placedSecondPreference": 9,
+          "placedThirdPreference": 11,
+          "placedOtherPreference": 9
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 57,
+          "firstPreferences": 46,
+          "secondPreferences": 34,
+          "thirdPreferences": 46,
+          "totalPlaced": 59,
+          "placedFirstPreference": 36,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 7,
+          "placedOtherPreference": 9
+        }
+      ]
+    },
+    "sample:00aa:barlaeus-gymnasium": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 140,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 140,
+          "firstPreferences": 254,
+          "secondPreferences": 222,
+          "thirdPreferences": 180,
+          "totalPlaced": 146,
+          "placedFirstPreference": 138,
+          "placedSecondPreference": 6,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:17ys:berlage-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": "My World Class",
+          "capacity": 28,
+          "pathways": [
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 75,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 72,
+          "firstPreferences": 69,
+          "secondPreferences": 103,
+          "thirdPreferences": 97,
+          "totalPlaced": 75,
+          "placedFirstPreference": 56,
+          "placedSecondPreference": 16,
+          "placedThirdPreference": 3,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 56,
+          "firstPreferences": 18,
+          "secondPreferences": 32,
+          "thirdPreferences": 41,
+          "totalPlaced": 50,
+          "placedFirstPreference": 18,
+          "placedSecondPreference": 9,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 18
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 84,
+          "firstPreferences": 26,
+          "secondPreferences": 46,
+          "thirdPreferences": 69,
+          "totalPlaced": 88,
+          "placedFirstPreference": 20,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 17,
+          "placedOtherPreference": 44
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 28,
+          "firstPreferences": 16,
+          "secondPreferences": 22,
+          "thirdPreferences": 31,
+          "totalPlaced": 29,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 8
+        }
+      ]
+    },
+    "sample:14rf:bindelmeer-college": {
+      "capacityGroups": [
+        {
+          "profile": "Havo-potentie",
+          "capacity": 24,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 96,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 120,
+          "firstPreferences": 17,
+          "secondPreferences": 58,
+          "thirdPreferences": 47,
+          "totalPlaced": 30,
+          "placedFirstPreference": 17,
+          "placedSecondPreference": 13,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21as:bredero": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 175,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 150,
+          "firstPreferences": 79,
+          "secondPreferences": 57,
+          "thirdPreferences": 59,
+          "totalPlaced": 82,
+          "placedFirstPreference": 79,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:14vy:csb": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 119,
+          "pathways": [
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 79,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 119,
+          "firstPreferences": 33,
+          "secondPreferences": 32,
+          "thirdPreferences": 60,
+          "totalPlaced": 109,
+          "placedFirstPreference": 33,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 10,
+          "placedOtherPreference": 56
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 79,
+          "firstPreferences": 52,
+          "secondPreferences": 61,
+          "thirdPreferences": 76,
+          "totalPlaced": 79,
+          "placedFirstPreference": 51,
+          "placedSecondPreference": 12,
+          "placedThirdPreference": 9,
+          "placedOtherPreference": 7
+        }
+      ]
+    },
+    "sample:21gd:calandlyceum": {
+      "capacityGroups": [
+        {
+          "profile": "Technasium",
+          "capacity": 28,
+          "pathways": [
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Topsport",
+          "capacity": 56,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": true
+        },
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 112,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 28,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 24,
+          "firstPreferences": 7,
+          "secondPreferences": 10,
+          "thirdPreferences": 14,
+          "totalPlaced": 10,
+          "placedFirstPreference": 7,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 48,
+          "firstPreferences": 16,
+          "secondPreferences": 0,
+          "thirdPreferences": 0,
+          "totalPlaced": 16,
+          "placedFirstPreference": 16,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 72,
+          "firstPreferences": 21,
+          "secondPreferences": 32,
+          "thirdPreferences": 49,
+          "totalPlaced": 26,
+          "placedFirstPreference": 21,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 96,
+          "firstPreferences": 53,
+          "secondPreferences": 40,
+          "thirdPreferences": 88,
+          "totalPlaced": 73,
+          "placedFirstPreference": 53,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 5
+        },
+        {
+          "department": "vwo",
+          "capacity": 24,
+          "firstPreferences": 10,
+          "secondPreferences": 9,
+          "thirdPreferences": 20,
+          "totalPlaced": 11,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:17hb:calvijn-college-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 145,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 145,
+          "firstPreferences": 141,
+          "secondPreferences": 113,
+          "thirdPreferences": 89,
+          "totalPlaced": 144,
+          "placedFirstPreference": 141,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:14rl:cburg-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 90,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 23,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 100,
+          "firstPreferences": 55,
+          "secondPreferences": 63,
+          "thirdPreferences": 70,
+          "totalPlaced": 56,
+          "placedFirstPreference": 55,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:14rf:college-de-meer": {
+      "capacityGroups": [
+        {
+          "profile": "Havo potentie",
+          "capacity": 20,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 95,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 35,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 20,
+          "firstPreferences": 11,
+          "secondPreferences": 14,
+          "thirdPreferences": 10,
+          "totalPlaced": 14,
+          "placedFirstPreference": 11,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 95,
+          "firstPreferences": 70,
+          "secondPreferences": 81,
+          "thirdPreferences": 99,
+          "totalPlaced": 73,
+          "placedFirstPreference": 70,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 35,
+          "firstPreferences": 12,
+          "secondPreferences": 11,
+          "thirdPreferences": 32,
+          "totalPlaced": 14,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:16ps:college-zuyd": {
+      "capacityGroups": [
+        {
+          "profile": "Talentendansklas",
+          "capacity": 22,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": true
+        },
+        {
+          "profile": null,
+          "capacity": 36,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 48,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Havo-potentie",
+          "capacity": 24,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 22,
+          "firstPreferences": 20,
+          "secondPreferences": 1,
+          "thirdPreferences": 0,
+          "totalPlaced": 20,
+          "placedFirstPreference": 20,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 42,
+          "firstPreferences": 40,
+          "secondPreferences": 40,
+          "thirdPreferences": 41,
+          "totalPlaced": 40,
+          "placedFirstPreference": 40,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 48,
+          "firstPreferences": 47,
+          "secondPreferences": 49,
+          "thirdPreferences": 56,
+          "totalPlaced": 48,
+          "placedFirstPreference": 47,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vmbo-g-t",
+          "capacity": 18,
+          "firstPreferences": 12,
+          "secondPreferences": 17,
+          "thirdPreferences": 11,
+          "totalPlaced": 15,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 2
+        }
+      ]
+    },
+    "sample:20ts:comenius-lyceum-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 78,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 44,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 78,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 85,
+          "firstPreferences": 131,
+          "secondPreferences": 99,
+          "thirdPreferences": 62,
+          "totalPlaced": 89,
+          "placedFirstPreference": 82,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 6
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 44,
+          "firstPreferences": 150,
+          "secondPreferences": 144,
+          "thirdPreferences": 92,
+          "totalPlaced": 44,
+          "placedFirstPreference": 44,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 71,
+          "firstPreferences": 66,
+          "secondPreferences": 45,
+          "thirdPreferences": 22,
+          "totalPlaced": 71,
+          "placedFirstPreference": 66,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 3,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:31gm:cornelius-haga-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 80,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 80,
+          "pathways": [
+            "vmbo-g-t",
+            "vmbo-g-t/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 40,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 80,
+          "firstPreferences": 16,
+          "secondPreferences": 16,
+          "thirdPreferences": 16,
+          "totalPlaced": 21,
+          "placedFirstPreference": 16,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 80,
+          "firstPreferences": 41,
+          "secondPreferences": 22,
+          "thirdPreferences": 17,
+          "totalPlaced": 52,
+          "placedFirstPreference": 41,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 40,
+          "firstPreferences": 15,
+          "secondPreferences": 4,
+          "thirdPreferences": 7,
+          "totalPlaced": 16,
+          "placedFirstPreference": 15,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:14rf:cygnus-gymnasium": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 140,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 168,
+          "firstPreferences": 152,
+          "secondPreferences": 119,
+          "thirdPreferences": 123,
+          "totalPlaced": 175,
+          "placedFirstPreference": 125,
+          "placedSecondPreference": 22,
+          "placedThirdPreference": 15,
+          "placedOtherPreference": 13
+        }
+      ]
+    },
+    "sample:25ef:denise": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 12,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 6,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 4,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 14,
+          "firstPreferences": 4,
+          "secondPreferences": 10,
+          "thirdPreferences": 15,
+          "totalPlaced": 10,
+          "placedFirstPreference": 4,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 4
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 3,
+          "firstPreferences": 15,
+          "secondPreferences": 22,
+          "thirdPreferences": 20,
+          "totalPlaced": 3,
+          "placedFirstPreference": 3,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 4,
+          "firstPreferences": 2,
+          "secondPreferences": 3,
+          "thirdPreferences": 2,
+          "totalPlaced": 3,
+          "placedFirstPreference": 2,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:21vf:damstede-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 112,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 112,
+          "firstPreferences": 40,
+          "secondPreferences": 20,
+          "thirdPreferences": 25,
+          "totalPlaced": 44,
+          "placedFirstPreference": 40,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "vwo",
+          "capacity": 56,
+          "firstPreferences": 10,
+          "secondPreferences": 11,
+          "thirdPreferences": 3,
+          "totalPlaced": 14,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:31bl:de-amsterdamse-mavo": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 71,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 72,
+          "firstPreferences": 50,
+          "secondPreferences": 42,
+          "thirdPreferences": 43,
+          "totalPlaced": 72,
+          "placedFirstPreference": 50,
+          "placedSecondPreference": 11,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 7
+        }
+      ]
+    },
+    "sample:21et:de-apollo": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 32,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 32,
+          "pathways": [
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": []
+    },
+    "sample:31fg:fiducie-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 75,
+          "pathways": [
+            "havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 100,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 75,
+          "firstPreferences": 19,
+          "secondPreferences": 19,
+          "thirdPreferences": 12,
+          "totalPlaced": 25,
+          "placedFirstPreference": 19,
+          "placedSecondPreference": 6,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "havo",
+          "capacity": 50,
+          "firstPreferences": 3,
+          "secondPreferences": 7,
+          "thirdPreferences": 7,
+          "totalPlaced": 4,
+          "placedFirstPreference": 3,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:02an:fons-vitae-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 84,
+          "firstPreferences": 156,
+          "secondPreferences": 180,
+          "thirdPreferences": 213,
+          "totalPlaced": 90,
+          "placedFirstPreference": 75,
+          "placedSecondPreference": 8,
+          "placedThirdPreference": 6,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "vwo",
+          "capacity": 84,
+          "firstPreferences": 110,
+          "secondPreferences": 160,
+          "thirdPreferences": 207,
+          "totalPlaced": 87,
+          "placedFirstPreference": 62,
+          "placedSecondPreference": 18,
+          "placedThirdPreference": 6,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:28ch:futuris": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 50,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 50,
+          "firstPreferences": 44,
+          "secondPreferences": 46,
+          "thirdPreferences": 64,
+          "totalPlaced": 47,
+          "placedFirstPreference": 44,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:16ts:geert-groote-college-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 58,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 58,
+          "firstPreferences": 43,
+          "secondPreferences": 52,
+          "thirdPreferences": 47,
+          "totalPlaced": 64,
+          "placedFirstPreference": 32,
+          "placedSecondPreference": 14,
+          "placedThirdPreference": 7,
+          "placedOtherPreference": 11
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 56,
+          "firstPreferences": 51,
+          "secondPreferences": 85,
+          "thirdPreferences": 90,
+          "totalPlaced": 58,
+          "placedFirstPreference": 39,
+          "placedSecondPreference": 13,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 4
+        },
+        {
+          "department": "vwo",
+          "capacity": 58,
+          "firstPreferences": 22,
+          "secondPreferences": 23,
+          "thirdPreferences": 17,
+          "totalPlaced": 47,
+          "placedFirstPreference": 22,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 16
+        }
+      ]
+    },
+    "sample:21et:gerrit-van-der-veen-college": {
+      "capacityGroups": [
+        {
+          "profile": "DaMu",
+          "capacity": 36,
+          "pathways": [
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": true
+        },
+        {
+          "profile": null,
+          "capacity": 55,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 55,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 36,
+          "firstPreferences": 25,
+          "secondPreferences": 1,
+          "thirdPreferences": 0,
+          "totalPlaced": 25,
+          "placedFirstPreference": 25,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 55,
+          "firstPreferences": 82,
+          "secondPreferences": 88,
+          "thirdPreferences": 95,
+          "totalPlaced": 59,
+          "placedFirstPreference": 45,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 5
+        },
+        {
+          "department": "vwo",
+          "capacity": 55,
+          "firstPreferences": 33,
+          "secondPreferences": 52,
+          "thirdPreferences": 46,
+          "totalPlaced": 57,
+          "placedFirstPreference": 31,
+          "placedSecondPreference": 11,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 13
+        }
+      ]
+    },
+    "sample:14rf:havo-de-hof": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 87,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 84,
+          "firstPreferences": 53,
+          "secondPreferences": 40,
+          "thirdPreferences": 36,
+          "totalPlaced": 85,
+          "placedFirstPreference": 53,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 6,
+          "placedOtherPreference": 16
+        }
+      ]
+    },
+    "sample:01tc:hervormd-lyceum-west-hlw-": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 90,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 90,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Digi Tech/TTO",
+          "capacity": 60,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 74,
+          "firstPreferences": 48,
+          "secondPreferences": 80,
+          "thirdPreferences": 65,
+          "totalPlaced": 71,
+          "placedFirstPreference": 48,
+          "placedSecondPreference": 22,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 123,
+          "firstPreferences": 84,
+          "secondPreferences": 102,
+          "thirdPreferences": 98,
+          "totalPlaced": 123,
+          "placedFirstPreference": 81,
+          "placedSecondPreference": 36,
+          "placedThirdPreference": 6,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 30,
+          "firstPreferences": 13,
+          "secondPreferences": 39,
+          "thirdPreferences": 34,
+          "totalPlaced": 15,
+          "placedFirstPreference": 13,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 90,
+          "firstPreferences": 29,
+          "secondPreferences": 33,
+          "thirdPreferences": 23,
+          "totalPlaced": 37,
+          "placedFirstPreference": 29,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:02ar:hervormd-lyceum-zuid-hlz-": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 116,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 58,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 116,
+          "firstPreferences": 60,
+          "secondPreferences": 92,
+          "thirdPreferences": 126,
+          "totalPlaced": 121,
+          "placedFirstPreference": 40,
+          "placedSecondPreference": 15,
+          "placedThirdPreference": 28,
+          "placedOtherPreference": 38
+        },
+        {
+          "department": "vwo",
+          "capacity": 58,
+          "firstPreferences": 21,
+          "secondPreferences": 43,
+          "thirdPreferences": 68,
+          "totalPlaced": 60,
+          "placedFirstPreference": 19,
+          "placedSecondPreference": 13,
+          "placedThirdPreference": 9,
+          "placedOtherPreference": 19
+        }
+      ]
+    },
+    "sample:30gc:het-4e-gymnasium": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 146,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 173,
+          "firstPreferences": 88,
+          "secondPreferences": 97,
+          "thirdPreferences": 97,
+          "totalPlaced": 176,
+          "placedFirstPreference": 87,
+          "placedSecondPreference": 30,
+          "placedThirdPreference": 9,
+          "placedOtherPreference": 50
+        }
+      ]
+    },
+    "sample:02ap:het-amsterdams-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 170,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 192,
+          "firstPreferences": 273,
+          "secondPreferences": 215,
+          "thirdPreferences": 205,
+          "totalPlaced": 200,
+          "placedFirstPreference": 173,
+          "placedSecondPreference": 24,
+          "placedThirdPreference": 3,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17ys:het-cartesius": {
+      "capacityGroups": [
+        {
+          "profile": "De Plaats",
+          "capacity": 25,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "De Plaats",
+          "capacity": 25,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Het Lyceum",
+          "capacity": 100,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Het Lyceum",
+          "capacity": 40,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 25,
+          "firstPreferences": 8,
+          "secondPreferences": 14,
+          "thirdPreferences": 8,
+          "totalPlaced": 10,
+          "placedFirstPreference": 8,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "vwo",
+          "capacity": 25,
+          "firstPreferences": 1,
+          "secondPreferences": 4,
+          "thirdPreferences": 5,
+          "totalPlaced": 1,
+          "placedFirstPreference": 1,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 128,
+          "firstPreferences": 36,
+          "secondPreferences": 31,
+          "thirdPreferences": 68,
+          "totalPlaced": 77,
+          "placedFirstPreference": 36,
+          "placedSecondPreference": 9,
+          "placedThirdPreference": 10,
+          "placedOtherPreference": 22
+        },
+        {
+          "department": "vwo",
+          "capacity": 40,
+          "firstPreferences": 21,
+          "secondPreferences": 26,
+          "thirdPreferences": 32,
+          "totalPlaced": 30,
+          "placedFirstPreference": 21,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 2
+        }
+      ]
+    },
+    "sample:14rl:hubertus-berkhoff": {
+      "capacityGroups": [
+        {
+          "profile": "Tweetalig",
+          "capacity": 20,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 100,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 45,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vmbo-k",
+          "capacity": 20,
+          "firstPreferences": 10,
+          "secondPreferences": 3,
+          "thirdPreferences": 4,
+          "totalPlaced": 10,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 100,
+          "firstPreferences": 82,
+          "secondPreferences": 75,
+          "thirdPreferences": 48,
+          "totalPlaced": 84,
+          "placedFirstPreference": 82,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 35,
+          "firstPreferences": 10,
+          "secondPreferences": 4,
+          "thirdPreferences": 15,
+          "totalPlaced": 10,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21et:huygens-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 110,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 110,
+          "firstPreferences": 83,
+          "secondPreferences": 123,
+          "thirdPreferences": 126,
+          "totalPlaced": 85,
+          "placedFirstPreference": 83,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:00ac:hyperion-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 150,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 150,
+          "firstPreferences": 175,
+          "secondPreferences": 122,
+          "thirdPreferences": 103,
+          "totalPlaced": 153,
+          "placedFirstPreference": 125,
+          "placedSecondPreference": 17,
+          "placedThirdPreference": 7,
+          "placedOtherPreference": 4
+        }
+      ]
+    },
+    "sample:16ps:ivko": {
+      "capacityGroups": [
+        {
+          "profile": "DAMU",
+          "capacity": 6,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": true
+        },
+        {
+          "profile": null,
+          "capacity": 44,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": true
+        },
+        {
+          "profile": null,
+          "capacity": 58,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": true
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 4,
+          "firstPreferences": 5,
+          "secondPreferences": 1,
+          "thirdPreferences": 0,
+          "totalPlaced": 4,
+          "placedFirstPreference": 4,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 44,
+          "firstPreferences": 60,
+          "secondPreferences": 15,
+          "thirdPreferences": 11,
+          "totalPlaced": 47,
+          "placedFirstPreference": 43,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 58,
+          "firstPreferences": 95,
+          "secondPreferences": 20,
+          "thirdPreferences": 12,
+          "totalPlaced": 60,
+          "placedFirstPreference": 60,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21ff:ir-lely-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": "Technasium",
+          "capacity": 50,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Technasium",
+          "capacity": 43,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Technasium",
+          "capacity": 25,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 52,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 50,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 92,
+          "firstPreferences": 53,
+          "secondPreferences": 41,
+          "thirdPreferences": 19,
+          "totalPlaced": 58,
+          "placedFirstPreference": 53,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 83,
+          "firstPreferences": 70,
+          "secondPreferences": 52,
+          "thirdPreferences": 25,
+          "totalPlaced": 72,
+          "placedFirstPreference": 70,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "vwo",
+          "capacity": 50,
+          "firstPreferences": 24,
+          "secondPreferences": 19,
+          "thirdPreferences": 6,
+          "totalPlaced": 26,
+          "placedFirstPreference": 24,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:16pn:joodse-scholengemeenschap-maimonides": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 56,
+          "firstPreferences": 36,
+          "secondPreferences": 4,
+          "thirdPreferences": 4,
+          "totalPlaced": 42,
+          "placedFirstPreference": 36,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 2
+        }
+      ]
+    },
+    "sample:17vf:kairos-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 37,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 38,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 37,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 18,
+          "firstPreferences": 32,
+          "secondPreferences": 29,
+          "thirdPreferences": 21,
+          "totalPlaced": 19,
+          "placedFirstPreference": 18,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 19,
+          "firstPreferences": 33,
+          "secondPreferences": 22,
+          "thirdPreferences": 18,
+          "totalPlaced": 20,
+          "placedFirstPreference": 18,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 19,
+          "firstPreferences": 18,
+          "secondPreferences": 9,
+          "thirdPreferences": 6,
+          "totalPlaced": 19,
+          "placedFirstPreference": 17,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:16ps:kiem-montessori": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 28,
+          "pathways": [
+            "havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "havo",
+          "capacity": 15,
+          "firstPreferences": 5,
+          "secondPreferences": 4,
+          "thirdPreferences": 8,
+          "totalPlaced": 14,
+          "placedFirstPreference": 5,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 3,
+          "placedOtherPreference": 3
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 60,
+          "firstPreferences": 53,
+          "secondPreferences": 51,
+          "thirdPreferences": 41,
+          "totalPlaced": 61,
+          "placedFirstPreference": 47,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 3
+        }
+      ]
+    },
+    "sample:14rl:luca": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 16,
+          "pathways": [
+            "vmbo-b"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": []
+    },
+    "sample:21gd:lumion": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 112,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 140,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 112,
+          "firstPreferences": 74,
+          "secondPreferences": 62,
+          "thirdPreferences": 63,
+          "totalPlaced": 93,
+          "placedFirstPreference": 74,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 7
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 142,
+          "firstPreferences": 120,
+          "secondPreferences": 93,
+          "thirdPreferences": 104,
+          "totalPlaced": 142,
+          "placedFirstPreference": 113,
+          "placedSecondPreference": 27,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 38,
+          "firstPreferences": 36,
+          "secondPreferences": 22,
+          "thirdPreferences": 24,
+          "totalPlaced": 38,
+          "placedFirstPreference": 35,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:17ys:marcanti-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 26,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 50,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 15,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 26,
+          "firstPreferences": 1,
+          "secondPreferences": 6,
+          "thirdPreferences": 9,
+          "totalPlaced": 0,
+          "placedFirstPreference": 0,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 50,
+          "firstPreferences": 26,
+          "secondPreferences": 35,
+          "thirdPreferences": 44,
+          "totalPlaced": 26,
+          "placedFirstPreference": 26,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 60,
+          "firstPreferences": 10,
+          "secondPreferences": 14,
+          "thirdPreferences": 12,
+          "totalPlaced": 18,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 56,
+          "firstPreferences": 51,
+          "secondPreferences": 52,
+          "thirdPreferences": 46,
+          "totalPlaced": 51,
+          "placedFirstPreference": 51,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 15,
+          "firstPreferences": 2,
+          "secondPreferences": 4,
+          "thirdPreferences": 1,
+          "totalPlaced": 0,
+          "placedFirstPreference": 0,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:02pa:mediacollege-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 22,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 24,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 42,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 22,
+          "firstPreferences": 12,
+          "secondPreferences": 7,
+          "thirdPreferences": 1,
+          "totalPlaced": 13,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 24,
+          "firstPreferences": 11,
+          "secondPreferences": 7,
+          "thirdPreferences": 6,
+          "totalPlaced": 12,
+          "placedFirstPreference": 11,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 42,
+          "firstPreferences": 24,
+          "secondPreferences": 14,
+          "thirdPreferences": 12,
+          "totalPlaced": 25,
+          "placedFirstPreference": 24,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:16ps:metis-montessori-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": "Coderclass of Kunst & Co.",
+          "capacity": 56,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Coderclass of Kunst & Co.",
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Technasium",
+          "capacity": 28,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Technasium",
+          "capacity": 28,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 54,
+          "firstPreferences": 121,
+          "secondPreferences": 119,
+          "thirdPreferences": 93,
+          "totalPlaced": 59,
+          "placedFirstPreference": 49,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "vwo",
+          "capacity": 54,
+          "firstPreferences": 77,
+          "secondPreferences": 81,
+          "thirdPreferences": 78,
+          "totalPlaced": 56,
+          "placedFirstPreference": 42,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 27,
+          "firstPreferences": 113,
+          "secondPreferences": 101,
+          "thirdPreferences": 88,
+          "totalPlaced": 29,
+          "placedFirstPreference": 27,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 27,
+          "firstPreferences": 92,
+          "secondPreferences": 107,
+          "thirdPreferences": 91,
+          "totalPlaced": 27,
+          "placedFirstPreference": 24,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17vf:metropolis-lyceum": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 60,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 90,
+          "firstPreferences": 49,
+          "secondPreferences": 49,
+          "thirdPreferences": 26,
+          "totalPlaced": 67,
+          "placedFirstPreference": 49,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 11
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 60,
+          "firstPreferences": 35,
+          "secondPreferences": 51,
+          "thirdPreferences": 58,
+          "totalPlaced": 51,
+          "placedFirstPreference": 35,
+          "placedSecondPreference": 6,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 6
+        },
+        {
+          "department": "vwo",
+          "capacity": 30,
+          "firstPreferences": 9,
+          "secondPreferences": 9,
+          "thirdPreferences": 8,
+          "totalPlaced": 12,
+          "placedFirstPreference": 9,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-amsterdam-mla-": {
+      "capacityGroups": [
+        {
+          "profile": "Gymnasium",
+          "capacity": 30,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 54,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 29,
+          "firstPreferences": 10,
+          "secondPreferences": 21,
+          "thirdPreferences": 20,
+          "totalPlaced": 29,
+          "placedFirstPreference": 10,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 3,
+          "placedOtherPreference": 13
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 56,
+          "firstPreferences": 70,
+          "secondPreferences": 75,
+          "thirdPreferences": 138,
+          "totalPlaced": 60,
+          "placedFirstPreference": 40,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 9,
+          "placedOtherPreference": 7
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 54,
+          "firstPreferences": 49,
+          "secondPreferences": 105,
+          "thirdPreferences": 126,
+          "totalPlaced": 57,
+          "placedFirstPreference": 32,
+          "placedSecondPreference": 18,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "vwo",
+          "capacity": 87,
+          "firstPreferences": 34,
+          "secondPreferences": 55,
+          "thirdPreferences": 58,
+          "totalPlaced": 87,
+          "placedFirstPreference": 31,
+          "placedSecondPreference": 21,
+          "placedThirdPreference": 12,
+          "placedOtherPreference": 23
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-oostpoort": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 90,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 50,
+          "firstPreferences": 5,
+          "secondPreferences": 8,
+          "thirdPreferences": 19,
+          "totalPlaced": 11,
+          "placedFirstPreference": 5,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 4
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 120,
+          "firstPreferences": 59,
+          "secondPreferences": 93,
+          "thirdPreferences": 144,
+          "totalPlaced": 69,
+          "placedFirstPreference": 59,
+          "placedSecondPreference": 8,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-pax": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 65,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 35,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 40,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 35,
+          "firstPreferences": 49,
+          "secondPreferences": 53,
+          "thirdPreferences": 43,
+          "totalPlaced": 38,
+          "placedFirstPreference": 33,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 102,
+          "firstPreferences": 43,
+          "secondPreferences": 49,
+          "thirdPreferences": 56,
+          "totalPlaced": 107,
+          "placedFirstPreference": 39,
+          "placedSecondPreference": 19,
+          "placedThirdPreference": 13,
+          "placedOtherPreference": 36
+        },
+        {
+          "department": "vwo",
+          "capacity": 30,
+          "firstPreferences": 16,
+          "secondPreferences": 24,
+          "thirdPreferences": 16,
+          "totalPlaced": 30,
+          "placedFirstPreference": 15,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 6
+        }
+      ]
+    },
+    "sample:28dh:montessori-lyceum-terra-nova": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 75,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 75,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 25,
+          "pathways": [
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 75,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 80,
+          "firstPreferences": 5,
+          "secondPreferences": 5,
+          "thirdPreferences": 9,
+          "totalPlaced": 10,
+          "placedFirstPreference": 5,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 3
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 22,
+          "firstPreferences": 6,
+          "secondPreferences": 24,
+          "thirdPreferences": 21,
+          "totalPlaced": 7,
+          "placedFirstPreference": 6,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 92,
+          "firstPreferences": 18,
+          "secondPreferences": 17,
+          "thirdPreferences": 20,
+          "totalPlaced": 19,
+          "placedFirstPreference": 18,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 30,
+          "firstPreferences": 24,
+          "secondPreferences": 25,
+          "thirdPreferences": 35,
+          "totalPlaced": 24,
+          "placedFirstPreference": 24,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 30,
+          "firstPreferences": 5,
+          "secondPreferences": 1,
+          "thirdPreferences": 4,
+          "totalPlaced": 5,
+          "placedFirstPreference": 5,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17hb:mundus-college": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 76,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 44,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 76,
+          "firstPreferences": 29,
+          "secondPreferences": 14,
+          "thirdPreferences": 35,
+          "totalPlaced": 29,
+          "placedFirstPreference": 29,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 44,
+          "firstPreferences": 19,
+          "secondPreferences": 10,
+          "thirdPreferences": 48,
+          "totalPlaced": 19,
+          "placedFirstPreference": 19,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vmbo-g-t",
+          "capacity": 24,
+          "firstPreferences": 2,
+          "secondPreferences": 1,
+          "thirdPreferences": 6,
+          "totalPlaced": 2,
+          "placedFirstPreference": 2,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:03aq:osb-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 66,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 24,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 159,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 72,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 25,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 66,
+          "firstPreferences": 33,
+          "secondPreferences": 32,
+          "thirdPreferences": 16,
+          "totalPlaced": 41,
+          "placedFirstPreference": 33,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 4
+        },
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 24,
+          "firstPreferences": 61,
+          "secondPreferences": 30,
+          "thirdPreferences": 29,
+          "totalPlaced": 24,
+          "placedFirstPreference": 24,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 159,
+          "firstPreferences": 71,
+          "secondPreferences": 62,
+          "thirdPreferences": 25,
+          "totalPlaced": 75,
+          "placedFirstPreference": 71,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 1
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 72,
+          "firstPreferences": 79,
+          "secondPreferences": 33,
+          "thirdPreferences": 27,
+          "totalPlaced": 72,
+          "placedFirstPreference": 72,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 15,
+          "firstPreferences": 11,
+          "secondPreferences": 12,
+          "thirdPreferences": 9,
+          "totalPlaced": 12,
+          "placedFirstPreference": 11,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17vf:over-y-college": {
+      "capacityGroups": [
+        {
+          "profile": "Sportklas",
+          "capacity": 50,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 104,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 50,
+          "firstPreferences": 3,
+          "secondPreferences": 11,
+          "thirdPreferences": 9,
+          "totalPlaced": 3,
+          "placedFirstPreference": 3,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 104,
+          "firstPreferences": 51,
+          "secondPreferences": 61,
+          "thirdPreferences": 43,
+          "totalPlaced": 57,
+          "placedFirstPreference": 51,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 1
+        }
+      ]
+    },
+    "sample:14rf:pieter-nieuwland-college": {
+      "capacityGroups": [
+        {
+          "profile": "Plus",
+          "capacity": 29,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 116,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 58,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 11,
+          "firstPreferences": 6,
+          "secondPreferences": 13,
+          "thirdPreferences": 6,
+          "totalPlaced": 10,
+          "placedFirstPreference": 6,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 3
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 152,
+          "firstPreferences": 100,
+          "secondPreferences": 75,
+          "thirdPreferences": 73,
+          "totalPlaced": 153,
+          "placedFirstPreference": 98,
+          "placedSecondPreference": 11,
+          "placedThirdPreference": 16,
+          "placedOtherPreference": 28
+        },
+        {
+          "department": "vwo",
+          "capacity": 68,
+          "firstPreferences": 36,
+          "secondPreferences": 27,
+          "thirdPreferences": 33,
+          "totalPlaced": 55,
+          "placedFirstPreference": 36,
+          "placedSecondPreference": 7,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 7
+        }
+      ]
+    },
+    "sample:21bh:spinoza-lyceum-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": "Gymnasium",
+          "capacity": 60,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Muziekplus",
+          "capacity": 19,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 68,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 54,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 28,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 60,
+          "firstPreferences": 24,
+          "secondPreferences": 48,
+          "thirdPreferences": 43,
+          "totalPlaced": 61,
+          "placedFirstPreference": 20,
+          "placedSecondPreference": 15,
+          "placedThirdPreference": 7,
+          "placedOtherPreference": 19
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 19,
+          "firstPreferences": 17,
+          "secondPreferences": 13,
+          "thirdPreferences": 13,
+          "totalPlaced": 20,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 68,
+          "firstPreferences": 111,
+          "secondPreferences": 185,
+          "thirdPreferences": 186,
+          "totalPlaced": 71,
+          "placedFirstPreference": 53,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 5,
+          "placedOtherPreference": 3
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 54,
+          "firstPreferences": 130,
+          "secondPreferences": 161,
+          "thirdPreferences": 159,
+          "totalPlaced": 56,
+          "placedFirstPreference": 56,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 28,
+          "firstPreferences": 70,
+          "secondPreferences": 78,
+          "thirdPreferences": 116,
+          "totalPlaced": 29,
+          "placedFirstPreference": 23,
+          "placedSecondPreference": 6,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21bh:spinoza20first": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 54,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 116,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 180,
+          "firstPreferences": 125,
+          "secondPreferences": 133,
+          "thirdPreferences": 131,
+          "totalPlaced": 187,
+          "placedFirstPreference": 111,
+          "placedSecondPreference": 25,
+          "placedThirdPreference": 11,
+          "placedOtherPreference": 40
+        }
+      ]
+    },
+    "sample:31gh:spring-high": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 70,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo",
+            "havo/vwo",
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 70,
+          "firstPreferences": 3,
+          "secondPreferences": 6,
+          "thirdPreferences": 19,
+          "totalPlaced": 10,
+          "placedFirstPreference": 3,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 5
+        }
+      ]
+    },
+    "sample:01et:st-ignatiusgymnasium": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 168,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 140,
+          "firstPreferences": 164,
+          "secondPreferences": 172,
+          "thirdPreferences": 158,
+          "totalPlaced": 145,
+          "placedFirstPreference": 118,
+          "placedSecondPreference": 20,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 3
+        }
+      ]
+    },
+    "sample:14se:st-nicolaaslyceum": {
+      "capacityGroups": [
+        {
+          "profile": "Tweetalig Onderwijs",
+          "capacity": 28,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": "Tweetalig Onderwijs",
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 84,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 56,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 28,
+          "firstPreferences": 71,
+          "secondPreferences": 94,
+          "thirdPreferences": 56,
+          "totalPlaced": 30,
+          "placedFirstPreference": 29,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 56,
+          "firstPreferences": 57,
+          "secondPreferences": 54,
+          "thirdPreferences": 59,
+          "totalPlaced": 57,
+          "placedFirstPreference": 40,
+          "placedSecondPreference": 15,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. havo",
+          "capacity": 84,
+          "firstPreferences": 281,
+          "secondPreferences": 251,
+          "thirdPreferences": 211,
+          "totalPlaced": 89,
+          "placedFirstPreference": 88,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 56,
+          "firstPreferences": 211,
+          "secondPreferences": 196,
+          "thirdPreferences": 183,
+          "totalPlaced": 58,
+          "placedFirstPreference": 58,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21et:sweelinck-college": {
+      "capacityGroups": [
+        {
+          "profile": "Havo-potentie",
+          "capacity": 84,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo",
+            "havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 28,
+          "pathways": [
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 126,
+          "firstPreferences": 33,
+          "secondPreferences": 33,
+          "thirdPreferences": 58,
+          "totalPlaced": 56,
+          "placedFirstPreference": 33,
+          "placedSecondPreference": 10,
+          "placedThirdPreference": 4,
+          "placedOtherPreference": 9
+        }
+      ]
+    },
+    "sample:30gs:tasc": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "havo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 30,
+          "firstPreferences": 18,
+          "secondPreferences": 11,
+          "thirdPreferences": 15,
+          "totalPlaced": 23,
+          "placedFirstPreference": 18,
+          "placedSecondPreference": 5,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-k",
+          "capacity": 30,
+          "firstPreferences": 8,
+          "secondPreferences": 17,
+          "thirdPreferences": 18,
+          "totalPlaced": 10,
+          "placedFirstPreference": 8,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vmbo-g-t",
+          "capacity": 30,
+          "firstPreferences": 5,
+          "secondPreferences": 4,
+          "thirdPreferences": 2,
+          "totalPlaced": 5,
+          "placedFirstPreference": 5,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21et:vinse-school": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 32,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 24,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 12,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 32,
+          "firstPreferences": 65,
+          "secondPreferences": 56,
+          "thirdPreferences": 40,
+          "totalPlaced": 35,
+          "placedFirstPreference": 33,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 2,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 24,
+          "firstPreferences": 51,
+          "secondPreferences": 68,
+          "thirdPreferences": 58,
+          "totalPlaced": 26,
+          "placedFirstPreference": 23,
+          "placedSecondPreference": 2,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vwo",
+          "capacity": 12,
+          "firstPreferences": 26,
+          "secondPreferences": 20,
+          "thirdPreferences": 25,
+          "totalPlaced": 12,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:25ef:vonk-amsterdam": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 100,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl",
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 100,
+          "firstPreferences": 104,
+          "secondPreferences": 71,
+          "thirdPreferences": 47,
+          "totalPlaced": 100,
+          "placedFirstPreference": 99,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:21af:vossius-gymnasium": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 140,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "vwo",
+          "capacity": 168,
+          "firstPreferences": 95,
+          "secondPreferences": 137,
+          "thirdPreferences": 149,
+          "totalPlaced": 173,
+          "placedFirstPreference": 83,
+          "placedSecondPreference": 39,
+          "placedThirdPreference": 20,
+          "placedOtherPreference": 31
+        }
+      ]
+    },
+    "sample:17vf:xplore-agora": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 30,
+          "pathways": [
+            "havo",
+            "havo/vwo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 25,
+          "pathways": [
+            "vmbo-gl-tl",
+            "vmbo-gl-tl/havo"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 25,
+          "pathways": [
+            "vwo"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. havo",
+          "capacity": 44,
+          "firstPreferences": 32,
+          "secondPreferences": 11,
+          "thirdPreferences": 13,
+          "totalPlaced": 38,
+          "placedFirstPreference": 32,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 5
+        },
+        {
+          "department": "v.a. vmbo-g-t",
+          "capacity": 31,
+          "firstPreferences": 30,
+          "secondPreferences": 17,
+          "thirdPreferences": 26,
+          "totalPlaced": 33,
+          "placedFirstPreference": 27,
+          "placedSecondPreference": 3,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 2
+        },
+        {
+          "department": "vwo",
+          "capacity": 21,
+          "firstPreferences": 12,
+          "secondPreferences": 4,
+          "thirdPreferences": 5,
+          "totalPlaced": 16,
+          "placedFirstPreference": 12,
+          "placedSecondPreference": 1,
+          "placedThirdPreference": 1,
+          "placedOtherPreference": 2
+        }
+      ]
+    },
+    "sample:17vf:yuverta-vmbo-amsterdam-west": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 120,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k",
+            "vmbo-k/gl-tl"
+          ],
+          "preselection": false
+        },
+        {
+          "profile": null,
+          "capacity": 45,
+          "pathways": [
+            "vmbo-gl-tl"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 120,
+          "firstPreferences": 25,
+          "secondPreferences": 60,
+          "thirdPreferences": 51,
+          "totalPlaced": 25,
+          "placedFirstPreference": 25,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        },
+        {
+          "department": "vmbo-g-t",
+          "capacity": 45,
+          "firstPreferences": 2,
+          "secondPreferences": 4,
+          "thirdPreferences": 2,
+          "totalPlaced": 2,
+          "placedFirstPreference": 2,
+          "placedSecondPreference": 0,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    },
+    "sample:17vf:yuverta-vmbo-en-pro-amsterdam-oost": {
+      "capacityGroups": [
+        {
+          "profile": null,
+          "capacity": 38,
+          "pathways": [
+            "vmbo-b",
+            "vmbo-b/k",
+            "vmbo-k"
+          ],
+          "preselection": false
+        }
+      ],
+      "matchingGroups": [
+        {
+          "department": "v.a. vmbo-b",
+          "capacity": 38,
+          "firstPreferences": 14,
+          "secondPreferences": 28,
+          "thirdPreferences": 31,
+          "totalPlaced": 18,
+          "placedFirstPreference": 14,
+          "placedSecondPreference": 4,
+          "placedThirdPreference": 0,
+          "placedOtherPreference": 0
+        }
+      ]
+    }
+  }
+}

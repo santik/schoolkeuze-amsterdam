@@ -92,7 +92,7 @@ test("details page shows core info and exam results", async ({ page }) => {
     await expect(page.getByText(/Aantal leerlingen|Student count/i)).toBeVisible();
   }
   await expect(page.getByRole("button", { name: /Add favorite|Remove favorite/i })).toBeVisible();
-  await expect(page.getByText(/Terug naar scholen|Back to schools/i)).toHaveCount(0);
+  await expect(page.getByTestId("back-to-schools")).toBeVisible();
   await expect(page.getByText(/Vergelijken|Compare/i)).toHaveCount(0);
 
   const mapLink = page.getByTestId("details-map-link");

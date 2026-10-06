@@ -5,7 +5,9 @@ import type { Prisma, School, SchoolLevel } from "@prisma/client";
 
 import { prisma } from "@/server/db";
 import { buildAdmissionsInfo } from "@/lib/admissions-info";
+import { missingProvenance, readProvenance } from "@/lib/data-provenance";
 import { bikeRadiusKmFromMinutes } from "@/lib/bike";
+import { matchesSchoolSearch } from "@/lib/school-search";
 
 export type SchoolListFilters = {
   q?: string;
@@ -37,6 +39,7 @@ type SampleSchool = {
   examens_bron?: string;
   admissions?: unknown;
   admissionsInfo?: unknown;
+  provenance?: unknown;
   source?: string;
   sourceUrl?: string;
 };
@@ -99,18 +102,21 @@ async function getSampleSchools(): Promise<School[]> {
       } as Prisma.JsonValue;
     })(),
     admissions: (s.admissions ?? null) as Prisma.JsonValue | null,
-    admissionsInfo: (s.admissionsInfo ??
-      buildAdmissionsInfo({
-        name: s.name,
-        websiteUrl: s.websiteUrl ?? null,
-        levels: s.levels ?? [],
-      })) as Prisma.JsonValue,
+    // Admissions data is an annual, centrally maintained data set. Generate it
+    // here instead of trusting a possibly stale copy embedded in the sample file.
+    admissionsInfo: buildAdmissionsInfo({
+      name: s.name,
+      websiteUrl: s.websiteUrl ?? null,
+      levels: s.levels ?? [],
+    }) as Prisma.JsonValue,
+    provenance: readProvenance(s.provenance) as Prisma.JsonValue,
     source: s.source ?? "sample",
     sourceUrl: s.sourceUrl ?? null,
     updatedAt: new Date(),
     createdAt: new Date(),
   }));
 
+  mapped.forEach(reportMissingProvenance);
   if (process.env.NODE_ENV !== "development") {
     sampleCache = mapped;
   }
@@ -118,51 +124,40 @@ async function getSampleSchools(): Promise<School[]> {
   return mapped;
 }
 
-async function buildSampleSizeByKey() {
-  const sample = await getSampleSchools();
-  const byName = new Map<string, number>();
-  const byBrin = new Map<string, number>();
-  const brinCount = new Map<string, number>();
-  for (const s of sample) {
-    if (typeof s.size !== "number") continue;
-    byName.set(s.name.toLowerCase(), s.size);
-    if (s.brin) {
-      const key = s.brin.toLowerCase();
-      brinCount.set(key, (brinCount.get(key) ?? 0) + 1);
-      byBrin.set(key, s.size);
-    }
+const warned = new Set<string>();
+function reportMissingProvenance(school: School) {
+  if (process.env.NODE_ENV !== "development") return;
+  const missing = missingProvenance(school);
+  const key = `${school.id}:${missing.join(",")}`;
+  if (missing.length && !warned.has(key)) {
+    warned.add(key);
+    console.warn(`[provenance] ${school.name}: missing ${missing.join(", ")}`);
   }
-  return { byName, byBrin, brinCount };
 }
 
 async function withSizeFallback(school: School | null): Promise<School | null> {
   if (!school) return null;
-  if (typeof school.size === "number") return school;
-
-  const { byName, byBrin, brinCount } = await buildSampleSizeByKey();
-  const fallback =
-    byName.get(school.name.toLowerCase()) ??
-    (school.brin && brinCount.get(school.brin.toLowerCase()) === 1
-      ? byBrin.get(school.brin.toLowerCase())
-      : undefined);
-
-  if (typeof fallback !== "number") return school;
-  return { ...school, size: fallback };
+  return (await withSizeFallbackMany([school]))[0];
 }
 
 async function withSizeFallbackMany(schools: School[]): Promise<School[]> {
-  if (schools.every((s) => typeof s.size === "number")) return schools;
-
-  const { byName, byBrin, brinCount } = await buildSampleSizeByKey();
-  return schools.map((school) => {
-    if (typeof school.size === "number") return school;
-    const fallback =
-      byName.get(school.name.toLowerCase()) ??
-      (school.brin && brinCount.get(school.brin.toLowerCase()) === 1
-        ? byBrin.get(school.brin.toLowerCase())
-        : undefined);
-    if (typeof fallback !== "number") return school;
-    return { ...school, size: fallback };
+  const needsFallback = schools.some(s => s.size == null && !readProvenance(s.provenance).some(p => p.fieldGroup === "enrolment"));
+  const sample = needsFallback ? await getSampleSchools() : [];
+  return schools.map(school => {
+    const provenance = readProvenance(school.provenance);
+    let result = { ...school, provenance: provenance as Prisma.JsonValue };
+    // Never undo a sourced removal or attach database metadata to a sample value.
+    if (school.size == null && !provenance.some(p => p.fieldGroup === "enrolment")) {
+      const byName = sample.find(s => s.name.toLowerCase() === school.name.toLowerCase());
+      const byBrin = sample.filter(s => school.brin && s.brin?.toUpperCase() === school.brin.toUpperCase());
+      const fallback = byName ?? (byBrin.length === 1 ? byBrin[0] : undefined);
+      const source = readProvenance(fallback?.provenance).find(p => p.fieldGroup === "enrolment");
+      if (fallback && typeof fallback.size === "number" && source) {
+        result = { ...result, size: fallback.size, provenance: [...provenance, source] as Prisma.JsonValue };
+      }
+    }
+    reportMissingProvenance(result);
+    return result;
   });
 }
 
@@ -206,135 +201,84 @@ function normalizeSelectedLevels(filters: SchoolListFilters) {
   return selected;
 }
 
-export async function listSchools(filters: SchoolListFilters = {}) {
-  const take = Math.min(Math.max(filters.take ?? 50, 1), 200);
+function normalizeLevel(level: string) {
+  const upper = String(level).toUpperCase().trim();
+  return upper.startsWith("VMBO") ? "VMBO" : upper;
+}
 
-  if (!hasDb()) {
-    const all = await getSampleSchools();
-    let results = all;
+// One filter pipeline shared by the database, sample and pool-timeout fallback
+// records so every backend returns the same schools for the same filters.
+function applyListFilters(schools: School[], filters: SchoolListFilters) {
+  let results = schools;
 
-    const normalizeLevel = (level: SchoolLevel) => {
-      const upper = String(level).toUpperCase().trim();
-      return upper.startsWith("VMBO") ? "VMBO" : upper;
-    };
-
-    if (filters.q) {
-      const q = filters.q.toLowerCase();
-      results = results.filter((s) => {
-        const haystack = [
-          s.name,
-          s.brin,
-          s.street,
-          s.houseNumber,
-          s.postalCode,
-          s.city,
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase();
-        return haystack.includes(q);
-      });
-    }
-    const selectedLevels = normalizeSelectedLevels(filters);
-    if (selectedLevels.length > 0) {
-      const selected = new Set(selectedLevels);
-
-      results = results.filter((s) => {
-        const levelSet = new Set((s.levels ?? []).map(normalizeLevel));
-        for (const selectedLevel of selected) {
-          if (levelSet.has(selectedLevel)) return true;
-        }
-        return false;
-      });
-    }
-    const radiusKm =
-      filters.bikeMinutes != null
-        ? bikeRadiusKmFromMinutes(filters.bikeMinutes)
-        : undefined;
-    if (
-      typeof filters.lat === "number" &&
-      typeof filters.lon === "number" &&
-      typeof radiusKm === "number"
-    ) {
-      results = results.filter((s) => {
-        if (s.lat == null || s.lon == null) return false;
-        return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <= radiusKm!;
-      });
-    }
-
-    return results.slice(0, take);
-  }
-
-  const and: Prisma.SchoolWhereInput[] = [];
   if (filters.q) {
-    and.push({
-      OR: [
-        { name: { contains: filters.q, mode: "insensitive" } },
-        { brin: { contains: filters.q, mode: "insensitive" } },
-        { street: { contains: filters.q, mode: "insensitive" } },
-        { houseNumber: { contains: filters.q, mode: "insensitive" } },
-        { postalCode: { contains: filters.q, mode: "insensitive" } },
-        { city: { contains: filters.q, mode: "insensitive" } },
-      ],
-    });
+    results = results.filter((s) => matchesSchoolSearch(s, filters.q!));
   }
+
   const selectedLevels = normalizeSelectedLevels(filters);
   if (selectedLevels.length > 0) {
     const selected = new Set(selectedLevels);
-
-    const praktijkFilter: Prisma.SchoolWhereInput = {
-      levels: { has: "PRAKTIJKONDERWIJS" as SchoolLevel },
-    };
-    const vmboOr: Prisma.SchoolWhereInput = {
-      OR: [
-        { levels: { has: "VMBO" as SchoolLevel } },
-        { levels: { has: "VMBO_T" as SchoolLevel } },
-        { levels: { has: "VMBO_B" as SchoolLevel } },
-        { levels: { has: "VMBO_K" as SchoolLevel } },
-      ],
-    };
-
-    const levelOr: Prisma.SchoolWhereInput[] = [];
-    if (selected.has("PRAKTIJKONDERWIJS")) levelOr.push(praktijkFilter);
-    if (selected.has("VMBO")) levelOr.push(vmboOr);
-    if (selected.has("HAVO")) levelOr.push({ levels: { has: "HAVO" as SchoolLevel } });
-    if (selected.has("VWO")) levelOr.push({ levels: { has: "VWO" as SchoolLevel } });
-
-    if (levelOr.length > 0) and.push({ OR: levelOr });
+    results = results.filter((s) =>
+      (s.levels ?? []).some((level) => selected.has(normalizeLevel(level) as never))
+    );
   }
-  const where: Prisma.SchoolWhereInput = and.length > 0 ? { AND: and } : {};
 
-  // Radius filtering: do a light pre-filter in SQL, then precise haversine in JS.
   const radiusKm =
     filters.bikeMinutes != null
       ? bikeRadiusKmFromMinutes(filters.bikeMinutes)
       : undefined;
-  const candidateTake = radiusKm != null ? Math.min(take * 4, 200) : take;
-  let candidates: School[];
-  try {
-    candidates = await prisma.school.findMany({
-      where,
-      take: candidateTake,
-      orderBy: { name: "asc" },
-    });
-  } catch (error) {
-    if (!isPoolTimeoutError(error)) throw error;
-    const all = await getSampleSchools();
-    candidates = all;
-  }
-
   if (
     typeof filters.lat === "number" &&
     typeof filters.lon === "number" &&
     typeof radiusKm === "number"
   ) {
-    candidates = candidates.filter((s) => {
+    results = results.filter((s) => {
       if (s.lat == null || s.lon == null) return false;
-      return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <= radiusKm!;
+      return haversineKm(filters.lat!, filters.lon!, s.lat, s.lon) <= radiusKm;
     });
   }
 
-  return withSizeFallbackMany(candidates.slice(0, take));
+  return results;
+}
+
+export async function listSchools(filters: SchoolListFilters = {}) {
+  const take = Math.min(Math.max(filters.take ?? 50, 1), 200);
+
+  if (!hasDb()) {
+    return applyListFilters(await getSampleSchools(), filters).slice(0, take);
+  }
+
+  // The catalogue is small, so fetch every school and filter in JS: text
+  // normalization and the precise distance check then behave identically to the
+  // sample backend and nothing is truncated before filtering. Revisit (SQL
+  // pre-filtering/indexing) if the catalogue grows.
+  let candidates: School[];
+  try {
+    candidates = await prisma.school.findMany({ orderBy: { name: "asc" } });
+  } catch (error) {
+    if (!isPoolTimeoutError(error)) throw error;
+    candidates = await getSampleSchools();
+  }
+
+  return withSizeFallbackMany(applyListFilters(candidates, filters).slice(0, take));
+}
+
+export async function getAllSchoolIds(): Promise<string[]> {
+  if (!hasDb()) {
+    const all = await getSampleSchools();
+    return all.map((s) => s.id);
+  }
+  try {
+    const schools = await prisma.school.findMany({
+      select: { id: true },
+      orderBy: { name: "asc" },
+    });
+    return schools.map((s) => s.id);
+  } catch (error) {
+    if (!isPoolTimeoutError(error)) throw error;
+    const all = await getSampleSchools();
+    return all.map((s) => s.id);
+  }
 }
 
 export async function getSchoolById(id: string) {

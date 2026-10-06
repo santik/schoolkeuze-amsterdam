@@ -218,7 +218,7 @@ test("schools page renders filters and defaults", async ({ page }) => {
   if (!isProd) await mockSchoolsApi(page);
   await page.goto("/nl/schools");
   await expect(page.getByLabel("Zoek")).toBeVisible();
-  await expect(page.getByPlaceholder("Bijv. Montessori, Barlaeus...")).toBeVisible();
+  await expect(page.getByPlaceholder("Zoek op school, onderwijsconcept, adres of postcode")).toBeVisible();
 
   const levelContainer = page.getByText("Niveau").locator("..");
   const levelLabels = levelContainer.locator("label");
@@ -226,7 +226,7 @@ test("schools page renders filters and defaults", async ({ page }) => {
   const labelTexts = (await levelLabels.allTextContents()).map((text) => text.trim());
   expect(labelTexts).toEqual(["Praktijk", "VMBO", "HAVO", "VWO"]);
 
-  await expect(page.getByText("Concept")).toHaveCount(0);
+  await expect(page.getByText("Concept", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Postcode", { exact: true })).toHaveCount(0);
 
   const distanceButton = page.getByRole("button", { name: /Afstand & fietstijd/i });
@@ -674,7 +674,7 @@ test("distance controls use location and zip interactions", async ({
   await page.goto("/nl/schools");
   await page.getByRole("button", { name: /Afstand & fietstijd/i }).click();
 
-  const zipInput = page.getByLabel("Postcode voor afstand");
+  const zipInput = page.getByLabel("Jouw postcode (vertrekpunt voor afstand)");
   const useLocation = page.getByLabel("Gebruik mijn locatie (afstand)");
   const bikeSlider = page.locator('input[type="range"]');
 
@@ -786,4 +786,44 @@ test("school card click opens details", async ({ page }) => {
 
   await page.getByTestId("school-card").filter({ hasText: "Alpha VWO" }).click();
   await expect(page).toHaveURL(/\/nl\/schools\/s1/);
+});
+
+test("search placeholder and label are localized in English", async ({ page }) => {
+  await mockSchoolsApi(page);
+  await page.goto("/en/schools");
+  await expect(
+    page.getByPlaceholder("Search by school, education concept, address or postcode")
+  ).toBeVisible();
+});
+
+test("search persists in the URL, clears, and resets from the empty state", async ({ page }) => {
+  test.skip(isProd, "uses mocked schools");
+  await mockSchoolsApi(page);
+  await page.goto("/nl/schools");
+  const input = page.getByPlaceholder("Zoek op school, onderwijsconcept, adres of postcode");
+
+  await input.fill("Kerkstraat");
+  await expect(page).toHaveURL(/q=Kerkstraat/);
+  await page.getByRole("button", { name: "Wissen" }).click();
+  await expect(input).toHaveValue("");
+  await expect(page).not.toHaveURL(/q=/);
+
+  await input.fill("niets-gevonden");
+  await expect(page.getByTestId("schools-empty")).toBeVisible();
+  await page.getByRole("button", { name: "Alle filters wissen" }).click();
+  await expect(page.getByTestId("schools-empty")).toHaveCount(0);
+  await expect(input).toHaveValue("");
+});
+
+test("returning from details restores the search", async ({ page }) => {
+  test.skip(isProd, "uses mocked schools");
+  await mockSchoolsApi(page);
+  await page.goto("/nl/schools?q=Alpha&levels=VWO");
+  await expect(page.getByLabel("Zoek")).toHaveValue("Alpha");
+  // Mocked ids have no detail page, so open a real school directly.
+  const { schools } = await (await page.request.get("/api/schools?take=1")).json();
+  await page.goto(`/nl/schools/${schools[0].id}`);
+  await page.getByTestId("back-to-schools").click();
+  await expect(page).toHaveURL(/q=Alpha/);
+  await expect(page.getByLabel("Zoek")).toHaveValue("Alpha");
 });

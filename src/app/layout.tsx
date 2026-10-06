@@ -20,13 +20,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "School Choice",
-    images: [
-      {
-        url: "/favicon.ico",
-        width: 256,
-        height: 256,
-      },
-    ],
   },
   twitter: {
     card: "summary",

@@ -1,0 +1,22 @@
+[
+  {
+    "sourceKey": "fixture:provenance-school",
+    "brin": "99XX",
+    "name": "Provenance Fixture School",
+    "websiteUrl": "https://example.edu/school",
+    "street": "Teststraat",
+    "houseNumber": "1",
+    "postalCode": "1000AA",
+    "city": "Amsterdam",
+    "levels": ["HAVO"],
+    "concepts": ["Dalton"],
+    "size": 900,
+    "results": {"coverage": {"year": "2024-2025"}},
+    "provenance": [
+      {"fieldGroup":"identity","dataYear":"2026","sourceLabel":"Fixture school","sourceUrl":"https://example.edu/school","sourceUpdatedAt":"2026-01-01T00:00:00Z","importedAt":"2026-01-02T00:00:00Z","verifiedAt":null,"method":"automatic","authority":"authoritative"},
+      {"fieldGroup":"education","dataYear":"2026","sourceLabel":"Fixture school","sourceUrl":"https://example.edu/school","sourceUpdatedAt":"2026-01-01T00:00:00Z","importedAt":"2026-01-02T00:00:00Z","verifiedAt":null,"method":"automatic","authority":"authoritative"},
+      {"fieldGroup":"enrolment","dataYear":"2026","sourceLabel":"DUO","sourceUrl":"https://duo.nl/enrolment?utm_source=fixture","sourceUpdatedAt":"2026-01-01T00:00:00Z","importedAt":"2026-01-02T00:00:00Z","verifiedAt":null,"method":"automatic","authority":"authoritative"},
+      {"fieldGroup":"results","dataYear":"2024-2025","sourceLabel":"DUO","sourceUrl":"https://duo.nl/results","sourceUpdatedAt":"2025-12-22T00:00:00Z","importedAt":"2026-01-02T00:00:00Z","verifiedAt":null,"method":"automatic","authority":"authoritative"}
+    ]
+  }
+]

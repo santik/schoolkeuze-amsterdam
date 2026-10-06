@@ -32,11 +32,11 @@
     "thankYou": "Bedankt voor je feedback!"
   },
   "Schools": {
-    "searchLabel": "Zoek",
-    "searchPlaceholder": "Bijv. Montessori, Barlaeus...",
+    "searchLabel": "Zoek op school, onderwijsconcept, adres of postcode",
+    "searchPlaceholder": "Zoek op school, onderwijsconcept, adres of postcode",
     "levelLabel": "Niveau",
     "distanceBikeTitle": "Afstand & fietstijd",
-    "zipDistanceLabel": "Postcode voor afstand",
+    "zipDistanceLabel": "Jouw postcode (vertrekpunt voor afstand)",
     "zipLookupLoading": "Postcode wordt opgezocht...",
     "zipLookupUsing": "Postcode wordt gebruikt voor afstand",
     "zipLookupHint": "Bij een geldige postcode wordt die gebruikt voor fietsafstand.",
@@ -54,7 +54,22 @@
     "distanceEstimate": "{km} km · ~{minutes} min fiets",
     "detailsCta": "Info",
     "favoriteOn": "★",
-    "favoriteOff": "☆"
+    "favoriteOff": "☆",
+    "sortLabel": "Sorteer op",
+    "sortDefault": "Standaard: niveau en naam",
+    "sortName": "Naam A–Z",
+    "sortScore": "Mijn score: hoogste eerst",
+    "sortDistance": "Afstand: dichtstbij eerst",
+    "ratedOnly": "Alleen scholen die ik heb beoordeeld",
+    "myScore": "Mijn score",
+    "clearSearch": "Wissen",
+    "distanceOriginHelp": "Zoeken vindt scholen op een adres. Het afstandsfilter hieronder gebruikt juist het vertrekpunt van je gezin.",
+    "emptyTitle": "Geen scholen gevonden.",
+    "resetFilters": "Alle filters wissen",
+    "activeSearch": "Zoekopdracht: “{query}”",
+    "activeLevels": "Niveau: {levels}",
+    "activeDistance": "Binnen {minutes} min fietsen",
+    "backToSchools": "← Terug naar scholen"
   },
   "Compare": {
     "addMore": "+ Scholen toevoegen",
@@ -94,7 +109,7 @@
     "websiteLabel": "Website",
     "studentCount": "Aantal leerlingen",
     "denomination": "Denominatie",
-    "examResults": "Examenresultaten (2023–2024)",
+    "examResults": "Examenresultaten",
     "noExamResults": "Geen examenresultaten beschikbaar.",
     "levelHeader": "Niveau",
     "candidatesHeader": "Kandidaten",
@@ -107,9 +122,11 @@
   "CompareTable": {
     "property": "Eigenschap",
     "level": "Niveau",
-    "passRate": "Slagingspercentage (2023–2024)",
+    "passRate": "Slagingspercentage",
     "concept": "Concept",
     "size": "Aantal leerlingen",
+    "capacity": "Voorlopige capaciteit ({year})",
+    "previousDemand": "1e voorkeuren / capaciteit ({year})",
     "score": "Mijn score",
     "address": "Adres",
     "website": "Website"
@@ -139,7 +156,9 @@
     "feedbackTitle": "Feedback",
     "feedbackDescription": "Stuur feedback over de Schoolkeuze-app.",
     "guideTitle": "Uitleg",
-    "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken."
+    "guideDescription": "Lees hoe toelating en loting/matching in Amsterdam werken.",
+    "compareTitle": "Vergelijken",
+    "compareDescription": "Vergelijk middelbare scholen in Amsterdam naast elkaar."
   },
   "Impression": {
     "title": "Jouw indruk",
@@ -175,5 +194,24 @@
     "hasChoirBandOrchestra": "Is er een schoolkoor / band / orkest?",
     "hasSportsTeams": "Zijn er sportteams?",
     "hasClubs": "Clubs of naschoolse activiteiten"
+  },
+  "ExamResults": {
+    "title": "Examenresultaten",
+    "year": "Schooljaar",
+    "context": "De groepsgrootte telt mee: percentages bij kleine groepen kunnen sterk wisselen. Examenresultaten zijn één onderdeel van de schoolkeuze, geen algemeen kwaliteitsoordeel.",
+    "provisional": "De nieuwste DUO-publicatie is een voorlopige momentopname.",
+    "track": "Niveau",
+    "candidates": "Kandidaten",
+    "passed": "Geslaagden",
+    "passRate": "Slagingspercentage",
+    "averageGrade": "Gemiddeld eindcijfer",
+    "published": "Gepubliceerd",
+    "available": "Beschikbaar",
+    "not_offered": "Geen eindexamenopleiding",
+    "no_cohort": "Geen examenkandidaten",
+    "suppressed": "Afgeschermde kleine groep",
+    "unmatched_source": "Geen bevestigde vestigingskoppeling",
+    "unavailable": "Niet beschikbaar",
+    "gradeNotComparable": "Geen vergelijkbaar niveaugemiddelde"
   }
 }

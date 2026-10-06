@@ -13,6 +13,7 @@ import {
 import { Link, useRouter } from "@/i18n/navigation";
 import { bikeMinutesFromKm } from "@/lib/bike";
 import { useFavorites } from "@/lib/useFavorites";
+import { calculateImpressionSummary, impressionStorageKey } from "@/lib/impression-score";
 import { useProfileId } from "@/lib/useProfileId";
 
 type SchoolDTO = {
@@ -29,63 +30,6 @@ type SchoolDTO = {
 };
 
 type ImpressionMetrics = Record<string, unknown>;
-
-type WeightedField = {
-  key: string;
-  weight: number;
-};
-
-type SectionConfig = {
-  weight: number;
-  fields: WeightedField[];
-};
-
-const scoreSections: SectionConfig[] = [
-  {
-    weight: 0.28,
-    fields: [
-      { key: "canImagineYourself", weight: 1.2 },
-      { key: "teachingImpression", weight: 1.2 },
-      { key: "homeworkLoad", weight: 1 },
-    ],
-  },
-  {
-    weight: 0.24,
-    fields: [
-      { key: "overallVibe", weight: 1.2 },
-      { key: "buildingVibe", weight: 1.1 },
-      { key: "buildingModern", weight: 1 },
-      { key: "hasLockerForEveryStudent", weight: 0.8 },
-      { key: "hasIndoorBreakSpace", weight: 0.8 },
-    ],
-  },
-  {
-    weight: 0.16,
-    fields: [
-      { key: "bikeRoute", weight: 1 },
-      { key: "publicTransportAccess", weight: 1 },
-    ],
-  },
-  {
-    weight: 0.14,
-    fields: [
-      { key: "hasCanteen", weight: 0.9 },
-      { key: "hasHealthyFood", weight: 1 },
-      { key: "canBringOwnLunch", weight: 0.8 },
-      { key: "foodQuality", weight: 1 },
-      { key: "foodPrice", weight: 0.9 },
-    ],
-  },
-  {
-    weight: 0.18,
-    fields: [
-      { key: "hasProperGym", weight: 1 },
-      { key: "hasChoirBandOrchestra", weight: 0.8 },
-      { key: "hasSportsTeams", weight: 0.9 },
-      { key: "hasClubs", weight: 1 },
-    ],
-  },
-];
 
 type ExportEntry = {
   rank: number;
@@ -190,50 +134,6 @@ function normalizeLevel(level: string) {
   return upper;
 }
 
-function impressionStorageKey(profileId: string, schoolId: string) {
-  return `schoolkeuze:impression:v1:${profileId}:${schoolId}`;
-}
-
-function metricToPercent(value: unknown): number | null {
-  if (typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 5) {
-    return value * 20;
-  }
-  if (value === "yes") return 100;
-  if (value === "no") return 0;
-  return null;
-}
-
-function weightedScore(metrics: ImpressionMetrics, fields: WeightedField[]): number | null {
-  const totalWeight = fields.reduce((acc, field) => acc + field.weight, 0);
-  if (totalWeight <= 0) return null;
-  let weightedTotal = 0;
-  let answeredWeight = 0;
-  for (const field of fields) {
-    const value = metricToPercent(metrics[field.key]);
-    if (value == null) continue;
-    weightedTotal += value * field.weight;
-    answeredWeight += field.weight;
-  }
-  if (answeredWeight <= 0) return null;
-  return weightedTotal / answeredWeight;
-}
-
-function overallImpressionScore(metrics: ImpressionMetrics): number | null {
-  const totalSectionWeight = scoreSections.reduce((acc, section) => acc + section.weight, 0);
-  if (totalSectionWeight <= 0) return null;
-
-  let totalScore = 0;
-  let answeredSectionWeight = 0;
-  for (const section of scoreSections) {
-    const sectionScore = weightedScore(metrics, section.fields);
-    if (sectionScore == null) continue;
-    totalScore += sectionScore * section.weight;
-    answeredSectionWeight += section.weight;
-  }
-  if (answeredSectionWeight <= 0) return null;
-  return totalScore / answeredSectionWeight;
-}
-
 export function FavoritesClient({
   userLocation,
   adviceLevel,
@@ -326,7 +226,7 @@ export function FavoritesClient({
             item.metrics && typeof item.metrics === "object"
               ? (item.metrics as ImpressionMetrics)
               : {};
-          const score = overallImpressionScore(metrics);
+          const score = calculateImpressionSummary(metrics).score;
           if (score != null) next.set(item.schoolId, score);
         }
 
@@ -336,7 +236,7 @@ export function FavoritesClient({
             const raw = localStorage.getItem(impressionStorageKey(profileId, schoolId));
             if (!raw) continue;
             const parsed = JSON.parse(raw) as ImpressionMetrics;
-            const score = overallImpressionScore(parsed);
+            const score = calculateImpressionSummary(parsed).score;
             if (score != null) next.set(schoolId, score);
           } catch {
             // best-effort local fallback
@@ -352,7 +252,7 @@ export function FavoritesClient({
             const raw = localStorage.getItem(impressionStorageKey(profileId, schoolId));
             if (!raw) continue;
             const parsed = JSON.parse(raw) as ImpressionMetrics;
-            const score = overallImpressionScore(parsed);
+            const score = calculateImpressionSummary(parsed).score;
             if (score != null) next.set(schoolId, score);
           } catch {
             // best-effort local fallback

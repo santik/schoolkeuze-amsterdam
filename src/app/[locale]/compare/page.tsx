@@ -1,8 +1,33 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
+import { isAppLocale, type AppLocale } from "@/i18n/routing";
+import { languageAlternates, localizedPath } from "@/lib/seo";
 import { getSchoolsByIds } from "@/server/schoolsStore";
+import { getPlacementSources, getSchoolPlacementData } from "@/server/placementStore";
 import { CompareTableClient } from "./table-client";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isAppLocale(locale)) return {};
+  const tSeo = await getTranslations({ locale, namespace: "SEO" });
+  const appLocale = locale as AppLocale;
+
+  return {
+    title: tSeo("compareTitle"),
+    description: tSeo("compareDescription"),
+    robots: { index: false, follow: true },
+    alternates: {
+      canonical: localizedPath(appLocale, "/compare"),
+      languages: languageAlternates("/compare"),
+    },
+  };
+}
 
 export default async function ComparePage({
   searchParams,
@@ -19,6 +44,7 @@ export default async function ComparePage({
       .filter(Boolean) ?? [];
 
   const schools = await getSchoolsByIds(parsed);
+  const placementSources = getPlacementSources();
   const compareSchools = schools.map((s) => ({
     id: s.id,
     name: s.name,
@@ -27,6 +53,7 @@ export default async function ComparePage({
     websiteUrl: s.websiteUrl,
     size: s.size,
     results: s.results,
+    placement: getSchoolPlacementData(s),
   }));
 
   return (
@@ -52,7 +79,11 @@ export default async function ComparePage({
           .
         </div>
       ) : (
-        <CompareTableClient schools={compareSchools} />
+        <CompareTableClient
+          schools={compareSchools}
+          capacitySource={placementSources.capacity}
+          matchingSource={placementSources.matching}
+        />
       )}
     </div>
   );

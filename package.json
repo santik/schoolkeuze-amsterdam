@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:unit": "tsx --test tests/unit/*.test.ts",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
@@ -17,7 +18,9 @@
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "ingest:sample": "tsx scripts/ingest/sample.ts",
-    "ingest:duo": "tsx scripts/ingest/duo.ts"
+    "ingest:duo": "tsx scripts/ingest/duo.ts",
+    "ingest:exams": "tsx scripts/ingest/exams.ts",
+    "ingest:exams:db": "tsx scripts/ingest/exams-db.ts"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",

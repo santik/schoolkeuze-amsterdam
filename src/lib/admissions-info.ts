@@ -1,4 +1,5 @@
 import type { SchoolLevel } from "@prisma/client";
+import admissionsPriority from "@/lib/admissions-priority.json";
 
 type SourceLink = { label: string; url: string };
 
@@ -33,6 +34,13 @@ function hasAnyVmbo(levels: SchoolLevel[] | undefined) {
   return levels.some((lvl) => String(lvl).startsWith("VMBO"));
 }
 
+function hasKovo(levels: SchoolLevel[] | undefined, name: string) {
+  return Boolean(
+    levels?.some((level) => String(level).toUpperCase() === "KOVO") ||
+      /\bkovo\b|special classes/i.test(name)
+  );
+}
+
 export function buildAdmissionsInfo({
   name,
   websiteUrl,
@@ -42,24 +50,33 @@ export function buildAdmissionsInfo({
   const schoolSpecificEn: string[] = [];
 
   const isPraktijk = hasLevel(levels, "PRAKTIJKONDERWIJS");
-  const isVsoLike = /vso|orion|signis|visio|kentalis/i.test(name);
+  const isVsoLike =
+    hasLevel(levels, "VSO") || /vso|orion|signis|visio|kentalis|viertaal/i.test(name);
+  const isKovo = hasKovo(levels, name);
   const offersVwo = hasLevel(levels, "VWO");
   const offersHavo = hasLevel(levels, "HAVO");
   const offersVmbo = hasAnyVmbo(levels);
 
   if (isPraktijk) {
     schoolSpecificNl.push(
-      `${name}: praktijkonderwijs werkt met een oriëntatie/intake vóór de centrale aanmeldweek; alleen als de school je plaatsbaar vindt kun je daar aanmelden.`
+      `${name}: praktijkonderwijs doet niet mee aan de Centrale Loting & Matching. Eerst is er een oriëntatie- en intakefase; alleen na een positieve plaatsbaarheidsbeoordeling kan digitaal worden aangemeld tijdens de centrale aanmeldweek.`
     );
     schoolSpecificEn.push(
-      `${name}: practical education uses an orientation/intake phase before the central application week; you can only apply if the school confirms you are placeable.`
+      `${name}: practical education does not take part in Central Lottery & Matching. There is first an orientation and intake phase; online application in the central application week is possible only after the school confirms that it can offer a suitable place.`
     );
   } else if (isVsoLike) {
     schoolSpecificNl.push(
-      `${name}: deze route valt vaak (deels) buiten de standaard centrale loting & matching. Controleer de aparte toelatingsroute van de school en het samenwerkingsverband.`
+      `${name}: voortgezet speciaal onderwijs doet niet mee aan de Centrale Loting & Matching. Bespreek plaatsing vroeg met de basisschool, deze school en het Samenwerkingsverband VO Amsterdam-Diemen.`
     );
     schoolSpecificEn.push(
-      `${name}: this route is often (partly) outside the standard central lottery & matching process. Check the school's separate admission route and regional support process.`
+      `${name}: secondary special education does not take part in Central Lottery & Matching. Discuss placement early with the primary school, this school, and the Amsterdam-Diemen regional support partnership.`
+    );
+  } else if (isKovo) {
+    schoolSpecificNl.push(
+      `${name}: kleinschalig ondersteunend voortgezet onderwijs (kovo) doet niet mee aan de Centrale Loting & Matching. De oriëntatiefase gaat vooraf aan de digitale aanmelding in de centrale aanmeldweek.`
+    );
+    schoolSpecificEn.push(
+      `${name}: small-scale supportive secondary education (kovo) does not take part in Central Lottery & Matching. Its orientation phase takes place before the online application during the central application week.`
     );
   } else {
     schoolSpecificNl.push(
@@ -79,20 +96,11 @@ export function buildAdmissionsInfo({
     );
   }
 
-  if ((offersHavo || offersVmbo) && !isPraktijk) {
-    schoolSpecificNl.push(
-      "Bij overaanmelding op een niveau/profielklas bepaalt loting & matching de plaatsing op basis van voorrang en lotnummer."
-    );
-    schoolSpecificEn.push(
-      "If a level/profile class is oversubscribed, placement is determined by lottery & matching using priority rules and lottery number."
-    );
-  }
-
   schoolSpecificNl.push(
-    "Controleer altijd de groep-8/aanmeldpagina van de school voor exacte voorrangsregels, profielklassen en beschikbare capaciteit van dit jaar."
+    "Controleer de groep-8/aanmeldpagina van de school voor intake, voorselectie, profielklassen en capaciteit. Deze gegevens bevestigen geen afzonderlijke voorrangsregel zonder bron voor de specifieke capaciteitsgroep."
   );
   schoolSpecificEn.push(
-    "Always verify the school's group-8/admissions page for exact priority rules, profile classes, and this year's capacity."
+    "Check the school's group-8/admissions page for intake, preselection, profile classes, and capacity. This information does not establish a separate priority rule without a source for the specific capacity group."
   );
 
   const sources: SourceLink[] = [
@@ -107,6 +115,14 @@ export function buildAdmissionsInfo({
     {
       label: "Schoolkeuze020 - Praktijkonderwijs/KOVO",
       url: "https://schoolkeuze020.nl/aanmelding-voor-praktijkonderwijs-of-kovo/",
+    },
+    {
+      label: "ELKadam - Kernprocedure 2025-2026 (timeline)",
+      url: "https://www.elkadam.info/sites/default/files/2026-01/bijlage_1_tijdpad_kernprocedure_po-vo_2025-2026_1.pdf",
+    },
+    {
+      label: `${admissionsPriority.annualProcedureLabel} (priority rules)`,
+      url: admissionsPriority.annualProcedureUrl,
     },
     {
       label: "OSVO",
@@ -124,33 +140,34 @@ export function buildAdmissionsInfo({
   return {
     nl: {
       summary:
-        "Amsterdam gebruikt een centrale loting & matching voor de overstap naar het voortgezet onderwijs, met uitzonderingen voor sommige routes (zoals praktijkonderwijs/kovo en delen van vso).",
+        "In schooljaar 2025-2026 gebruikt Amsterdam Centrale Loting & Matching voor regulier voortgezet onderwijs. Praktijkonderwijs, kovo en voortgezet speciaal onderwijs volgen een aparte route.",
       timeline: [
         "Uiterlijk 24 maart 2026: definitief basisschooladvies.",
         "25 t/m 31 maart 2026: centrale aanmeldweek (1e ronde).",
         "9 april 2026: uitslag centrale loting & matching (1e ronde).",
+        "9 april 16:00 t/m 14 april 16:00: aanmelden voor de 2e ronde; uitslag op 15 april vanaf 15:30 uur.",
       ],
       schoolSpecific: schoolSpecificNl,
       notes: [
-        "Na de uitslag volgt een 2e ronde voor leerlingen zonder plaatsing of bij terugtrekking.",
+        "Uiterlijk 12 mei 2026 beslist de middelbare school over toelating, ook wanneer een ondersteuningsvraag verdere beoordeling vraagt.",
         "Hardheidsclausule loopt via het centrale OSVO-loket.",
       ],
     },
     en: {
       summary:
-        "Amsterdam uses a central lottery & matching process for secondary-school admissions, with exceptions for some routes (such as practical education/kovo and parts of special education).",
+        "In school year 2025-2026, Amsterdam uses Central Lottery & Matching for mainstream secondary education. Practical education, kovo, and secondary special education use separate routes.",
       timeline: [
         "By March 24, 2026: final primary-school recommendation.",
         "March 25-31, 2026: central application week (round 1).",
         "April 9, 2026: round-1 lottery & matching results.",
+        "April 9, 16:00 to April 14, 16:00: round-2 applications; results on April 15 from 15:30.",
       ],
       schoolSpecific: schoolSpecificEn,
       notes: [
-        "After round 1, a second round is available for students without placement or after withdrawal.",
+        "By May 12, 2026, the secondary school decides on admission, including when a support need requires further assessment.",
         "Hardship requests go through the central OSVO desk.",
       ],
     },
     sources,
   };
 }
-

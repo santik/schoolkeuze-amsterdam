@@ -32,11 +32,11 @@
     "thankYou": "Thank you for your feedback!"
   },
   "Schools": {
-    "searchLabel": "Search",
-    "searchPlaceholder": "e.g. Montessori, Barlaeus...",
+    "searchLabel": "Search by school, education concept, address or postcode",
+    "searchPlaceholder": "Search by school, education concept, address or postcode",
     "levelLabel": "Level",
     "distanceBikeTitle": "Distance & bike time",
-    "zipDistanceLabel": "Zip code for distance",
+    "zipDistanceLabel": "Your postcode (distance origin)",
     "zipLookupLoading": "Looking up zip code...",
     "zipLookupUsing": "Using zip code for distance",
     "zipLookupHint": "If valid, zip code is used for bike distance.",
@@ -54,7 +54,22 @@
     "distanceEstimate": "{km} km · ~{minutes} min bike",
     "detailsCta": "Info",
     "favoriteOn": "★",
-    "favoriteOff": "☆"
+    "favoriteOff": "☆",
+    "sortLabel": "Sort by",
+    "sortDefault": "Default: level and name",
+    "sortName": "Name A–Z",
+    "sortScore": "My score: highest first",
+    "sortDistance": "Distance: nearest first",
+    "ratedOnly": "Only schools I rated",
+    "myScore": "My score",
+    "clearSearch": "Clear",
+    "distanceOriginHelp": "Search finds schools at an address. The distance filter below uses your family's starting point instead.",
+    "emptyTitle": "No schools match.",
+    "resetFilters": "Reset all filters",
+    "activeSearch": "Search: “{query}”",
+    "activeLevels": "Level: {levels}",
+    "activeDistance": "Within {minutes} min by bike",
+    "backToSchools": "← Back to schools"
   },
   "Compare": {
     "addMore": "+ Add schools",
@@ -94,7 +109,7 @@
     "websiteLabel": "Website",
     "studentCount": "Student count",
     "denomination": "Denomination",
-    "examResults": "Exam results (2023–2024)",
+    "examResults": "Exam results",
     "noExamResults": "No exam results available.",
     "levelHeader": "Level",
     "candidatesHeader": "Candidates",
@@ -107,9 +122,11 @@
   "CompareTable": {
     "property": "Property",
     "level": "Level",
-    "passRate": "Pass rate (2023–2024)",
+    "passRate": "Pass rate",
     "concept": "Concept",
     "size": "Student count",
+    "capacity": "Preliminary capacity ({year})",
+    "previousDemand": "First preferences / capacity ({year})",
     "score": "My Score",
     "address": "Address",
     "website": "Website"
@@ -139,7 +156,9 @@
     "feedbackTitle": "Feedback",
     "feedbackDescription": "Send feedback about the School Choice app.",
     "guideTitle": "Guide",
-    "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools."
+    "guideDescription": "Read how admissions and lottery matching works for Amsterdam secondary schools.",
+    "compareTitle": "Compare",
+    "compareDescription": "Compare Amsterdam secondary schools side by side."
   },
   "Impression": {
     "title": "Your Impression",
@@ -175,5 +194,24 @@
     "hasChoirBandOrchestra": "Is there a school choir / band / orchestra?",
     "hasSportsTeams": "Are there sports teams?",
     "hasClubs": "Clubs or after-school activities"
+  },
+  "ExamResults": {
+    "title": "Exam results",
+    "year": "School year",
+    "context": "Cohort size matters: percentages from small groups can vary considerably. Exam outcomes are only one part of school choice, not an overall quality rating.",
+    "provisional": "DUO’s latest release is a provisional snapshot.",
+    "track": "Track",
+    "candidates": "Candidates",
+    "passed": "Passed",
+    "passRate": "Pass rate",
+    "averageGrade": "Average final grade",
+    "published": "Published",
+    "available": "Available",
+    "not_offered": "No final-exam programme",
+    "no_cohort": "No exam cohort",
+    "suppressed": "Suppressed small group",
+    "unmatched_source": "No verified branch match",
+    "unavailable": "Unavailable",
+    "gradeNotComparable": "No comparable track average"
   }
 }

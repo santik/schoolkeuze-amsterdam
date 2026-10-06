@@ -12,7 +12,11 @@ export function localizedPath(locale: AppLocale, path: string) {
 }
 
 export function languageAlternates(path: string) {
-  return Object.fromEntries(
-    routing.locales.map((locale) => [locale, localizedPath(locale, path)])
-  ) as Record<AppLocale, string>;
+  const entries = routing.locales.map(
+    (locale) => [locale, localizedPath(locale, path)] as const
+  );
+  return {
+    ...Object.fromEntries(entries),
+    "x-default": localizedPath(routing.defaultLocale, path),
+  } as Record<string, string>;
 }

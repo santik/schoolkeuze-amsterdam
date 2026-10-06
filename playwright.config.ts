@@ -24,6 +24,10 @@ export default defineConfig({
         url: baseURL,
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
+        // Hermetic runs: blank the database so the app serves the bundled sample
+        // data and the impression API answers 503 (exercising the local-storage
+        // fallback), and tests never write to a real database.
+        env: { DATABASE_URL: "", DATABASE_URL_UNPOOLED: "" },
       },
   projects: [
     {

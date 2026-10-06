@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ParentSupportLinks } from "@/components/parent-support-links";
+import { PriorityGuidance } from "@/components/priority-guidance";
 import { getTranslations } from "next-intl/server";
 
 import { isAppLocale, type AppLocale } from "@/i18n/routing";
@@ -75,6 +77,8 @@ export default async function GuidePage({
         </ol>
       </section>
 
+      <PriorityGuidance locale={isEn ? "en" : "nl"} />
+
       <section className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5">
         <h2 className="text-lg font-semibold tracking-tight">
           {isEn ? "Admissions & lottery" : "Toelating & loting"}
@@ -83,13 +87,16 @@ export default async function GuidePage({
           {isEn ? (
             <>
               <li>
-                For school year 2026-2027, Amsterdam uses one central matching
-                process (Centrale Loting & Matching).
+                For the 2025-2026 transition procedure, Amsterdam uses one
+                central matching process (Centrale Loting & Matching) for
+                mainstream secondary education.
               </li>
               <li>
                 Main timeline: final primary-school advice by March 24, 2026;
                 central application week March 25-31, 2026; placement result on
-                April 9, 2026.
+                April 9, 2026 at 15:30. Round 2 runs from April 9 at 16:00
+                through April 14 at 16:00; its result is published April 15 at
+                15:30.
               </li>
               <li>
                 You submit one ranked preference list. Remaining seats are
@@ -99,10 +106,9 @@ export default async function GuidePage({
                 school).
               </li>
               <li>
-                Not every program participates in this central matching.
-                Practical education (`praktijkonderwijs`), international
-                transition classes, and some special schools can have separate
-                admission procedures.
+                Not every programme participates in this central matching.
+                Practical education, kovo and secondary special education use
+                separate admission routes; early orientation is important.
               </li>
               <li>
                 Official info and yearly updates:{" "}
@@ -125,13 +131,16 @@ export default async function GuidePage({
           ) : (
             <>
               <li>
-                Voor schooljaar 2026-2027 werkt Amsterdam met 1 centrale
-                procedure: Centrale Loting & Matching.
+                Voor de overstapprocedure 2025-2026 werkt Amsterdam voor het
+                reguliere voortgezet onderwijs met 1 centrale procedure:
+                Centrale Loting & Matching.
               </li>
               <li>
                 Belangrijke data: definitief basisschooladvies uiterlijk 24
                 maart 2026; centrale aanmeldweek 25 t/m 31 maart 2026;
-                plaatsingsuitslag op 9 april 2026.
+                plaatsingsuitslag op 9 april 2026 om 15:30 uur. De 2e ronde
+                loopt van 9 april 16:00 uur t/m 14 april 16:00 uur; de uitslag
+                daarvan is op 15 april om 15:30 uur.
               </li>
               <li>
                 Je levert 1 voorkeurslijst in. Overige plekken worden toegewezen
@@ -141,8 +150,9 @@ export default async function GuidePage({
               </li>
               <li>
                 Niet alle routes vallen onder de centrale matching.
-                Praktijkonderwijs, internationale schakelklassen en sommige
-                speciale scholen hebben (deels) aparte toelatingsprocedures.
+                Praktijkonderwijs, kovo en voortgezet speciaal onderwijs
+                volgen een aparte toelatingsroute; vroeg oriënteren is daarbij
+                belangrijk.
               </li>
               <li>
                 Officiële informatie en jaarlijkse updates:{" "}
@@ -268,10 +278,10 @@ export default async function GuidePage({
             <hr className="border-black/5 dark:border-white/10" />
 
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-              Why can't we swap places?
+              Why can&apos;t we swap places?
             </h4>
             <p>
-              It can happen that two children each end up at the other's
+              It can happen that two children each end up at the other&apos;s
               first-choice school — meaning both would be better off if they
               simply switched. Swapping is not allowed under the current rules
               of the system.
@@ -282,23 +292,7 @@ export default async function GuidePage({
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               What if my child is not placed at their preferred school?
             </h4>
-            <ul className="list-disc pl-5">
-              <li>Your child will be offered a reserve school.</li>
-              <li>
-                You can contact schools directly about any remaining spots.
-              </li>
-              <li>
-                Every year, Stichting VSA organises a meeting for parents of
-                children who were not placed at their preferred school — see{" "}
-                <a
-                  href="http://www.stichtingvsa.nl"
-                  className="underline underline-offset-2"
-                >
-                  stichtingvsa.nl
-                </a>
-                .
-              </li>
-            </ul>
+            <ParentSupportLinks locale={locale} context="non-placement" />
 
             <hr className="border-black/5 dark:border-white/10" />
 
@@ -333,7 +327,7 @@ export default async function GuidePage({
                       School advice received
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      By mid-February
+                      Final advice: by March 24, 2026
                     </td>
                   </tr>
                   <tr>
@@ -341,7 +335,7 @@ export default async function GuidePage({
                       Registration window
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      Early March to mid-March
+                      March 25–31, 2026 (round 1)
                     </td>
                   </tr>
                   <tr>
@@ -349,7 +343,7 @@ export default async function GuidePage({
                       Lottery results
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      Early April, 15:30
+                      April 9, 2026, 15:30 (round 1)
                     </td>
                   </tr>
                 </tbody>
@@ -392,6 +386,7 @@ export default async function GuidePage({
                 .
               </li>
             </ul>
+            <ParentSupportLinks locale={locale} context="capacity" />
 
             <hr className="border-black/5 dark:border-white/10" />
 
@@ -415,15 +410,6 @@ export default async function GuidePage({
                   className="underline underline-offset-2"
                 >
                   verenigingosvo.nl
-                </a>
-              </li>
-              <li>
-                Parent support organisation:{" "}
-                <a
-                  href="http://www.stichtingvsa.nl"
-                  className="underline underline-offset-2"
-                >
-                  stichtingvsa.nl
                 </a>
               </li>
             </ul>
@@ -535,24 +521,7 @@ export default async function GuidePage({
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               Wat als mijn kind is uitgeloot?
             </h4>
-            <ul className="list-disc pl-5">
-              <li>Je kind krijgt een reserveschool aangeboden.</li>
-              <li>
-                Je kunt contact opnemen met scholen voor eventuele resterende
-                plaatsen.
-              </li>
-              <li>
-                Elk jaar organiseert Stichting VSA een bijeenkomst voor ouders
-                van uitgelote kinderen — zie{" "}
-                <a
-                  href="http://www.stichtingvsa.nl"
-                  className="underline underline-offset-2"
-                >
-                  stichtingvsa.nl
-                </a>
-                .
-              </li>
-            </ul>
+            <ParentSupportLinks locale={locale} context="non-placement" />
 
             <hr className="border-black/5 dark:border-white/10" />
 
@@ -587,7 +556,7 @@ export default async function GuidePage({
                       Schooladvies ontvangen
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      Uiterlijk half februari
+                      Definitief advies: uiterlijk 24 maart 2026
                     </td>
                   </tr>
                   <tr>
@@ -595,7 +564,7 @@ export default async function GuidePage({
                       Aanmeldperiode
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      Begin maart t/m half maart
+                      25 t/m 31 maart 2026 (1e ronde)
                     </td>
                   </tr>
                   <tr>
@@ -603,7 +572,7 @@ export default async function GuidePage({
                       Uitslag loting
                     </td>
                     <td className="border-b border-black/5 px-2 py-1 text-zinc-700 dark:border-white/5 dark:text-zinc-300">
-                      Begin april, 15:30 uur
+                      9 april 2026, 15:30 uur (1e ronde)
                     </td>
                   </tr>
                 </tbody>
@@ -646,6 +615,7 @@ export default async function GuidePage({
                 .
               </li>
             </ul>
+            <ParentSupportLinks locale={locale} context="capacity" />
 
             <hr className="border-black/5 dark:border-white/10" />
 
@@ -669,15 +639,6 @@ export default async function GuidePage({
                   className="underline underline-offset-2"
                 >
                   verenigingosvo.nl
-                </a>
-              </li>
-              <li>
-                Ouderorganisatie bij uitloting:{" "}
-                <a
-                  href="http://www.stichtingvsa.nl"
-                  className="underline underline-offset-2"
-                >
-                  stichtingvsa.nl
                 </a>
               </li>
             </ul>

@@ -1,0 +1,159 @@
+{
+  "year": "2024-2025",
+  "complete": [
+    "Het Amsterdams Lyceum",
+    "College De Meer",
+    "Huygens College",
+    "Mediacollege Amsterdam",
+    "Tobiasschool"
+  ],
+  "notApplicable": [
+    "Kolom Praktijkcollege De Atlant",
+    "Kolom Praktijkcollege De Dreef",
+    "Kolom Praktijkcollege Het Plein",
+    "Kolom Praktijkcollege Noord"
+  ],
+  "unmatched": [
+    "Spinoza Lyceum Amsterdam",
+    "Pieter Nieuwland College",
+    "Berlage Lyceum",
+    "Gerrit van der Veen College",
+    "Geert Groote College Amsterdam",
+    "Comenius Lyceum Amsterdam",
+    "ALASCA",
+    "Bredero",
+    "Cburg College",
+    "CSB",
+    "Damstede Lyceum",
+    "DENISE",
+    "Fiducie College",
+    "Kairos College",
+    "Kiem Montessori",
+    "Het Cartesius",
+    "Marcanti College",
+    "Metropolis Lyceum",
+    "Montessori Lyceum Pax",
+    "Mundus College",
+    "OSB Amsterdam",
+    "Over-Y College",
+    "Futuris",
+    "Spring High",
+    "Vechtstede College",
+    "Hogelant",
+    "Hubertus & Berkhoff",
+    "Yuverta vmbo Amsterdam-West",
+    "Yuverta vmbo en pro Amsterdam-Oost",
+    "Jordaan College",
+    "LUCA",
+    "Meiberg College",
+    "Orion College Drostenburg",
+    "VierTaal College Amsterdam",
+    "Visio Onderwijs Amsterdam",
+    "Montessori Lyceum Amsterdam (MLA)"
+  ],
+  "partialOrUnavailable": [
+    "Barlaeus Gymnasium",
+    "Hyperion Lyceum",
+    "Vossius Gymnasium",
+    "St. Ignatiusgymnasium",
+    "St. Nicolaaslyceum",
+    "Cygnus Gymnasium",
+    "Havo De Hof",
+    "Calandlyceum",
+    "Lumion",
+    "Fons Vitae Lyceum",
+    "Hervormd Lyceum Zuid (HLZ)",
+    "Hervormd Lyceum West (HLW)",
+    "Spinoza20first",
+    "ABC Noorderlicht",
+    "Bindelmeer College",
+    "Calvijn College Amsterdam",
+    "Casparus College",
+    "Cheider (vo)",
+    "College ZUYD",
+    "Cornelius Haga Lyceum",
+    "De Amsterdamse MAVO",
+    "De Apollo",
+    "Joodse Scholengemeenschap Maimonides",
+    "Het 4e Gymnasium",
+    "Ir. Lely Lyceum",
+    "IVKO",
+    "Metis Montessori Lyceum",
+    "Montessori Lyceum Oostpoort",
+    "Montessori Lyceum Terra Nova",
+    "Vonk Amsterdam",
+    "Xplore Agora",
+    "Sweelinck College",
+    "Vinse School",
+    "TASC",
+    "Iedersland College",
+    "Kentalis Signis",
+    "Kolom VSO Alphons Laudy",
+    "Kolom VSO De Heldring",
+    "Orion College Amstel",
+    "Orion College Noord",
+    "Orion College Zuidoost",
+    "Voort College"
+  ],
+  "changes": [
+    {
+      "school": "Casparus College",
+      "track": "VMBO-K",
+      "previous": 97.5,
+      "current": 84.8,
+      "percentagePoints": -12.7
+    },
+    {
+      "school": "Montessori Lyceum Oostpoort",
+      "track": "VMBO-GL",
+      "previous": 61.5,
+      "current": 89.7,
+      "percentagePoints": 28.2
+    },
+    {
+      "school": "Montessori Lyceum Oostpoort",
+      "track": "VMBO-K",
+      "previous": 76,
+      "current": 88.5,
+      "percentagePoints": 12.5
+    },
+    {
+      "school": "Tobiasschool",
+      "track": "VMBO-B",
+      "previous": 89.5,
+      "current": 100,
+      "percentagePoints": 10.5
+    },
+    {
+      "school": "Iedersland College",
+      "track": "VMBO-B",
+      "previous": 66.7,
+      "current": 93.8,
+      "percentagePoints": 27.1
+    }
+  ],
+  "sourceRows": 11356,
+  "importedSourceRows": 312,
+  "sourceKnownCandidates": 1821,
+  "importedKnownCandidates": 1821,
+  "sourceKnownPassed": 1330,
+  "importedKnownPassed": 1330,
+  "suppressedTrackCount": 57,
+  "sources": [
+    {
+      "year": "2024-2025",
+      "url": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+      "sha256": "568e9a1e0322123e3907553ffc6b3f024952d3e79b2456974df9c2b84f5fb590"
+    },
+    {
+      "year": "2023-2024",
+      "url": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2023-2024.csv",
+      "sha256": "b16db753cfc97dbf2671e3b6d9f8de3cbab9b435e7b87ff3b6f4d6e86bdc620c"
+    }
+  ],
+  "reconciliation": {
+    "candidatesMatch": true,
+    "passedMatch": true,
+    "scope": "Matched branches, complete track counts only. Suppressed totals are excluded, never estimated."
+  }
+}

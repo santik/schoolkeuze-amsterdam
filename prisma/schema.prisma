@@ -50,6 +50,9 @@ model School {
   admissions  Json?         // lottery/admissions notes (prototype)
   admissionsInfo Json?      // structured admissions rules and school-specific notes (nl/en)
 
+  provenance  Json          @default("[]")
+  imports     SchoolImport[]
+
   source      String?       // which dataset populated this record
   sourceUrl   String?
   updatedAt   DateTime      @updatedAt
@@ -109,4 +112,16 @@ model Feedback {
   createdAt DateTime @default(now())
 
   @@index([createdAt])
+}
+
+// Append-only import snapshots, retained until an explicit retention policy exists.
+model SchoolImport {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Restrict)
+  importedAt  DateTime @default(now())
+  previous    Json
+  report      Json
+
+  @@index([schoolId, importedAt])
 }

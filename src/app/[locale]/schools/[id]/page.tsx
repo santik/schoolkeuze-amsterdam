@@ -1,44 +1,55 @@
+import type { Metadata } from "next";
+import { DataSources, FactSource } from "@/components/data-sources";
+import { getExamCoverage } from "@/lib/exam-results";
+import { readProvenance } from "@/lib/data-provenance";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { FavoriteButton } from "@/components/favorite-button";
 import { ExamResultsCollapsible } from "@/app/[locale]/schools/[id]/exam-results-collapsible";
+import { BackToSchools } from "@/app/[locale]/schools/[id]/back-to-schools";
 import { ImpressionClient } from "@/app/[locale]/schools/[id]/impression-client";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
+import { PlacementHistorySection } from "@/app/[locale]/schools/[id]/placement-history-section";
 import { getSchoolById } from "@/server/schoolsStore";
-import type { AdmissionsInfo } from "@/lib/admissions-info";
+import { getPlacementSources, getSchoolPlacementData } from "@/server/placementStore";
+import { buildAdmissionsInfo } from "@/lib/admissions-info";
+import { isAppLocale, type AppLocale } from "@/i18n/routing";
+import { languageAlternates, localizedPath } from "@/lib/seo";
 
-function parseAdmissionsInfo(value: unknown): AdmissionsInfo | null {
-  if (!value || typeof value !== "object") return null;
-  const v = value as Record<string, unknown>;
-  if (!v.nl || !v.en || !v.sources) return null;
-  return value as AdmissionsInfo;
-}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; id: string }>;
+}): Promise<Metadata> {
+  const { locale, id } = await params;
+  if (!isAppLocale(locale)) return {};
+  const appLocale = locale as AppLocale;
 
-type ExamStats = {
-  kandidaten?: number;
-  geslaagden?: number;
-  slagingspercentage?: number;
-  gem_cijfer_lijst?: number;
-};
+  const school = await getSchoolById(id);
+  if (!school) {
+    return { title: "School not found" };
+  }
 
-function getExamRows(results: unknown) {
-  const r = (results ?? {}) as { examens_2023_2024?: unknown };
-  const exams = r.examens_2023_2024 as Record<string, ExamStats> | undefined | null;
-  if (!exams || typeof exams !== "object") return [];
+  const levels = (school.levels ?? []).join(", ");
+  const description =
+    locale === "nl"
+      ? `${school.name} — middelbare school in Amsterdam. Niveaus: ${levels || "—"}.`
+      : `${school.name} — secondary school in Amsterdam. Levels: ${levels || "—"}.`;
 
-  const preferredOrder = ["VWO", "HAVO", "VMBO_TL", "VMBO_KL", "VMBO_BL", "VMBO"];
-  const keys = Object.keys(exams);
-  keys.sort((a, b) => {
-    const ai = preferredOrder.indexOf(a);
-    const bi = preferredOrder.indexOf(b);
-    if (ai === -1 && bi === -1) return a.localeCompare(b);
-    if (ai === -1) return 1;
-    if (bi === -1) return -1;
-    return ai - bi;
-  });
-
-  return keys.map((level) => ({ level, ...(exams[level] ?? {}) }));
+  return {
+    title: school.name,
+    description,
+    alternates: {
+      canonical: localizedPath(appLocale, `/schools/${id}`),
+      languages: languageAlternates(`/schools/${id}`),
+    },
+    openGraph: {
+      title: school.name,
+      description,
+      locale: locale === "nl" ? "nl_NL" : "en_US",
+    },
+  };
 }
 
 export default async function SchoolDetailPage({
@@ -52,10 +63,19 @@ export default async function SchoolDetailPage({
 
   const t = await getTranslations("SchoolDetails");
   const locale = await getLocale();
-  const admissionsInfo = parseAdmissionsInfo((school as { admissionsInfo?: unknown }).admissionsInfo);
+  const admissionsInfo = buildAdmissionsInfo({
+    name: school.name,
+    websiteUrl: school.websiteUrl,
+    levels: school.levels,
+  });
   const lang = locale === "nl" ? "nl" : "en";
-  const admissionsText = admissionsInfo?.[lang];
-  const examRows = getExamRows(school.results);
+  const provenance = readProvenance(school.provenance);
+  const enrolmentSource = provenance.find(p => p.fieldGroup === "enrolment");
+  const resultsSource = provenance.find(p => p.fieldGroup === "results" && p.dataYear === getExamCoverage(school.results, school.levels).year);
+  const admissionsSource = provenance.find(p => p.fieldGroup === "admissions");
+  const admissionsText = admissionsSource ? admissionsInfo[lang] : undefined;
+  const placement = getSchoolPlacementData(school);
+  const placementSources = getPlacementSources();
 
   const address = [
     [school.street, school.houseNumber].filter(Boolean).join(" "),
@@ -67,8 +87,29 @@ export default async function SchoolDetailPage({
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
     : null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: school.name,
+    ...(address && {
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: [school.street, school.houseNumber].filter(Boolean).join(" "),
+        postalCode: school.postalCode,
+        addressLocality: school.city,
+      },
+    }),
+    ...(school.websiteUrl && { url: school.websiteUrl }),
+    ...(school.levels?.length && { educationalLevel: school.levels }),
+  };
+
   return (
     <div className="grid gap-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BackToSchools />
       <section
         data-testid="details-hero"
         className="grid gap-3 rounded-3xl border border-black/5 bg-white p-8 dark:border-white/10 dark:bg-white/5"
@@ -118,24 +159,25 @@ export default async function SchoolDetailPage({
           </div>
           <div data-testid="details-student-count">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("studentCount")}:</span>{" "}
-            {typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}
+            {enrolmentSource && typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}{" "}
+            <FactSource provenance={enrolmentSource} lang={lang} />
           </div>
         </div>
 
-        <ExamResultsCollapsible
-          title={t("examResults")}
-          noResultsLabel={t("noExamResults")}
-          levelHeader={t("levelHeader")}
-          candidatesHeader={t("candidatesHeader")}
-          passedHeader={t("passedHeader")}
-          passRateHeader={t("passRateHeader")}
-          avgGradeHeader={t("avgGradeHeader")}
-          rows={examRows}
-        />
+        <ExamResultsCollapsible results={school.results} levels={school.levels} />
+        <div data-testid="exam-source"><FactSource provenance={resultsSource} lang={lang} /></div>
+        <DataSources provenance={provenance} lang={lang} />
       </section>
 
       <ImpressionClient schoolId={school.id} />
       <NotesClient schoolId={school.id} />
+
+      <PlacementHistorySection
+        locale={locale}
+        placement={placement}
+        capacitySource={placementSources.capacity}
+        matchingSource={placementSources.matching}
+      />
 
       <section
         data-testid="details-admissions"
@@ -144,7 +186,8 @@ export default async function SchoolDetailPage({
         <h2 className="text-lg font-semibold tracking-tight">
           {t("admissionsTitle")}
         </h2>
-        {admissionsText ? (
+        <FactSource provenance={admissionsSource} lang={lang} />
+        {admissionsText && admissionsInfo ? (
           <div className="grid gap-3 text-sm text-zinc-700 dark:text-zinc-300">
             <p>{admissionsText.summary}</p>
 

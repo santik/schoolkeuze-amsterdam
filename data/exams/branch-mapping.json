@@ -1,0 +1,242 @@
+[
+  {
+    "school": "Barlaeus Gymnasium",
+    "branch": "21AB00",
+    "sourceName": "Barlaeus Gymnasium",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Hyperion Lyceum",
+    "branch": "21AS08",
+    "sourceName": "loc, Hyperion Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Vossius Gymnasium",
+    "branch": "21AF00",
+    "sourceName": "Vossius Gymnasium",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "St. Ignatiusgymnasium",
+    "branch": "01ET00",
+    "sourceName": "St. Ignatiusgymnasium",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "St. Nicolaaslyceum",
+    "branch": "14SE00",
+    "sourceName": "St. Nicolaaslyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Cygnus Gymnasium",
+    "branch": "14RF06",
+    "sourceName": "Cygnus Gymnasium",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Havo De Hof",
+    "branch": "14RF08",
+    "sourceName": "Havo de Hof",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Calandlyceum",
+    "branch": "21GD00",
+    "sourceName": "Calandlyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Lumion",
+    "branch": "21GD01",
+    "sourceName": "locatie, Lumion",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Fons Vitae Lyceum",
+    "branch": "02AN00",
+    "sourceName": "Fons Vitae Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Hervormd Lyceum Zuid (HLZ)",
+    "branch": "02AR00",
+    "sourceName": "Het Hervormd Lyc Zuid",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Het Amsterdams Lyceum",
+    "branch": "02AP00",
+    "sourceName": "Het Amsterdams Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Hervormd Lyceum West (HLW)",
+    "branch": "01TC00",
+    "sourceName": "Hervormd Lyceum West",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Spinoza20first",
+    "branch": "21BH02",
+    "sourceName": "Spinoza20First",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "ABC Noorderlicht",
+    "branch": "17VF02",
+    "sourceName": "ABC Noorderlicht",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Bindelmeer College",
+    "branch": "14RF04",
+    "sourceName": "Bindelmeer College",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Calvijn College Amsterdam",
+    "branch": "17HB06",
+    "sourceName": "Calvijn College",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Casparus College",
+    "branch": "24TG04",
+    "sourceName": "Casparus College",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Cheider (vo)",
+    "branch": "23GF00",
+    "sourceName": "Stg Cheider VO",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "College De Meer",
+    "branch": "14RF03",
+    "sourceName": "College De Meer (Lavoisierstr)",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "College ZUYD",
+    "branch": "21ET07",
+    "sourceName": "College ZUYD",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Cornelius Haga Lyceum",
+    "branch": "31GM00",
+    "sourceName": "Cornelius Haga Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "De Amsterdamse MAVO",
+    "branch": "31BL00",
+    "sourceName": "De Amsterdamse Mavo",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "De Apollo",
+    "branch": "21ET08",
+    "sourceName": "De Apollo",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Joodse Scholengemeenschap Maimonides",
+    "branch": "16PN00",
+    "sourceName": "Joodse SGM Maimonides",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Het 4e Gymnasium",
+    "branch": "30GC00",
+    "sourceName": "Het 4e Gymnasium",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Huygens College",
+    "branch": "21ET04",
+    "sourceName": "Huygens College",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Ir. Lely Lyceum",
+    "branch": "21FF00",
+    "sourceName": "Ir. Lely Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "IVKO",
+    "branch": "16PS04",
+    "sourceName": "Locatie, IVKO",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Mediacollege Amsterdam",
+    "branch": "02PA00",
+    "sourceName": "Mediacollege Amsterdam Ma",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Metis Montessori Lyceum",
+    "branch": "16PS16",
+    "sourceName": "Loc, Metis Montessori Lyceum",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Montessori Lyceum Oostpoort",
+    "branch": "16PS08",
+    "sourceName": "Montessori Lyceum Oostpoort",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Montessori Lyceum Terra Nova",
+    "branch": "28DH00",
+    "sourceName": "Montessori Lyceum Terra Nova",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Tobiasschool",
+    "branch": "14RL03",
+    "sourceName": "Locatie, Tobiasschool",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Vonk Amsterdam",
+    "branch": "25EF03",
+    "sourceName": "Vonk Amsterdam",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Xplore Agora",
+    "branch": "17VF08",
+    "sourceName": "Xplore Agora Amsterdam",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Sweelinck College",
+    "branch": "21ET02",
+    "sourceName": "Sweelinck College",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Vinse School",
+    "branch": "21ET12",
+    "sourceName": "Vinse School",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "TASC",
+    "branch": "17YS24",
+    "sourceName": "TASC",
+    "municipality": "AMSTERDAM"
+  },
+  {
+    "school": "Iedersland College",
+    "branch": "17HB07",
+    "sourceName": "Iedersland College",
+    "municipality": "AMSTERDAM"
+  }
+]

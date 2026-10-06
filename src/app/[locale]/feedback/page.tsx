@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: tSeo("feedbackTitle"),
     description: tSeo("feedbackDescription"),
+    robots: { index: false, follow: true },
     alternates: {
       canonical: localizedPath(appLocale, "/feedback"),
       languages: languageAlternates("/feedback"),

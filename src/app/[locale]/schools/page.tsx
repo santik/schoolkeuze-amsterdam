@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 
 import { SchoolsExplorer } from "@/app/[locale]/schools/schools-explorer";
@@ -28,7 +29,9 @@ export async function generateMetadata({
 export default async function SchoolsPage() {
   return (
     <div className="grid gap-4">
-      <SchoolsExplorer />
+      <Suspense>
+        <SchoolsExplorer />
+      </Suspense>
     </div>
   );
 }
