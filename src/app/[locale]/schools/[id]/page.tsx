@@ -70,8 +70,6 @@ export default async function SchoolDetailPage({
   });
   const lang = locale === "nl" ? "nl" : "en";
   const provenance = readProvenance(school.provenance);
-  const identitySource = provenance.find(p => p.fieldGroup === "identity");
-  const educationSource = provenance.find(p => p.fieldGroup === "education");
   const enrolmentSource = provenance.find(p => p.fieldGroup === "enrolment");
   const resultsSource = provenance.find(p => p.fieldGroup === "results" && p.dataYear === getExamCoverage(school.results, school.levels).year);
   const admissionsSource = provenance.find(p => p.fieldGroup === "admissions");
@@ -128,8 +126,7 @@ export default async function SchoolDetailPage({
 
         <div className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <div data-testid="details-levels">
-            {(school.levels ?? []).join(" / ") || "—"}{" "}
-            <FactSource provenance={educationSource} lang={lang} />
+            {(school.levels ?? []).join(" / ") || "—"}
           </div>
           <div data-testid="details-address">
             {address || "—"}{" "}
@@ -143,8 +140,7 @@ export default async function SchoolDetailPage({
               >
                 📍 {t("openMap")}
               </a>
-            ) : null}{" "}
-            <FactSource provenance={identitySource} lang={lang} />
+            ) : null}
           </div>
           <div data-testid="details-website">
             {school.websiteUrl ? (
@@ -163,8 +159,7 @@ export default async function SchoolDetailPage({
           </div>
           <div data-testid="details-student-count">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t("studentCount")}:</span>{" "}
-            {enrolmentSource && typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}{" "}
-            <FactSource provenance={enrolmentSource} lang={lang} />
+            {enrolmentSource && typeof school.size === "number" ? school.size.toLocaleString(locale) : "—"}
           </div>
         </div>
 
