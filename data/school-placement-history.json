@@ -90,7 +90,7 @@
         }
       ]
     },
-    "sample:00aa:barlaeus-gymnasium": {
+    "sample:21ab:barlaeus-gymnasium": {
       "capacityGroups": [
         {
           "profile": null,
@@ -577,7 +577,7 @@
         }
       ]
     },
-    "sample:16ps:college-zuyd": {
+    "sample:21et:college-zuyd": {
       "capacityGroups": [
         {
           "profile": "Talentendansklas",
@@ -833,7 +833,7 @@
         }
       ]
     },
-    "sample:25ef:denise": {
+    "sample:17ys:denise": {
       "capacityGroups": [
         {
           "profile": null,
@@ -901,7 +901,7 @@
         }
       ]
     },
-    "sample:21vf:damstede-lyceum": {
+    "sample:17vf:damstede-lyceum": {
       "capacityGroups": [
         {
           "profile": null,
@@ -999,7 +999,7 @@
       ],
       "matchingGroups": []
     },
-    "sample:31fg:fiducie-college": {
+    "sample:32gd:fiducie-college": {
       "capacityGroups": [
         {
           "profile": null,
@@ -1567,7 +1567,7 @@
         }
       ]
     },
-    "sample:14rl:hubertus-berkhoff": {
+    "sample:00ef:hubertus-berkhoff": {
       "capacityGroups": [
         {
           "profile": "Tweetalig",
@@ -1668,7 +1668,7 @@
         }
       ]
     },
-    "sample:00ac:hyperion-lyceum": {
+    "sample:21as:hyperion-lyceum": {
       "capacityGroups": [
         {
           "profile": null,
@@ -2629,7 +2629,7 @@
         }
       ]
     },
-    "sample:28dh:montessori-lyceum-terra-nova": {
+    "sample:16ps:montessori-lyceum-terra-nova": {
       "capacityGroups": [
         {
           "profile": null,
@@ -2729,7 +2729,7 @@
         }
       ]
     },
-    "sample:17hb:mundus-college": {
+    "sample:17ys:mundus-college": {
       "capacityGroups": [
         {
           "profile": null,
@@ -3357,7 +3357,7 @@
         }
       ]
     },
-    "sample:30gs:tasc": {
+    "sample:17ys:tasc": {
       "capacityGroups": [
         {
           "profile": null,
@@ -3626,7 +3626,7 @@
         }
       ]
     },
-    "sample:17vf:yuverta-vmbo-amsterdam-west": {
+    "sample:01oe:yuverta-vmbo-amsterdam-west": {
       "capacityGroups": [
         {
           "profile": null,
@@ -3675,7 +3675,7 @@
         }
       ]
     },
-    "sample:17vf:yuverta-vmbo-en-pro-amsterdam-oost": {
+    "sample:01oe:yuverta-vmbo-en-pro-amsterdam-oost": {
       "capacityGroups": [
         {
           "profile": null,

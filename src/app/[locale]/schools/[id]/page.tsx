@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DataSources, FactSource } from "@/components/data-sources";
+import { FactSource } from "@/components/data-sources";
 import { getExamCoverage } from "@/lib/exam-results";
 import { readProvenance } from "@/lib/data-provenance";
 import { notFound } from "next/navigation";
@@ -70,6 +70,8 @@ export default async function SchoolDetailPage({
   });
   const lang = locale === "nl" ? "nl" : "en";
   const provenance = readProvenance(school.provenance);
+  const identitySource = provenance.find(p => p.fieldGroup === "identity");
+  const educationSource = provenance.find(p => p.fieldGroup === "education");
   const enrolmentSource = provenance.find(p => p.fieldGroup === "enrolment");
   const resultsSource = provenance.find(p => p.fieldGroup === "results" && p.dataYear === getExamCoverage(school.results, school.levels).year);
   const admissionsSource = provenance.find(p => p.fieldGroup === "admissions");
@@ -126,7 +128,8 @@ export default async function SchoolDetailPage({
 
         <div className="grid gap-2 text-sm text-zinc-700 dark:text-zinc-300">
           <div data-testid="details-levels">
-            {(school.levels ?? []).join(" / ") || "—"}
+            {(school.levels ?? []).join(" / ") || "—"}{" "}
+            <FactSource provenance={educationSource} lang={lang} />
           </div>
           <div data-testid="details-address">
             {address || "—"}{" "}
@@ -140,7 +143,8 @@ export default async function SchoolDetailPage({
               >
                 📍 {t("openMap")}
               </a>
-            ) : null}
+            ) : null}{" "}
+            <FactSource provenance={identitySource} lang={lang} />
           </div>
           <div data-testid="details-website">
             {school.websiteUrl ? (
@@ -166,7 +170,6 @@ export default async function SchoolDetailPage({
 
         <ExamResultsCollapsible results={school.results} levels={school.levels} />
         <div data-testid="exam-source"><FactSource provenance={resultsSource} lang={lang} /></div>
-        <DataSources provenance={provenance} lang={lang} />
       </section>
 
       <ImpressionClient schoolId={school.id} />

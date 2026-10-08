@@ -18,7 +18,7 @@
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "ingest:sample": "tsx scripts/ingest/sample.ts",
-    "ingest:duo": "tsx scripts/ingest/duo.ts",
+    "ingest:duo": "tsx scripts/ingest/duo-provenance.ts",
     "ingest:exams": "tsx scripts/ingest/exams.ts",
     "ingest:exams:db": "tsx scripts/ingest/exams-db.ts"
   },
