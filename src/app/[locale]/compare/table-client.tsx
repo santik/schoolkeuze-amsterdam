@@ -151,15 +151,7 @@ export function CompareTableClient({
           </tr>
           <tr data-testid="compare-row-capacity" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
-              <a
-                href={capacitySource.sourceUrl}
-                target="_blank"
-                rel="noreferrer"
-                title={capacitySource.sourceLabel}
-                className="underline decoration-dotted underline-offset-2"
-              >
-                {tTable("capacity", { year: capacitySource.academicYear })}
-              </a>
+              {tTable("capacity", { year: capacitySource.academicYear })}
             </td>
             {schools.map((s) => (
               <td key={s.id} className="p-4 align-top text-xs">
@@ -178,15 +170,7 @@ export function CompareTableClient({
           </tr>
           <tr data-testid="compare-row-matching" className="border-b border-black/5 dark:border-white/10">
             <td className="p-4 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
-              <a
-                href={matchingSource.sourceUrl}
-                target="_blank"
-                rel="noreferrer"
-                title={matchingSource.sourceLabel}
-                className="underline decoration-dotted underline-offset-2"
-              >
-                {tTable("previousDemand", { year: matchingSource.academicYear })}
-              </a>
+              {tTable("previousDemand", { year: matchingSource.academicYear })}
             </td>
             {schools.map((s) => (
               <td key={s.id} className="p-4 align-top text-xs">

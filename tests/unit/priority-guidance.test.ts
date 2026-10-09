@@ -15,8 +15,19 @@ for (const levels of [['HAVO'], ['VWO'], ['VSO', 'HAVO'], ['PRAKTIJKONDERWIJS']]
   });
 }
 
-test('generated school guidance links to the centrally configured annual procedure', () => {
-  const info = buildAdmissionsInfo({ name: 'Test school', levels: ['HAVO'] });
+test('school guidance links only to the school itself and the ELK parent portal', () => {
+  const info = buildAdmissionsInfo({
+    name: 'Test school',
+    levels: ['HAVO'],
+    websiteUrl: 'https://test-school.example/',
+  });
   assert.equal(admissionsPriority.procedureYear, '2025–2026');
-  assert.ok(info.sources.some(source => source.url === admissionsPriority.annualProcedureUrl));
+
+  const hosts = info.sources.map(source => new URL(source.url).hostname);
+  assert.deepEqual(hosts, ['test-school.example', 'www.elkadam.info']);
+
+  // Other bodies are named in the guidance text, never linked.
+  for (const source of info.sources) {
+    assert.doesNotMatch(source.url, /schoolkeuze020|osvo|stichtingvsa/i);
+  }
 });

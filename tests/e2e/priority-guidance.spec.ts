@@ -13,6 +13,8 @@ for (const locale of ['nl', 'en'] as const) {
     await expect(block).toContainText('Kopklas');
     await expect(block).toContainText('SO/SBO');
     await expect(block).toContainText(locale === 'nl' ? 'toegekende hardheidsclausule' : 'approved hardship');
-    await expect(block.getByRole('link')).toHaveAttribute('href', /KERNPROCEDURE-PO-VO-1-2025-2026\.pdf#page=18$/);
+    // The annual procedure is named, not linked.
+    await expect(block.getByRole('link')).toHaveCount(0);
+    await expect(block).toContainText('Kernprocedure PO-VO 2025–2026');
   });
 }

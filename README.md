@@ -63,6 +63,10 @@ Then open:
 This repo includes an ingestion scaffold:
 
 - `npm run ingest:sample` — upserts `data/schools.sample.json` into Postgres
+- `npm run ingest:open-days` — re-scrapes the Schoolkeuze 020 open-day calendar into
+  `data/school-open-days.json` (plus a `.report.json` with the match results). Pass
+  `--html <file>` to re-parse a saved copy instead of fetching. Source names are mapped
+  onto ours explicitly, so an unknown school fails the run instead of disappearing.
 - `scripts/ingest/duo.ts` — **placeholder** for DUO open datasets/APIs ingestion
 
 ### Notes

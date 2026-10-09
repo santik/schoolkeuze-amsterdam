@@ -121,16 +121,6 @@ export function PlacementHistorySection({
           </p>
         )}
       </div>
-
-      <div className="grid gap-1 text-xs text-zinc-600 dark:text-zinc-400">
-        <div className="font-semibold text-zinc-800 dark:text-zinc-200">{isNl ? "Bronnen" : "Sources"}</div>
-        <a className="underline underline-offset-2" href={capacitySource.sourceUrl} target="_blank" rel="noreferrer">
-          {capacitySource.sourceLabel} ({capacitySource.academicYear})
-        </a>
-        <a className="underline underline-offset-2" href={matchingSource.sourceUrl} target="_blank" rel="noreferrer">
-          {matchingSource.sourceLabel} ({matchingSource.academicYear})
-        </a>
-      </div>
     </section>
   );
 }

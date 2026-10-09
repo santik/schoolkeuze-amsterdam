@@ -20,7 +20,8 @@
     "ingest:sample": "tsx scripts/ingest/sample.ts",
     "ingest:duo": "tsx scripts/ingest/duo-provenance.ts",
     "ingest:exams": "tsx scripts/ingest/exams.ts",
-    "ingest:exams:db": "tsx scripts/ingest/exams-db.ts"
+    "ingest:exams:db": "tsx scripts/ingest/exams-db.ts",
+    "ingest:open-days": "python3 scripts/extract-open-days.py"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",

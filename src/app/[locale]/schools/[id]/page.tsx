@@ -10,9 +10,11 @@ import { ExamResultsCollapsible } from "@/app/[locale]/schools/[id]/exam-results
 import { BackToSchools } from "@/app/[locale]/schools/[id]/back-to-schools";
 import { ImpressionClient } from "@/app/[locale]/schools/[id]/impression-client";
 import { NotesClient } from "@/app/[locale]/schools/[id]/notes-client";
+import { OpenDaysSection } from "@/app/[locale]/schools/[id]/open-days-section";
 import { PlacementHistorySection } from "@/app/[locale]/schools/[id]/placement-history-section";
 import { getSchoolById } from "@/server/schoolsStore";
 import { getPlacementSources, getSchoolPlacementData } from "@/server/placementStore";
+import { getOpenDaysSource, getUpcomingSchoolOpenDays } from "@/server/openDaysStore";
 import { buildAdmissionsInfo } from "@/lib/admissions-info";
 import { isAppLocale, type AppLocale } from "@/i18n/routing";
 import { languageAlternates, localizedPath } from "@/lib/seo";
@@ -76,6 +78,8 @@ export default async function SchoolDetailPage({
   const admissionsText = admissionsSource ? admissionsInfo[lang] : undefined;
   const placement = getSchoolPlacementData(school);
   const placementSources = getPlacementSources();
+  const openDays = getUpcomingSchoolOpenDays(school);
+  const openDaysSource = getOpenDaysSource();
 
   const address = [
     [school.street, school.houseNumber].filter(Boolean).join(" "),
@@ -166,6 +170,13 @@ export default async function SchoolDetailPage({
         <ExamResultsCollapsible results={school.results} levels={school.levels} />
         <div data-testid="exam-source"><FactSource provenance={resultsSource} lang={lang} /></div>
       </section>
+
+      <OpenDaysSection
+        locale={locale}
+        upcoming={openDays.upcoming}
+        pastCount={openDays.past.length}
+        source={openDaysSource}
+      />
 
       <ImpressionClient schoolId={school.id} />
       <NotesClient schoolId={school.id} />

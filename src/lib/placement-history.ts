@@ -1,3 +1,5 @@
+import { buildSchoolDatasetKey } from "@/lib/school-dataset-key";
+
 export type CapacityGroup = {
   profile: string | null;
   capacity: number;
@@ -37,16 +39,7 @@ export type PlacementDataset = {
   schools: Record<string, SchoolPlacementData>;
 };
 
-export function buildPlacementSchoolKey(school: {
-  sourceKey?: string | null;
-  brin?: string | null;
-  name: string;
-}): string {
-  if (school.sourceKey?.trim()) return school.sourceKey.trim().toLowerCase();
-  const brin = school.brin?.trim().toLowerCase() || "no-brin";
-  const slug = school.name.toLowerCase().replaceAll(/\W+/g, "-");
-  return `sample:${brin}:${slug}`;
-}
+export const buildPlacementSchoolKey = buildSchoolDatasetKey;
 
 export function getPlacementDataForSchoolKey(
   dataset: PlacementDataset,

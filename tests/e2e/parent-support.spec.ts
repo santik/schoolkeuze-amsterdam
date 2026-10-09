@@ -16,12 +16,15 @@ for (const locale of ["nl", "en"] as const) {
       await expect(nonPlacement.locator("strong")).toHaveText(locale === "en"
         ? ["Official procedure", "Independent parent support"]
         : ["Officiële procedure", "Onafhankelijke ouderondersteuning"]);
-      await expect(nonPlacement.locator("a")).toHaveCount(3);
-      const officialLinks = nonPlacement.getByRole("link");
-      await expect(officialLinks.nth(0)).toHaveAttribute("href", "https://www.elkadam.info");
-      await expect(officialLinks.nth(1)).toHaveAttribute("href", "https://verenigingosvo.nl");
-      await expect(officialLinks.nth(2)).toHaveAttribute("href", "http://www.stichtingvsa.nl");
-      await expect(page.getByRole("link", { name: /Stichting VSA/ })).toHaveCount(2);
+      // ELK is the only body linked out to; the rest are named in the text.
+      await expect(nonPlacement.locator("a")).toHaveCount(1);
+      await expect(nonPlacement.getByRole("link").nth(0)).toHaveAttribute(
+        "href",
+        "https://www.elkadam.info"
+      );
+      await expect(nonPlacement).toContainText("OSVO");
+      await expect(page.getByRole("link", { name: /Stichting VSA/ })).toHaveCount(0);
+      await expect(page.getByText(/Stichting VSA/).first()).toBeVisible();
       await expect(capacity).toContainText(locale === "en" ? "historical placement figures" : "historische plaatsingscijfers");
       for (const block of [nonPlacement, capacity]) {
         await expect(block).toContainText(locale === "en" ? "independent parent organisation" : "onafhankelijke ouderorganisatie");
@@ -38,6 +41,14 @@ for (const locale of ["nl", "en"] as const) {
         await block.screenshot({ path: `test-results/parent-support-${locale}-${mobile ? "mobile" : "desktop"}-${block === capacity ? "capacity" : "non-placement"}.png` });
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+      // No source links anywhere on the guide except the school-neutral ELK portal.
+      const hosts = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('a[href^="http"]')).map(
+          (a) => new URL((a as HTMLAnchorElement).href).hostname
+        )
+      );
+      expect([...new Set(hosts)].sort()).toEqual(["www.elkadam.info"]);
       await expect(page.getByText(/Every year, Stichting VSA|Elk jaar organiseert Stichting VSA/)).toHaveCount(0);
     });
   }

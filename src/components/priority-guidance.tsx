@@ -57,16 +57,11 @@ export function PriorityGuidance({ locale }: { locale: "nl" | "en" }) {
           </>
         )}
       </div>
-      <a
-        href={admissionsPriority.annualProcedureUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="text-sm underline underline-offset-2"
-      >
+      <p className="text-sm text-zinc-600 dark:text-zinc-400">
         {isEn
           ? `${admissionsPriority.annualProcedureLabel} (priority rules)`
           : `${admissionsPriority.annualProcedureLabel} (voorrangsregels)`}
-      </a>
+      </p>
     </section>
   );
 }

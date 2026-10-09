@@ -1,0 +1,3409 @@
+{
+  "generatedAt": "2026-10-08T20:29:08+00:00",
+  "source": {
+    "sourceLabel": "Schoolkeuze 020 – open dagen",
+    "sourceUrl": "https://schoolkeuze020.nl/open-dagen/",
+    "firstDate": "2026-10-24",
+    "lastDate": "2027-03-23"
+  },
+  "schools": {
+    "sample:00ef:hubertus-berkhoff": {
+      "name": "Hubertus & Berkhoff",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/hubertus-berkhoff/",
+      "openDays": [
+        {
+          "date": "2027-02-11",
+          "startTime": "17:30",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond",
+            "en": "Open evening"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Betuwestraat 29",
+            "en": "Betuwestraat 29"
+          },
+          "signupUrl": "https://hubertusberkhoff.nl/groep-8/welkom-groep-8-ers/"
+        }
+      ]
+    },
+    "sample:01et:st-ignatiusgymnasium": {
+      "name": "St. Ignatiusgymnasium",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/st-ignatiusgymnasium/",
+      "openDays": [
+        {
+          "date": "2027-02-16",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Inschrijven is niet nodig!",
+            "en": "Open evening. No registration needed!"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Jan van Eijckstraat 47",
+            "en": "Jan van Eijckstraat 47"
+          },
+          "signupUrl": "https://ig.nl/Groep-8/Kennismaken"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "15:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open middag. Inschrijven is niet nodig!",
+            "en": "Open afternoon. No registration needed!"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Jan van Eijckstraat 47",
+            "en": "Jan van Eijckstraat 47"
+          },
+          "signupUrl": "https://ig.nl/Groep-8/Kennismaken"
+        },
+        {
+          "date": "2027-02-18",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Voor deze middag is het nodig om je aan te melden. Dat kan over een paar maanden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. You need to sign up for this afternoon; that will be possible in a few months via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Jan van Eijckstraat 47",
+            "en": "Jan van Eijckstraat 47"
+          },
+          "signupUrl": "https://ig.nl/Groep-8/Kennismaken"
+        }
+      ]
+    },
+    "sample:01oe:yuverta-vmbo-amsterdam-west": {
+      "name": "Yuverta vmbo Amsterdam-West",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/yuverta-vmbo-amsterdam-west/",
+      "openDays": [
+        {
+          "date": "2026-11-19",
+          "startTime": "19:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatieavond. In een uur vertellen we ouders/leerlingen over de school. Aanmelden via de schoolwebsite.",
+            "en": "Information evening. In one hour we tell parents and pupils about the school. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jan van Zutphenstraat 60",
+            "en": "Jan van Zutphenstraat 60"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-west/"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "14:30",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jan van Zutphenstraat 60",
+            "en": "Jan van Zutphenstraat 60"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-west/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via schoolwebsite",
+            "en": "Open day. Sign up via the school's website"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jan van Zutphenstraat 60",
+            "en": "Jan van Zutphenstraat 60"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-west/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "12:45",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jan van Zutphenstraat 60",
+            "en": "Jan van Zutphenstraat 60"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-west/"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "12:45",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jan van Zutphenstraat 60",
+            "en": "Jan van Zutphenstraat 60"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-west/"
+        }
+      ]
+    },
+    "sample:01oe:yuverta-vmbo-en-pro-amsterdam-oost": {
+      "name": "Yuverta vmbo en pro Amsterdam-Oost",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/yuverta-vmbo-pro-amsterdam-oost/",
+      "openDays": [
+        {
+          "date": "2026-11-26",
+          "startTime": "19:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatieavond. In een uur vertellen we ouders/leerlingen over de schoold.",
+            "en": "Information evening. In one hour we tell parents and pupils about the school."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Archimedesplantsoen 87",
+            "en": "Archimedesplantsoen 87"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-oost"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "15:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Archimedesplantsoen 87",
+            "en": "Archimedesplantsoen 87"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-oost"
+        },
+        {
+          "date": "2027-02-06",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Archimedesplantsoen 87",
+            "en": "Archimedesplantsoen 87"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-oost"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "12:45",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Archimedesplantsoen 87",
+            "en": "Archimedesplantsoen 87"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-oost"
+        },
+        {
+          "date": "2027-03-17",
+          "startTime": "12:45",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Archimedesplantsoen 87",
+            "en": "Archimedesplantsoen 87"
+          },
+          "signupUrl": "https://www.yuverta.nl/vmbo/scholen/vmbo-amsterdam-oost"
+        }
+      ]
+    },
+    "sample:01tc:hervormd-lyceum-west-hlw-": {
+      "name": "Hervormd Lyceum West (HLW)",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/hervormd-lyceum-west/",
+      "openDays": [
+        {
+          "date": "2026-12-09",
+          "startTime": "14:45",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag 8+. Vast programma op inschrijving. Start 14:45 uur tot ca. 16:45 uur",
+            "en": "Taster-lesson afternoon for group 8+. Fixed programme, registration required. Runs from 14:45 until about 16:45."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        },
+        {
+          "date": "2027-01-20",
+          "startTime": "14:45",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag 8+. Vast programma op inschrijving. Start 14:45 uur tot ca. 16:45 uur",
+            "en": "Taster-lesson afternoon for group 8+. Fixed programme, registration required. Runs from 14:45 until about 16:45."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Inschrijven is niet nodig.",
+            "en": "Open evening. No registration needed."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Inschrijven is niet nodig.",
+            "en": "Open evening. No registration needed."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatiemiddag TTO. Als je voor beide middagen wil inschrijven, schrijf je dan voor beide dagen even apart in.",
+            "en": "TTO (bilingual stream) information afternoon. If you want to attend both afternoons, register for each day separately."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatiemiddag DigiTech. Als je voor beide middagen wil inschrijven, schrijf je dan voor beide dagen even apart in.",
+            "en": "DigiTech information afternoon. If you want to attend both afternoons, register for each day separately."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Hemsterhuisstraat 79",
+            "en": "Hemsterhuisstraat 79"
+          },
+          "signupUrl": "https://www.hlw.nl/kom-kijken-op-het-hlw"
+        }
+      ]
+    },
+    "sample:02an:fons-vitae-lyceum": {
+      "name": "Fons Vitae Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/fons-vitae-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-21",
+          "startTime": "15:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Vooraf aanmelden is niet nodig.",
+            "en": "Open day. No need to sign up in advance."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Reijnier Vinkeleskade 53",
+            "en": "Reijnier Vinkeleskade 53"
+          },
+          "signupUrl": "https://fonsvitae.nl/nieuwe-leerlingen/kennismakingsdagen/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "15:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Vooraf aanmelden is niet nodig.",
+            "en": "Open day. No need to sign up in advance."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Reijnier Vinkeleskade 53",
+            "en": "Reijnier Vinkeleskade 53"
+          },
+          "signupUrl": "https://fonsvitae.nl/nieuwe-leerlingen/kennismakingsdagen/"
+        }
+      ]
+    },
+    "sample:02ar:hervormd-lyceum-zuid-hlz-": {
+      "name": "Hervormd Lyceum Zuid (HLZ)",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/hlz/",
+      "openDays": [
+        {
+          "date": "2027-01-27",
+          "startTime": "14:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Jan van Eijckstraat 21, inschrijving nodig. Informatie volgt.",
+            "en": "Open day. Jan van Eijckstraat 21, registration required. Information will follow."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Hoofdgebouw (tijdelijk): Dongestraat 12 Dependance leerjaar 1: Jan van Eijckstraat 21",
+            "en": "Main building (temporary): Dongestraat 12. Year 1 annexe: Jan van Eijckstraat 21"
+          },
+          "signupUrl": "https://www.hlz.nl/groep-7-8/"
+        },
+        {
+          "date": "2027-01-28",
+          "startTime": "16:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Jan van Eijckstraat 21, inschrijving nodig. Informatie volgt.",
+            "en": "Open day. Jan van Eijckstraat 21, registration required. Information will follow."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Hoofdgebouw (tijdelijk): Dongestraat 12 Dependance leerjaar 1: Jan van Eijckstraat 21",
+            "en": "Main building (temporary): Dongestraat 12. Year 1 annexe: Jan van Eijckstraat 21"
+          },
+          "signupUrl": "https://www.hlz.nl/groep-7-8/"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "16:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Jan van Eijckstraat 21, inschrijving nodig. Informatie volgt.",
+            "en": "Open day. Jan van Eijckstraat 21, registration required. Information will follow."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Hoofdgebouw (tijdelijk): Dongestraat 12 Dependance leerjaar 1: Jan van Eijckstraat 21",
+            "en": "Main building (temporary): Dongestraat 12. Year 1 annexe: Jan van Eijckstraat 21"
+          },
+          "signupUrl": "https://www.hlz.nl/groep-7-8/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "10:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Jan van Eijckstraat 21, inschrijving nodig. Informatie volgt.",
+            "en": "Open day. Jan van Eijckstraat 21, registration required. Information will follow."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Hoofdgebouw (tijdelijk): Dongestraat 12 Dependance leerjaar 1: Jan van Eijckstraat 21",
+            "en": "Main building (temporary): Dongestraat 12. Year 1 annexe: Jan van Eijckstraat 21"
+          },
+          "signupUrl": "https://www.hlz.nl/groep-7-8/"
+        },
+        {
+          "date": "2027-03-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Jan van Eijckstraat 21, inschrijving nodig. Informatie volgt.",
+            "en": "Taster-lesson afternoon. Jan van Eijckstraat 21, registration required. Information will follow."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Hoofdgebouw (tijdelijk): Dongestraat 12 Dependance leerjaar 1: Jan van Eijckstraat 21",
+            "en": "Main building (temporary): Dongestraat 12. Year 1 annexe: Jan van Eijckstraat 21"
+          },
+          "signupUrl": "https://www.hlz.nl/groep-7-8/"
+        }
+      ]
+    },
+    "sample:02pa:mediacollege-amsterdam": {
+      "name": "Mediacollege Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/mediacollege-amsterdam/",
+      "openDays": [
+        {
+          "date": "2027-01-29",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Dintelstraat 15 1078 VN Amsterdam",
+            "en": "Dintelstraat 15 1078 VN Amsterdam"
+          },
+          "signupUrl": "https://www.ma-web.nl/opleidingen/opleidingsoverzicht/vmbo/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "11:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Dintelstraat 15 1078 VN Amsterdam",
+            "en": "Dintelstraat 15 1078 VN Amsterdam"
+          },
+          "signupUrl": "https://www.ma-web.nl/opleidingen/opleidingsoverzicht/vmbo/"
+        }
+      ]
+    },
+    "sample:03aq:osb-amsterdam": {
+      "name": "OSB Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/osb-amsterdam/",
+      "openDays": [
+        {
+          "date": "2027-02-04",
+          "startTime": "16:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Kom langs om te zien of OSB bij je past; aanmelden is niet nodig.",
+            "en": "Open day. Come and see whether OSB suits you; no need to sign up."
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Gulden Kruis 5",
+            "en": "Gulden Kruis 5"
+          },
+          "signupUrl": "https://osbijlmer.nl/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "16:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Kom langs om te zien of OSB bij je past; aanmelden is niet nodig.",
+            "en": "Open day. Come and see whether OSB suits you; no need to sign up."
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Gulden Kruis 5",
+            "en": "Gulden Kruis 5"
+          },
+          "signupUrl": "https://osbijlmer.nl/"
+        }
+      ]
+    },
+    "sample:09py:kolom-praktijkcollege-de-atlant": {
+      "name": "Kolom Praktijkcollege De Atlant",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kolom-praktijkcollege-de-atlant/",
+      "openDays": [
+        {
+          "date": "2027-01-23",
+          "startTime": "11:00",
+          "endTime": "15:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Teilingen 4",
+            "en": "Teilingen 4"
+          },
+          "signupUrl": "https://www.de-atlant.nl/aanmelding-rondleiding/"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "14:30",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Teilingen 4",
+            "en": "Teilingen 4"
+          },
+          "signupUrl": "https://www.de-atlant.nl/aanmelding-rondleiding/"
+        }
+      ]
+    },
+    "sample:14rf:bindelmeer-college": {
+      "name": "Bindelmeer College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/bindelmeer-college/",
+      "openDays": [
+        {
+          "date": "2026-11-17",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag voor groep 8 leerlingen, aanmelden via basisschool.",
+            "en": "Taster-lesson afternoon for group 8 pupils; register through your primary school."
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Dubbelink 1",
+            "en": "Dubbelink 1"
+          },
+          "signupUrl": "https://www.bindelmeercollege.nl/onze-school/open-avond-en-lesjesochtend"
+        },
+        {
+          "date": "2027-01-25",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond",
+            "en": "Open evening"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Dubbelink 1",
+            "en": "Dubbelink 1"
+          },
+          "signupUrl": "https://www.bindelmeercollege.nl/onze-school/open-avond-en-lesjesochtend"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond",
+            "en": "Open evening"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Dubbelink 1",
+            "en": "Dubbelink 1"
+          },
+          "signupUrl": "https://www.bindelmeercollege.nl/onze-school/open-avond-en-lesjesochtend"
+        }
+      ]
+    },
+    "sample:14rf:college-de-meer": {
+      "name": "College De Meer",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/college-de-meer/",
+      "openDays": [
+        {
+          "date": "2027-01-22",
+          "startTime": "14:45",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag.",
+            "en": "Taster-lesson afternoon."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Radioweg 56",
+            "en": "Radioweg 56"
+          },
+          "signupUrl": "https://collegedemeer.nl/overstap-groep-8/"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Radioweg 56",
+            "en": "Radioweg 56"
+          },
+          "signupUrl": "https://collegedemeer.nl/overstap-groep-8/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "14:45",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag.",
+            "en": "Taster-lesson afternoon."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Radioweg 56",
+            "en": "Radioweg 56"
+          },
+          "signupUrl": "https://collegedemeer.nl/overstap-groep-8/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Radioweg 56",
+            "en": "Radioweg 56"
+          },
+          "signupUrl": "https://collegedemeer.nl/overstap-groep-8/"
+        },
+        {
+          "date": "2027-03-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Radioweg 56",
+            "en": "Radioweg 56"
+          },
+          "signupUrl": "https://collegedemeer.nl/overstap-groep-8/"
+        }
+      ]
+    },
+    "sample:14rf:cygnus-gymnasium": {
+      "name": "Cygnus Gymnasium",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/cygnus-gymnasium/",
+      "openDays": [
+        {
+          "date": "2027-01-27",
+          "startTime": "14:30",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Vrolikstraat 8",
+            "en": "Vrolikstraat 8"
+          },
+          "signupUrl": "https://cygnusgymnasium.nl/groep-8/voorlichting-groep-8/"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "14:30",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Vrolikstraat 8",
+            "en": "Vrolikstraat 8"
+          },
+          "signupUrl": "https://cygnusgymnasium.nl/groep-8/voorlichting-groep-8/"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": {
+            "nl": "19.00 en 21.30 uur",
+            "en": "19:00 and 21:30"
+          },
+          "description": {
+            "nl": "Open avond.",
+            "en": "Open evening."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Vrolikstraat 8",
+            "en": "Vrolikstraat 8"
+          },
+          "signupUrl": "https://cygnusgymnasium.nl/groep-8/voorlichting-groep-8/"
+        },
+        {
+          "date": "2027-02-06",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": {
+            "nl": "10.00 en 12.30 uur",
+            "en": "10:00 and 12:30"
+          },
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Vrolikstraat 8",
+            "en": "Vrolikstraat 8"
+          },
+          "signupUrl": "https://cygnusgymnasium.nl/groep-8/voorlichting-groep-8/"
+        }
+      ]
+    },
+    "sample:14rf:havo-de-hof": {
+      "name": "Havo De Hof",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/havo-de-hof/",
+      "openDays": [
+        {
+          "date": "2026-11-25",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de website: www.havodehof.nl",
+            "en": "Taster-lesson afternoon. Sign up via the website: www.havodehof.nl"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Aanmelden is niet nodig, wees welkom!",
+            "en": "Open day. No need to sign up — you are welcome!"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        },
+        {
+          "date": "2027-02-06",
+          "startTime": "12:00",
+          "endTime": "15:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Aanmelden is niet nodig, wees welkom!",
+            "en": "Open day. No need to sign up — you are welcome!"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de website: www.havodehof.nl",
+            "en": "Taster-lesson afternoon. Sign up via the website: www.havodehof.nl"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "15:00",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de website: www.havodehof.nl",
+            "en": "Taster-lesson afternoon. Sign up via the website: www.havodehof.nl"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "15:30",
+          "endTime": "19:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatieavond. Aanmelden via de schoolwebsite.",
+            "en": "Information evening. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Dapperstraat 315",
+            "en": "Dapperstraat 315"
+          },
+          "signupUrl": "https://havodehof.nl/"
+        }
+      ]
+    },
+    "sample:14rf:pieter-nieuwland-college": {
+      "name": "Pieter Nieuwland College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/pieter-nieuwland-college/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Nobelweg 6",
+            "en": "Nobelweg 6"
+          },
+          "signupUrl": "https://pieternieuwland.nl/belangrijkedata/"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Nobelweg 6",
+            "en": "Nobelweg 6"
+          },
+          "signupUrl": "https://pieternieuwland.nl/belangrijkedata/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Workshopmiddag.",
+            "en": "Workshop afternoon."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Nobelweg 6",
+            "en": "Nobelweg 6"
+          },
+          "signupUrl": "https://pieternieuwland.nl/belangrijkedata/"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Minilessen.",
+            "en": "Mini-lessons."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Nobelweg 6",
+            "en": "Nobelweg 6"
+          },
+          "signupUrl": "https://pieternieuwland.nl/belangrijkedata/"
+        }
+      ]
+    },
+    "sample:14rl:cburg-college": {
+      "name": "Cburg College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/cburg-college/",
+      "openDays": [
+        {
+          "date": "2027-01-15",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Foekje Dillemastraat 116",
+            "en": "Foekje Dillemastraat 116"
+          },
+          "signupUrl": "https://cburgcollege.nl/groep-8/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Foekje Dillemastraat 116",
+            "en": "Foekje Dillemastraat 116"
+          },
+          "signupUrl": "https://cburgcollege.nl/groep-8/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-01-21",
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Foekje Dillemastraat 116",
+            "en": "Foekje Dillemastraat 116"
+          },
+          "signupUrl": "https://cburgcollege.nl/groep-8/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Foekje Dillemastraat 116",
+            "en": "Foekje Dillemastraat 116"
+          },
+          "signupUrl": "https://cburgcollege.nl/groep-8/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:30",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond",
+            "en": "Open evening"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Foekje Dillemastraat 116",
+            "en": "Foekje Dillemastraat 116"
+          },
+          "signupUrl": "https://cburgcollege.nl/groep-8/welkom-groep-8-ers/"
+        }
+      ]
+    },
+    "sample:14rl:luca": {
+      "name": "LUCA",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/luca-praktijkschool/",
+      "openDays": [
+        {
+          "date": "2027-01-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Javaplantsoen 24",
+            "en": "Javaplantsoen 24"
+          },
+          "signupUrl": "https://lucapraktijkschool.nl/groep-8/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Javaplantsoen 24",
+            "en": "Javaplantsoen 24"
+          },
+          "signupUrl": "https://lucapraktijkschool.nl/groep-8/welkom-groep-8-ers/"
+        }
+      ]
+    },
+    "sample:14rl:tobiasschool": {
+      "name": "Tobiasschool",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/tobiasschool/",
+      "openDays": [
+        {
+          "date": "2027-01-12",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Rietwijkerstraat 55",
+            "en": "Rietwijkerstraat 55"
+          },
+          "signupUrl": "https://vo.tobiasschool.nl/groep-8/welkom-groep-8-ers"
+        }
+      ]
+    },
+    "sample:14vy:csb": {
+      "name": "CSB",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/csb/",
+      "openDays": [
+        {
+          "date": "2027-01-21",
+          "startTime": "19:00",
+          "endTime": "21:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open huis",
+            "en": "Open house"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "De Cuserstraat 3",
+            "en": "De Cuserstraat 3"
+          },
+          "signupUrl": "https://csbamsterdam.nl/groep-8"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open huis",
+            "en": "Open house"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "De Cuserstraat 3",
+            "en": "De Cuserstraat 3"
+          },
+          "signupUrl": "https://csbamsterdam.nl/groep-8"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden kan via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. You can sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "De Cuserstraat 3",
+            "en": "De Cuserstraat 3"
+          },
+          "signupUrl": "https://csbamsterdam.nl/groep-8"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden kan via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. You can sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "De Cuserstraat 3",
+            "en": "De Cuserstraat 3"
+          },
+          "signupUrl": "https://csbamsterdam.nl/groep-8"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden kan via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. You can sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "De Cuserstraat 3",
+            "en": "De Cuserstraat 3"
+          },
+          "signupUrl": "https://csbamsterdam.nl/groep-8"
+        }
+      ]
+    },
+    "sample:16ps:ivko": {
+      "name": "IVKO",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/ivko/",
+      "openDays": [
+        {
+          "date": "2027-01-29",
+          "startTime": "18:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond",
+            "en": "Open evening"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Rustenburgerstraat 15",
+            "en": "Rustenburgerstraat 15"
+          },
+          "signupUrl": "https://www.ivko.nl/home/open-dagen-en-intakes"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "11:00",
+          "endTime": "14:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Rustenburgerstraat 15",
+            "en": "Rustenburgerstraat 15"
+          },
+          "signupUrl": "https://www.ivko.nl/home/open-dagen-en-intakes"
+        }
+      ]
+    },
+    "sample:16ps:kiem-montessori": {
+      "name": "Kiem Montessori",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kiem-montessori/",
+      "openDays": [
+        {
+          "date": "2027-01-21",
+          "startTime": "18:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Kom naar de open dag en ontdek Kiem Montessori",
+            "en": "Come to the open day and discover Kiem Montessori"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Tweede Oosterparkstraat 33",
+            "en": "Tweede Oosterparkstraat 33"
+          },
+          "signupUrl": "https://www.kiemmontessori.nl/nieuwe-leerlingen/open-dagen/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "15:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Kom naar de open dag en ontdek Kiem Montessori",
+            "en": "Come to the open day and discover Kiem Montessori"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Tweede Oosterparkstraat 33",
+            "en": "Tweede Oosterparkstraat 33"
+          },
+          "signupUrl": "https://www.kiemmontessori.nl/nieuwe-leerlingen/open-dagen/"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Geef je op via de website en doe mee met de lesjesmiddag op Kiemm",
+            "en": "Sign up via the website and join the taster-lesson afternoon at Kiem"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Tweede Oosterparkstraat 33",
+            "en": "Tweede Oosterparkstraat 33"
+          },
+          "signupUrl": "https://www.kiemmontessori.nl/nieuwe-leerlingen/open-dagen/"
+        }
+      ]
+    },
+    "sample:16ps:metis-montessori-lyceum": {
+      "name": "Metis Montessori Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/metis-montessori-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-20",
+          "startTime": "18:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Aanmelden via de schoolwebsite.",
+            "en": "Open evening. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Mauritskade 58",
+            "en": "Mauritskade 58"
+          },
+          "signupUrl": "https://hetmml.nl/open-dagen"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "15:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Mauritskade 58",
+            "en": "Mauritskade 58"
+          },
+          "signupUrl": "https://hetmml.nl/open-dagen"
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-amsterdam-mla-": {
+      "name": "Montessori Lyceum Amsterdam (MLA)",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/montessori-lyceum-amsterdam-mla/",
+      "openDays": [
+        {
+          "date": "2027-02-05",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Hoofdgebouw Nicolaas Maesstraat. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Main building, Nicolaas Maesstraat. Sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Nicolaas Maesstraat 1",
+            "en": "Nicolaas Maesstraat 1"
+          },
+          "signupUrl": "https://www.montessorilyceumamsterdam.nl/over-ons/open-dagen-online"
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-oostpoort": {
+      "name": "Montessori Lyceum Oostpoort",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/montessori-lyceum-oostpoort/",
+      "openDays": [
+        {
+          "date": "2027-01-29",
+          "startTime": "15:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Wil je op de hoogte gehouden worden over de kennismakingsdagen op Oostpoort? Geef je dan op via de schoolwebsite.",
+            "en": "Open day. Would you like to be kept up to date about the introduction days at Oostpoort? Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Polderweg 3 1093 KL Amsterdam",
+            "en": "Polderweg 3 1093 KL Amsterdam"
+          },
+          "signupUrl": "https://oostpoort.nl/groep-8/voorlichting/"
+        },
+        {
+          "date": "2027-02-11",
+          "startTime": "19:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesavond. Meer informatie volgt te zijner tijd!",
+            "en": "Taster-lesson evening. More information will follow in due course!"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Polderweg 3 1093 KL Amsterdam",
+            "en": "Polderweg 3 1093 KL Amsterdam"
+          },
+          "signupUrl": "https://oostpoort.nl/groep-8/voorlichting/"
+        }
+      ]
+    },
+    "sample:16ps:montessori-lyceum-pax": {
+      "name": "Montessori Lyceum Pax",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/montessori-lyceum-pax/",
+      "openDays": [
+        {
+          "date": "2027-01-13",
+          "startTime": "15:30",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Locatie: C. van Eesterenlaan 50. Voor onze open dagen hoef je je niet in te schrijven.",
+            "en": "Open day. Location: C. van Eesterenlaan 50. You do not need to register for our open days."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Hoofdlocatie: C. van Eesterenlaan 50 Dependance: Tweede Jan van der Heijdenstraat 75",
+            "en": "Main site: C. van Eesterenlaan 50. Annexe: Tweede Jan van der Heijdenstraat 75"
+          },
+          "signupUrl": "https://montessorilyceumpax.nl/"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "15:30",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Locatie: C. van Eesterenlaan 50. Voor onze open dagen hoef je je niet in te schrijven.",
+            "en": "Open day. Location: C. van Eesterenlaan 50. You do not need to register for our open days."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Hoofdlocatie: C. van Eesterenlaan 50 Dependance: Tweede Jan van der Heijdenstraat 75",
+            "en": "Main site: C. van Eesterenlaan 50. Annexe: Tweede Jan van der Heijdenstraat 75"
+          },
+          "signupUrl": "https://montessorilyceumpax.nl/"
+        }
+      ]
+    },
+    "sample:16ts:geert-groote-college-amsterdam": {
+      "name": "Geert Groote College Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/geert-groote-college-amsterdam/",
+      "openDays": [
+        {
+          "date": "2027-02-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Fred. Roeskestraat 84",
+            "en": "Fred. Roeskestraat 84"
+          },
+          "signupUrl": "https://www.ggca.nl/informatie-voor-nieuwe-leerlingen/#belangrijke-data"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "10:00",
+          "endTime": "14:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Fred. Roeskestraat 84",
+            "en": "Fred. Roeskestraat 84"
+          },
+          "signupUrl": "https://www.ggca.nl/informatie-voor-nieuwe-leerlingen/#belangrijke-data"
+        }
+      ]
+    },
+    "sample:17hb:calvijn-college-amsterdam": {
+      "name": "Calvijn College Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/calvijn-college/",
+      "openDays": [
+        {
+          "date": "2027-01-26",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 3",
+            "en": "Pieter Calandlaan 3"
+          },
+          "signupUrl": "https://calvijncollege.amsterdam/nieuwe-leerlingen/kennismaken/"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Calvijn xPerience lesjesmiddagen, aanmelden via de schoolwebsite",
+            "en": "Calvijn xPerience taster-lesson afternoons; sign up via the school's website"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 3",
+            "en": "Pieter Calandlaan 3"
+          },
+          "signupUrl": "https://calvijncollege.amsterdam/nieuwe-leerlingen/kennismaken/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 3",
+            "en": "Pieter Calandlaan 3"
+          },
+          "signupUrl": "https://calvijncollege.amsterdam/nieuwe-leerlingen/kennismaken/"
+        },
+        {
+          "date": "2027-03-04",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Calvijn xPerience lesjesmiddagen, aanmelden via de schoolwebsite",
+            "en": "Calvijn xPerience taster-lesson afternoons; sign up via the school's website"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 3",
+            "en": "Pieter Calandlaan 3"
+          },
+          "signupUrl": "https://calvijncollege.amsterdam/nieuwe-leerlingen/kennismaken/"
+        }
+      ]
+    },
+    "sample:17hb:iedersland-college": {
+      "name": "Iedersland College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/iedersland-college/",
+      "openDays": [
+        {
+          "date": "2027-01-26",
+          "startTime": "19:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond voor ouders en leerlingen groep 8.",
+            "en": "Open evening for group 8 pupils and their parents."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Zekeringstraat 38 - 40 1014 BT Amsterdam",
+            "en": "Zekeringstraat 38 - 40 1014 BT Amsterdam"
+          },
+          "signupUrl": "https://iederslandcollege.nl/groep-8/"
+        },
+        {
+          "date": "2027-03-17",
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag leerlingen groep 8",
+            "en": "Taster-lesson afternoon for group 8 pupils"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Zekeringstraat 38 - 40 1014 BT Amsterdam",
+            "en": "Zekeringstraat 38 - 40 1014 BT Amsterdam"
+          },
+          "signupUrl": "https://iederslandcollege.nl/groep-8/"
+        }
+      ]
+    },
+    "sample:17vf:abc-noorderlicht": {
+      "name": "ABC Noorderlicht",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/amsterdams-beroepscollege-noorderlicht/",
+      "openDays": [
+        {
+          "date": "2027-01-12",
+          "startTime": "18:30",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 14, 1025 KN Amsterdam",
+            "en": "Rode Kruisstraat 14, 1025 KN Amsterdam"
+          },
+          "signupUrl": "https://www.abcnoorderlicht.nl/groep-78/aanmelden-open-dag-lesjesmiddag/"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": "18:30",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 14, 1025 KN Amsterdam",
+            "en": "Rode Kruisstraat 14, 1025 KN Amsterdam"
+          },
+          "signupUrl": "https://www.abcnoorderlicht.nl/groep-78/aanmelden-open-dag-lesjesmiddag/"
+        },
+        {
+          "date": "2027-03-17",
+          "startTime": "14:00",
+          "endTime": "16:15",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 14, 1025 KN Amsterdam",
+            "en": "Rode Kruisstraat 14, 1025 KN Amsterdam"
+          },
+          "signupUrl": "https://www.abcnoorderlicht.nl/groep-78/aanmelden-open-dag-lesjesmiddag/"
+        }
+      ]
+    },
+    "sample:17vf:damstede-lyceum": {
+      "name": "Damstede Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/damstede-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-09",
+          "startTime": "12:00",
+          "endTime": "15:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 83",
+            "en": "Rode Kruisstraat 83"
+          },
+          "signupUrl": "https://damstedelyceum.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-01-21",
+          "startTime": "18:30",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 83",
+            "en": "Rode Kruisstraat 83"
+          },
+          "signupUrl": "https://damstedelyceum.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 83",
+            "en": "Rode Kruisstraat 83"
+          },
+          "signupUrl": "https://damstedelyceum.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 83",
+            "en": "Rode Kruisstraat 83"
+          },
+          "signupUrl": "https://damstedelyceum.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-03-16",
+          "startTime": "16:00",
+          "endTime": "18:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag",
+            "en": "Open day"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 83",
+            "en": "Rode Kruisstraat 83"
+          },
+          "signupUrl": "https://damstedelyceum.nl/groep-8/open-dagen/"
+        }
+      ]
+    },
+    "sample:17vf:kairos-college": {
+      "name": "Kairos College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kairos-tienercollege/",
+      "openDays": [
+        {
+          "date": "2026-10-24",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag met vast programma. Aanmelden is verplicht.",
+            "en": "Open day with a fixed programme. Registration is required."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Meeuwenlaan 136",
+            "en": "Meeuwenlaan 136"
+          },
+          "signupUrl": "https://www.kairostienercollege.nl/#:~:text=De%20open%20dag,voor%20aanvang%20via%20deze%20website."
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "16:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag met vast programma. Aanmelden is verplicht.",
+            "en": "Open day with a fixed programme. Registration is required."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Meeuwenlaan 136",
+            "en": "Meeuwenlaan 136"
+          },
+          "signupUrl": "https://www.kairostienercollege.nl/#:~:text=De%20open%20dag,voor%20aanvang%20via%20deze%20website."
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag met vast programma. Aanmelden is verplicht.",
+            "en": "Open day with a fixed programme. Registration is required."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Meeuwenlaan 136",
+            "en": "Meeuwenlaan 136"
+          },
+          "signupUrl": "https://www.kairostienercollege.nl/#:~:text=De%20open%20dag,voor%20aanvang%20via%20deze%20website."
+        }
+      ]
+    },
+    "sample:17vf:metropolis-lyceum": {
+      "name": "Metropolis Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/metropolis-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-21",
+          "startTime": "18:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag in ons nieuwe schoolgebouw aan de Meidoornweg. Aanmelden via schoolwebsite.",
+            "en": "Open day in our new school building on Meidoornweg. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Meidoornweg 52",
+            "en": "Meidoornweg 52"
+          },
+          "signupUrl": "https://metropolislyceum.nl/kennismaken/welkom-groep8ers/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "15:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag in ons nieuwe schoolgebouw aan de Meidoornweg. Aanmelden via schoolwebsite.",
+            "en": "Open day in our new school building on Meidoornweg. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Meidoornweg 52",
+            "en": "Meidoornweg 52"
+          },
+          "signupUrl": "https://metropolislyceum.nl/kennismaken/welkom-groep8ers/"
+        }
+      ]
+    },
+    "sample:17vf:over-y-college": {
+      "name": "Over-Y College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/over-y-college/",
+      "openDays": [
+        {
+          "date": "2027-01-14",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Aanmelden tijdslot via de schoolwebsite.",
+            "en": "Open evening. Book a time slot via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Floraweg 170",
+            "en": "Floraweg 170"
+          },
+          "signupUrl": "https://www.over-y.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Aanmelden tijdslot via de schoolwebsite.",
+            "en": "Open evening. Book a time slot via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Floraweg 170",
+            "en": "Floraweg 170"
+          },
+          "signupUrl": "https://www.over-y.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-03-17",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Floraweg 170",
+            "en": "Floraweg 170"
+          },
+          "signupUrl": "https://www.over-y.nl/groep-8/open-dagen/"
+        }
+      ]
+    },
+    "sample:17ys:alasca": {
+      "name": "ALASCA",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/alasca/",
+      "openDays": [
+        {
+          "date": "2027-02-04",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via de schoolwebsite..",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Geertje Wielemaplein 1",
+            "en": "Geertje Wielemaplein 1"
+          },
+          "signupUrl": "https://alasca.espritscholen.nl/home/over-alasca-nederlands/open-dagen"
+        }
+      ]
+    },
+    "sample:17ys:berlage-lyceum": {
+      "name": "Berlage Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/berlage-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-02-04",
+          "startTime": "16:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Vanaf 20 oktober staat de inschrijving open.",
+            "en": "Open day. Registration opens on 20 October."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "P.L. Takstraat 33-34",
+            "en": "P.L. Takstraat 33-34"
+          },
+          "signupUrl": "https://berlage.espritscholen.nl/home/groep-8/open-dagen-en-lesmiddagen"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "16:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Vanaf 20 oktober staat de inschrijving open.",
+            "en": "Open day. Registration opens on 20 October."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "P.L. Takstraat 33-34",
+            "en": "P.L. Takstraat 33-34"
+          },
+          "signupUrl": "https://berlage.espritscholen.nl/home/groep-8/open-dagen-en-lesmiddagen"
+        }
+      ]
+    },
+    "sample:17ys:denise": {
+      "name": "DENISE",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/denise/",
+      "openDays": [
+        {
+          "date": "2027-01-13",
+          "startTime": "15:30",
+          "endTime": "18:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Kijk- en doemiddag. Voor de ouders/verzorgers zijn er informatiebijeenkomsten.",
+            "en": "Look-and-do afternoon. Information sessions are held for parents/carers."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Piet Mondriaanstraat 140",
+            "en": "Piet Mondriaanstraat 140"
+          },
+          "signupUrl": "https://denise.espritscholen.nl/home/onze-informatie/aanmelden-bij-denise"
+        },
+        {
+          "date": "2027-01-20",
+          "startTime": "15:30",
+          "endTime": "18:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Kijk- en doemiddag. Voor de ouders/verzorgers zijn er informatiebijeenkomsten.",
+            "en": "Look-and-do afternoon. Information sessions are held for parents/carers."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Piet Mondriaanstraat 140",
+            "en": "Piet Mondriaanstraat 140"
+          },
+          "signupUrl": "https://denise.espritscholen.nl/home/onze-informatie/aanmelden-bij-denise"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "15:30",
+          "endTime": "18:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Kijk- en doemiddag. Voor de ouders/verzorgers zijn er informatiebijeenkomsten.",
+            "en": "Look-and-do afternoon. Information sessions are held for parents/carers."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Piet Mondriaanstraat 140",
+            "en": "Piet Mondriaanstraat 140"
+          },
+          "signupUrl": "https://denise.espritscholen.nl/home/onze-informatie/aanmelden-bij-denise"
+        }
+      ]
+    },
+    "sample:17ys:het-cartesius": {
+      "name": "Het Cartesius",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/het-cartesius/",
+      "openDays": [
+        {
+          "date": "2026-12-09",
+          "startTime": "15:15",
+          "endTime": "16:45",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjes- en informatiemiddag Het Lyceum. Aanmelden kan binnenkort .",
+            "en": "Taster-lesson and information afternoon at Het Lyceum. Registration opens soon."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Frederik Hendrikplantsoen 7A",
+            "en": "Frederik Hendrikplantsoen 7A"
+          },
+          "signupUrl": "https://cartesius.espritscholen.nl/home/het-lyceum"
+        },
+        {
+          "date": "2027-01-15",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden niet nodig.",
+            "en": "Open day. No need to sign up."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Frederik Hendrikplantsoen 7A",
+            "en": "Frederik Hendrikplantsoen 7A"
+          },
+          "signupUrl": "https://cartesius.espritscholen.nl/home/het-lyceum"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden niet nodig.",
+            "en": "Open day. No need to sign up."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Frederik Hendrikplantsoen 7A",
+            "en": "Frederik Hendrikplantsoen 7A"
+          },
+          "signupUrl": "https://cartesius.espritscholen.nl/home/het-lyceum"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "15:15",
+          "endTime": "16:45",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjes- en informatiemiddag Het Lyceum. Aanmelden kan binnenkort .",
+            "en": "Taster-lesson and information afternoon at Het Lyceum. Registration opens soon."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Frederik Hendrikplantsoen 7A",
+            "en": "Frederik Hendrikplantsoen 7A"
+          },
+          "signupUrl": "https://cartesius.espritscholen.nl/home/het-lyceum"
+        }
+      ]
+    },
+    "sample:17ys:marcanti-college": {
+      "name": "Marcanti College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/marcanti-college/",
+      "openDays": [
+        {
+          "date": "2027-01-27",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Jan van Galenstraat 31",
+            "en": "Jan van Galenstraat 31"
+          },
+          "signupUrl": "https://marcanti.espritscholen.nl/informatie/open-dagen"
+        },
+        {
+          "date": "2027-03-16",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Jan van Galenstraat 31",
+            "en": "Jan van Galenstraat 31"
+          },
+          "signupUrl": "https://marcanti.espritscholen.nl/informatie/open-dagen"
+        }
+      ]
+    },
+    "sample:17ys:mundus-college": {
+      "name": "Mundus College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/mundus-college/",
+      "openDays": [
+        {
+          "date": "2027-01-27",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Burgemeester Hogguerstraat 2",
+            "en": "Burgemeester Hogguerstraat 2"
+          },
+          "signupUrl": "https://mundus.espritscholen.nl/home/groep-8/open-dagen"
+        },
+        {
+          "date": "2027-03-11",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Burgemeester Hogguerstraat 2",
+            "en": "Burgemeester Hogguerstraat 2"
+          },
+          "signupUrl": "https://mundus.espritscholen.nl/home/groep-8/open-dagen"
+        }
+      ]
+    },
+    "sample:17ys:tasc": {
+      "name": "TASC",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/tasc-tech-amsterdam-scholen-collectief/",
+      "openDays": [
+        {
+          "date": "2026-12-02",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Darlingstraat 2",
+            "en": "Darlingstraat 2"
+          },
+          "signupUrl": "https://tasc.espritscholen.nl/home/praktisch/open-dagen-2024/25"
+        },
+        {
+          "date": "2027-01-21",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Darlingstraat 2",
+            "en": "Darlingstraat 2"
+          },
+          "signupUrl": "https://tasc.espritscholen.nl/home/praktisch/open-dagen-2024/25"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Darlingstraat 2",
+            "en": "Darlingstraat 2"
+          },
+          "signupUrl": "https://tasc.espritscholen.nl/home/praktisch/open-dagen-2024/25"
+        }
+      ]
+    },
+    "sample:20ts:comenius-lyceum-amsterdam": {
+      "name": "Comenius Lyceum Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/comenius-lyceum-amsterdam/",
+      "openDays": [
+        {
+          "date": "2027-01-26",
+          "startTime": "17:30",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond",
+            "en": "Open evening"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jacob Geelstraat 38",
+            "en": "Jacob Geelstraat 38"
+          },
+          "signupUrl": "https://comeniuslyceum.nl/groep-8/open-avonden/"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "17:30",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond.",
+            "en": "Open evening."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Jacob Geelstraat 38",
+            "en": "Jacob Geelstraat 38"
+          },
+          "signupUrl": "https://comeniuslyceum.nl/groep-8/open-avonden/"
+        }
+      ]
+    },
+    "sample:21ab:barlaeus-gymnasium": {
+      "name": "Barlaeus Gymnasium",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/barlaeus-gymnasium/",
+      "openDays": [
+        {
+          "date": "2027-01-15",
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond. Open Markt: presentaties vakken en activiteiten, forum rector",
+            "en": "Open evening. Open Markt: presentations of subjects and activities, forum with the rector"
+          },
+          "district": "Centrum",
+          "locationNote": {
+            "nl": "Weteringschans 29-31",
+            "en": "Weteringschans 29-31"
+          },
+          "signupUrl": "https://barlaeus.nl/nieuws/open-dagen-2025/"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. 10-12 uur Open Markt, aansluitend lesjes voor ouders en kinderen.",
+            "en": "Open day. Open Markt from 10:00 to 12:00, followed by taster lessons for parents and children."
+          },
+          "district": "Centrum",
+          "locationNote": {
+            "nl": "Weteringschans 29-31",
+            "en": "Weteringschans 29-31"
+          },
+          "signupUrl": "https://barlaeus.nl/nieuws/open-dagen-2025/"
+        },
+        {
+          "date": "2027-01-20",
+          "startTime": "14:00",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Infomiddag ouders, Lesjesmiddag kinderen. Gesplitst programma!",
+            "en": "Information afternoon for parents, taster lessons for children. Separate programmes!"
+          },
+          "district": "Centrum",
+          "locationNote": {
+            "nl": "Weteringschans 29-31",
+            "en": "Weteringschans 29-31"
+          },
+          "signupUrl": "https://barlaeus.nl/nieuws/open-dagen-2025/"
+        }
+      ]
+    },
+    "sample:21af:vossius-gymnasium": {
+      "name": "Vossius Gymnasium",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/vossius-gymnasium/",
+      "openDays": [
+        {
+          "date": "2027-01-13",
+          "startTime": "13:30",
+          "endTime": "16:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Messchaertstraat 1",
+            "en": "Messchaertstraat 1"
+          },
+          "signupUrl": "https://www.vossius.nl/groep-8/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond",
+            "en": "Open evening"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Messchaertstraat 1",
+            "en": "Messchaertstraat 1"
+          },
+          "signupUrl": "https://www.vossius.nl/groep-8/"
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Messchaertstraat 1",
+            "en": "Messchaertstraat 1"
+          },
+          "signupUrl": "https://www.vossius.nl/groep-8/"
+        }
+      ]
+    },
+    "sample:21as:bredero": {
+      "name": "Bredero",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/bredero/",
+      "openDays": [
+        {
+          "date": "2027-01-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Gare du Nord 5",
+            "en": "Gare du Nord 5"
+          },
+          "signupUrl": "https://brederomavo.nl/nieuwe-leerlingen/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-01-20",
+          "startTime": "18:00",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond. Aanmelden via de schoolwebsite.",
+            "en": "Open evening. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Gare du Nord 5",
+            "en": "Gare du Nord 5"
+          },
+          "signupUrl": "https://brederomavo.nl/nieuwe-leerlingen/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond. Aanmelden via de schoolwebsite.",
+            "en": "Open evening. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Gare du Nord 5",
+            "en": "Gare du Nord 5"
+          },
+          "signupUrl": "https://brederomavo.nl/nieuwe-leerlingen/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-03-10",
+          "startTime": "14:30",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Gare du Nord 5",
+            "en": "Gare du Nord 5"
+          },
+          "signupUrl": "https://brederomavo.nl/nieuwe-leerlingen/welkom-groep-8-ers/"
+        },
+        {
+          "date": "2027-03-17",
+          "startTime": "14:30",
+          "endTime": "16:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Gare du Nord 5",
+            "en": "Gare du Nord 5"
+          },
+          "signupUrl": "https://brederomavo.nl/nieuwe-leerlingen/welkom-groep-8-ers/"
+        }
+      ]
+    },
+    "sample:21as:hyperion-lyceum": {
+      "name": "Hyperion Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/hyperion-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "19:00",
+          "endTime": "21:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond Aanmelden via de schoolwebsite.",
+            "en": "Open evening. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Badhuiskade 361",
+            "en": "Badhuiskade 361"
+          },
+          "signupUrl": "https://www.hyperionlyceum.nl/aanmelden/welkom-groep-8/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "10:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden via de schoolwebsite.",
+            "en": "Open day. Sign up via the school's website."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Badhuiskade 361",
+            "en": "Badhuiskade 361"
+          },
+          "signupUrl": "https://www.hyperionlyceum.nl/aanmelden/welkom-groep-8/"
+        }
+      ]
+    },
+    "sample:21bh:spinoza-lyceum-amsterdam": {
+      "name": "Spinoza Lyceum Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/spinoza-lyceum/",
+      "openDays": [
+        {
+          "date": "2027-02-04",
+          "startTime": "15:30",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Je bent van harte welkom, aanmelden is niet nodig!",
+            "en": "Open day. You are very welcome; no need to sign up!"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Peter van Anrooystraat 8",
+            "en": "Peter van Anrooystraat 8"
+          },
+          "signupUrl": "https://spinozalyceum.nl/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "15:30",
+          "endTime": "20:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Je bent van harte welkom, aanmelden is niet nodig!",
+            "en": "Open day. You are very welcome; no need to sign up!"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Peter van Anrooystraat 8",
+            "en": "Peter van Anrooystraat 8"
+          },
+          "signupUrl": "https://spinozalyceum.nl/"
+        }
+      ]
+    },
+    "sample:21bh:spinoza20first": {
+      "name": "Spinoza20first",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/spinoza20first/",
+      "openDays": [
+        {
+          "date": "2027-01-15",
+          "startTime": "16:00",
+          "endTime": "19:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "H.J.E. Wenckebachweg 44",
+            "en": "H.J.E. Wenckebachweg 44"
+          },
+          "signupUrl": "https://www.spinoza20first.nl/groep-7-en-8/kennismaken-en-open-dagen/"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "10:00",
+          "endTime": "14:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag",
+            "en": "Open day"
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "H.J.E. Wenckebachweg 44",
+            "en": "H.J.E. Wenckebachweg 44"
+          },
+          "signupUrl": "https://www.spinoza20first.nl/groep-7-en-8/kennismaken-en-open-dagen/"
+        }
+      ]
+    },
+    "sample:21et:college-zuyd": {
+      "name": "College ZUYD",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/college-zuyd/",
+      "openDays": [
+        {
+          "date": "2027-01-13",
+          "startTime": "13:45",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "ZUYD tour. Aanmelden via de schoolwebsite.",
+            "en": "ZUYD tour. Sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Karel du Jardinstraat 54",
+            "en": "Karel du Jardinstraat 54"
+          },
+          "signupUrl": "https://collegezuyd.nl/kennismaken/"
+        },
+        {
+          "date": "2027-01-20",
+          "startTime": "13:45",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "ZUYD tour. Aanmelden via de schoolwebsite.",
+            "en": "ZUYD tour. Sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Karel du Jardinstraat 54",
+            "en": "Karel du Jardinstraat 54"
+          },
+          "signupUrl": "https://collegezuyd.nl/kennismaken/"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Karel du Jardinstraat 54",
+            "en": "Karel du Jardinstraat 54"
+          },
+          "signupUrl": "https://collegezuyd.nl/kennismaken/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "11:00",
+          "endTime": "13:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag.",
+            "en": "Open day."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Karel du Jardinstraat 54",
+            "en": "Karel du Jardinstraat 54"
+          },
+          "signupUrl": "https://collegezuyd.nl/kennismaken/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "13:45",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "ZUYD tour. Aanmelden via de schoolwebsite.",
+            "en": "ZUYD tour. Sign up via the school's website."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Karel du Jardinstraat 54",
+            "en": "Karel du Jardinstraat 54"
+          },
+          "signupUrl": "https://collegezuyd.nl/kennismaken/"
+        }
+      ]
+    },
+    "sample:21et:de-apollo": {
+      "name": "De Apollo",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/de-apollo/",
+      "openDays": [
+        {
+          "date": "2026-12-08",
+          "startTime": "16:30",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open huis.",
+            "en": "Open house."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert",
+            "en": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert"
+          },
+          "signupUrl": "https://www.deapollo.nl/"
+        },
+        {
+          "date": "2027-01-12",
+          "startTime": "16:30",
+          "endTime": "19:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Open huis",
+            "en": "Open house"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert",
+            "en": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert"
+          },
+          "signupUrl": "https://www.deapollo.nl/"
+        },
+        {
+          "date": "2027-01-21",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert",
+            "en": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert"
+          },
+          "signupUrl": "https://www.deapollo.nl/"
+        },
+        {
+          "date": "2027-02-04",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag",
+            "en": "Taster-lesson afternoon"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert",
+            "en": "Oudaen 6, 1081 BZ, Amsterdam Buitenveldert"
+          },
+          "signupUrl": "https://www.deapollo.nl/"
+        }
+      ]
+    },
+    "sample:21et:gerrit-van-der-veen-college": {
+      "name": "Gerrit van der Veen College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/gerrit-van-der-veen-college/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "16:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Info volgt op onze website",
+            "en": "Open evening. Information will follow on our website"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Gerrit van der Veenstraat 99",
+            "en": "Gerrit van der Veenstraat 99"
+          },
+          "signupUrl": "https://gerritvdveen.nl/groep-8/open-dagen/"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "14:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Info volgt op onze website",
+            "en": "Open day. Information will follow on our website"
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Gerrit van der Veenstraat 99",
+            "en": "Gerrit van der Veenstraat 99"
+          },
+          "signupUrl": "https://gerritvdveen.nl/groep-8/open-dagen/"
+        }
+      ]
+    },
+    "sample:21et:huygens-college": {
+      "name": "Huygens College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/huygens-college/",
+      "openDays": [
+        {
+          "date": "2027-02-04",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Middenweg 68: brugklassen vwo, havo/vwo en vmbo-tl/havo Umbriëllaan 3: brugklassen vmbo-kb/vmbo-tl en vmbo-bb/vmbo-kb",
+            "en": "Open day. Middenweg 68: first-year vwo, havo/vwo and vmbo-tl/havo classes. Umbriëllaan 3: first-year vmbo-kb/vmbo-tl and vmbo-bb/vmbo-kb classes."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "2e Constantijn Huygensstraat 31",
+            "en": "2e Constantijn Huygensstraat 31"
+          },
+          "signupUrl": "https://huygens-college.nl/groep-8/"
+        }
+      ]
+    },
+    "sample:21ff:ir-lely-lyceum": {
+      "name": "Ir. Lely Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/ir-lely-lyceum/",
+      "openDays": [
+        {
+          "date": "2026-11-24",
+          "startTime": "09:00",
+          "endTime": "12:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Minilessen. Aanmeldingen via de basisschool.",
+            "en": "Mini-lessons. Registration through your primary school."
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Ravenswaaipad 3",
+            "en": "Ravenswaaipad 3"
+          },
+          "signupUrl": "https://www.lelylyceum.nl/praktische-informatie/groep-8/naar-de-middelbare-school/"
+        },
+        {
+          "date": "2027-01-21",
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond. Combinatie van voorlichting en veel lesactiviteiten.",
+            "en": "Open evening. A combination of information sessions and plenty of lesson activities."
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Ravenswaaipad 3",
+            "en": "Ravenswaaipad 3"
+          },
+          "signupUrl": "https://www.lelylyceum.nl/praktische-informatie/groep-8/naar-de-middelbare-school/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Proef de sfeer en doe mee met lessen!",
+            "en": "Open day. Get a feel for the school and join in with lessons!"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Ravenswaaipad 3",
+            "en": "Ravenswaaipad 3"
+          },
+          "signupUrl": "https://www.lelylyceum.nl/praktische-informatie/groep-8/naar-de-middelbare-school/"
+        }
+      ]
+    },
+    "sample:21gd:calandlyceum": {
+      "name": "Calandlyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/calandlyceum/",
+      "openDays": [
+        {
+          "date": "2027-01-26",
+          "startTime": "18:30",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Je hoeft je niet vooraf aan te melden: je bent samen met je ouders/verzorgers van harte welkom!",
+            "en": "Open evening. No need to sign up in advance: you and your parents/carers are very welcome!"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 182",
+            "en": "Pieter Calandlaan 182"
+          },
+          "signupUrl": "https://calandlyceum.nl/leerjaar-1/opendagen"
+        },
+        {
+          "date": "2027-02-09",
+          "startTime": "18:30",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond. Je hoeft je niet vooraf aan te melden: je bent samen met je ouders/verzorgers van harte welkom!",
+            "en": "Open evening. No need to sign up in advance: you and your parents/carers are very welcome!"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Pieter Calandlaan 182",
+            "en": "Pieter Calandlaan 182"
+          },
+          "signupUrl": "https://calandlyceum.nl/leerjaar-1/opendagen"
+        }
+      ]
+    },
+    "sample:21gd:lumion": {
+      "name": "Lumion",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/lumion/",
+      "openDays": [
+        {
+          "date": "2027-01-19",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Rondleiding, proeflessen en gesprek met docenten en leerlingen",
+            "en": "Open day. Guided tour, trial lessons and a chance to talk to teachers and pupils"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Vlaardingenlaan 25, 1062 HM Amsterdam",
+            "en": "Vlaardingenlaan 25, 1062 HM Amsterdam"
+          },
+          "signupUrl": "https://lumion.amsterdam/leerjaar-1#open-dagen"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Dag. Rondleiding, proeflessen en gesprek met docenten en leerlingen",
+            "en": "Open day. Guided tour, trial lessons and a chance to talk to teachers and pupils"
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Vlaardingenlaan 25, 1062 HM Amsterdam",
+            "en": "Vlaardingenlaan 25, 1062 HM Amsterdam"
+          },
+          "signupUrl": "https://lumion.amsterdam/leerjaar-1#open-dagen"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Vlaardingenlaan 25, 1062 HM Amsterdam",
+            "en": "Vlaardingenlaan 25, 1062 HM Amsterdam"
+          },
+          "signupUrl": "https://lumion.amsterdam/leerjaar-1#open-dagen"
+        },
+        {
+          "date": "2027-03-10",
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Taster-lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Nieuw-West",
+          "locationNote": {
+            "nl": "Vlaardingenlaan 25, 1062 HM Amsterdam",
+            "en": "Vlaardingenlaan 25, 1062 HM Amsterdam"
+          },
+          "signupUrl": "https://lumion.amsterdam/leerjaar-1#open-dagen"
+        }
+      ]
+    },
+    "sample:21vn:kolom-vso-alphons-laudy": {
+      "name": "Kolom VSO Alphons Laudy",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kolom-vso-alphons-laudy/",
+      "openDays": [
+        {
+          "date": "2027-01-26",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": {
+            "nl": "18:45 inloop - start 19:00 uur",
+            "en": "doors open 18:45, starts 19:00"
+          },
+          "description": {
+            "nl": "Info-avond nieuwe ouders.",
+            "en": "Information evening for new parents."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Van Nijenrodeweg 648",
+            "en": "Van Nijenrodeweg 648"
+          },
+          "signupUrl": "https://www.vsoalphonslaudy.nl/"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": {
+            "nl": "12:45 inloop - start 13:00 uur",
+            "en": "doors open 12:45, starts 13:00"
+          },
+          "description": {
+            "nl": "Open middag nieuwe leerlingen.",
+            "en": "Open afternoon for new pupils."
+          },
+          "district": "Zuid",
+          "locationNote": {
+            "nl": "Van Nijenrodeweg 648",
+            "en": "Van Nijenrodeweg 648"
+          },
+          "signupUrl": "https://www.vsoalphonslaudy.nl/"
+        }
+      ]
+    },
+    "sample:24tg:casparus-college": {
+      "name": "Casparus College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/casparus-college/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "19:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Voorlichtingsavond voor ouders van leerlingen groep 8",
+            "en": "Information evening for parents of group 8 pupils"
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Talmastraat 40, 1381 NE Weesp",
+            "en": "Talmastraat 40, 1381 NE Weesp"
+          },
+          "signupUrl": "https://casparuscollege.nl/groep-7-8/open-dag/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "15:00",
+          "endTime": "19:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Je hoeft je niet van tevoren aan te melden voor de voorlichting en/of open dag.",
+            "en": "Open day. You do not need to sign up in advance for the information session and/or the open day."
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Talmastraat 40, 1381 NE Weesp",
+            "en": "Talmastraat 40, 1381 NE Weesp"
+          },
+          "signupUrl": "https://casparuscollege.nl/groep-7-8/open-dag/"
+        }
+      ]
+    },
+    "sample:24tg:vechtstede-college": {
+      "name": "Vechtstede College",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/vechtstede-college/",
+      "openDays": [
+        {
+          "date": "2027-01-18",
+          "startTime": "19:00",
+          "endTime": "21:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Voorlichtingsavond. Er worden twee sessies gehouden: om 19.00 uur en om 20.30 uur. Aanmelden via de schoolwebsite.",
+            "en": "Information evening. Two sessions are held: at 19:00 and at 20:30. Sign up via the school's website."
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Amstellandlaan 1a 1382 CD Weesp",
+            "en": "Amstellandlaan 1a 1382 CD Weesp"
+          },
+          "signupUrl": "https://vechtstedecollege.nl/nieuwe-leerlingen/open-dagen-kennismaking/"
+        },
+        {
+          "date": "2027-02-05",
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open huis. U hoeft zich voor ons Open Huis niet van tevoren aan te melden. De inloop start om 18.30 uur!",
+            "en": "Open house. You do not need to sign up in advance for our open house. Doors open at 18:30!"
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Amstellandlaan 1a 1382 CD Weesp",
+            "en": "Amstellandlaan 1a 1382 CD Weesp"
+          },
+          "signupUrl": "https://vechtstedecollege.nl/nieuwe-leerlingen/open-dagen-kennismaking/"
+        },
+        {
+          "date": "2027-02-09",
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Voorlichtingsavond voor leerlingen én hun ouders, die geïnteresseerd zijn in het tweetalig vwo. Aanmelden via schoolwebsite",
+            "en": "Information evening for pupils and their parents who are interested in the bilingual vwo stream. Sign up via the school's website"
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Amstellandlaan 1a 1382 CD Weesp",
+            "en": "Amstellandlaan 1a 1382 CD Weesp"
+          },
+          "signupUrl": "https://vechtstedecollege.nl/nieuwe-leerlingen/open-dagen-kennismaking/"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Amstellandlaan 1a 1382 CD Weesp",
+            "en": "Amstellandlaan 1a 1382 CD Weesp"
+          },
+          "signupUrl": "https://vechtstedecollege.nl/nieuwe-leerlingen/open-dagen-kennismaking/"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesmiddag. Aanmelden via de schoolwebsite.",
+            "en": "Lesson afternoon. Sign up via the school's website."
+          },
+          "district": "Weesp",
+          "locationNote": {
+            "nl": "Amstellandlaan 1a 1382 CD Weesp",
+            "en": "Amstellandlaan 1a 1382 CD Weesp"
+          },
+          "signupUrl": "https://vechtstedecollege.nl/nieuwe-leerlingen/open-dagen-kennismaking/"
+        }
+      ]
+    },
+    "sample:25ef:vonk-amsterdam": {
+      "name": "Vonk Amsterdam",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/vonk/",
+      "openDays": [
+        {
+          "date": "2026-11-12",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Meeloopmiddag",
+            "en": "Shadowing afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        },
+        {
+          "date": "2026-11-25",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Meeloopmiddag",
+            "en": "Shadowing afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Meeloopmiddag",
+            "en": "Shadowing afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        },
+        {
+          "date": "2027-02-10",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Meeloopmiddag",
+            "en": "Shadowing afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        },
+        {
+          "date": "2027-03-11",
+          "startTime": "13:30",
+          "endTime": "15:30",
+          "timeNote": null,
+          "description": {
+            "nl": "Meeloopmiddag",
+            "en": "Shadowing afternoon"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        },
+        {
+          "date": "2027-03-22",
+          "startTime": "18:30",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Informatieavond voor ouders",
+            "en": "Information evening for parents"
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Rode Kruisstraat 40",
+            "en": "Rode Kruisstraat 40"
+          },
+          "signupUrl": "https://www.vonknh.nl/vmbo/Amsterdam/Kennismaken"
+        }
+      ]
+    },
+    "sample:26hp:kolom-praktijkcollege-noord": {
+      "name": "Kolom Praktijkcollege Noord",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kolom-praktijkcollege-noord/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "13:15",
+          "endTime": "14:45",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Een rondleiding door leerlingen.",
+            "en": "Open day. A tour guided by pupils."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Oostzanerdijk 139",
+            "en": "Oostzanerdijk 139"
+          },
+          "signupUrl": "https://www.kpcn.nl/aanmelding-rondleiding/"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "13:15",
+          "endTime": "14:45",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Een rondleiding door leerlingen.",
+            "en": "Open day. A tour guided by pupils."
+          },
+          "district": "Noord",
+          "locationNote": {
+            "nl": "Oostzanerdijk 139",
+            "en": "Oostzanerdijk 139"
+          },
+          "signupUrl": "https://www.kpcn.nl/aanmelding-rondleiding/"
+        }
+      ]
+    },
+    "sample:27vh:kolom-praktijkcollege-de-dreef": {
+      "name": "Kolom Praktijkcollege De Dreef",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/kolom-praktijkcollege-de-dreef/",
+      "openDays": [
+        {
+          "date": "2026-11-24",
+          "startTime": "13:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open middag",
+            "en": "Open afternoon"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Alexander Dumaslaan 7",
+            "en": "Alexander Dumaslaan 7"
+          },
+          "signupUrl": "https://www.dedreef.net/aanmelding-rondleiding/"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "13:00",
+          "endTime": "18:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open middag",
+            "en": "Open afternoon"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Alexander Dumaslaan 7",
+            "en": "Alexander Dumaslaan 7"
+          },
+          "signupUrl": "https://www.dedreef.net/aanmelding-rondleiding/"
+        },
+        {
+          "date": "2027-02-09",
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond",
+            "en": "Open evening"
+          },
+          "district": "Zuidoost",
+          "locationNote": {
+            "nl": "Alexander Dumaslaan 7",
+            "en": "Alexander Dumaslaan 7"
+          },
+          "signupUrl": "https://www.dedreef.net/aanmelding-rondleiding/"
+        }
+      ]
+    },
+    "sample:30gc:het-4e-gymnasium": {
+      "name": "Het 4e Gymnasium",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/het-4e-gymnasium/",
+      "openDays": [
+        {
+          "date": "2027-01-28",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden is niet nodig!",
+            "en": "Open day. No need to sign up!"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Archangelweg 4",
+            "en": "Archangelweg 4"
+          },
+          "signupUrl": "https://www.het4egymnasium.nl/home/praktische-informatie/informatie-voor-nieuwe-leerlingen"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open dag. Aanmelden is niet nodig!",
+            "en": "Open day. No need to sign up!"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Archangelweg 4",
+            "en": "Archangelweg 4"
+          },
+          "signupUrl": "https://www.het4egymnasium.nl/home/praktische-informatie/informatie-voor-nieuwe-leerlingen"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": null,
+          "endTime": null,
+          "timeNote": null,
+          "description": {
+            "nl": "Lesjesmiddag. Leerlingen van groep 8 kunnen dan lesjes volgen. Ook hiervoor is aanmelden niet nodig.",
+            "en": "Taster-lesson afternoon. Group 8 pupils can sit in on lessons. No need to sign up for this either."
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Archangelweg 4",
+            "en": "Archangelweg 4"
+          },
+          "signupUrl": "https://www.het4egymnasium.nl/home/praktische-informatie/informatie-voor-nieuwe-leerlingen"
+        }
+      ]
+    },
+    "sample:31bl:de-amsterdamse-mavo": {
+      "name": "De Amsterdamse MAVO",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/de-amsterdamse-mavo/",
+      "openDays": [
+        {
+          "date": "2027-02-01",
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond, aanmelden via de schoolwebisite.",
+            "en": "Open evening; sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Linnaeushof 48",
+            "en": "Linnaeushof 48"
+          },
+          "signupUrl": "https://deamsterdamsemavo.nl/groep-8.html"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open avond, aanmelden via de schoolwebsite.",
+            "en": "Open evening; sign up via the school's website."
+          },
+          "district": "Oost",
+          "locationNote": {
+            "nl": "Linnaeushof 48",
+            "en": "Linnaeushof 48"
+          },
+          "signupUrl": "https://deamsterdamsemavo.nl/groep-8.html"
+        }
+      ]
+    },
+    "sample:31gm:cornelius-haga-lyceum": {
+      "name": "Cornelius Haga Lyceum",
+      "sourcePageUrl": "https://schoolkeuze020.nl/scholen/cornelius-haga-lyceum/",
+      "openDays": [
+        {
+          "date": "2026-12-11",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond",
+            "en": "Open evening"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Reinaert de Vosstraat 27",
+            "en": "Reinaert de Vosstraat 27"
+          },
+          "signupUrl": "https://corneliushagalyceum.nl/open-dagen-25-26/"
+        },
+        {
+          "date": "2027-01-22",
+          "startTime": "18:00",
+          "endTime": "21:00",
+          "timeNote": null,
+          "description": {
+            "nl": "Open Avond",
+            "en": "Open evening"
+          },
+          "district": "West",
+          "locationNote": {
+            "nl": "Reinaert de Vosstraat 27",
+            "en": "Reinaert de Vosstraat 27"
+          },
+          "signupUrl": "https://corneliushagalyceum.nl/open-dagen-25-26/"
+        }
+      ]
+    }
+  }
+}

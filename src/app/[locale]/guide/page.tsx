@@ -110,23 +110,6 @@ export default async function GuidePage({
                 Practical education, kovo and secondary special education use
                 separate admission routes; early orientation is important.
               </li>
-              <li>
-                Official info and yearly updates:{" "}
-                <a
-                  href="https://schoolkeuze020.nl/naar-de-middelbare-school/"
-                  className="underline underline-offset-2"
-                >
-                  schoolkeuze020.nl
-                </a>{" "}
-                and{" "}
-                <a
-                  href="https://www.osvo.nl"
-                  className="underline underline-offset-2"
-                >
-                  osvo.nl
-                </a>
-                .
-              </li>
             </>
           ) : (
             <>
@@ -153,23 +136,6 @@ export default async function GuidePage({
                 Praktijkonderwijs, kovo en voortgezet speciaal onderwijs
                 volgen een aparte toelatingsroute; vroeg oriënteren is daarbij
                 belangrijk.
-              </li>
-              <li>
-                Officiële informatie en jaarlijkse updates:{" "}
-                <a
-                  href="https://schoolkeuze020.nl/naar-de-middelbare-school/"
-                  className="underline underline-offset-2"
-                >
-                  schoolkeuze020.nl
-                </a>{" "}
-                en{" "}
-                <a
-                  href="https://www.osvo.nl"
-                  className="underline underline-offset-2"
-                >
-                  osvo.nl
-                </a>
-                .
               </li>
             </>
           )}
@@ -356,17 +322,8 @@ export default async function GuidePage({
               Capacities and chances (last year)
             </h4>
             <ul className="list-disc pl-5">
-              <li>
-                Preliminary 2026 capacity list per school/track (indicative,
-                subject to change):{" "}
-                <a
-                  href="https://verenigingosvo.nl/wp-content/uploads/2025/12/Voorlopige-capaciteitsopgave-2026-1.pdf"
-                  className="underline underline-offset-2"
-                >
-                  preliminary capacity PDF
-                </a>
-                .
-              </li>
+              <li>Preliminary 2026 capacity list per school/track (indicative,
+                subject to change).</li>
               <li>
                 2025 report: 75.2% were placed at their first preference and
                 91.3% within their top 3.
@@ -374,16 +331,6 @@ export default async function GuidePage({
               <li>
                 By advice (2025): VWO 70.0% first choice; HAVO/VWO 61.7%; HAVO
                 71.7%; VMBO-b t/m VMBO-k 91.1%–98.7% first choice.
-              </li>
-              <li>
-                Full report:{" "}
-                <a
-                  href="https://verenigingosvo.nl/wp-content/uploads/2026/02/Loting-en-Matching-2025-Verslag.pdf"
-                  className="underline underline-offset-2"
-                >
-                  Loting en Matching 2025 – Verslag (PDF)
-                </a>
-                .
               </li>
             </ul>
             <ParentSupportLinks locale={locale} context="capacity" />
@@ -401,15 +348,6 @@ export default async function GuidePage({
                   className="underline underline-offset-2"
                 >
                   elkadam.info
-                </a>
-              </li>
-              <li>
-                Amsterdam school boards:{" "}
-                <a
-                  href="https://www.verenigingosvo.nl"
-                  className="underline underline-offset-2"
-                >
-                  verenigingosvo.nl
                 </a>
               </li>
             </ul>
@@ -585,17 +523,8 @@ export default async function GuidePage({
               Capaciteit en kansen (vorig jaar)
             </h4>
             <ul className="list-disc pl-5">
-              <li>
-                Voorlopige capaciteitsopgave 2026 per school/afdeling (indicatief,
-                kan wijzigen):{" "}
-                <a
-                  href="https://verenigingosvo.nl/wp-content/uploads/2025/12/Voorlopige-capaciteitsopgave-2026-1.pdf"
-                  className="underline underline-offset-2"
-                >
-                  voorlopige capaciteit PDF
-                </a>
-                .
-              </li>
+              <li>Voorlopige capaciteitsopgave 2026 per school/afdeling (indicatief,
+                kan wijzigen).</li>
               <li>
                 Verslag 2025: 75,2% geplaatst op 1e voorkeur en 91,3% binnen top
                 3.
@@ -603,16 +532,6 @@ export default async function GuidePage({
               <li>
                 Per advies (2025): vwo 70,0% 1e voorkeur; havo/vwo 61,7%; havo
                 71,7%; vmbo-b t/m vmbo-k 91,1%–98,7% 1e voorkeur.
-              </li>
-              <li>
-                Volledig verslag:{" "}
-                <a
-                  href="https://verenigingosvo.nl/wp-content/uploads/2026/02/Loting-en-Matching-2025-Verslag.pdf"
-                  className="underline underline-offset-2"
-                >
-                  Loting en Matching 2025 – Verslag (PDF)
-                </a>
-                .
               </li>
             </ul>
             <ParentSupportLinks locale={locale} context="capacity" />
@@ -630,15 +549,6 @@ export default async function GuidePage({
                   className="underline underline-offset-2"
                 >
                   elkadam.info
-                </a>
-              </li>
-              <li>
-                Schoolbesturen Amsterdam:{" "}
-                <a
-                  href="https://www.verenigingosvo.nl"
-                  className="underline underline-offset-2"
-                >
-                  verenigingosvo.nl
                 </a>
               </li>
             </ul>

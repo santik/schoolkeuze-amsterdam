@@ -41,16 +41,15 @@ export function ParentSupportLinks({ locale, context }: {
           <SourceLink href="https://www.elkadam.info" isEn={isEn}>
             {isEn ? "ELK information" : "ELK-informatie"}
           </SourceLink>
-          {isEn ? " and " : " en "}
-          <SourceLink href="https://verenigingosvo.nl" isEn={isEn}>
-            {isEn ? "OSVO procedure" : "OSVO-procedure"}
-          </SourceLink>.
+          {isEn
+            ? ", and the OSVO procedure published by the Amsterdam school boards."
+            : ", en de OSVO-procedure van de Amsterdamse schoolbesturen."}
         </p>
       )}
       <p>
         <strong>{isEn ? "Independent parent support" : "Onafhankelijke ouderondersteuning"}</strong>
         {": "}
-        <SourceLink href="http://www.stichtingvsa.nl" isEn={isEn}>Stichting VSA</SourceLink>
+        <span className="font-medium">Stichting VSA</span>
         {context === "capacity"
           ? isEn
             ? " is an independent parent organisation offering analysis of historical placement figures and experience with Amsterdam’s matching system."

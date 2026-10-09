@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-10-08T20:29:08+00:00",
+  "totalOpenDays": 188,
+  "schoolsWithOpenDays": 63,
+  "schoolsWithoutOpenDays": [
+    "Cheider (vo)",
+    "Fiducie College",
+    "Futuris",
+    "Het Amsterdams Lyceum",
+    "Hogelant",
+    "Joodse Scholengemeenschap Maimonides",
+    "Jordaan College",
+    "Kentalis Signis",
+    "Kolom Praktijkcollege Het Plein",
+    "Kolom VSO De Heldring",
+    "Meiberg College",
+    "Montessori Lyceum Terra Nova",
+    "Orion College Amstel",
+    "Orion College Drostenburg",
+    "Orion College Noord",
+    "Orion College Zuidoost",
+    "Spring High",
+    "St. Nicolaaslyceum",
+    "Sweelinck College",
+    "VierTaal College Amsterdam",
+    "Vinse School",
+    "Visio Onderwijs Amsterdam",
+    "Voort College",
+    "Xplore Agora"
+  ],
+  "renamedSourceNames": {
+    "Hervormd Lyceum West (HLW)": [
+      "HLW"
+    ],
+    "Hervormd Lyceum Zuid (HLZ)": [
+      "HLZ"
+    ],
+    "Het Cartesius": [
+      "Cartesius Lyceum"
+    ],
+    "Kolom Praktijkcollege De Atlant": [
+      "Kolom praktijkcollege De Atlant"
+    ],
+    "Kolom Praktijkcollege De Dreef": [
+      "Kolom praktijkcollege De Dreef"
+    ],
+    "Kolom Praktijkcollege Noord": [
+      "Kolom praktijkcollege Noord"
+    ],
+    "Spinoza Lyceum Amsterdam": [
+      "Spinoza Lyceum"
+    ],
+    "TASC": [
+      "TASC (Tech Amsterdam Scholen Collectief)"
+    ],
+    "Vonk Amsterdam": [
+      "VONK"
+    ]
+  },
+  "openDaysWithoutTime": [
+    {
+      "school": "Bindelmeer College",
+      "date": "2026-11-17"
+    },
+    {
+      "school": "De Apollo",
+      "date": "2027-01-21"
+    },
+    {
+      "school": "De Apollo",
+      "date": "2027-02-04"
+    },
+    {
+      "school": "Vechtstede College",
+      "date": "2027-02-17"
+    },
+    {
+      "school": "Vechtstede College",
+      "date": "2027-03-03"
+    },
+    {
+      "school": "Calvijn College Amsterdam",
+      "date": "2027-02-04"
+    },
+    {
+      "school": "Calvijn College Amsterdam",
+      "date": "2027-03-04"
+    },
+    {
+      "school": "Het 4e Gymnasium",
+      "date": "2027-02-03"
+    },
+    {
+      "school": "Montessori Lyceum Amsterdam (MLA)",
+      "date": "2027-02-05"
+    }
+  ],
+  "openDaysWithUnparsedTime": [
+    {
+      "school": "Kolom VSO Alphons Laudy",
+      "date": "2027-01-26",
+      "timeNote": "18:45 inloop - start 19:00 uur"
+    },
+    {
+      "school": "Kolom VSO Alphons Laudy",
+      "date": "2027-02-10",
+      "timeNote": "12:45 inloop - start 13:00 uur"
+    },
+    {
+      "school": "Cygnus Gymnasium",
+      "date": "2027-02-04",
+      "timeNote": "19.00 en 21.30 uur"
+    },
+    {
+      "school": "Cygnus Gymnasium",
+      "date": "2027-02-06",
+      "timeNote": "10.00 en 12.30 uur"
+    }
+  ],
+  "unusedTranslations": [],
+  "openDaysWithoutSignupUrl": []
+}

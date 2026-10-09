@@ -1,5 +1,4 @@
 import type { SchoolLevel } from "@prisma/client";
-import admissionsPriority from "@/lib/admissions-priority.json";
 
 type SourceLink = { label: string; url: string };
 
@@ -103,30 +102,12 @@ export function buildAdmissionsInfo({
     "Check the school's group-8/admissions page for intake, preselection, profile classes, and capacity. This information does not establish a separate priority rule without a source for the specific capacity group."
   );
 
+  // Only the school's own site and the ELK parent portal are linked to; other
+  // bodies are named in the text instead.
   const sources: SourceLink[] = [
     {
-      label: "Schoolkeuze020 - De overstap",
-      url: "https://schoolkeuze020.nl/de-overstap/",
-    },
-    {
-      label: "Schoolkeuze020 - Centrale aanmeldweek",
-      url: "https://schoolkeuze020.nl/centrale-aanmeldweek/",
-    },
-    {
-      label: "Schoolkeuze020 - Praktijkonderwijs/KOVO",
-      url: "https://schoolkeuze020.nl/aanmelding-voor-praktijkonderwijs-of-kovo/",
-    },
-    {
-      label: "ELKadam - Kernprocedure 2025-2026 (timeline)",
+      label: "ELK - Kernprocedure 2025-2026 (timeline)",
       url: "https://www.elkadam.info/sites/default/files/2026-01/bijlage_1_tijdpad_kernprocedure_po-vo_2025-2026_1.pdf",
-    },
-    {
-      label: `${admissionsPriority.annualProcedureLabel} (priority rules)`,
-      url: admissionsPriority.annualProcedureUrl,
-    },
-    {
-      label: "OSVO",
-      url: "https://www.osvo.nl",
     },
   ];
 
