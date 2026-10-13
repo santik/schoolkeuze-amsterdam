@@ -10,7 +10,11 @@ export function ExamResults({ results, levels, compact = false }: { results: unk
   const number = new Intl.NumberFormat(locale, { maximumFractionDigits: 1 });
   function value(row: ExamRow, key: ExamMetric) {
     const n = row[key];
-    if (n !== null) return `${number.format(n)}${key === 'passRate' ? '%' : ''}`;
+    if (n !== null) {
+      const formatted = `${number.format(n)}${key === 'passRate' ? '%' : ''}`;
+      if (!row.suppressedFields.includes(key)) return formatted;
+      return key === 'passRate' ? `~${formatted}` : `≥${formatted}`;
+    }
     if (row.suppressedFields.includes(key)) return t('suppressed');
     if (row.status !== 'available' && row.status !== 'suppressed') return t(row.status);
     return t(key === 'averageGrade' && row.sourceRows.length > 1 ? 'gradeNotComparable' : 'unavailable');
@@ -33,6 +37,7 @@ export function ExamResults({ results, levels, compact = false }: { results: unk
         </tr>)}</tbody>
       </table>
     </div>}
+    {coverage.rows.some(r => r.suppressedFields.length > 0 && r.status === 'suppressed') && <p className="text-xs text-zinc-500 dark:text-zinc-400">{t('approximate')}</p>}
     {coverage.sourceUrl && <a href={coverage.sourceUrl} target="_blank" rel="noreferrer" className="text-xs underline underline-offset-2">DUO · {coverage.year}{coverage.publishedAt ? ` · ${t('published')}: ${coverage.publishedAt}` : ''}</a>}
   </div>;
 }

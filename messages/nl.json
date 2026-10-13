@@ -209,7 +209,8 @@
     "available": "Beschikbaar",
     "not_offered": "Geen eindexamenopleiding",
     "no_cohort": "Geen examenkandidaten",
-    "suppressed": "Afgeschermde kleine groep",
+    "suppressed": "Afgeschermd (kleine groep)",
+    "approximate": "≥ / ~ waarden sluiten afdelingen met minder dan 5 leerlingen uit",
     "unmatched_source": "Geen bevestigde vestigingskoppeling",
     "unavailable": "Niet beschikbaar",
     "gradeNotComparable": "Geen vergelijkbaar niveaugemiddelde"

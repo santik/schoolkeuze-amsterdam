@@ -31,11 +31,18 @@ test('VMBO pathways remain separate; profile totals use counts, not average perc
   assert.equal(rows[1].averageGrade, 6.5);
 });
 
-test('suppression is preserved without deriving hidden counts or rates', () => {
+test('partial suppression shows known totals; full suppression stays null', () => {
   const result = importExams([schools[0]], csv([row(), row('00AA00', 'HAVO', ' ', '<5', '<5', 'B')]), [mappings[0]], '2024-2025');
   assert.equal(result.coverage.A.rows[0].status, 'suppressed');
-  assert.equal(result.coverage.A.rows[0].candidates, null);
-  assert.equal(result.coverage.A.rows[0].passRate, null);
+  assert.equal(result.coverage.A.rows[0].candidates, 10);
+  assert.equal(result.coverage.A.rows[0].passed, 8);
+  assert.equal(result.coverage.A.rows[0].passRate, 80);
+  assert.ok(result.coverage.A.rows[0].suppressedFields.includes('candidates'));
+  assert.ok(result.coverage.A.rows[0].suppressedFields.includes('passRate'));
+  const full = importExams([schools[0]], csv([row('00AA00', 'HAVO', ' ', '<5', '<5')]), [mappings[0]], '2024-2025');
+  assert.equal(full.coverage.A.rows[0].status, 'suppressed');
+  assert.equal(full.coverage.A.rows[0].candidates, null);
+  assert.equal(full.coverage.A.rows[0].passRate, null);
 });
 
 test('zero, missing rows, practical education and VSO have different meanings', () => {
@@ -67,8 +74,9 @@ test('UI projection refuses undated, unsafe, invalid and contradictory coverage'
     { ...c, rows: [{ ...c.rows[0], candidates: null }] },
     { ...c, rows: [{ ...c.rows[0], passRate: 99 }] },
     { ...c, rows: [{ ...c.rows[0], passed: -1 }] },
-    { ...c, rows: [{ ...c.rows[0], suppressedFields: ['passed'] }] },
   ]) assert.equal(getExamCoverage({ examCoverage: invalid }, ['HAVO']).rows[0].passRate, null);
+  const approx = { ...c, rows: [{ ...c.rows[0], suppressedFields: ['candidates', 'passed', 'passRate'] }] };
+  assert.equal(getExamCoverage({ examCoverage: approx }, ['HAVO']).rows[0].passRate, 80);
 });
 
 test('totals reconcile complete groups and changes use the same branch and track', () => {
@@ -80,4 +88,13 @@ test('totals reconcile complete groups and changes use the same branch and track
   assert.equal(result.summary.sourceKnownPassed, 8);
   assert.equal(result.summary.importedKnownPassed, 8);
   assert.deepEqual(result.summary.changes, [{ school: 'A', track: 'HAVO', previous: 100, current: 80, percentagePoints: -20 }]);
+});
+
+test('partial suppression still yields approximate totals in importedKnown', () => {
+  const current = csv([row(), row('00AA00', 'HAVO', ' ', '<5', '<5', 'B'), row('00AA01', 'HAVO', ' ', '20', '20')]);
+  const result = importExams(schools, current, mappings, '2024-2025');
+  assert.equal(result.coverage.A.rows[0].candidates, 10);
+  assert.equal(result.coverage.A.rows[0].status, 'suppressed');
+  assert.equal(result.coverage.B.rows[0].candidates, 20);
+  assert.equal(result.coverage.B.rows[0].status, 'available');
 });

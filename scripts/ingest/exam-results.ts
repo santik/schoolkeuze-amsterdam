@@ -55,15 +55,20 @@ export function parseDuoCsv(text: string): SourceRow[] {
 }
 
 function aggregate(rows: SourceRow[]): ExamRow {
-  const sum = (key: 'candidates' | 'passed') => rows.every(r => r[key] !== null) ? rows.reduce((n, r) => n + r[key]!, 0) : null;
+  const allKnown = (key: 'candidates' | 'passed') => rows.every(r => r[key] !== null);
+  const sum = (key: 'candidates' | 'passed') => {
+    const known = rows.filter(r => r[key] !== null);
+    return known.length ? known.reduce((n, r) => n + r[key]!, 0) : null;
+  };
   const candidates = sum('candidates'), passed = sum('passed');
   const suppressedFields = [...new Set(rows.flatMap(r => r.suppressedFields))];
-  if (suppressedFields.some(k => k === 'candidates' || k === 'passed')) suppressedFields.push('passRate');
+  if (suppressedFields.some(k => k === 'candidates' || k === 'passed') && !suppressedFields.includes('passRate')) suppressedFields.push('passRate');
   const passRate = candidates !== null && candidates > 0 && passed !== null ? Math.round(passed / candidates * 1000) / 10 : null;
+  const fullyKnown = allKnown('candidates') && allKnown('passed');
   return { track: rows[0].track, candidates, passed, passRate,
     averageGrade: rows.length === 1 ? rows[0].averageGrade : null,
-    status: candidates === 0 ? 'no_cohort' : suppressedFields.length ? 'suppressed' : passRate === null ? 'unavailable' : 'available',
-    suppressedFields, sourceRows: rows.map(r => r.line) };
+    status: candidates === 0 ? 'no_cohort' : !fullyKnown && suppressedFields.length ? 'suppressed' : passRate === null ? 'unavailable' : 'available',
+    suppressedFields: fullyKnown ? [] : suppressedFields, sourceRows: rows.map(r => r.line) };
 }
 
 export function importExams(schools: SchoolInput[], rows: SourceRow[], mappings: BranchMapping[], year: string, previous: SourceRow[] = []) {
@@ -97,8 +102,8 @@ export function importExams(schools: SchoolInput[], rows: SourceRow[], mappings:
     else summary.partialOrUnavailable.push(school.name);
     summary.importedSourceRows += selected.length;
     for (const r of resultRows) {
-      summary.importedKnownCandidates += r.candidates ?? 0;
-      summary.importedKnownPassed += r.passed ?? 0;
+      if (!r.suppressedFields.includes('candidates')) summary.importedKnownCandidates += r.candidates ?? 0;
+      if (!r.suppressedFields.includes('passed')) summary.importedKnownPassed += r.passed ?? 0;
       if (r.status === 'suppressed') summary.suppressedTrackCount++;
       const sourceTrack = selected.filter(s => s.track === r.track);
       // Compare like-for-like only: totals whose entire source group is visible.

@@ -97,11 +97,102 @@
   ],
   "changes": [
     {
+      "school": "Calandlyceum",
+      "track": "VWO",
+      "previous": 76,
+      "current": 59.6,
+      "percentagePoints": -16.4
+    },
+    {
+      "school": "Lumion",
+      "track": "VWO",
+      "previous": 75.7,
+      "current": 38.3,
+      "percentagePoints": -37.4
+    },
+    {
+      "school": "Hervormd Lyceum West (HLW)",
+      "track": "HAVO",
+      "previous": 80,
+      "current": 91.2,
+      "percentagePoints": 11.2
+    },
+    {
+      "school": "Hervormd Lyceum West (HLW)",
+      "track": "VWO",
+      "previous": 77.3,
+      "current": 100,
+      "percentagePoints": 22.7
+    },
+    {
+      "school": "Spinoza20first",
+      "track": "VMBO-T",
+      "previous": 90.6,
+      "current": 80.6,
+      "percentagePoints": -10
+    },
+    {
+      "school": "Spinoza20first",
+      "track": "VWO",
+      "previous": 52.4,
+      "current": 79.4,
+      "percentagePoints": 27
+    },
+    {
+      "school": "Bindelmeer College",
+      "track": "VMBO-T",
+      "previous": 75,
+      "current": 92.3,
+      "percentagePoints": 17.3
+    },
+    {
       "school": "Casparus College",
       "track": "VMBO-K",
       "previous": 97.5,
       "current": 84.8,
       "percentagePoints": -12.7
+    },
+    {
+      "school": "College De Meer",
+      "track": "VMBO-T",
+      "previous": 87.5,
+      "current": 73.7,
+      "percentagePoints": -13.8
+    },
+    {
+      "school": "Cornelius Haga Lyceum",
+      "track": "HAVO",
+      "previous": 38.5,
+      "current": 64.3,
+      "percentagePoints": 25.8
+    },
+    {
+      "school": "Cornelius Haga Lyceum",
+      "track": "VMBO-T",
+      "previous": 36.2,
+      "current": 47.2,
+      "percentagePoints": 11
+    },
+    {
+      "school": "De Apollo",
+      "track": "HAVO",
+      "previous": 79.2,
+      "current": 66.7,
+      "percentagePoints": -12.5
+    },
+    {
+      "school": "Ir. Lely Lyceum",
+      "track": "VWO",
+      "previous": 85.7,
+      "current": 51.9,
+      "percentagePoints": -33.8
+    },
+    {
+      "school": "Montessori Lyceum Oostpoort",
+      "track": "HAVO",
+      "previous": 83.3,
+      "current": 21.7,
+      "percentagePoints": -61.6
     },
     {
       "school": "Montessori Lyceum Oostpoort",
@@ -118,11 +209,60 @@
       "percentagePoints": 12.5
     },
     {
+      "school": "Montessori Lyceum Terra Nova",
+      "track": "HAVO",
+      "previous": 47.4,
+      "current": 71.1,
+      "percentagePoints": 23.7
+    },
+    {
+      "school": "Montessori Lyceum Terra Nova",
+      "track": "VMBO-T",
+      "previous": 84.6,
+      "current": 64.2,
+      "percentagePoints": -20.4
+    },
+    {
       "school": "Tobiasschool",
       "track": "VMBO-B",
       "previous": 89.5,
       "current": 100,
       "percentagePoints": 10.5
+    },
+    {
+      "school": "Xplore Agora",
+      "track": "HAVO",
+      "previous": 100,
+      "current": 0,
+      "percentagePoints": -100
+    },
+    {
+      "school": "Sweelinck College",
+      "track": "HAVO",
+      "previous": 57.1,
+      "current": 75,
+      "percentagePoints": 17.9
+    },
+    {
+      "school": "Vinse School",
+      "track": "VMBO-T",
+      "previous": 100,
+      "current": 80,
+      "percentagePoints": -20
+    },
+    {
+      "school": "Vinse School",
+      "track": "VWO",
+      "previous": 73.7,
+      "current": 100,
+      "percentagePoints": 26.3
+    },
+    {
+      "school": "TASC",
+      "track": "VMBO-B",
+      "previous": 43.8,
+      "current": 81.3,
+      "percentagePoints": 37.5
     },
     {
       "school": "Iedersland College",
@@ -154,6 +294,6 @@
   "reconciliation": {
     "candidatesMatch": true,
     "passedMatch": true,
-    "scope": "Matched branches, complete track counts only. Suppressed totals are excluded, never estimated."
+    "scope": "Matched branches, fully-known track counts only. Partially-suppressed tracks show known subtotals as approximate values."
   }
 }

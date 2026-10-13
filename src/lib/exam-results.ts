@@ -44,7 +44,7 @@ export function getExamCoverage(results: unknown, levels: string[]): ExamCoverag
     && metric(r.candidates, Number.MAX_SAFE_INTEGER) && (r.candidates === null || Number.isInteger(r.candidates))
     && metric(r.passed, Number.MAX_SAFE_INTEGER) && (r.passed === null || Number.isInteger(r.passed))
     && metric(r.passRate, 100) && metric(r.averageGrade, 10)
-    && Array.isArray(r.suppressedFields) && r.suppressedFields.every(k => ['candidates', 'passed', 'passRate', 'averageGrade'].includes(String(k)) && r[String(k)] === null)
+    && Array.isArray(r.suppressedFields) && r.suppressedFields.every(k => ['candidates', 'passed', 'passRate', 'averageGrade'].includes(String(k)))
     && Array.isArray(r.sourceRows) && r.sourceRows.every(n => Number.isInteger(n) && n >= 2)
     && (r.passed === null || r.candidates === null || Number(r.passed) <= Number(r.candidates))
     && (r.passRate === null || (Number(r.candidates) > 0 && r.passed !== null && Math.abs(Number(r.passRate) - Number(r.passed) / Number(r.candidates) * 100) <= 0.11))

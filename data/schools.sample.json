@@ -106,9 +106,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 109,
+            "passed": 100,
+            "passRate": 91.7,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -164,23 +164,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -296,9 +296,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 130,
+            "passed": 111,
+            "passRate": 85.4,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -354,23 +354,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -485,9 +485,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 120,
+            "passed": 111,
+            "passRate": 92.5,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -542,23 +542,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -673,9 +673,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 105,
+            "passed": 102,
+            "passRate": 97.1,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -730,23 +730,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -866,9 +866,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 99,
+            "passed": 83,
+            "passRate": 83.8,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -886,9 +886,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 103,
+            "passed": 95,
+            "passRate": 92.2,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -943,23 +943,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -1153,23 +1153,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -1343,23 +1343,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -1474,9 +1474,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 116,
+            "passed": 108,
+            "passRate": 93.1,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -1531,23 +1531,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -1658,9 +1658,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 64,
+            "passed": 50,
+            "passRate": 78.1,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -1714,23 +1714,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -1956,23 +1956,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -2102,9 +2102,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 108,
+            "passed": 84,
+            "passRate": 77.8,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2138,8 +2138,8 @@
           {
             "track": "VWO",
             "candidates": 57,
-            "passed": null,
-            "passRate": null,
+            "passed": 34,
+            "passRate": 59.6,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2192,23 +2192,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -2369,8 +2369,8 @@
           {
             "track": "VMBO-T",
             "candidates": 66,
-            "passed": null,
-            "passRate": null,
+            "passed": 48,
+            "passRate": 72.7,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2385,9 +2385,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 47,
+            "passed": 18,
+            "passRate": 38.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2442,23 +2442,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -2576,9 +2576,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 77,
+            "passed": 65,
+            "passRate": 84.4,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2630,7 +2630,7 @@
         "fieldGroup": "enrolment",
         "dataYear": "2026",
         "sourceLabel": "Schoolkeuze Amsterdam — redactie",
-        "sourceUrl": "https://www.schoolkeuze.amsterdam",
+        "sourceUrl": "https://www.schoolkeuze.amsterdam/",
         "sourceUpdatedAt": "2026-10-07T19:20:50.283Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
         "verifiedAt": "2026-10-07T19:20:50.283Z",
@@ -2649,23 +2649,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -2783,9 +2783,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 69,
+            "passed": 54,
+            "passRate": 78.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2803,9 +2803,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 65,
+            "passed": 58,
+            "passRate": 89.2,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -2858,23 +2858,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -3041,23 +3041,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -3185,9 +3185,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 34,
+            "passed": 31,
+            "passRate": 91.2,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3206,8 +3206,8 @@
           {
             "track": "VMBO-T",
             "candidates": 61,
-            "passed": null,
-            "passRate": null,
+            "passed": 53,
+            "passRate": 86.9,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3222,9 +3222,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 7,
+            "passed": 7,
+            "passRate": 100,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3277,23 +3277,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -3467,23 +3467,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -3676,23 +3676,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -3818,9 +3818,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 93,
+            "passed": 61,
+            "passRate": 65.6,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3839,9 +3839,9 @@
           },
           {
             "track": "VMBO-T",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 31,
+            "passed": 25,
+            "passRate": 80.6,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3857,9 +3857,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 34,
+            "passed": 27,
+            "passRate": 79.4,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -3914,23 +3914,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -4101,23 +4101,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -4278,23 +4278,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -4413,9 +4413,9 @@
           },
           {
             "track": "VMBO-K",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 32,
+            "passed": 31,
+            "passRate": 96.9,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -4490,23 +4490,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -4628,9 +4628,9 @@
           },
           {
             "track": "VMBO-K",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 25,
+            "passed": 24,
+            "passRate": 96,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -4704,23 +4704,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -4878,23 +4878,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -5085,23 +5085,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -5205,9 +5205,9 @@
         "rows": [
           {
             "track": "VMBO-B",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 13,
+            "passed": 13,
+            "passRate": 100,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -5223,9 +5223,9 @@
           },
           {
             "track": "VMBO-GL",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 15,
+            "passed": 13,
+            "passRate": 86.7,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -5291,23 +5291,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -5477,23 +5477,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -5617,7 +5617,7 @@
           {
             "track": "VWO",
             "candidates": null,
-            "passed": null,
+            "passed": 0,
             "passRate": null,
             "averageGrade": null,
             "status": "suppressed",
@@ -5689,23 +5689,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -5884,23 +5884,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6087,23 +6087,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6209,9 +6209,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 42,
+            "passed": 27,
+            "passRate": 64.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -6229,9 +6229,9 @@
           },
           {
             "track": "VMBO-T",
-            "candidates": null,
+            "candidates": 36,
             "passed": 17,
-            "passRate": null,
+            "passRate": 47.2,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -6246,9 +6246,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 16,
+            "passed": 10,
+            "passRate": 62.5,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -6301,23 +6301,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6489,23 +6489,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6664,23 +6664,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6785,8 +6785,8 @@
           {
             "track": "VMBO-T",
             "candidates": 63,
-            "passed": null,
-            "passRate": null,
+            "passed": 55,
+            "passRate": 87.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -6838,23 +6838,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -6960,9 +6960,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 18,
+            "passed": 12,
+            "passRate": 66.7,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -7030,23 +7030,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -7216,23 +7216,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -7391,23 +7391,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -7545,9 +7545,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 12,
+            "passed": 12,
+            "passRate": 100,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -7611,23 +7611,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -7799,23 +7799,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -7975,23 +7975,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -8150,23 +8150,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -8272,9 +8272,9 @@
         "rows": [
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 111,
+            "passed": 98,
+            "passRate": 88.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -8330,23 +8330,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -8525,23 +8525,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -8645,9 +8645,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 49,
+            "passed": 26,
+            "passRate": 53.1,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -8666,9 +8666,9 @@
           },
           {
             "track": "VMBO-T",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 60,
+            "passed": 41,
+            "passRate": 68.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -8685,9 +8685,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 27,
+            "passed": 14,
+            "passRate": 51.9,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -8742,23 +8742,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -8878,9 +8878,9 @@
           },
           {
             "track": "VMBO-T",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 36,
+            "passed": 34,
+            "passRate": 94.4,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -8933,23 +8933,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -9130,23 +9130,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -9325,23 +9325,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -9448,9 +9448,9 @@
         "rows": [
           {
             "track": "VMBO-T",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 33,
+            "passed": 31,
+            "passRate": 93.9,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -9523,23 +9523,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -9711,23 +9711,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -9835,9 +9835,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 23,
+            "passed": 5,
+            "passRate": 21.7,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -9956,23 +9956,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -10144,23 +10144,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -10266,9 +10266,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 45,
+            "passed": 32,
+            "passRate": 71.1,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -10311,8 +10311,8 @@
           {
             "track": "VMBO-T",
             "candidates": 53,
-            "passed": null,
-            "passRate": null,
+            "passed": 34,
+            "passRate": 64.2,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -10327,9 +10327,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 16,
+            "passed": 7,
+            "passRate": 43.8,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -10363,7 +10363,7 @@
         "fieldGroup": "enrolment",
         "dataYear": "2026",
         "sourceLabel": "Schoolkeuze Amsterdam — redactie",
-        "sourceUrl": "https://www.schoolkeuze.amsterdam",
+        "sourceUrl": "https://www.schoolkeuze.amsterdam/",
         "sourceUpdatedAt": "2026-10-07T19:20:50.283Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
         "verifiedAt": "2026-10-07T19:20:50.283Z",
@@ -10382,23 +10382,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -10568,23 +10568,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -10776,23 +10776,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -10951,23 +10951,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -11133,23 +11133,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -11335,23 +11335,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -11457,9 +11457,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 5,
+            "passed": 0,
+            "passRate": 0,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -11542,23 +11542,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -11739,23 +11739,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -11857,9 +11857,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
+            "candidates": 20,
             "passed": 15,
-            "passRate": null,
+            "passRate": 75,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -11924,23 +11924,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -12046,9 +12046,9 @@
         "rows": [
           {
             "track": "HAVO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 35,
+            "passed": 31,
+            "passRate": 88.6,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -12067,9 +12067,9 @@
           },
           {
             "track": "VMBO-T",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 20,
+            "passed": 16,
+            "passRate": 80,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -12085,9 +12085,9 @@
           },
           {
             "track": "VWO",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 15,
+            "passed": 15,
+            "passRate": 100,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -12161,23 +12161,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -12347,23 +12347,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -12532,23 +12532,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -12654,9 +12654,9 @@
         "rows": [
           {
             "track": "VMBO-B",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 16,
+            "passed": 13,
+            "passRate": 81.3,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -12672,9 +12672,9 @@
           },
           {
             "track": "VMBO-K",
-            "candidates": null,
-            "passed": null,
-            "passRate": null,
+            "candidates": 17,
+            "passed": 13,
+            "passRate": 76.5,
             "averageGrade": null,
             "status": "suppressed",
             "suppressedFields": [
@@ -12736,23 +12736,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -12902,23 +12902,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13095,23 +13095,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13273,23 +13273,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13461,23 +13461,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13639,23 +13639,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13817,23 +13817,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -13980,23 +13980,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14144,23 +14144,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14308,23 +14308,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14472,23 +14472,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14637,23 +14637,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14803,23 +14803,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -14966,23 +14966,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -15129,23 +15129,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -15315,23 +15315,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -15478,23 +15478,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -15675,23 +15675,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -15838,23 +15838,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -16001,23 +16001,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -16167,23 +16167,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -16344,23 +16344,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -16507,23 +16507,23 @@
         "authority": "fallback"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"
@@ -16715,23 +16715,23 @@
         "authority": "authoritative"
       },
       {
-        "fieldGroup": "results",
-        "dataYear": "2024-2025",
-        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
-        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
-        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
-        "importedAt": "2026-10-03T05:07:38.138Z",
-        "verifiedAt": null,
-        "method": "automatic",
-        "authority": "authoritative"
-      },
-      {
         "fieldGroup": "admissions",
         "dataYear": "2025-2026",
         "sourceLabel": "Kernprocedure PO-VO Amsterdam",
         "sourceUrl": "https://onderwijsconsument.nl/wp-content/uploads/KERNPROCEDURE-PO-VO-1-2025-2026.pdf",
         "sourceUpdatedAt": "2025-09-01T00:00:00.000Z",
         "importedAt": "2026-10-07T19:20:50.283Z",
+        "verifiedAt": null,
+        "method": "automatic",
+        "authority": "authoritative"
+      },
+      {
+        "fieldGroup": "results",
+        "dataYear": "2024-2025",
+        "sourceLabel": "DUO — examenkandidaten, geslaagden en cijfers",
+        "sourceUrl": "https://duo.nl/open_onderwijsdata/images/geslaagden-gezakten-en-cijfers-2024-2025.csv",
+        "sourceUpdatedAt": "2025-12-22T00:00:00.000Z",
+        "importedAt": "2026-10-12T19:48:36.730Z",
         "verifiedAt": null,
         "method": "automatic",
         "authority": "authoritative"

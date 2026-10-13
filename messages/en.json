@@ -209,7 +209,8 @@
     "available": "Available",
     "not_offered": "No final-exam programme",
     "no_cohort": "No exam cohort",
-    "suppressed": "Suppressed small group",
+    "suppressed": "Suppressed (small group)",
+    "approximate": "≥ / ~ values exclude departments with fewer than 5 students",
     "unmatched_source": "No verified branch match",
     "unavailable": "Unavailable",
     "gradeNotComparable": "No comparable track average"

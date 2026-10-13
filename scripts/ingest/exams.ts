@@ -23,7 +23,7 @@ async function main() {
   const summary = { ...result.summary, sources: [
     { year, url: sourceUrl(year), sha256: createHash('sha256').update(current).digest('hex') },
     { year: '2023-2024', url: sourceUrl('2023-2024'), sha256: createHash('sha256').update(previous).digest('hex') },
-  ], reconciliation: { candidatesMatch: result.summary.sourceKnownCandidates === result.summary.importedKnownCandidates, passedMatch: result.summary.sourceKnownPassed === result.summary.importedKnownPassed, scope: 'Matched branches, complete track counts only. Suppressed totals are excluded, never estimated.' } };
+  ], reconciliation: { candidatesMatch: result.summary.sourceKnownCandidates === result.summary.importedKnownCandidates, passedMatch: result.summary.sourceKnownPassed === result.summary.importedKnownPassed, scope: 'Matched branches, fully-known track counts only. Partially-suppressed tracks show known subtotals as approximate values.' } };
   if (!summary.reconciliation.candidatesMatch || !summary.reconciliation.passedMatch) throw new Error('Aggregate reconciliation failed');
   if (args.includes('--write')) {
     const importedAt = new Date().toISOString();
