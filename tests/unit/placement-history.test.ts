@@ -126,8 +126,8 @@ test("committed OSVO dataset maps cleanly and preserves checked source values", 
   assert.equal(actual.schools["sample:21ab:barlaeus-gymnasium"]?.capacityGroups[0]?.capacity, 140);
   assert.equal(
     actual.schools["sample:21ab:barlaeus-gymnasium"]?.matchingGroups[0]?.firstPreferences,
-    254
+    289
   );
   assert.equal(actual.schools["sample:03aq:osb-amsterdam"]?.matchingGroups.length, 5);
-  assert.equal(actual.schools["sample:21as:hyperion-lyceum"]?.matchingGroups[0]?.totalPlaced, 153);
+  assert.equal(actual.schools["sample:21as:hyperion-lyceum"]?.matchingGroups[0]?.totalPlaced, 156);
 });

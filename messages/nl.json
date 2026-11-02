@@ -7,7 +7,7 @@
     "compare": "Vergelijken",
     "favorites": "Favorieten",
     "guide": "Uitleg",
-    "profile": "Profiel"
+    "profile": "Mijn lijst"
   },
   "Home": {
     "title": "Kies een middelbare school in Amsterdam",
@@ -18,7 +18,7 @@
     "feature1Desc": "Filter op niveau (inclusief Praktijk), gebruik de kaart met marker-popups en bereken fietsafstand vanaf je locatie of postcode.",
     "feature2Title": "Vergelijken",
     "feature2Desc": "Zet scholen naast elkaar en vergelijk wat voor jullie belangrijk is.",
-    "feature3Title": "Favorieten & lijst",
+    "feature3Title": "Mijn lijst",
     "feature3Desc": "Bewaar favorieten, orden je lijst, bekijk Mijn score op basis van je beoordelingen, exporteer een nette PDF en deel/laad hetzelfde profiel via ID.",
     "feedbackLink": "Stuur feedback"
   },
@@ -85,7 +85,10 @@
     "remove": "Verwijder",
     "details": "Info",
     "compare": "Vergelijken",
-    "score": "Mijn score"
+    "score": "Mijn score",
+    "emptyHint": "Tik op ☆ bij een school om die aan je lijst toe te voegen.",
+    "emptyCta": "Scholen bekijken",
+    "ratePrompt": "Beoordeel deze school"
   },
   "SchoolsMap": {
     "title": "Kaart",
@@ -132,10 +135,10 @@
     "website": "Website"
   },
   "Profile": {
-    "title": "Jouw profiel",
+    "title": "Mijn lijst",
     "adviceLabel": "Advies/niveau",
-    "profileIdLabel": "Profiel-ID",
-    "profileIdPlaceholder": "Voer een profiel-ID in",
+    "profileIdLabel": "Deel-/synccode",
+    "profileIdPlaceholder": "Voer een code in",
     "loadProfile": "Profiel laden",
     "copyShareLink": "Deellink kopiëren",
     "shareHint": "Deel dit ID/deze link zodat iemand dezelfde favorieten en notities kan openen.",
@@ -151,7 +154,7 @@
     "homeDescription": "Zoek scholen, filter op niveau en afstand, bewaar favorieten en maak je voorkeurslijst.",
     "schoolsTitle": "Scholen",
     "schoolsDescription": "Bekijk middelbare scholen in Amsterdam en filter op niveau, afstand en reistijd.",
-    "profileTitle": "Profiel",
+    "profileTitle": "Mijn lijst",
     "profileDescription": "Beheer favorieten, volgorde, notities en je deelbare profiel-link.",
     "feedbackTitle": "Feedback",
     "feedbackDescription": "Stuur feedback over de Schoolkeuze-app.",

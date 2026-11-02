@@ -21,7 +21,7 @@ test('school guidance links only to the school itself and the ELK parent portal'
     levels: ['HAVO'],
     websiteUrl: 'https://test-school.example/',
   });
-  assert.equal(admissionsPriority.procedureYear, '2025–2026');
+  assert.equal(admissionsPriority.procedureYear, '2026–2027');
 
   const hosts = info.sources.map(source => new URL(source.url).hostname);
   assert.deepEqual(hosts, ['test-school.example', 'www.elkadam.info']);

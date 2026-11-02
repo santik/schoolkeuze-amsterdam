@@ -5,7 +5,7 @@ for (const locale of ['nl', 'en'] as const) {
     await page.goto(`/${locale}/guide`);
     const block = page.getByTestId('priority-guidance');
     await expect(block).toBeVisible();
-    await expect(block.getByRole('heading')).toContainText('2025–2026');
+    await expect(block.getByRole('heading')).toContainText('2026–2027');
     await expect(block).toContainText(locale === 'nl' ? 'broers of zussen' : 'sibling priority');
     await expect(block).toContainText('Montessori');
     await expect(block).toContainText('Dalton');
@@ -15,6 +15,6 @@ for (const locale of ['nl', 'en'] as const) {
     await expect(block).toContainText(locale === 'nl' ? 'toegekende hardheidsclausule' : 'approved hardship');
     // The annual procedure is named, not linked.
     await expect(block.getByRole('link')).toHaveCount(0);
-    await expect(block).toContainText('Kernprocedure PO-VO 2025–2026');
+    await expect(block).toContainText('Kernprocedure PO-VO 2026–2027');
   });
 }

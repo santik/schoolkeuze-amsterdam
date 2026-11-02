@@ -7,7 +7,7 @@
     "compare": "Compare",
     "favorites": "Favorites",
     "guide": "Guide",
-    "profile": "Profile"
+    "profile": "My list"
   },
   "Home": {
     "title": "Choose a secondary school in Amsterdam",
@@ -18,7 +18,7 @@
     "feature1Desc": "Filter by level (including Praktijk), use map + marker popups, and calculate bike distance from your location or ZIP code.",
     "feature2Title": "Compare",
     "feature2Desc": "Put schools side by side and compare what is important to you.",
-    "feature3Title": "Favorites & list",
+    "feature3Title": "My list",
     "feature3Desc": "Save favorites, reorder your list, view My Score from your ratings, export a styled PDF, and share/load the same profile by ID.",
     "feedbackLink": "Send feedback"
   },
@@ -85,7 +85,10 @@
     "remove": "Remove",
     "details": "Info",
     "compare": "Compare",
-    "score": "My Score"
+    "score": "My Score",
+    "emptyHint": "Tap ☆ on a school to add it to your list.",
+    "emptyCta": "Browse schools",
+    "ratePrompt": "Rate this school"
   },
   "SchoolsMap": {
     "title": "Map",
@@ -132,10 +135,10 @@
     "website": "Website"
   },
   "Profile": {
-    "title": "Your profile",
+    "title": "My list",
     "adviceLabel": "Advice/level",
-    "profileIdLabel": "Profile ID",
-    "profileIdPlaceholder": "Enter a profile ID",
+    "profileIdLabel": "Share / sync code",
+    "profileIdPlaceholder": "Enter a code",
     "loadProfile": "Load profile",
     "copyShareLink": "Copy share link",
     "shareHint": "Share this ID/link so someone can open the same favorites and notes.",
@@ -151,7 +154,7 @@
     "homeDescription": "Search schools, filter by level and distance, save favorites and build your ranking list.",
     "schoolsTitle": "Schools",
     "schoolsDescription": "Browse Amsterdam secondary schools and filter by level, distance and travel time.",
-    "profileTitle": "Profile",
+    "profileTitle": "My list",
     "profileDescription": "Manage your school favorites, ranking, notes and shareable profile link.",
     "feedbackTitle": "Feedback",
     "feedbackDescription": "Send feedback about the School Choice app.",

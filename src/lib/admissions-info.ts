@@ -106,8 +106,8 @@ export function buildAdmissionsInfo({
   // bodies are named in the text instead.
   const sources: SourceLink[] = [
     {
-      label: "ELK - Kernprocedure 2025-2026 (timeline)",
-      url: "https://www.elkadam.info/sites/default/files/2026-01/bijlage_1_tijdpad_kernprocedure_po-vo_2025-2026_1.pdf",
+      label: "ELK - Kernprocedure 2026-2027 (timeline)",
+      url: "https://www.elkadam.info/tijdpad",
     },
   ];
 
@@ -121,31 +121,31 @@ export function buildAdmissionsInfo({
   return {
     nl: {
       summary:
-        "In schooljaar 2025-2026 gebruikt Amsterdam Centrale Loting & Matching voor regulier voortgezet onderwijs. Praktijkonderwijs, kovo en voortgezet speciaal onderwijs volgen een aparte route.",
+        "In schooljaar 2026-2027 gebruikt Amsterdam Centrale Loting & Matching voor regulier voortgezet onderwijs. Praktijkonderwijs, kovo en voortgezet speciaal onderwijs volgen een aparte route.",
       timeline: [
-        "Uiterlijk 24 maart 2026: definitief basisschooladvies.",
-        "25 t/m 31 maart 2026: centrale aanmeldweek (1e ronde).",
-        "9 april 2026: uitslag centrale loting & matching (1e ronde).",
-        "9 april 16:00 t/m 14 april 16:00: aanmelden voor de 2e ronde; uitslag op 15 april vanaf 15:30 uur.",
+        "Uiterlijk 24 maart 2027: definitief basisschooladvies.",
+        "25 t/m 31 maart 2027: centrale aanmeldweek (1e ronde).",
+        "15 april 2027 (vanaf 15:30 uur): uitslag centrale loting & matching (1e ronde).",
+        "15 april 16:00 t/m 19 april 16:00: aanmelden voor de 2e ronde; uitslag op 22 april 2027.",
       ],
       schoolSpecific: schoolSpecificNl,
       notes: [
-        "Uiterlijk 12 mei 2026 beslist de middelbare school over toelating, ook wanneer een ondersteuningsvraag verdere beoordeling vraagt.",
+        "Na de matching beslist de middelbare school over de definitieve toelating, ook wanneer een ondersteuningsvraag verdere beoordeling vraagt.",
         "Hardheidsclausule loopt via het centrale OSVO-loket.",
       ],
     },
     en: {
       summary:
-        "In school year 2025-2026, Amsterdam uses Central Lottery & Matching for mainstream secondary education. Practical education, kovo, and secondary special education use separate routes.",
+        "In school year 2026-2027, Amsterdam uses Central Lottery & Matching for mainstream secondary education. Practical education, kovo, and secondary special education use separate routes.",
       timeline: [
-        "By March 24, 2026: final primary-school recommendation.",
-        "March 25-31, 2026: central application week (round 1).",
-        "April 9, 2026: round-1 lottery & matching results.",
-        "April 9, 16:00 to April 14, 16:00: round-2 applications; results on April 15 from 15:30.",
+        "By March 24, 2027: final primary-school recommendation.",
+        "March 25-31, 2027: central application week (round 1).",
+        "April 15, 2027 (from 15:30): round-1 lottery & matching results.",
+        "April 15, 16:00 to April 19, 16:00: round-2 applications; results on April 22, 2027.",
       ],
       schoolSpecific: schoolSpecificEn,
       notes: [
-        "By May 12, 2026, the secondary school decides on admission, including when a support need requires further assessment.",
+        "After matching, the secondary school decides on final admission, including when a support need requires further assessment.",
         "Hardship requests go through the central OSVO desk.",
       ],
     },
