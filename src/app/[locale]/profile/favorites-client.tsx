@@ -314,12 +314,22 @@ export function FavoritesClient({
 
   if (ids.length === 0) {
     return (
-      <div className="rounded-3xl border border-indigo-100 bg-white/85 p-6 text-sm text-indigo-800 dark:border-indigo-300/20 dark:bg-white/5 dark:text-indigo-200">
-        {tFav("empty")}{" "}
-        <Link href="/schools" className="font-semibold underline decoration-indigo-300 underline-offset-2">
-          Scholen
-        </Link>{" "}
-        .
+      <div className="grid justify-items-center gap-3 rounded-3xl border border-indigo-100 bg-white/85 p-10 text-center dark:border-indigo-300/20 dark:bg-white/5">
+        <div className="text-5xl leading-none text-indigo-200 dark:text-indigo-300/40" aria-hidden>
+          ☆
+        </div>
+        <div className="text-base font-semibold text-indigo-900 dark:text-indigo-100">
+          {tFav("empty")}
+        </div>
+        <div className="max-w-xs text-sm text-indigo-700/85 dark:text-indigo-200/80">
+          {tFav("emptyHint")}
+        </div>
+        <Link
+          href="/schools"
+          className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 text-sm font-bold text-white shadow-sm hover:from-orange-400 hover:to-amber-400"
+        >
+          🏫 {tFav("emptyCta")}
+        </Link>
       </div>
     );
   }
@@ -417,7 +427,17 @@ export function FavoritesClient({
                             >
                               {tFav("score")}: {Math.round(scoreBySchoolId.get(s.id) ?? 0)}%
                             </div>
-                          ) : null}
+                          ) : (
+                            <div
+                              data-testid="favorite-rate-prompt"
+                              className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-indigo-700/80 dark:text-indigo-200/70"
+                            >
+                              <span className="text-amber-400" aria-hidden>
+                                ☆☆☆☆☆
+                              </span>
+                              <span>{tFav("ratePrompt")}</span>
+                            </div>
+                          )}
                           <div className="mt-1 text-xs text-indigo-700/85 dark:text-indigo-200/80">
                             {(s.levels ?? []).join(" / ") || "—"} ·{" "}
                             {(s.concepts ?? []).slice(0, 3).join(", ") || "—"}

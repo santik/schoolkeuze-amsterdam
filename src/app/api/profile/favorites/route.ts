@@ -47,6 +47,11 @@ export async function PUT(req: Request) {
         schoolId,
         rank: idx,
       })),
+      // The client fires an unawaited PUT on every change, so two requests for
+      // the same profile can overlap and both try to insert the same
+      // (profileId, schoolId). skipDuplicates keeps that race from throwing a
+      // unique-constraint error (P2002); the last write still wins.
+      skipDuplicates: true,
     });
   });
 

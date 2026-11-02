@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Extract checked OSVO capacity/matching tables into the app's JSON dataset.
 
-The PDFs use merged cells and visual grouping. Capacity rows are parsed by
-column coordinates. Matching rows are parsed from the numeric table and assigned
-to explicitly reviewed school groups in page order. If the source layout changes,
-row-count assertions fail instead of silently attaching figures to another school.
+Capacity rows come from the preliminary capacity PDF and are parsed by column
+coordinates. Matching rows come from the Loting & Matching report's per-afdeling
+overview table (TABEL 18). That table wraps school names across several lines and
+pdfplumber detects a different number of spacer columns per page, so names and
+departments are read from the detected table cells while the numeric values are
+read by column x-coordinate; the two are aligned by asserting their department
+sequences are identical. If the source layout changes, those assertions fail
+instead of silently attaching figures to another school.
 """
 
 from __future__ import annotations
@@ -22,12 +26,31 @@ CAPACITY_SOURCE_URL = (
     "Voorlopige-capaciteitsopgave-2026-1.pdf"
 )
 MATCHING_SOURCE_URL = (
-    "https://verenigingosvo.nl/wp-content/uploads/2026/02/"
-    "Loting-en-Matching-2025-Verslag.pdf"
+    "https://verenigingosvo.nl/wp-content/uploads/2026/04/"
+    "Verslag-Loting-en-Matching-2026.pdf"
 )
+
+# TABEL 18 "Overzicht per afdeling" spans these pages in the 2026 report.
+MATCHING_PAGES = [39, 40, 41, 42]
+# A marker on the first matching page, asserted so a re-paginated report fails loud.
+MATCHING_PAGE_MARKER = "CAPACITEIT, VOORKEUREN EN PLAATSINGEN"
+
+# Left x0 bound of each numeric column in TABEL 18 (right-aligned numbers). The
+# five capacity and five placement columns are annual series; only the 2026
+# columns are kept. Demand is published for the first preference only.
+MATCHING_NUM_COLUMNS = [
+    ("cap22", 190), ("cap23", 214), ("cap24", 238), ("cap25", 262), ("cap26", 286),
+    ("vk1", 322),
+    ("pl22", 358), ("pl23", 384), ("pl24", 407), ("pl25", 430), ("pl26", 453),
+    ("nv1", 478), ("nv2", 498), ("nv3", 517), ("nv4", 536),
+]
+MATCHING_NUM_BOUNDS = [lo for _, lo in MATCHING_NUM_COLUMNS] + [562]
+MATCHING_NUM_NAMES = [name for name, _ in MATCHING_NUM_COLUMNS]
+DEPARTMENT_RE = re.compile(r"^(vwo|v\.a\.|havo|vmbo)", re.IGNORECASE)
 
 
 SOURCE_TO_INTERNAL = {
+    # Capacity PDF aliases.
     "Alasca": "ALASCA",
     "Amsterdams Beroepscollege Noorderlicht": "ABC Noorderlicht",
     "AB Noorderlicht": "ABC Noorderlicht",
@@ -54,58 +77,30 @@ SOURCE_TO_INTERNAL = {
     "Montessori Lyceum Amsterdam": "Montessori Lyceum Amsterdam (MLA)",
     "Geert Groote College": "Geert Groote College Amsterdam",
     "VONK Amsterdam": "Vonk Amsterdam",
-}
-
-
-# PDF page number -> (internal school name, number of department rows).
-# Repeated names represent separately published profile/capacity groups.
-MATCHING_GROUPS = {
-    49: [
-        ("ALASCA", 2), ("ABC Noorderlicht", 1), ("Barlaeus Gymnasium", 1),
-        ("Berlage Lyceum", 3), ("Berlage Lyceum", 1), (None, 2),
-        ("Bindelmeer College", 1), ("Bredero", 1), ("Calandlyceum", 1),
-        ("Calandlyceum", 1), ("Calandlyceum", 3), ("Calvijn College Amsterdam", 1),
-        ("Het Cartesius", 2), ("Het Cartesius", 2), ("Cburg College", 1),
-        ("College De Meer", 1), ("College De Meer", 2), ("College ZUYD", 1),
-        ("College ZUYD", 3), ("Comenius Lyceum Amsterdam", 3),
-    ],
-    50: [
-        ("Cornelius Haga Lyceum", 3), ("CSB", 2), ("Cygnus Gymnasium", 1),
-        ("Damstede Lyceum", 2), ("De Amsterdamse MAVO", 1), ("DENISE", 3),
-        ("Fiducie College", 2), ("Fons Vitae Lyceum", 2), ("Futuris", 1),
-        ("Geert Groote College Amsterdam", 3), ("Gerrit van der Veen College", 1),
-        ("Gerrit van der Veen College", 2), ("Havo De Hof", 1),
-        ("Hervormd Lyceum West (HLW)", 3), ("Hervormd Lyceum West (HLW)", 1),
-        ("Het 4e Gymnasium", 1), ("Het Amsterdams Lyceum", 1),
-        ("Hervormd Lyceum Zuid (HLZ)", 2), ("Hubertus & Berkhoff", 1),
-        ("Hubertus & Berkhoff", 2), ("Huygens College", 1),
-        ("Hyperion Lyceum", 1), ("St. Ignatiusgymnasium", 1),
-    ],
-    51: [
-        ("Ir. Lely Lyceum", 3), ("IVKO", 1), ("IVKO", 2),
-        ("Joodse Scholengemeenschap Maimonides", 1), ("Kairos College", 3),
-        ("Kiem Montessori", 2), ("Lumion", 3), ("Marcanti College", 5),
-        ("Mediacollege Amsterdam", 3), ("Metis Montessori Lyceum", 2),
-        ("Metis Montessori Lyceum", 2), ("Metropolis Lyceum", 3),
-        ("Montessori Lyceum Amsterdam (MLA)", 1),
-        ("Montessori Lyceum Amsterdam (MLA)", 3),
-    ],
-    52: [
-        ("Montessori Lyceum Oostpoort", 2), ("Montessori Lyceum Pax", 3),
-        ("Montessori Lyceum Terra Nova", 5), ("Mundus College", 3),
-        ("OSB Amsterdam", 5), ("Over-Y College", 1), ("Over-Y College", 1),
-        ("Pieter Nieuwland College", 1), ("Pieter Nieuwland College", 2),
-        ("Spinoza Lyceum Amsterdam", 1), ("Spinoza Lyceum Amsterdam", 1),
-        ("Spinoza Lyceum Amsterdam", 3), ("Spinoza20first", 1),
-        ("Spring High", 1), ("St. Nicolaaslyceum", 2),
-        ("St. Nicolaaslyceum", 2), ("Sweelinck College", 1),
-    ],
-    53: [
-        ("TASC", 3), ("Vinse School", 3), ("Vonk Amsterdam", 1),
-        ("Vossius Gymnasium", 1), ("Xplore Agora", 3),
-        ("Yuverta vmbo en pro Amsterdam-Oost", 1),
-        ("Yuverta vmbo Amsterdam-West", 2),
-    ],
+    # Matching report (TABEL 18) profile-class variants that fold into one school.
+    "Berlage Lyceum - tto": "Berlage Lyceum",
+    "Berlage Lyceum - My World Class": "Berlage Lyceum",
+    "Bindelmeer College - Havo- potentie": "Bindelmeer College",
+    "Calandlyceum - Technasium": "Calandlyceum",
+    "Calandlyceum - Topsport": "Calandlyceum",
+    "Cartesius Lyceum - Het Lyceum": "Het Cartesius",
+    "College de Meer": "College De Meer",
+    "College de Meer Havo potentie": "College De Meer",
+    "College ZUYD - Havo- potentie": "College ZUYD",
+    "College ZUYD - Talentendanskla": "College ZUYD",
+    "Gerrit van der Veen College - DaMu": "Gerrit van der Veen College",
+    "Hervormd Lyceum West - Digi Tech/tto": "Hervormd Lyceum West (HLW)",
+    "Hubertus & Berkhoff - tto": "Hubertus & Berkhoff",
+    "Ir. Lely Lyceum - Technasium": "Ir. Lely Lyceum",
+    "IVKO DAMU": "IVKO",
+    "Metis Mont. Lyceum": "Metis Montessori Lyceum",
+    "Montessori Lyceum Amsterdam - Gymnasium": "Montessori Lyceum Amsterdam (MLA)",
+    "Over-Y - Sportklas": "Over-Y College",
+    "Pieter Nieuwland College - Plus": "Pieter Nieuwland College",
+    "Spinoza Lyceum - Gymnasium": "Spinoza Lyceum Amsterdam",
+    "Spinoza Lyceum - Muziekplus": "Spinoza Lyceum Amsterdam",
+    "St. Nicolaaslyceum - tto": "St. Nicolaaslyceum",
+    "Sweelinck College - Havo- potentie": "Sweelinck College",
 }
 
 
@@ -166,62 +161,103 @@ def to_int(value: str | None) -> int | None:
     return int(value) if value.isdigit() else None
 
 
-def extract_department(page, row) -> str:
-    text = page.crop((84, row.bbox[1], 137, row.bbox[3])).extract_text(
-        x_tolerance=1, y_tolerance=1
-    )
+def _norm(text: str | None) -> str:
     return " ".join((text or "").split())
+
+
+def _repair_name(text: str | None) -> str:
+    # pdfplumber occasionally splits a word on kerning, e.g. "Kairos C ollege".
+    return re.sub(r"\bC ollege\b", "College", _norm(text))
+
+
+def _num_column(x0: float) -> str | None:
+    for index in range(len(MATCHING_NUM_COLUMNS)):
+        if MATCHING_NUM_BOUNDS[index] <= x0 < MATCHING_NUM_BOUNDS[index + 1]:
+            return MATCHING_NUM_NAMES[index]
+    return None
+
+
+def _matching_numbers(page):
+    """Per department row (keyed by the department label), the numeric cells
+    bucketed by column x-coordinate. Returns rows in top-to-bottom order."""
+    rows = []
+    for words in group_words_by_line(page):
+        department = _norm(" ".join(w["text"] for w in words if 133 <= w["x0"] < 190))
+        if not DEPARTMENT_RE.match(department):
+            continue
+        buckets: dict[str, list[tuple[float, str]]] = {}
+        for word in words:
+            column = _num_column(word["x0"])
+            if column:
+                buckets.setdefault(column, []).append((word["x0"], word["text"]))
+        values = {
+            column: "".join(text for _, text in sorted(cells))
+            for column, cells in buckets.items()
+        }
+        rows.append((department, values))
+    return rows
+
+
+def _matching_names(page):
+    """Per department row, the (school name, department) from the detected table
+    cells, where wrapped names are joined. Returns rows in table order."""
+    rows = []
+    for cells in page.find_tables()[0].extract():
+        department = _norm(cells[1]) if len(cells) > 1 else ""
+        if not DEPARTMENT_RE.match(department):
+            continue
+        rows.append((_repair_name(cells[0]), department))
+    return rows
 
 
 def extract_matching(path: Path, known_names: set[str]):
     schools: dict[str, list[dict]] = {}
     with pdfplumber.open(path) as pdf:
-        for pdf_page_number, groups in MATCHING_GROUPS.items():
-            page = pdf.pages[pdf_page_number - 1]
-            table = page.find_tables()[0]
-            values = table.extract()[2:]
-            rows = table.rows[2:]
-            expected = sum(row_count for _, row_count in groups)
-            if len(rows) != expected or len(values) != expected:
+        marker = pdf.pages[MATCHING_PAGES[0] - 1].extract_text() or ""
+        if MATCHING_PAGE_MARKER not in marker:
+            raise ValueError(
+                f"OSVO matching page {MATCHING_PAGES[0]} is missing the TABEL 18 marker"
+            )
+        current_source: str | None = None
+        for page_number in MATCHING_PAGES:
+            page = pdf.pages[page_number - 1]
+            numbers = _matching_numbers(page)
+            names = _matching_names(page)
+            if len(numbers) != len(names):
                 raise ValueError(
-                    f"OSVO page {pdf_page_number}: expected {expected} rows, "
-                    f"found {len(rows)} geometry rows and {len(values)} value rows"
+                    f"OSVO page {page_number}: {len(numbers)} numeric rows vs "
+                    f"{len(names)} named rows"
                 )
-
-            offset = 0
-            for school_name, row_count in groups:
-                if school_name is not None and school_name not in known_names:
-                    raise ValueError(f"Unknown internal school mapping: {school_name}")
-                for index in range(offset, offset + row_count):
-                    raw = list(values[index])
-                    if len(raw) == 20:
-                        raw.pop(6)  # blank spacer column on the final pages
-                    if len(raw) != 19:
-                        raise ValueError(
-                            f"OSVO page {pdf_page_number}, row {index}: expected 19 values, found {len(raw)}"
-                        )
-                    if school_name is None:
-                        continue
-                    department = extract_department(page, rows[index])
-                    if not department:
-                        raise ValueError(
-                            f"OSVO page {pdf_page_number}, row {index}: missing department"
-                        )
-                    schools.setdefault(school_name, []).append(
-                        {
-                            "department": department,
-                            "capacity": to_int(raw[5]),
-                            "firstPreferences": to_int(raw[6]),
-                            "secondPreferences": to_int(raw[7]),
-                            "thirdPreferences": to_int(raw[8]),
-                            "totalPlaced": to_int(raw[14]),
-                            "placedFirstPreference": to_int(raw[15]),
-                            "placedSecondPreference": to_int(raw[16]),
-                            "placedThirdPreference": to_int(raw[17]),
-                            "placedOtherPreference": to_int(raw[18]),
-                        }
+            for (dept_a, values), (source_name, dept_b) in zip(numbers, names):
+                if dept_a != dept_b:
+                    raise ValueError(
+                        f"OSVO page {page_number}: department mismatch "
+                        f"{dept_a!r} vs {dept_b!r}"
                     )
-                offset += row_count
+                if source_name:
+                    current_source = source_name
+                if current_source is None:
+                    raise ValueError(
+                        f"OSVO page {page_number}: department {dept_a!r} has no school"
+                    )
+                name = internal_name(current_source, known_names)
+                if name is None:
+                    continue
+                schools.setdefault(name, []).append(
+                    {
+                        "department": dept_a,
+                        "capacity": to_int(values.get("cap26")),
+                        "firstPreferences": to_int(values.get("vk1")),
+                        # The 2026 report publishes demand for the first preference only.
+                        "secondPreferences": None,
+                        "thirdPreferences": None,
+                        "totalPlaced": to_int(values.get("pl26")),
+                        "placedFirstPreference": to_int(values.get("nv1")),
+                        "placedSecondPreference": to_int(values.get("nv2")),
+                        "placedThirdPreference": to_int(values.get("nv3")),
+                        "placedOtherPreference": to_int(values.get("nv4")),
+                    }
+                )
     return schools
 
 
@@ -248,7 +284,7 @@ def main():
 
     names = sorted(set(capacity) | set(matching))
     dataset = {
-        "generatedAt": "2026-10-02T00:00:00.000Z",
+        "generatedAt": "2026-11-02T00:00:00.000Z",
         "capacity": {
             "academicYear": "2026-2027",
             "status": "preliminary",
@@ -256,9 +292,9 @@ def main():
             "sourceUrl": CAPACITY_SOURCE_URL,
         },
         "matching": {
-            "academicYear": "2025-2026",
+            "academicYear": "2026-2027",
             "status": "final",
-            "sourceLabel": "OSVO Loting en Matching 2025 report",
+            "sourceLabel": "OSVO Loting en Matching 2026 report",
             "sourceUrl": MATCHING_SOURCE_URL,
         },
         "schools": {
@@ -279,13 +315,15 @@ def main():
         for target, aliases in duplicate_aliases.items()
         if len(aliases) > 1
     }
+    # Demand beyond the first preference is not published per afdeling in 2026.
+    unpublished_fields = {"secondPreferences", "thirdPreferences"}
     missing_values = []
     for name, rows in matching.items():
         for index, row in enumerate(rows):
             missing = [
                 field
                 for field, value in row.items()
-                if field != "department" and value is None
+                if field != "department" and field not in unpublished_fields and value is None
             ]
             if missing:
                 missing_values.append(

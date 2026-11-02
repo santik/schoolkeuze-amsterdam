@@ -1,10 +1,15 @@
 {
-  "generatedAt": "2026-10-02T00:00:00.000Z",
+  "generatedAt": "2026-11-02T00:00:00.000Z",
   "unmatchedSourceNames": [],
   "duplicateMappings": {
     "ABC Noorderlicht": [
       "Amsterdams Beroepscollege Noorderlicht",
       "AB Noorderlicht"
+    ],
+    "Berlage Lyceum": [
+      "Berlage Lyceum - Tweetalig",
+      "Berlage Lyceum - tto",
+      "Berlage Lyceum - My World Class"
     ],
     "Damstede Lyceum": [
       "Damstede",
@@ -16,11 +21,41 @@
     ],
     "Het Cartesius": [
       "Cartesius Amsterdam",
-      "Cartesius Lyceum"
+      "Cartesius Lyceum",
+      "Cartesius Lyceum - Het Lyceum"
+    ],
+    "Over-Y College": [
+      "Over-Y",
+      "Over-Y - Sportklas"
     ],
     "Vonk Amsterdam": [
       "VONK",
       "VONK Amsterdam"
+    ],
+    "Spinoza Lyceum Amsterdam": [
+      "Spinoza Lyceum",
+      "Spinoza Lyceum - Gymnasium",
+      "Spinoza Lyceum - Muziekplus"
+    ],
+    "Hervormd Lyceum West (HLW)": [
+      "Hervormd Lyceum West",
+      "Hervormd Lyceum West - Digi Tech/tto"
+    ],
+    "Montessori Lyceum Amsterdam (MLA)": [
+      "Montessori Lyceum Amsterdam",
+      "Montessori Lyceum Amsterdam - Gymnasium"
+    ],
+    "Calandlyceum": [
+      "Calandlyceum - Technasium",
+      "Calandlyceum - Topsport"
+    ],
+    "College De Meer": [
+      "College de Meer",
+      "College de Meer Havo potentie"
+    ],
+    "College ZUYD": [
+      "College ZUYD - Havo- potentie",
+      "College ZUYD - Talentendanskla"
     ]
   },
   "schoolsWithoutCapacity": [],
@@ -28,40 +63,19 @@
     "sample:21et:de-apollo",
     "sample:14rl:luca"
   ],
-  "missingValues": [],
-  "suspiciousCapacityChanges": [
+  "missingValues": [
     {
-      "schoolKey": "sample:31fg:fiducie-college",
-      "previousCapacity": 125,
-      "currentCapacity": 175,
-      "changePercent": 40.0,
-      "reviewNote": "Capacity groups can differ between publications; verify manually."
-    },
-    {
-      "schoolKey": "sample:17vf:kairos-college",
-      "previousCapacity": 56,
-      "currentCapacity": 112,
-      "changePercent": 100.0,
-      "reviewNote": "Capacity groups can differ between publications; verify manually."
-    },
-    {
-      "schoolKey": "sample:16ps:montessori-lyceum-oostpoort",
-      "previousCapacity": 170,
-      "currentCapacity": 120,
-      "changePercent": -29.4,
-      "reviewNote": "Capacity groups can differ between publications; verify manually."
-    },
-    {
-      "schoolKey": "sample:30gs:tasc",
-      "previousCapacity": 90,
-      "currentCapacity": 120,
-      "changePercent": 33.3,
-      "reviewNote": "Capacity groups can differ between publications; verify manually."
+      "schoolKey": "sample:01oe:yuverta-vmbo-amsterdam-west",
+      "row": 1,
+      "fields": [
+        "placedFirstPreference"
+      ]
     }
   ],
+  "suspiciousCapacityChanges": [],
   "counts": {
     "schools": 65,
     "capacityRows": 163,
-    "matchingRows": 152
+    "matchingRows": 158
   }
 }
