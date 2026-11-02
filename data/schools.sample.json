@@ -7,8 +7,8 @@
     "houseNumber": "31",
     "postalCode": "1017RV",
     "city": "Amsterdam",
-    "lat": 52.3629,
-    "lon": 4.8926,
+    "lat": 52.362218,
+    "lon": 4.884812,
     "levels": [
       "VWO"
     ],
@@ -196,8 +196,8 @@
     "houseNumber": "361",
     "postalCode": "1031KV",
     "city": "Amsterdam",
-    "lat": 52.3659,
-    "lon": 4.9445,
+    "lat": 52.385429,
+    "lon": 4.906151,
     "levels": [
       "VWO"
     ],
@@ -386,8 +386,8 @@
     "houseNumber": "1",
     "postalCode": "1077WS",
     "city": "Amsterdam",
-    "lat": 52.3491,
-    "lon": 4.8694,
+    "lat": 52.345686,
+    "lon": 4.883913,
     "levels": [
       "VWO"
     ],
@@ -574,8 +574,8 @@
     "houseNumber": "47",
     "postalCode": "1077LH",
     "city": "Amsterdam",
-    "lat": 52.3504,
-    "lon": 4.8763,
+    "lat": 52.349777,
+    "lon": 4.87393,
     "levels": [
       "VWO"
     ],
@@ -762,8 +762,8 @@
     "houseNumber": "2",
     "postalCode": "1077WM",
     "city": "Amsterdam",
-    "lat": 52.3467,
-    "lon": 4.8741,
+    "lat": 52.341507,
+    "lon": 4.878115,
     "levels": [
       "HAVO",
       "VWO"
@@ -975,8 +975,8 @@
     "houseNumber": "8",
     "postalCode": "1077VS",
     "city": "Amsterdam",
-    "lat": 52.3479,
-    "lon": 4.8687,
+    "lat": 52.344675,
+    "lon": 4.868427,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -1185,8 +1185,8 @@
     "houseNumber": "6",
     "postalCode": "1097AR",
     "city": "Amsterdam",
-    "lat": 52.3535,
-    "lon": 4.9423,
+    "lat": 52.349722,
+    "lon": 4.923641,
     "levels": [
       "HAVO",
       "VWO"
@@ -1375,8 +1375,8 @@
     "houseNumber": "8",
     "postalCode": "1091VG",
     "city": "Amsterdam",
-    "lat": 52.3591,
-    "lon": 4.9209,
+    "lat": 52.354936,
+    "lon": 4.912505,
     "levels": [
       "VWO"
     ],
@@ -1563,8 +1563,8 @@
     "houseNumber": "8",
     "postalCode": "1091VG",
     "city": "Amsterdam",
-    "lat": 52.3591,
-    "lon": 4.9209,
+    "lat": 52.354936,
+    "lon": 4.912505,
     "levels": [
       "HAVO"
     ],
@@ -1745,8 +1745,8 @@
     "houseNumber": "33-34",
     "postalCode": "1073KJ",
     "city": "Amsterdam",
-    "lat": 52.3533,
-    "lon": 4.9023,
+    "lat": 52.348925,
+    "lon": 4.899888,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -1988,8 +1988,8 @@
     "houseNumber": "182",
     "postalCode": "1068NT",
     "city": "Amsterdam",
-    "lat": 52.3713,
-    "lon": 4.8165,
+    "lat": 52.353669,
+    "lon": 4.805969,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -2224,8 +2224,8 @@
     "houseNumber": "25",
     "postalCode": "1062HM",
     "city": "Amsterdam",
-    "lat": 52.3698,
-    "lon": 4.8276,
+    "lat": 52.346668,
+    "lon": 4.83915,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -2474,8 +2474,8 @@
     "houseNumber": "1",
     "postalCode": "1097DP",
     "city": "Amsterdam",
-    "lat": 52.3576,
-    "lon": 4.9334,
+    "lat": 52.347798,
+    "lon": 4.914038,
     "levels": [
       "HAVO",
       "VWO"
@@ -2681,8 +2681,8 @@
     "houseNumber": "1",
     "postalCode": "1078BA",
     "city": "Amsterdam",
-    "lat": 52.3488,
-    "lon": 4.8855,
+    "lat": 52.348101,
+    "lon": 4.887584,
     "levels": [
       "HAVO",
       "VWO"
@@ -2889,8 +2889,8 @@
     "houseNumber": "15",
     "postalCode": "1075BJ",
     "city": "Amsterdam",
-    "lat": 52.3575,
-    "lon": 4.8659,
+    "lat": 52.351213,
+    "lon": 4.865166,
     "levels": [
       "VWO"
     ],
@@ -3073,8 +3073,8 @@
     "houseNumber": "79",
     "postalCode": "1065JX",
     "city": "Amsterdam",
-    "lat": 52.3726,
-    "lon": 4.8304,
+    "lat": 52.362545,
+    "lon": 4.825629,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -3309,8 +3309,8 @@
     "houseNumber": "99",
     "postalCode": "1077DT",
     "city": "Amsterdam",
-    "lat": 52.3508,
-    "lon": 4.879,
+    "lat": 52.348774,
+    "lon": 4.874617,
     "levels": [
       "HAVO",
       "VWO"
@@ -3499,8 +3499,8 @@
     "houseNumber": "56",
     "postalCode": "1076BG",
     "city": "Amsterdam",
-    "lat": 52.3416,
-    "lon": 4.8629,
+    "lat": 52.342023,
+    "lon": 4.866155,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -3707,8 +3707,8 @@
     "houseNumber": "2",
     "postalCode": "1071VH",
     "city": "Amsterdam",
-    "lat": 52.3545,
-    "lon": 4.8766,
+    "lat": 52.352433,
+    "lon": 4.883191,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -3945,8 +3945,8 @@
     "houseNumber": "2",
     "postalCode": "1062BW",
     "city": "Amsterdam",
-    "lat": 52.3655,
-    "lon": 4.8302,
+    "lat": 52.360802,
+    "lon": 4.839546,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -4132,8 +4132,8 @@
     "houseNumber": "1",
     "postalCode": "1095MM",
     "city": "Amsterdam",
-    "lat": 52.3618,
-    "lon": 4.9512,
+    "lat": 52.371505,
+    "lon": 4.968927,
     "levels": [
       "HAVO",
       "VWO"
@@ -4310,8 +4310,8 @@
     "houseNumber": "14",
     "postalCode": "1025KN",
     "city": "Amsterdam",
-    "lat": 52.395,
-    "lon": 4.9191,
+    "lat": 52.395163,
+    "lon": 4.930758,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -4522,8 +4522,8 @@
     "houseNumber": "5",
     "postalCode": "1103BB",
     "city": "Amsterdam",
-    "lat": 52.313,
-    "lon": 4.974,
+    "lat": 52.325311,
+    "lon": 4.963901,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -4733,10 +4733,10 @@
     "websiteUrl": "https://bredero.espritscholen.nl",
     "street": "Gare du Nord",
     "houseNumber": "5",
-    "postalCode": "1022GX",
+    "postalCode": "1022LD",
     "city": "Amsterdam",
-    "lat": 52.3948,
-    "lon": 4.9082,
+    "lat": 52.401925,
+    "lon": 4.931065,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -4910,8 +4910,8 @@
     "houseNumber": "3",
     "postalCode": "1065KH",
     "city": "Amsterdam",
-    "lat": 52.3645,
-    "lon": 4.8148,
+    "lat": 52.356095,
+    "lon": 4.831522,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -5117,8 +5117,8 @@
     "houseNumber": "40",
     "postalCode": "1382WB",
     "city": "Weesp",
-    "lat": 52.3084,
-    "lon": 5.0431,
+    "lat": 52.310686,
+    "lon": 5.037066,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -5323,8 +5323,8 @@
     "houseNumber": "116",
     "postalCode": "1087GN",
     "city": "Amsterdam",
-    "lat": 52.367,
-    "lon": 4.958,
+    "lat": 52.355752,
+    "lon": 4.995549,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -5509,8 +5509,8 @@
     "houseNumber": "11",
     "postalCode": "1078GG",
     "city": "Amsterdam",
-    "lat": 52.3477,
-    "lon": 4.8801,
+    "lat": 52.346229,
+    "lon": 4.891245,
     "levels": [
       "VMBO-GL",
       "VMBO-T",
@@ -5721,8 +5721,8 @@
     "houseNumber": "2",
     "postalCode": "1098XB",
     "city": "Amsterdam",
-    "lat": 52.3574,
-    "lon": 4.9497,
+    "lat": 52.357256,
+    "lon": 4.945406,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -5916,8 +5916,8 @@
     "houseNumber": "436-440",
     "postalCode": "1073GN",
     "city": "Amsterdam",
-    "lat": 52.3521,
-    "lon": 4.8986,
+    "lat": 52.35064,
+    "lon": 4.895026,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -6119,8 +6119,8 @@
     "houseNumber": "30",
     "postalCode": "1043BX",
     "city": "Amsterdam",
-    "lat": 52.3889,
-    "lon": 4.8392,
+    "lat": 52.387945,
+    "lon": 4.835182,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -6333,8 +6333,8 @@
     "houseNumber": "3",
     "postalCode": "1081CN",
     "city": "Amsterdam",
-    "lat": 52.338,
-    "lon": 4.8706,
+    "lat": 52.323404,
+    "lon": 4.858878,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -6521,8 +6521,8 @@
     "houseNumber": "83",
     "postalCode": "1025KP",
     "city": "Amsterdam",
-    "lat": 52.3965,
-    "lon": 4.92,
+    "lat": 52.394685,
+    "lon": 4.929885,
     "levels": [
       "HAVO",
       "VWO"
@@ -6696,8 +6696,8 @@
     "houseNumber": "48",
     "postalCode": "1098CE",
     "city": "Amsterdam",
-    "lat": 52.3588,
-    "lon": 4.944,
+    "lat": 52.354819,
+    "lon": 4.933159,
     "levels": [
       "VMBO-T"
     ],
@@ -6870,8 +6870,8 @@
     "houseNumber": "6",
     "postalCode": "1082VS",
     "city": "Amsterdam",
-    "lat": 52.337,
-    "lon": 4.8869,
+    "lat": 52.331058,
+    "lon": 4.872313,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -7062,8 +7062,8 @@
     "houseNumber": "140",
     "postalCode": "1061SB",
     "city": "Amsterdam",
-    "lat": 52.3733,
-    "lon": 4.8372,
+    "lat": 52.366577,
+    "lon": 4.840143,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -7248,8 +7248,8 @@
     "houseNumber": "44",
     "postalCode": "1065TG",
     "city": "Amsterdam",
-    "lat": 52.3692,
-    "lon": 4.8203,
+    "lat": 52.354267,
+    "lon": 4.829315,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -7423,8 +7423,8 @@
     "houseNumber": "17",
     "postalCode": "1079RK",
     "city": "Amsterdam",
-    "lat": 52.3413,
-    "lon": 4.8935,
+    "lat": 52.337847,
+    "lon": 4.900977,
     "levels": [
       "VMBO-GL",
       "VMBO-T",
@@ -7643,8 +7643,8 @@
     "houseNumber": "134",
     "postalCode": "1021JL",
     "city": "Amsterdam",
-    "lat": 52.3973,
-    "lon": 4.9341,
+    "lat": 52.385653,
+    "lon": 4.920798,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -7830,8 +7830,8 @@
     "houseNumber": "33",
     "postalCode": "1092AX",
     "city": "Amsterdam",
-    "lat": 52.3596,
-    "lon": 4.9274,
+    "lat": 52.357967,
+    "lon": 4.917698,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -8007,8 +8007,8 @@
     "houseNumber": "7-A",
     "postalCode": "1052HA",
     "city": "Amsterdam",
-    "lat": 52.3771,
-    "lon": 4.868,
+    "lat": 52.377785,
+    "lon": 4.874282,
     "levels": [
       "HAVO",
       "VWO"
@@ -8182,8 +8182,8 @@
     "houseNumber": "4",
     "postalCode": "1032CE",
     "city": "Amsterdam",
-    "lat": 52.3964,
-    "lon": 4.9237,
+    "lat": 52.393969,
+    "lon": 4.916994,
     "levels": [
       "VWO"
     ],
@@ -8362,8 +8362,8 @@
     "houseNumber": "31",
     "postalCode": "1054CX",
     "city": "Amsterdam",
-    "lat": 52.3762,
-    "lon": 4.8682,
+    "lat": 52.36392,
+    "lon": 4.877202,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -8555,10 +8555,10 @@
     "websiteUrl": "https://lelylyceum.nl",
     "street": "Ravenswaaipad",
     "houseNumber": "3",
-    "postalCode": "1106AZ",
+    "postalCode": "1106AW",
     "city": "Amsterdam",
-    "lat": 52.3105,
-    "lon": 4.9712,
+    "lat": 52.297146,
+    "lon": 4.978005,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -8774,8 +8774,8 @@
     "houseNumber": "15",
     "postalCode": "1072ER",
     "city": "Amsterdam",
-    "lat": 52.353,
-    "lon": 4.8973,
+    "lat": 52.352469,
+    "lon": 4.887564,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -8965,8 +8965,8 @@
     "houseNumber": "31",
     "postalCode": "1056AJ",
     "city": "Amsterdam",
-    "lat": 52.3759,
-    "lon": 4.8614,
+    "lat": 52.372527,
+    "lon": 4.844034,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -9162,8 +9162,8 @@
     "houseNumber": "15",
     "postalCode": "1078JL",
     "city": "Amsterdam",
-    "lat": 52.3462,
-    "lon": 4.8838,
+    "lat": 52.346143,
+    "lon": 4.892097,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -9357,8 +9357,8 @@
     "houseNumber": "58",
     "postalCode": "1092AD",
     "city": "Amsterdam",
-    "lat": 52.3604,
-    "lon": 4.9266,
+    "lat": 52.36178,
+    "lon": 4.918157,
     "levels": [
       "HAVO",
       "VWO",
@@ -9555,8 +9555,8 @@
     "houseNumber": "1-A",
     "postalCode": "1031BV",
     "city": "Amsterdam",
-    "lat": 52.3933,
-    "lon": 4.9436,
+    "lat": 52.387619,
+    "lon": 4.912896,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -9742,8 +9742,8 @@
     "houseNumber": "3",
     "postalCode": "1093KN",
     "city": "Amsterdam",
-    "lat": 52.3648,
-    "lon": 4.9347,
+    "lat": 52.357143,
+    "lon": 4.927601,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -9988,8 +9988,8 @@
     "houseNumber": "50",
     "postalCode": "1112HR",
     "city": "Amsterdam",
-    "lat": 52.3515,
-    "lon": 4.9094,
+    "lat": 52.335038,
+    "lon": 4.951011,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -10176,8 +10176,8 @@
     "houseNumber": "1",
     "postalCode": "1087LA",
     "city": "Amsterdam",
-    "lat": 52.3622,
-    "lon": 4.9651,
+    "lat": 52.351257,
+    "lon": 5.006229,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -10413,8 +10413,8 @@
     "houseNumber": "2",
     "postalCode": "1064BA",
     "city": "Amsterdam",
-    "lat": 52.3708,
-    "lon": 4.8219,
+    "lat": 52.37643,
+    "lon": 4.832957,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -10600,8 +10600,8 @@
     "houseNumber": "5",
     "postalCode": "1103BB",
     "city": "Amsterdam",
-    "lat": 52.3133,
-    "lon": 4.9741,
+    "lat": 52.325311,
+    "lon": 4.963901,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -10808,8 +10808,8 @@
     "houseNumber": "170",
     "postalCode": "1032KD",
     "city": "Amsterdam",
-    "lat": 52.3938,
-    "lon": 4.9368,
+    "lat": 52.394038,
+    "lon": 4.911851,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -10983,8 +10983,8 @@
     "houseNumber": "55",
     "postalCode": "1059VN",
     "city": "Amsterdam",
-    "lat": 52.3616,
-    "lon": 4.8231,
+    "lat": 52.348924,
+    "lon": 4.849665,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -11165,8 +11165,8 @@
     "houseNumber": "40",
     "postalCode": "1025KR",
     "city": "Amsterdam",
-    "lat": 52.3957,
-    "lon": 4.9198,
+    "lat": 52.39449,
+    "lon": 4.930681,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -11367,8 +11367,8 @@
     "houseNumber": "2",
     "postalCode": "1022XA",
     "city": "Amsterdam",
-    "lat": 52.3912,
-    "lon": 4.9358,
+    "lat": 52.387585,
+    "lon": 4.925346,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -11574,8 +11574,8 @@
     "houseNumber": "1",
     "postalCode": "1183JD",
     "city": "Amstelveen",
-    "lat": 52.3077,
-    "lon": 4.8705,
+    "lat": 52.311654,
+    "lon": 4.873203,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -11770,8 +11770,8 @@
     "houseNumber": "19-21",
     "postalCode": "1055XE",
     "city": "Amsterdam",
-    "lat": 52.3776,
-    "lon": 4.8621,
+    "lat": 52.380752,
+    "lon": 4.857997,
     "levels": [
       "VMBO-T",
       "HAVO"
@@ -11956,8 +11956,8 @@
     "houseNumber": "132-136",
     "postalCode": "1013EK",
     "city": "Amsterdam",
-    "lat": 52.3825,
-    "lon": 4.8957,
+    "lat": 52.379779,
+    "lon": 4.893058,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -12193,8 +12193,8 @@
     "houseNumber": "17",
     "postalCode": "1077JN",
     "city": "Amsterdam",
-    "lat": 52.344,
-    "lon": 4.8848,
+    "lat": 52.347219,
+    "lon": 4.87666,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -12378,8 +12378,8 @@
     "houseNumber": "1-A",
     "postalCode": "1382GV",
     "city": "Weesp",
-    "lat": 52.309,
-    "lon": 5.0456,
+    "lat": 52.31432,
+    "lon": 5.028961,
     "levels": [
       "VMBO-T",
       "HAVO",
@@ -12562,10 +12562,10 @@
     "websiteUrl": "https://tasc.nl",
     "street": "Darlingstraat",
     "houseNumber": "2",
-    "postalCode": "1061RJ",
+    "postalCode": "1102MX",
     "city": "Amsterdam",
-    "lat": 52.3726,
-    "lon": 4.83,
+    "lat": 52.31927,
+    "lon": 4.950962,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -12765,10 +12765,10 @@
     "websiteUrl": "https://hogelant.nl",
     "street": "Duinluststraat",
     "houseNumber": "20",
-    "postalCode": "1022PK",
+    "postalCode": "1024VK",
     "city": "Amsterdam",
-    "lat": 52.3927,
-    "lon": 4.9262,
+    "lat": 52.395717,
+    "lon": 4.953426,
     "levels": [
       "VMBO-B",
       "KOVO"
@@ -12934,8 +12934,8 @@
     "houseNumber": "38-40",
     "postalCode": "1014BT",
     "city": "Amsterdam",
-    "lat": 52.3875,
-    "lon": 4.8562,
+    "lat": 52.396813,
+    "lon": 4.850216,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -13127,8 +13127,8 @@
     "houseNumber": "29",
     "postalCode": "1078TA",
     "city": "Amsterdam",
-    "lat": 52.3399,
-    "lon": 4.8838,
+    "lat": 52.347418,
+    "lon": 4.907082,
     "levels": [
       "VMBO-B",
       "VMBO-K"
@@ -13305,8 +13305,8 @@
     "houseNumber": "60",
     "postalCode": "1055LG",
     "city": "Amsterdam",
-    "lat": 52.3775,
-    "lon": 4.8534,
+    "lat": 52.377626,
+    "lon": 4.856704,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -13493,8 +13493,8 @@
     "houseNumber": "87",
     "postalCode": "1098JB",
     "city": "Amsterdam",
-    "lat": 52.3573,
-    "lon": 4.9479,
+    "lat": 52.354352,
+    "lon": 4.937875,
     "levels": [
       "VMBO-B",
       "VMBO-K",
@@ -13671,8 +13671,8 @@
     "houseNumber": "366",
     "postalCode": "1054AH",
     "city": "Amsterdam",
-    "lat": 52.376,
-    "lon": 4.872,
+    "lat": 52.36561,
+    "lon": 4.875171,
     "levels": [
       "VMBO-K",
       "VMBO-T",
@@ -13848,8 +13848,8 @@
     "houseNumber": "4",
     "postalCode": "1082HK",
     "city": "Amsterdam",
-    "lat": 52.335,
-    "lon": 4.8945,
+    "lat": 52.327529,
+    "lon": 4.875082,
     "levels": [
       "Praktijkonderwijs"
     ],
@@ -14012,8 +14012,8 @@
     "houseNumber": "7",
     "postalCode": "1102CE",
     "city": "Amsterdam",
-    "lat": 52.3162,
-    "lon": 4.9614,
+    "lat": 52.312385,
+    "lon": 4.954093,
     "levels": [
       "Praktijkonderwijs"
     ],
@@ -14174,10 +14174,10 @@
     "websiteUrl": "https://kolomonderwijs.nl",
     "street": "Jan de Louterpad",
     "houseNumber": "5",
-    "postalCode": "1067JX",
+    "postalCode": "1063ME",
     "city": "Amsterdam",
-    "lat": 52.372,
-    "lon": 4.8189,
+    "lat": 52.378825,
+    "lon": 4.818667,
     "levels": [
       "Praktijkonderwijs"
     ],
@@ -14340,8 +14340,8 @@
     "houseNumber": "139",
     "postalCode": "1021CK",
     "city": "Amsterdam",
-    "lat": 52.3993,
-    "lon": 4.9308,
+    "lat": 52.387412,
+    "lon": 4.917959,
     "levels": [
       "Praktijkonderwijs"
     ],
@@ -14504,8 +14504,8 @@
     "houseNumber": "24",
     "postalCode": "1094HM",
     "city": "Amsterdam",
-    "lat": 52.3615,
-    "lon": 4.9419,
+    "lat": 52.36362,
+    "lon": 4.935975,
     "levels": [
       "Praktijkonderwijs",
       "VMBO-B"
@@ -14669,8 +14669,8 @@
     "houseNumber": "300",
     "postalCode": "1068LE",
     "city": "Amsterdam",
-    "lat": 52.3633,
-    "lon": 4.8103,
+    "lat": 52.359051,
+    "lon": 4.807352,
     "levels": [
       "VSO"
     ],
@@ -14834,8 +14834,8 @@
     "houseNumber": "4",
     "postalCode": "1082HK",
     "city": "Amsterdam",
-    "lat": 52.335,
-    "lon": 4.8945,
+    "lat": 52.327529,
+    "lon": 4.875082,
     "levels": [
       "VSO"
     ],
@@ -14997,8 +14997,8 @@
     "houseNumber": "17",
     "postalCode": "1064PA",
     "city": "Amsterdam",
-    "lat": 52.3705,
-    "lon": 4.8199,
+    "lat": 52.371014,
+    "lon": 4.831865,
     "levels": [
       "VSO"
     ],
@@ -15160,8 +15160,8 @@
     "houseNumber": "9",
     "postalCode": "1105AZ",
     "city": "Amsterdam",
-    "lat": 52.2973,
-    "lon": 4.9671,
+    "lat": 52.29499,
+    "lon": 4.957913,
     "levels": [
       "VSO",
       "VMBO-T",
@@ -15346,8 +15346,8 @@
     "houseNumber": "2",
     "postalCode": "1094HM",
     "city": "Amsterdam",
-    "lat": 52.3615,
-    "lon": 4.9417,
+    "lat": 52.36362,
+    "lon": 4.935975,
     "levels": [
       "VSO"
     ],
@@ -15509,8 +15509,8 @@
     "houseNumber": "50",
     "postalCode": "1103BC",
     "city": "Amsterdam",
-    "lat": 52.3137,
-    "lon": 4.971,
+    "lat": 52.325743,
+    "lon": 4.965158,
     "levels": [
       "VSO",
       "VMBO-B",
@@ -15706,8 +15706,8 @@
     "houseNumber": "60",
     "postalCode": "1025KV",
     "city": "Amsterdam",
-    "lat": 52.3958,
-    "lon": 4.9201,
+    "lat": 52.394057,
+    "lon": 4.932727,
     "levels": [
       "VSO"
     ],
@@ -15869,8 +15869,8 @@
     "houseNumber": "5",
     "postalCode": "1103BB",
     "city": "Amsterdam",
-    "lat": 52.313,
-    "lon": 4.974,
+    "lat": 52.325311,
+    "lon": 4.963901,
     "levels": [
       "VSO"
     ],
@@ -16032,8 +16032,8 @@
     "houseNumber": "1",
     "postalCode": "1093KK",
     "city": "Amsterdam",
-    "lat": 52.3651,
-    "lon": 4.9342,
+    "lat": 52.358852,
+    "lon": 4.932471,
     "levels": [
       "VSO",
       "VMBO-T"
@@ -16198,8 +16198,8 @@
     "houseNumber": "1",
     "postalCode": "1034DG",
     "city": "Amsterdam",
-    "lat": 52.3986,
-    "lon": 4.9327,
+    "lat": 52.402834,
+    "lon": 4.911007,
     "levels": [
       "VSO",
       "VMBO-T",
@@ -16371,12 +16371,12 @@
     "brin": "28RG",
     "name": "Voort College",
     "websiteUrl": "https://voortcollege.nl",
-    "street": "Joop Geesinkweg",
-    "houseNumber": "901",
-    "postalCode": "1096AX",
+    "street": "Kortvoort",
+    "houseNumber": "60",
+    "postalCode": "1104NB",
     "city": "Amsterdam",
-    "lat": 52.3475,
-    "lon": 4.9592,
+    "lat": 52.315644,
+    "lon": 4.970589,
     "levels": [
       "VSO"
     ],
@@ -16538,8 +16538,8 @@
     "houseNumber": "59",
     "postalCode": "1071ED",
     "city": "Amsterdam",
-    "lat": 52.3555,
-    "lon": 4.8829,
+    "lat": 52.355004,
+    "lon": 4.885466,
     "levels": [
       "VMBO-T",
       "HAVO",
